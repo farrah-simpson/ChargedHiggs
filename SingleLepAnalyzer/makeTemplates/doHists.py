@@ -20,7 +20,7 @@ start_time = time.time()
 # args = parser.parse_args()
 
 lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
-step1Dir = 'root://cmseos.fnal.gov//store/user/lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_XGBs_added_sys_new/nominal/'
+step1Dir = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step2/nominal/' #lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_XGBs_added_sys_new/nominal/'
 
 """
 Note: 
@@ -31,10 +31,10 @@ where <shape> is for example "JECUp". hadder.py can be used to prepare input fil
 --Each process given in the lists below must have a definition in "samples.py"
 --Check the set of cuts in "analyze.py"
 """	
-
 bkgList = [
-		  'DYMG', #'DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500',
-		  'QCDht200','QCDht300',
+		  'DY1MG', 'DY2MG', 'DY3MG', 'DY4MG', #'DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500',
+		  'QCDht200',
+          'QCDht300',
                   'QCDht500',
                   'QCDht700','QCDht1000','QCDht1500','QCDht2000',
 		  'Tt','Tbt','Ts','TtW','TbtW',
@@ -43,27 +43,31 @@ bkgList = [
 		  #'WJetsMG1200_1','WJetsMG1200_2','WJetsMG1200_3','WJetsMG1200_4','WJetsMG1200_5',
 		  #'WJetsMG2500_1','WJetsMG2500_2','WJetsMG2500_3','WJetsMG2500_4','WJetsMG2500_5', 'WJetsMG2500_6',
 
-	 	  #'TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000',		  
-		  #'TTJetsHad0','TTJetsHad700','TTJetsHad1000',		 
-                  'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic', 
+	 	  'TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000',		  
+		  'TTJetsHad0','TTJetsHad700','TTJetsHad1000',		 
+          #        'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic', 
 		  #'TTJetsSemiLepNjet9bin1','TTJetsSemiLepNjet9bin2','TTJetsSemiLepNjet9bin3',
-		  #'TTJetsSemiLep1','TTJetsSemiLep2','TTJetsSemiLep3','TTJetsSemiLep4','TTJetsSemiLep5','TTJetsSemiLep6',		  
-		  #'TTJets700mtt','TTJets1000mtt',
+		  'TTJetsSemiLep01','TTJetsSemiLep02','TTJetsSemiLep03','TTJetsSemiLep04','TTJetsSemiLep05','TTJetsSemiLep06', 'TTJetsSemiLep07','TTJetsSemiLep08','TTJetsSemiLep09','TTJetsSemiLep010', 		  
+		  'TTJetsSemiLep7001','TTJetsSemiLep7002','TTJetsSemiLep7003','TTJetsSemiLep7004','TTJetsSemiLep7005','TTJetsSemiLep7006', 'TTJetsSemiLep7007','TTJetsSemiLep7008','TTJetsSemiLep7009','TTJetsSemiLep70010', 		  
+		  'TTJetsSemiLep10001','TTJetsSemiLep10002','TTJetsSemiLep10003','TTJetsSemiLep10004','TTJetsSemiLep10005','TTJetsSemiLep10006', 'TTJetsSemiLep10007','TTJetsSemiLep10008','TTJetsSemiLep10009','TTJetsSemiLep100010', 		  
+
+		  'TTJets700mtt','TTJets1000mtt',
 		  'TTWl',#'TTWq',
                   'TTZl',#'TTTT',
           'WW','WZ','ZZ',
 		  #'TTHB','TTHnoB',
 		  ]
-		  
-ttFlvs = ['_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
+	
+	  
+ttFlvs = []#'_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
 dataList = ['DataE','DataM']
 
-whichSignal = 'Hptb' #Hptb,HTB, TTM, BBM, or X53X53M
-massList = [200, 220, 250, 300, 350, 400, 500, 600, 700, 800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]#[1000]#[250,500,1000]
+whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
+#mass = range(600,1500+1,100)
 
-sigList = [whichSignal+str(mass) for mass in massList]
-#sigList = []
-if whichSignal=='Hptb': decays = ['']
+#sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
+sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+if whichSignal=='Hptb'or 'X53': decays = ['']
 
 sigTrained = 'Low1'
 if len(sys.argv)>10: sigTrained=sys.argv[10]
@@ -76,8 +80,8 @@ isCategorized = False
 BDTSR_Merged = False
 if len(sys.argv)>4: isCategorized=int(sys.argv[4])
 doJetRwt= 0
-doAllSys= True 
-cutList = {'metCut':30,'jet1PtCut':40,'jet2PtCut':40}
+doAllSys= False#True 
+cutList = {'metCut':0,'jet1PtCut':0,'jet2PtCut':0}
 
 cutString  = 'MET'+str(int(cutList['metCut']))
 cutString += '_1jet'+str(int(cutList['jet1PtCut']))+'_2jet'+str(int(cutList['jet2PtCut']))

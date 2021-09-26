@@ -95,7 +95,7 @@ def analyze(tTree,tTreePkey,process,cutList,doAllSys,doJetRwt,iPlot,plotDetails,
 # 		weightStr = '3/2'
 # 		weightStrBase = '3/2'
 ############################  BDT FLIP BINNING BUILDING############## ############## ############## 
- 	if ('XGB' in plotTreeName) and (process.startswith('Hptb') or ('TTToSemiLeptonic' in process) ): #Add "or 'TTJetsPH' in process" here
+ 	if ('XGB' in plotTreeName) and (process.startswith('Hptb')): #or ('TTToSemiLeptonic' in process) ): #Add "or 'TTJetsPH' in process" here
  		cut += ' && (isTraining == 3)'
  		weightStr = '3'
  		weightStrBase = '3'
@@ -119,7 +119,7 @@ def analyze(tTree,tTreePkey,process,cutList,doAllSys,doJetRwt,iPlot,plotDetails,
 	if 'WJetsMG' in process:
 		HTweightStr   = 'HTSF_Pol'
 		HTweightStrUp = 'HTSF_PolUp'
-		HTweightStrDn = 'HTSF_PolDown'
+		HTweightStrDn = 'HTSF_PolDn'
 #
 # 		HTweightStr = str(genHTweight[process])
 # 		HTweightStr   = 'HTSF_Pol'
