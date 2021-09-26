@@ -40,37 +40,39 @@ saveKey = ''#'_50GeV_100GeVnB2'
 # if len(sys.argv)>1: iPlot=str(sys.argv[1])
 cutString = ''#'lep30_MET150_NJets4_DR1_1jet450_2jet150'
 lumiStr = str(targetlumi/1000).replace('.','p')+'fb' # 1/fb
-templateDir = 'templates_M500_2021_4_25_topPtRW_allweights_UL17_Reshape_ReNorm2D_HTnj_WJetsHTbinned_HTonly' 
+templateDir = ''#'templates_M500_2021_4_25_topPtRW_allweights_UL17_Reshape_ReNorm2D_HTnj_WJetsHTbinned_HTonly' 
 combinefile = 'templates_'+iPlot+'_'+lumiStr+'_wNegBinsCorrec_.root'
 
 quiet = True #if you don't want to see the warnings that are mostly from the stat. shape algorithm!
 rebinCombine = True #else rebins theta templates
 doStatShapes = False
 doSmoothing = True
-smoothingAlgo = 'lowess' #lowess, super, or kern
+smoothingAlgo = '' #lowess, super, or kern
 symmetrizeSmoothing = True #Symmetrize up/down shifts around nominal before smoothing
 doPDF = True
-doMURF = False#True
+doMURF = True
 doPSWeights = True
 normalizeTheorySystSig = True #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for signals
 normalizeTheorySystBkg = False #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for backgrounds
 #tttt, X53, TT, BB, HTB, etc --> this is used to identify signal histograms for combine templates when normalizing the pdf and muRF shapes to nominal!!!!
-sigName = 'Hptb' #MAKE SURE THIS WORKS FOR YOUR ANALYSIS PROPERLY!!!!!!!!!!!
+sigName = 'X53' #MAKE SURE THIS WORKS FOR YOUR ANALYSIS PROPERLY!!!!!!!!!!!
 massList = [200, 220, 300, 350, 400, 500, 600, 700, 800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]#[300,500,800,1000,1500]
 sigProcList = [sigName+str(mass) for mass in massList]
 if sigName=='tttt': sigProcList = [sigName]
-if sigName=='X53': 
-	sigProcList = [sigName+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
-	sigProcList+= [sigName+'RHM'+str(mass) for mass in range(900,1700+1,100)]
+#if sigName=='X53': 
+#	sigProcList = [sigName+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
+#	sigProcList+= [sigName+'RHM'+str(mass) for mass in range(900,1700+1,100)]
+if sigName == 'X53':sigProcList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+ 
 ttProcList = ['ttjj','ttcc','ttbb','tt1b','tt2b']#['ttnobb','ttbb'] # ['ttjj','ttcc','ttbb','ttbj']
-bkgProcList = ttProcList + ['top','ewk','qcd'] #put the most dominant process first
+bkgProcList =['top','ewk','qcd'] #put the most dominant process first
 removeSystFromYields = ['hdamp','ue','njet','njetsf'] #list of systematics to be removed from yield errors
 
 minNbins=1 #min number of bins to be merged
-stat = 0.2 #statistical uncertainty requirement (enter >1.0 for no rebinning; i.g., "1.1")
+stat = 0.3 #statistical uncertainty requirement (enter >1.0 for no rebinning; i.g., "1.1")
 statThres = 0.05 #statistical uncertainty threshold on total background to assign BB nuisances -- enter 0.0 to assign BB for all bins
 #if len(sys.argv)>1: stat=float(sys.argv[1])
-singleBinCR = True
+singleBinCR = False#True
 symmetrizeTopPtShift = False
 scaleSignalsToXsec = False # !!!!!Make sure you know signal x-sec used in input files to this script. If this is True, it will scale signal histograms by x-sec in weights.py!!!!!
 zero = 1E-12
@@ -135,7 +137,7 @@ def findfiles(path, filtre):
 rfiles = []         
 for file in findfiles(templateDir, '*.root'):
 	if 'rebinned' in file or combinefile in file or '_'+iPlot+'_' not in file.split('/')[-1]: continue
-	#if not any([signal in file for signal in sigProcList]): continue
+	if not any([signal in file for signal in sigProcList]): continue
 	if not file.endswith('fb.root'): continue
 	rfiles.append(file)
 if rebinCombine: rfiles = [templateDir+'/'+combinefile]
@@ -224,7 +226,7 @@ for chn in xbinsListTemp.keys():
 	xbinsList[chn] = []
 	for ibin in range(len(xbinsListTemp[chn])): xbinsList[chn].append(xbinsListTemp[chn][len(xbinsListTemp[chn])-1-ibin])
 	if 'isCR' in chn and singleBinCR: xbinsList[chn] = [xbinsList[chn][0],xbinsList[chn][-1]]
-	#if (iPlot.startswith('HT') or iPlot=='maxJJJpt' or iPlot=='ST') and stat<1.: xMax = xbinsList[chn][-2]+(500-xbinsList[chn][-2]%500)
+	if (iPlot.startswith('HT') or iPlot=='maxJJJpt' or iPlot=='ST') and stat<1.: xMax = xbinsList[chn][-2]+(500-xbinsList[chn][-2]%500)
 	if xMin>xbinsList[chn][0]: xbinsList[chn][0] = xMin
 	if xMax<xbinsList[chn][-1] and xMin!=xMax: xbinsList[chn][-1] = xMax
         ibin=1

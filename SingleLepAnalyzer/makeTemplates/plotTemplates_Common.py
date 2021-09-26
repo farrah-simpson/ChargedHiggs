@@ -18,15 +18,15 @@ lumiInTemplates= str(targetlumi/1000).replace('.','p') # 1/fb
 plottop = False
 plotewk = False
 plotqcd = False
-region='CR' #SR,PS
+region='PS' #SR,PS
 isCategorized=False
-iPlot='thirdcsvb_bb'
+iPlot='HT'
 if len(sys.argv)>2: iPlot=str(sys.argv[2])
 cutString=''#'E_nT0p_nW0p_nB2_nJ4'#'lep50_MET30_DR0_1jet50_2jet40'
 pfix='templates'
 if not isCategorized: pfix='kinematics_'+region
 
-massPt='500'
+massPt='200'#'500'
 if len(sys.argv)>3: massPt=str(sys.argv[3])
 
 # /user_data/jlee/chargedHiggs/2017Data/CMSSW_10_2_10/src/SingleLepAnalyzer/makeTemplates/v1/templates_M250_2019_11_18
@@ -35,18 +35,18 @@ else:
     templateDir=os.getcwd()+'/kinematics_CR_M500_2020_11_18_topPtRW_NC/'
 #templateDir2=os.getcwd()+'/v1/templates_M250_2019_12_16/'
 
-splitTTbar = True
+splitTTbar = False#True
 isRebinned= '_wNegBinsCorrec_'#_killFirstBins_syFist' #post for ROOT file names
 saveKey = '' # tag for plot names
 
-sig1='Hptb'+massPt # choose the 1st signal to plot
-sig1leg='H^{#pm} ('+massPt+' GeV)'
-M1 = '250'
-sig2='Hptb1000'
-sig2leg='H^{#pm} (1 TeV)'
-M2 = '250'
+sig1='X53'#'Hptb'+massPt # choose the 1st signal to plot
+sig1leg='X_{5/3}#bar{X}_{5/3} (1.1 TeV) ('+massPt+' GeV)'
+M1 = '200'
+sig2='X53'
+sig2leg='X_{5/3}#bar{X}_{5/3} LH (1.1 TeV)'
+M2 = '400'
 plotCombine = True ### make it False for YLD plot
-scaleSignals = True
+scaleSignals = False#True
 scaleFact1 = 100
 scaleFact2 = 100
 scaleFact1merged = 100
@@ -63,7 +63,7 @@ if splitTTbar:
     #    bkgProcList = ['ttbb','tt2b','tt1b','ttcc','ttjj','top','ewk','qcd']
     #    bkgProcList = ['ttb','ttcc','ttlf','top','ewk','qcd']
 else: 
-    bkgProcList = ['ttbar','top','ewk','qcd']
+    bkgProcList = ['top','ewk','qcd']
 
 plotbkg =''
 if plottop: 
@@ -89,12 +89,12 @@ doAllSys = False
 doQ2sys  = False
 if not doAllSys: doQ2sys = False
 addCRsys = False
-doNormByBinWidth=False
+doNormByBinWidth=True
 #set true, to see the actual shape of the distributions when the binning is not uniform, e.g binning with 0.3
-doOneBand = True
+doOneBand = False
 if not doAllSys: doOneBand = True # Don't change this!
-blind = False
-blindYLD = False
+blind = True
+blindYLD = True
 yLog  = True
 doRealPull = False
 if doRealPull: doOneBand=False
@@ -102,23 +102,22 @@ drawYields = False
 plotBkgShapes = True #not yet implemented
 
 isEMlist =['E','M']
-nttaglist = ['0p']
-nWtaglist = ['0p']
-nbtaglist = ['1','2','3p']
-njetslist = ['3','4','5','6p']
-if not isCategorized: 
-	nbtaglist = ['1p']
-	njetslist = ['3p']
-if not isCategorized and 'BDT' in region: 
-	nbtaglist = ['2p']
-	njetslist = ['5p']
+if region=='SR': nttaglist=['0','1p']
+else: nttaglist = ['0p']
+if region=='TTCR': nWtaglist = ['0p']
+else: nWtaglist = ['0','1p']
+if region=='WJCR': nbtaglist = ['0']
+elif region=='CR': nbtaglist = ['0','0p','1p']
+else: nbtaglist = ['1','2p']
+if region=='PS': njetslist=['3p']
+else: njetslist = ['4p']
+if not isCategorized:
+    nttaglist = ['0p']
+    nWtaglist = ['0p']
+    nbtaglist = ['1p']
+    njetslist = ['3p']
 
-if iPlot=='YLD':
-	isCategorized=0
-	nttaglist = ['0p']
-	nWtaglist = ['0p']
-	nbtaglist = ['0p']
-	njetslist = ['0p']
+
 tagList = list(itertools.product(nttaglist,nWtaglist,nbtaglist,njetslist))
 #print tagList
 lumiSys = 0.025 # lumi uncertainty
@@ -754,7 +753,7 @@ for tag in tagList:
 # 		hsig2merged = RFile2.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig2merged')
  		hsig1merged.Add(RFile1.Get(histPrefixM+'__sig').Clone())
 # 		hsig2merged.Add(RFile2.Get(histPrefixM+'__sig').Clone())
- 	hsig1merged.Scale(xsec[sig1])
+ 	if scaleSignalsToXsec: hsig1merged.Scale(xsec[sig1])
 # 	hsig2merged.Scale(xsec[sig2])
 	if doNormByBinWidth:
 		for proc in bkgProcList:
