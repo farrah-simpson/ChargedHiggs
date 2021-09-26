@@ -21,7 +21,7 @@ lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
 sigTrainedList=['1000']
 massPt=''
 if len(sys.argv)>1: massPt=str(sys.argv[1])
-region = 'CR' #PS,SR
+region = 'PS' #PS,SR
 
 isCategorized=args.Categorized#False#False
 doTempEachCategory = False
@@ -51,12 +51,12 @@ normalizeRENORM_PDF = False #normalize the renormalization/pdf uncertainties to 
 rebinBy = -1#4#performs a regular rebinning with "Rebin(rebinBy)", put -1 if rebinning is not wanted
 
 saveKey = '_wNegBinsCorrec_'
-splitTTbar = True
+splitTTbar = False#True
 splitST = False
 if splitTTbar:  
 	bkgTTBarList = ['ttnobb','ttbb']
         #bkgGrupList = bkgTTBarList + ['top','ewk','qcd','WJets', 'ZJets', 'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic']
-        bkgGrupList = bkgTTBarList + ['top','ewk','qcd']
+	bkgGrupList = bkgTTBarList + ['top','ewk','qcd']
 	bkgProcList = ['tt2b','ttbb','tt1b','ttcc','ttjj','T','TTV','WJets','ZJets','qcd']#,'VV'
         #bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','WJets','ZJets','qcd']#,'VV'
 	if splitST:
@@ -64,17 +64,16 @@ if splitTTbar:
 		bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','TTV','WJets','ZJets','qcd']#,'VV'	
                 #bkgGrupList = ['tt2b','ttbb','ttb','ttcc','ttlf','T','OtherT','ewk','qcd']
                 #bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','OtherT','WJets','ZJets','qcd']#,'VV'
-
 else:
 	bkgGrupList = ['ttbar','top','ewk','qcd', 'WJets']
 	#bkgGrupList = ['ttbar','top','ewk','qcd']
 	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd'] #TTV
 bkgProcs = {}
-bkgProcs['WJets']  = ['WJetsMG']#['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800']
+bkgProcs['WJets']  = ['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800']
 #bkgProcs['WJets'] += ['WJetsMG1200_1','WJetsMG1200_2','WJetsMG1200_3','WJetsMG1200_4','WJetsMG1200_5']
 #bkgProcs['WJets'] += ['WJetsMG2500_1','WJetsMG2500_2','WJetsMG2500_3','WJetsMG2500_4','WJetsMG2500_5']#,'WJetsMG2500_6']
 
-bkgProcs['ZJets'] = ['DYMG']#['DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500']
+bkgProcs['ZJets'] = ['DY1MG','DY2MG','DY3MG','DY4MG']#['DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500']
 
 bkgProcs['VV']    = ['WW','WZ','ZZ']
 
@@ -86,11 +85,11 @@ bkgProcs['TTV']   = ['TTWl','TTZl']
 
 #bkgProcs['TTTo2L2Nu'] = ['TTTo2L2Nu_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 #bkgProcs['TTToHadronic'] = ['TTToHadronic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
-#bkgProcs['TTToSemiLeptonic'] = ['TTToSemiLeptonic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
+#bkgProcs['TTJetsSemiLep'] = ['TTJetsSemiLep_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 bkgProcs['TTJets'] = []
-bkgProcs['TTJets'] += ['TTTo2L2Nu']#['TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000']
-bkgProcs['TTJets'] += ['TTToHadronic']
-bkgProcs['TTJets'] += ['TTToSemiLeptonic']
+bkgProcs['TTJets'] += ['TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000']
+bkgProcs['TTJets'] += ['TTJetsHad0','TTJetsHad700','TTJetsHad1000']
+bkgProcs['TTJets'] += ['TTJetsSemiLep01','TTJetsSemiLep02','TTJetsSemiLep03','TTJetsSemiLep04','TTJetsSemiLep05','TTJetsSemiLep06','TTJetsSemiLep07','TTJetsSemiLep08','TTJetsSemiLep09','TTJetsSemiLep010','TTJetsSemiLep7001','TTJetsSemiLep7002','TTJetsSemiLep7003','TTJetsSemiLep7004','TTJetsSemiLep7005','TTJetsSemiLep7006','TTJetsSemiLep7007','TTJetsSemiLep7008','TTJetsSemiLep7009','TTJetsSemiLep70010','TTJetsSemiLep10001','TTJetsSemiLep10002','TTJetsSemiLep10003','TTJetsSemiLep10004','TTJetsSemiLep10005','TTJetsSemiLep10006','TTJetsSemiLep10007','TTJetsSemiLep10008','TTJetsSemiLep10009','TTJetsSemiLep100010', ]
 #bkgProcs['TTJets'] += ['TTJetsHad0','TTJetsHad700','TTJetsHad1000'] 
 #bkgProcs['TTJets'] += ['TTJetsSemiLepNjet9bin1','TTJetsSemiLepNjet9bin2','TTJetsSemiLepNjet9bin3'] 
 #bkgProcs['TTJets'] += ['TTJetsSemiLepbin1','TTJetsSemiLepbin2','TTJetsSemiLepbin3']#,'TTJetsSemiLep4','TTJetsSemiLep5']#,'TTJetsSemiLep6']
@@ -127,12 +126,12 @@ topptProcs = ['tt2b','ttbb','ttb','ttcc','ttlf','ttbar','TTJets']
 bkgProcs['ttbar_q2up'] = ['TTJetsPHQ2U']#,'TtWQ2U','TbtWQ2U']
 bkgProcs['ttbar_q2dn'] = ['TTJetsPHQ2D']#,'TtWQ2D','TbtWQ2D']
 
-whichSignal = 'Hptb' #Hptb,HTB, TTM, BBM, or X53X53M
-massList = [200, 220, 250, 300, 400,  500, 600, 700, 800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]
-#if massPt not in massList:    MICHAEL COMMENTED OUT THESE TWO LINES
-#	massList.append(massPt)
-sigList = [whichSignal+str(mass) for mass in massList]
-if whichSignal=='Hptb' or whichSignal == 'Hptb1000': decays = ['']
+whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
+massList = range(600,1500+1,100)
+
+#sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
+sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+if whichSignal=='Hptb'or 'X53': decays = ['']
 
 doBRScan = False
 BRs={}
@@ -284,12 +283,12 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 				yieldTable[histoPrefix+'q2Down'][proc] = hists[proc+i+'q2Down'].Integral()
 
         #prepare yield table
-# 			for proc in bkgGrupList+bkgProcList+sigList+['data']: 
-		for proc in bkgGrupList+bkgProcList+['data']: 			
+		for proc in bkgGrupList+bkgProcList+sigList+['data']: 
+#here		#for proc in bkgGrupList+bkgProcList+['data']: 			
 			yieldTable[histoPrefix][proc] = hists[proc+i].Integral()
-# 				print "proc : ",proc
-# 				print "i : ",i
-# 				print hists[proc+i].GetEntries()
+ 			print "proc : ",proc
+ 			print "i : ",i
+ 			print hists[proc+i].GetEntries()
             
 		print bkgGrupList
 		yieldTable[histoPrefix]['totBkg'] = sum([hists[proc+i].Integral() for proc in bkgGrupList])
@@ -308,8 +307,8 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 		for ibin in range(1,hists[bkgGrupList[0]+i].GetXaxis().GetNbins()+1):
 # 				print "ibin ", ibin
 # 				print "##########"*20
-# 				for proc in bkgGrupList+bkgProcList+sigList+['data']: 
-			for proc in bkgGrupList+bkgProcList+['data']: 				
+ 			for proc in bkgGrupList+bkgProcList+sigList+['data']: 
+#here			for proc in bkgGrupList+bkgProcList+['data']: 				
 				yieldStatErrTable[histoPrefix][proc] += hists[proc+i].GetBinError(ibin)**2
 # 					if 'qcd' in proc:
 # 						print 'hists[proc+i].GetBinError(ibin)**2 : ',hists[proc+i].GetBinError(ibin)**2
@@ -357,8 +356,8 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 			i=cat
 			if doTempEachCategory and 'nB1' in cat:
 				if 'LL' in discriminant or'bb' in discriminant or 'BB' in discriminant: continue
-# 				for proc in bkgGrupList+[signal]:
-			for proc in bkgGrupList:				
+ 				for proc in bkgGrupList+[signal]:
+#			for proc in bkgGrupList:				
 				if hists[proc+i].Integral() > 0:
 					hists[proc+i].Write()
 					if doAllSys:
@@ -392,7 +391,7 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 		if '_nB1_' in cat or '_nB2p_' in cat or '_nB2_nJ4' in cat: postTag = 'isCR_'
 		else: postTag = 'isSR_'
                 for signal in sigList:
-                        mass = [str(mass) for mass in massList if signal.endswith(str(mass))][0]
+                        #mass = [str(mass) for mass in massList if signal.endswith(str(mass))][0]
                         hists[signal+i].SetName(hists[signal+i].GetName().replace('fb_','fb_'+postTag).replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
                         hists[signal+i].Write()
 				# if doAllSys:
@@ -544,8 +543,8 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 			if 'LL' in discriminant or'bb' in discriminant or 'BB' in discriminant: continue
 		row = [cat]
 		histoPrefix=discriminant+'_'+lumiStr+'fb_'+cat
-# 			for proc in sigList:
-# 				row.append(str(yieldTable[histoPrefix][proc])+' $\pm$ '+str(yieldStatErrTable[histoPrefix][proc]))
+ 			for proc in sigList:
+ 				row.append(str(yieldTable[histoPrefix][proc])+' $\pm$ '+str(yieldStatErrTable[histoPrefix][proc]))
 		table.append(row)
 
     #yields for AN tables (yields in e/m channels)
@@ -697,10 +696,10 @@ def findfiles(path, filtre):
 def rundoTemp(category):
 	#iPlotList = ['HT''minBBdr','aveBBdr','deltaEta_maxBB','FW_momentum_2','centrality','aveCSVpt','HT','minMlb','Bjet1Pt','mass_maxJJJpt','MTlmet','lepDR_minBBdr','MET']
         iPlotList = [
-                #'HT',
+                'HT',
                 #'HTpt40',
                 #'ST',
-                #'minMlb',
+                'minMlb',
                 #'mass_minBBdr',
                 #'deltaR_lepBJet_maxpt',
                 #'lepDR_minBBdr',
@@ -759,85 +758,85 @@ def rundoTemp(category):
                 #'HT_2m',
                 #'Sphericity',
                 #'Aplanarity',
-                'BestTop_Disc',
-                'BestTop_Pt', 
+                #'BestTop_Disc',
+                #'BestTop_Pt', 
                 #'NoTop_Jet1_CSV', 
-                'NoTop_Jet1_Pt', 
-                'NoTop_Jet2_CSV',
-                'NoTop_Jet2_Pt',
+                #'NoTop_Jet1_Pt', 
+                #'NoTop_Jet2_CSV',
+                #'NoTop_Jet2_Pt',
 
-                'XGB200', 
-                'XGB220', 
-                'XGB250', 
-                'XGB300', 
-                'XGB350', 
-                'XGB400', 
-                'XGB500', 
-                'XGB600', 
-                'XGB700', 
-                'XGB800', 
-                'XGB1000',  
-                'XGB1250',
-                'XGB1500',
-                'XGB1750',
-                'XGB2000',
-                'XGB2500',
-                'XGB3000',
-                
-                'XGB200_SR1', 
-                'XGB220_SR1', 
-                'XGB250_SR1', 
-                'XGB300_SR1', 
-                'XGB350_SR1', 
-                'XGB400_SR1', 
-                'XGB500_SR1', 
-                'XGB600_SR1', 
-                'XGB700_SR1', 
-                'XGB800_SR1', 
-                'XGB1000_SR1', 
-                'XGB1250_SR1',
-                'XGB1500_SR1',
-                'XGB1750_SR1',
-                'XGB2000_SR1',
-                'XGB2500_SR1',
-                'XGB3000_SR1',
-                
-                'XGB200_SR2', 
-                'XGB220_SR2', 
-                'XGB250_SR2', 
-                'XGB300_SR2', 
-                'XGB350_SR2', 
-                'XGB400_SR2', 
-                'XGB500_SR2', 
-                'XGB600_SR2', 
-                'XGB700_SR2', 
-                'XGB800_SR2', 
-                'XGB1000_SR2', 
-                'XGB1250_SR2',
-                'XGB1500_SR2',
-                'XGB1750_SR2',
-                'XGB2000_SR2',
-                'XGB2500_SR2',
-                'XGB3000_SR2',
-                
-                
-                'XGB200_SR3', 
-                'XGB220_SR3', 
-                'XGB250_SR3', 
-                'XGB300_SR3', 
-                'XGB350_SR3', 
-                'XGB400_SR3', 
-                'XGB500_SR3', 
-                'XGB600_SR3', 
-                'XGB700_SR3', 
-                'XGB800_SR3', 
-                'XGB1000_SR3', 
-                'XGB1250_SR3',
-                'XGB1500_SR3',
-                'XGB1750_SR3',
-                'XGB2000_SR3',
-                'XGB2500_SR3',
-                'XGB3000_SR3',
+                #'XGB200', 
+                #'XGB220', 
+               # 'XGB250', 
+               # 'XGB300', 
+               # 'XGB350', 
+               # 'XGB400', 
+               # 'XGB500', 
+               # 'XGB600', 
+               # 'XGB700', 
+               # 'XGB800', 
+               # 'XGB1000',  
+               # 'XGB1250',
+               # 'XGB1500',
+               # 'XGB1750',
+               # 'XGB2000',
+               # 'XGB2500',
+               # 'XGB3000',
+               # 
+               # 'XGB200_SR1', 
+               # 'XGB220_SR1', 
+               # 'XGB250_SR1', 
+               # 'XGB300_SR1', 
+               # 'XGB350_SR1', 
+               # 'XGB400_SR1', 
+               # 'XGB500_SR1', 
+               # 'XGB600_SR1', 
+               # 'XGB700_SR1', 
+               # 'XGB800_SR1', 
+               # 'XGB1000_SR1', 
+               # 'XGB1250_SR1',
+               # 'XGB1500_SR1',
+               # 'XGB1750_SR1',
+               # 'XGB2000_SR1',
+               # 'XGB2500_SR1',
+               # 'XGB3000_SR1',
+               # 
+               # 'XGB200_SR2', 
+               # 'XGB220_SR2', 
+               # 'XGB250_SR2', 
+               # 'XGB300_SR2', 
+               # 'XGB350_SR2', 
+               # 'XGB400_SR2', 
+               # 'XGB500_SR2', 
+               # 'XGB600_SR2', 
+               # 'XGB700_SR2', 
+               # 'XGB800_SR2', 
+               # 'XGB1000_SR2', 
+               # 'XGB1250_SR2',
+               # 'XGB1500_SR2',
+               # 'XGB1750_SR2',
+               # 'XGB2000_SR2',
+               # 'XGB2500_SR2',
+               # 'XGB3000_SR2',
+               # 
+               # 
+               # 'XGB200_SR3', 
+               # 'XGB220_SR3', 
+               # 'XGB250_SR3', 
+               # 'XGB300_SR3', 
+               # 'XGB350_SR3', 
+               # 'XGB400_SR3', 
+               # 'XGB500_SR3', 
+               # 'XGB600_SR3', 
+               # 'XGB700_SR3', 
+               # 'XGB800_SR3', 
+               # 'XGB1000_SR3', 
+               # 'XGB1250_SR3',
+               # 'XGB1500_SR3',
+               # 'XGB1750_SR3',
+               # 'XGB2000_SR3',
+               # 'XGB2500_SR3',
+               # 'XGB3000_SR3',
 
 
 
@@ -868,12 +867,13 @@ def rundoTemp(category):
 
                 ]
 
-	for file in findfiles(outDir+'/'+category+'/', '*.p'):
-		if 'lepPt' not in file: continue
-		if 'bkghists' not in file: continue
-		if not os.path.exists(file.replace('bkghists','datahists')): continue
-                if not os.path.exists(file.replace('bkghists','sighists')): continue
-		iPlotList.append(file.split('/')[-1].replace('bkghists_','')[:-2])
+#here
+	#for file in findfiles(outDir+'/'+category+'/', '*.p'):
+	#	if 'lepPt' not in file: continue
+	#	if 'bkghists' not in file: continue
+	#	if not os.path.exists(file.replace('bkghists','datahists')): continue
+         #       if not os.path.exists(file.replace('bkghists','sighists')): continue
+	#	iPlotList.append(file.split('/')[-1].replace('bkghists_','')[:-2])
 
 	print "WORKING DIR:",outDir
 	print iPlotList
@@ -885,7 +885,7 @@ def rundoTemp(category):
 		for cat in catList:
 			datahists.update(pickle.load(open(outDir+'/'+cat[2:]+'/datahists_'+iPlot+'.p','rb')))
 			bkghists.update(pickle.load(open(outDir+'/'+cat[2:]+'/bkghists_'+iPlot+'.p','rb')))
-                        sighists.update(pickle.load(open(outDir+'/'+cat[2:]+'/sighists_'+iPlot+'.p','rb')))
+			sighists.update(pickle.load(open(outDir+'/'+cat[2:]+'/sighists_'+iPlot+'.p','rb')))
 
 		if iPlot=='BDTdontscale':
 			for key in bkghists.keys(): 
@@ -907,15 +907,15 @@ def rundoTemp(category):
 			for bkg in bkghists.keys():
 				if bkghists[bkg].GetXaxis().GetNbins()<=50: continue
 				bkghists[bkg] = bkghists[bkg].Rebin(rebinBy)
-#			 for sig in sighists.keys():
-#				if sighists[sig].GetXaxis().GetNbins()<=50: continue
-#				sighists[sig] = sighists[sig].Rebin(rebinBy)
+			for sig in sighists.keys():
+				if sighists[sig].GetXaxis().GetNbins()<=50: continue
+				sighists[sig] = sighists[sig].Rebin(rebinBy)
 
 		#Negative Bin Correction
 		if '_wNegBinsCorrec' in saveKey:
 			print "CORRECTING NEGATIVE BINS ..."
 			for bkg in bkghists.keys(): negBinCorrection(bkghists[bkg])
-                        for sig in sighists.keys(): negBinCorrection(sighists[sig]) #should we do the correction after rebinning? -- SS
+			for sig in sighists.keys(): negBinCorrection(sighists[sig]) #should we do the correction after rebinning? -- SS
 
 		#OverFlow Correction
 	#  	print "CORRECTING OVERFLOW BINS ..."
