@@ -8,7 +8,6 @@ from weights import *
 from modSyst import *
 from utils import *
 
-
 parser = argparse.ArgumentParser(description="template building for the charged Higgs analysis")
 parser.add_argument("-d", "--directory", help="the directory to be processed")
 parser.add_argument("-c", "--Categorized", default=False, action="store_true", help="Categorize or not")
@@ -18,13 +17,13 @@ gROOT.SetBatch(1)
 start_time = time.time()
 
 lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
-sigTrainedList=['1000']
+sigTrainedList=[]#'1000']
 massPt=''
 if len(sys.argv)>1: massPt=str(sys.argv[1])
 region = 'PS' #PS,SR
 
 isCategorized=args.Categorized#False#False
-doTempEachCategory = False
+doTempEachCategory = True
 cutString=''#MET30_1jet40_2jet40'#'lep35_MET30_DR0_1jet40_2jet40'
 
 pfix = args.directory#'templates_M500_2020_11_23_topPtRW_NC_allweights_DJ'#'kinematics_CR_M500_2020_11_23_topPtRW_NC_allweights_DJ' 
@@ -34,18 +33,18 @@ pfix = args.directory#'templates_M500_2020_11_23_topPtRW_NC_allweights_DJ'#'kine
 #pfix+=massPt+'_2020_11_23_topPtRW_NC_allweights'
 outDir = os.getcwd()+'/'+pfix+'/'+cutString
 
-scaleSignalXsecTo1pb = True # this has to be "True" if you are making templates for limit calculation!!!!!!!!
+scaleSignalXsecTo1pb = False #True # this has to be "True" if you are making templates for limit calculation!!!!!!!!
 doAllSys = False
 doQ2sys  = False
 doPDFsys = False
 if not doAllSys: doQ2sys = False
 addCRsys = False
-systematicList = ['trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
-systList_jsf = ['jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
-'jsfJESPileUpPtBB', 'jsfJESPileUpPtEC1', 'jsfJESPileUpPtEC2', 'jsfJESPileUpPtHF', 'jsfJESPileUpPtRef', 'jsfJESRelativeBal', 'jsfJESRelativeFSR',
-'jsfJESRelativeJEREC1', 'jsfJESRelativeJEREC2', 'jsfJESRelativeJERHF', 'jsfJESRelativeJERHF', 'jsfJESRelativePtBB', 'jsfJESRelativePtEC1',
-'jsfJESRelativePtEC2', 'jsfJESRelativePtHF', 'jsfJESRelativeStatEC', 'jsfJESRelativeStatFSR', 'jsfJESRelativeStatHF', 'jsfJESSinglePionECAL',
-'jsfJESSinglePionHCAL', 'jsfJESTimePtEta']
+systematicList = ['pileup','muRFcorrd','muR','muF','isr','fsr','njet','njetsf','tau32','jmst','jmrt','tau21','jmsW','jmrW','tau21pt','jec','jer']#'trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
+systList_jsf = []#'jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
+#'jsfJESPileUpPtBB', 'jsfJESPileUpPtEC1', 'jsfJESPileUpPtEC2', 'jsfJESPileUpPtHF', 'jsfJESPileUpPtRef', 'jsfJESRelativeBal', 'jsfJESRelativeFSR',
+#'jsfJESRelativeJEREC1', 'jsfJESRelativeJEREC2', 'jsfJESRelativeJERHF', 'jsfJESRelativeJERHF', 'jsfJESRelativePtBB', 'jsfJESRelativePtEC1',
+#'jsfJESRelativePtEC2', 'jsfJESRelativePtHF', 'jsfJESRelativeStatEC', 'jsfJESRelativeStatFSR', 'jsfJESRelativeStatHF', 'jsfJESSinglePionECAL',
+#'jsfJESSinglePionHCAL', 'jsfJESTimePtEta']
 systematicList += systList_jsf
 normalizeRENORM_PDF = False #normalize the renormalization/pdf uncertainties to nominal templates --> normalizes signal processes only !!!!
 rebinBy = -1#4#performs a regular rebinning with "Rebin(rebinBy)", put -1 if rebinning is not wanted
@@ -55,8 +54,8 @@ splitTTbar = False#True
 splitST = False
 if splitTTbar:  
 	bkgTTBarList = ['ttnobb','ttbb']
-        #bkgGrupList = bkgTTBarList + ['top','ewk','qcd','WJets', 'ZJets', 'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic']
-	bkgGrupList = bkgTTBarList + ['top','ewk','qcd']
+        #bkgGrupList = bkgTTBarList + ['top','ewk','qcd','WJets', 'ZJets', 'TTToHadronic', 'TTTo2L2Nu', 'TTJetsSemiLep']
+        bkgGrupList = bkgTTBarList + ['top','ewk','qcd']
 	bkgProcList = ['tt2b','ttbb','tt1b','ttcc','ttjj','T','TTV','WJets','ZJets','qcd']#,'VV'
         #bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','WJets','ZJets','qcd']#,'VV'
 	if splitST:
@@ -64,6 +63,7 @@ if splitTTbar:
 		bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','TTV','WJets','ZJets','qcd']#,'VV'	
                 #bkgGrupList = ['tt2b','ttbb','ttb','ttcc','ttlf','T','OtherT','ewk','qcd']
                 #bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','OtherT','WJets','ZJets','qcd']#,'VV'
+
 else:
 	bkgGrupList = ['ttbar','top','ewk','qcd', 'WJets']
 	#bkgGrupList = ['ttbar','top','ewk','qcd']
@@ -122,7 +122,7 @@ bkgProcs['wjets'] = bkgProcs['WJets']
 dataList = ['DataE','DataM']
 
 htProcs = ['ewk','WJets']
-topptProcs = ['tt2b','ttbb','ttb','ttcc','ttlf','ttbar','TTJets']
+topptProcs = ['top','TTJets']#['tt2b','ttbb','ttb','ttcc','ttlf','ttbar','TTJets']
 bkgProcs['ttbar_q2up'] = ['TTJetsPHQ2U']#,'TtWQ2U','TbtWQ2U']
 bkgProcs['ttbar_q2dn'] = ['TTJetsPHQ2D']#,'TtWQ2D','TbtWQ2D']
 
@@ -133,6 +133,9 @@ massList = range(600,1500+1,100)
 sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 if whichSignal=='Hptb'or 'X53': decays = ['']
 
+#if massPt not in massList:    MICHAEL COMMENTED OUT THESE TWO LINES
+#	massList.append(massPt)
+
 doBRScan = False
 BRs={}
 BRs['BW']=[0.0,0.50,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.2,0.2,0.2,0.2,0.4,0.4,0.4,0.4,0.6,0.6,0.6,0.8,0.8,1.0]
@@ -141,18 +144,22 @@ BRs['TZ']=[0.5,0.25,1.0,0.8,0.6,0.4,0.2,0.0,0.8,0.6,0.4,0.2,0.0,0.6,0.4,0.2,0.0,
 nBRconf=len(BRs['BW'])
 if not doBRScan: nBRconf=1
 
-isEMlist =['E','M']
-nttaglist = ['0p']
-nWtaglist = ['0p']
-nbtaglist = ['1','2','3p']
-njetslist = ['3','4','5','6p']
-# njetslist = ['3','4','5','6','7','8','9','10','11']
-if not isCategorized: 
-	nbtaglist = ['1p']
-	njetslist = ['3p']
-if not isCategorized and 'BDT' in region: 	
-	nbtaglist = ['2p']
-	njetslist = ['5p']
+isEMlist = ['E','M']
+if region=='SR': nttaglist=['0','1p']
+else: nttaglist = ['0p']
+if region=='TTCR': nWtaglist = ['0p']
+else: nWtaglist = ['0','1p']
+if region=='WJCR': nbtaglist = ['0']
+elif region=='CR': nbtaglist = ['0','0p','1p']
+else: nbtaglist = ['1','2p']
+if region=='PS': njetslist=['3p']
+else: njetslist = ['4p']
+if not isCategorized:
+    nttaglist = ['0p']
+    nWtaglist = ['0p']
+    nbtaglist = ['1p']
+    njetslist = ['3p']
+
 catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist)) if not skip(item[4] ,item[3])]
 tagList = ['nT'+item[0]+'_nW'+item[1]+'_nB'+item[2]+'_nJ'+item[3] for item in list(itertools.product(nttaglist,nWtaglist,nbtaglist,njetslist)) if not skip(item[3] ,item[2])]
 
@@ -283,12 +290,12 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 				yieldTable[histoPrefix+'q2Down'][proc] = hists[proc+i+'q2Down'].Integral()
 
         #prepare yield table
-		for proc in bkgGrupList+bkgProcList+sigList+['data']: 
-#here		#for proc in bkgGrupList+bkgProcList+['data']: 			
+ 		for proc in bkgGrupList+bkgProcList+sigList+['data']: 
+		#for proc in bkgGrupList+bkgProcList+['data']: 			
 			yieldTable[histoPrefix][proc] = hists[proc+i].Integral()
- 			print "proc : ",proc
- 			print "i : ",i
- 			print hists[proc+i].GetEntries()
+# 				print "proc : ",proc
+# 				print "i : ",i
+# 				print hists[proc+i].GetEntries()
             
 		print bkgGrupList
 		yieldTable[histoPrefix]['totBkg'] = sum([hists[proc+i].Integral() for proc in bkgGrupList])
@@ -308,7 +315,7 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 # 				print "ibin ", ibin
 # 				print "##########"*20
  			for proc in bkgGrupList+bkgProcList+sigList+['data']: 
-#here			for proc in bkgGrupList+bkgProcList+['data']: 				
+#			for proc in bkgGrupList+bkgProcList+['data']: 				
 				yieldStatErrTable[histoPrefix][proc] += hists[proc+i].GetBinError(ibin)**2
 # 					if 'qcd' in proc:
 # 						print 'hists[proc+i].GetBinError(ibin)**2 : ',hists[proc+i].GetBinError(ibin)**2
@@ -356,7 +363,7 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 			i=cat
 			if doTempEachCategory and 'nB1' in cat:
 				if 'LL' in discriminant or'bb' in discriminant or 'BB' in discriminant: continue
- 				for proc in bkgGrupList+[signal]:
+ 			for proc in bkgGrupList+[signal]:
 #			for proc in bkgGrupList:				
 				if hists[proc+i].Integral() > 0:
 					hists[proc+i].Write()
@@ -543,8 +550,8 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 			if 'LL' in discriminant or'bb' in discriminant or 'BB' in discriminant: continue
 		row = [cat]
 		histoPrefix=discriminant+'_'+lumiStr+'fb_'+cat
- 			for proc in sigList:
- 				row.append(str(yieldTable[histoPrefix][proc])+' $\pm$ '+str(yieldStatErrTable[histoPrefix][proc]))
+ 		for proc in sigList:
+ 			row.append(str(yieldTable[histoPrefix][proc])+' $\pm$ '+str(yieldStatErrTable[histoPrefix][proc]))
 		table.append(row)
 
     #yields for AN tables (yields in e/m channels)
@@ -765,8 +772,8 @@ def rundoTemp(category):
                 #'NoTop_Jet2_CSV',
                 #'NoTop_Jet2_Pt',
 
-                #'XGB200', 
-                #'XGB220', 
+               # 'XGB200', 
+               # 'XGB220', 
                # 'XGB250', 
                # 'XGB300', 
                # 'XGB350', 
@@ -867,14 +874,13 @@ def rundoTemp(category):
 
                 ]
 
-#here
-	#for file in findfiles(outDir+'/'+category+'/', '*.p'):
-	#	if 'lepPt' not in file: continue
-	#	if 'bkghists' not in file: continue
-	#	if not os.path.exists(file.replace('bkghists','datahists')): continue
-         #       if not os.path.exists(file.replace('bkghists','sighists')): continue
-	#	iPlotList.append(file.split('/')[-1].replace('bkghists_','')[:-2])
-
+#	for file in findfiles(outDir+'/'+category+'/', '*.p'):
+#		if 'lepPt' not in file: continue
+#		if 'bkghists' not in file: continue
+#		if not os.path.exists(file.replace('bkghists','datahists')): continue
+#                if not os.path.exists(file.replace('bkghists','sighists')): continue
+#		iPlotList.append(file.split('/')[-1].replace('bkghists_','')[:-2])
+#
 	print "WORKING DIR:",outDir
 	print iPlotList
 	for iPlot in iPlotList:
@@ -885,7 +891,7 @@ def rundoTemp(category):
 		for cat in catList:
 			datahists.update(pickle.load(open(outDir+'/'+cat[2:]+'/datahists_'+iPlot+'.p','rb')))
 			bkghists.update(pickle.load(open(outDir+'/'+cat[2:]+'/bkghists_'+iPlot+'.p','rb')))
-			sighists.update(pickle.load(open(outDir+'/'+cat[2:]+'/sighists_'+iPlot+'.p','rb')))
+                        sighists.update(pickle.load(open(outDir+'/'+cat[2:]+'/sighists_'+iPlot+'.p','rb')))
 
 		if iPlot=='BDTdontscale':
 			for key in bkghists.keys(): 
@@ -915,7 +921,7 @@ def rundoTemp(category):
 		if '_wNegBinsCorrec' in saveKey:
 			print "CORRECTING NEGATIVE BINS ..."
 			for bkg in bkghists.keys(): negBinCorrection(bkghists[bkg])
-			for sig in sighists.keys(): negBinCorrection(sighists[sig]) #should we do the correction after rebinning? -- SS
+                        for sig in sighists.keys(): negBinCorrection(sighists[sig]) #should we do the correction after rebinning? -- SS
 
 		#OverFlow Correction
 	#  	print "CORRECTING OVERFLOW BINS ..."

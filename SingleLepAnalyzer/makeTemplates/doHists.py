@@ -31,6 +31,7 @@ where <shape> is for example "JECUp". hadder.py can be used to prepare input fil
 --Each process given in the lists below must have a definition in "samples.py"
 --Check the set of cuts in "analyze.py"
 """	
+
 bkgList = [
 		  'DY1MG', 'DY2MG', 'DY3MG', 'DY4MG', #'DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500',
 		  'QCDht200',
@@ -57,13 +58,12 @@ bkgList = [
           'WW','WZ','ZZ',
 		  #'TTHB','TTHnoB',
 		  ]
-	
-	  
+		  
 ttFlvs = []#'_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
 dataList = ['DataE','DataM']
 
 whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
-#mass = range(600,1500+1,100)
+mass = range(600,1500+1,100)
 
 #sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
 sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
@@ -73,7 +73,7 @@ sigTrained = 'Low1'
 if len(sys.argv)>10: sigTrained=sys.argv[10]
 iPlot = 'HT' #choose a discriminant from plotList below!
 if len(sys.argv)>2: iPlot=sys.argv[2]
-region = 'CR'
+region = 'PS'
 # region = 'BDT'
 if len(sys.argv)>3: region=sys.argv[3]
 isCategorized = False
@@ -81,10 +81,17 @@ BDTSR_Merged = False
 if len(sys.argv)>4: isCategorized=int(sys.argv[4])
 doJetRwt= 0
 doAllSys= False#True 
-cutList = {'metCut':0,'jet1PtCut':0,'jet2PtCut':0}
 
-cutString  = 'MET'+str(int(cutList['metCut']))
-cutString += '_1jet'+str(int(cutList['jet1PtCut']))+'_2jet'+str(int(cutList['jet2PtCut']))
+cutList = {'lepPtCut':100,'metCut':100,'mtCut':0,'drCut':1.0,'jet1PtCut':200,'jet2PtCut':100,'jet3PtCut':0, 'AK4HTCut':510}
+#cutList = {'lepPtCut':100,'metCut':150,'mtCut':0,'drCut':1.25,'jet1PtCut':200,'jet2PtCut':100,'jet3PtCut':0, 'AK4HTCut':510}
+if region=='PS': cutList = {'lepPtCut':80,'metCut':100,'mtCut':0,'drCut':0,'jet1PtCut':250,'jet2PtCut':150, 'jet3PtCut':0, 'AK4HTCut':510}
+#if (region=='SR' or 'CR' in region) and (iPlot=='ST' or iPlot=='HT'):
+#    cutList = {'lepPtCut':80,'metCut':100,'mtCut':0,'drCut':1,'jet1PtCut':250,'jet2PtCut':150, 'jet3PtCut':0, 'AK4HTCut':510}
+
+
+cutString  = 'lep'+str(int(cutList['lepPtCut']))
+cutString += '_MET'+str(int(cutList['metCut']))+'_MT'+str(cutList['mtCut'])+'_DR'+str(cutList['drCut'])
+cutString += '_1jet'+str(int(cutList['jet1PtCut']))+'_2jet'+str(int(cutList['jet2PtCut']))+str(int(cutList['jet3PtCut']))
 
 cTime=datetime.datetime.now()
 datestr='%i_%i_%i'%(cTime.year,cTime.month,cTime.day)
@@ -96,14 +103,14 @@ pfix+='_'+datestr#+'_'+timestr
 if len(sys.argv)>5: isEMlist=[str(sys.argv[5])]
 else: isEMlist = ['E','M']
 if len(sys.argv)>6: nttaglist=[str(sys.argv[6])]
-else: nttaglist = ['0p']
+else: nttaglist = ['3p']
 if len(sys.argv)>7: nWtaglist=[str(sys.argv[7])]
 else: nWtaglist = ['0p']
 if len(sys.argv)>8: nbtaglist=[str(sys.argv[8])]
 else: 
 	if not isCategorized: nbtaglist = ['1p']
 	if not isCategorized and BDTSR_Merged : nbtaglist = ['2p']
-	else: nbtaglist = ['1','2','3p']
+	else: nbtaglist = ['1','2p']
 
 if len(sys.argv)>9: njetslist=[str(sys.argv[9])]
 else:
@@ -327,9 +334,9 @@ print "         LJMET Variable:",plotList[iPlot][0]
 print "         X-AXIS TITLE  :",plotList[iPlot][2]
 print "         BINNING USED  :",plotList[iPlot][1]
 
-runData = True
+runData =True
 runBkgs = True
-runSigs = True#False
+runSigs =True
 nCats  = len(catList)
 
 
