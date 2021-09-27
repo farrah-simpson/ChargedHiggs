@@ -42,6 +42,8 @@ public:
     float GetDeepJetRenorm2DSF_HTnj(float HT, int njets, std::string sampleType, std::string sysType);
 
     TFile *tfile_HTNJ_SF;
+    TFile *tfile_X53HTNJ_SF;
+
     SFmap  hscale_ttjj;
     SFmap  hscale_ttbb;
     SFmap  hscale_ttcc;
@@ -68,8 +70,40 @@ public:
     SFmap  hscale_CHM2000;
     SFmap  hscale_CHM2500;
     SFmap  hscale_CHM3000;
-
-
+    SFmap  hscale_XXM600MH200; 
+    SFmap  hscale_XXM600MH400;
+    SFmap   hscale_XXM700MH400;
+    SFmap   hscale_XXM800MH200;
+    SFmap   hscale_XXM800MH400;
+    SFmap   hscale_XXM800MH600;
+    SFmap   hscale_XXM900MH200;
+    SFmap   hscale_XXM900MH400;
+    SFmap   hscale_XXM1000MH200; 
+    SFmap   hscale_XXM1000MH400;
+    SFmap   hscale_XXM1000MH800;
+    SFmap   hscale_XXM1100MH200;
+    SFmap   hscale_XXM1100MH400;
+    SFmap   hscale_XXM1100MH600;
+    SFmap   hscale_XXM1100MH800;
+    SFmap   hscale_XXM1200MH200;
+    SFmap   hscale_XXM1200MH400;
+    SFmap   hscale_XXM1200MH600;
+    SFmap   hscale_XXM1200MH800;
+    SFmap   hscale_XXM1200MH1000;
+    SFmap   hscale_XXM1500MH200; 
+    SFmap   hscale_XXM1500MH400;
+    SFmap   hscale_XXM1500MH600;
+    SFmap   hscale_XXM1500MH800;
+    SFmap   hscale_XXM1500MH1000;
+    SFmap   hscale_TTToHad0;
+    SFmap   hscale_TTToHad700;
+    SFmap   hscale_TTToHad1000;
+    SFmap   hscale_TTToSemiLep0;
+    SFmap   hscale_TTToSemiLep700;
+    SFmap   hscale_TTToSemiLep1000;
+    SFmap   hscale_TTToLNu0;
+    SFmap   hscale_TTToLNu700;
+    SFmap   hscale_TTToLNu1000;     
     //void GetBtaggingSF(double pt, double eta, double *btagsf, double *btagsfunc, std::string tagger="CSVM", int jetHFlav = 5, int year = 2017);
     //void GetBtaggingEff(double pt, double *eff, std::string tagger="CSVM", int jetHFlav = 5, int year = 2017);
     //void GetHOTtaggingSF(double pt, int njet, double *hotsf, double *hotstatunc, double *hotcspurunc, double *hotclosureunc, int year = 2017, bool isGenMatched=true, std::string workingpoint = "1pfake");

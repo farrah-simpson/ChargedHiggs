@@ -64,6 +64,44 @@ public :
    Bool_t          isCHM3000= false;
 
 
+   Bool_t          isXXM600MH200   = false;    
+   Bool_t          isXXM600MH400   = false;    
+   Bool_t          isXXM700MH200   = false;   
+   Bool_t          isXXM700MH400   = false;   
+   Bool_t          isXXM800MH200   = false;   
+   Bool_t          isXXM800MH400   = false;   
+   Bool_t          isXXM800MH600   = false;   
+   Bool_t          isXXM900MH200   = false;   
+   Bool_t          isXXM900MH400   = false;   
+   Bool_t          isXXM900MH600   = false;   
+   Bool_t          isXXM1000MH200  = false;   
+   Bool_t          isXXM1000MH400  = false;   
+   Bool_t          isXXM1000MH600  = false;   
+   Bool_t          isXXM1000MH800  = false;   
+   Bool_t          isXXM1100MH200  = false;   
+   Bool_t          isXXM1100MH400 = false; 
+   Bool_t          isXXM1100MH600 = false;    
+   Bool_t          isXXM1100MH800 = false;    
+   Bool_t          isXXM1200MH200 = false;    
+   Bool_t          isXXM1200MH400 = false;    
+   Bool_t          isXXM1200MH600 = false;    
+   Bool_t          isXXM1200MH800 = false;    
+   Bool_t          isXXM1200MH1000 = false; 
+   Bool_t          isXXM1500MH200 = false;  
+   Bool_t          isXXM1500MH400 = false;  
+   Bool_t          isXXM1500MH600 = false;  
+   Bool_t          isXXM1500MH800 = false;  
+   Bool_t          isXXM1500MH1000= false;  
+   Bool_t          isTTToHad0     = false;  
+   Bool_t          isTTToHad700   = false;  
+   Bool_t          isTTToHad1000  = false;  
+   Bool_t          isTTToSemiLep0 = false;  
+   Bool_t          isTTToSemiLep700 = false; 
+   Bool_t          isTTToSemiLep1000= false; 
+   Bool_t          isTTToLNu0     = false; 
+   Bool_t          isTTToLNu700   = false; 
+   Bool_t          isTTToLNu1000  = false; 
+
 
 
 
@@ -920,9 +958,43 @@ step2::step2(TString inputFileName, TString outputFileName)// : inputTree(0), in
    isCHM2500= (inputFileName.Contains("ChargedHiggs") && inputFileName.Contains("M-2500"));
    isCHM3000= (inputFileName.Contains("ChargedHiggs") && inputFileName.Contains("M-3000"));
 
-
-   
-   //isWJets = inputFileName.BeginsWith("WJetsToLNu");
+   isXXM600MH200 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX600") && inputFileName.Contains("MH200"));
+   isXXM600MH400 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX600") && inputFileName.Contains("MH400")); 
+   isXXM700MH200= (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX700") && inputFileName.Contains("MH200")); 
+   isXXM700MH400= (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX700") && inputFileName.Contains("MH400")); 
+   isXXM800MH200= (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX800") && inputFileName.Contains("MH200")); 
+   isXXM800MH400= (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX800") && inputFileName.Contains("MH400")); 
+   isXXM800MH600= (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX800") && inputFileName.Contains("MH600")); 
+   isXXM900MH200 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX900") && inputFileName.Contains("MH200"));
+   isXXM900MH400 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX900") && inputFileName.Contains("MH400"));
+   isXXM900MH600 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX900") && inputFileName.Contains("MH600"));
+   isXXM1000MH200 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1000") && inputFileName.Contains("MH200"));
+   isXXM1000MH400 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1000") && inputFileName.Contains("MH400"));
+   isXXM1000MH600  = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1000") && inputFileName.Contains("MH600"));
+   isXXM1000MH800 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1000") && inputFileName.Contains("MH800"));
+   isXXM1100MH200 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1100") && inputFileName.Contains("MH200"));
+   isXXM1100MH400 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1100") && inputFileName.Contains("MH400"));
+   isXXM1100MH600 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1100") && inputFileName.Contains("MH600"));
+   isXXM1100MH800 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1100") && inputFileName.Contains("MH800"));
+   isXXM1200MH200 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1200") && inputFileName.Contains("MH200"));
+   isXXM1200MH400= (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1200") && inputFileName.Contains("MH400"));
+   isXXM1200MH600 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1200") && inputFileName.Contains("MH600"));
+   isXXM1200MH800 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1200") && inputFileName.Contains("MH800"));
+   isXXM1200MH1000 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1200") && inputFileName.Contains("MH1000"));
+   isXXM1500MH200 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1500") && inputFileName.Contains("MH200"));
+   isXXM1500MH400 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1500") && inputFileName.Contains("MH400"));
+   isXXM1500MH600 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1500") && inputFileName.Contains("MH600"));
+   isXXM1500MH800 = (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1500") && inputFileName.Contains("MH800"));
+   isXXM1500MH1000= (inputFileName.Contains("tH_tH_x53x53") && inputFileName.Contains("_MX1500") && inputFileName.Contains("MH1000"));
+   isTTToHad0    = (inputFileName.Contains("TTToHadronic") && inputFileName.Contains("0to700")); 
+   isTTToHad700  = (inputFileName.Contains("TTToHadronic") && inputFileName.Contains("700to1000"));  
+   isTTToHad1000 = (inputFileName.Contains("TTToHadronic") && inputFileName.Contains("1000toInf"));  
+   isTTToSemiLep0 = (inputFileName.Contains("TTToSemiLeptonic") && inputFileName.Contains("0to700"));         
+   isTTToSemiLep700 = (inputFileName.Contains("TTToSemiLeptonic") && inputFileName.Contains("700to1000"));     
+   isTTToSemiLep1000 = (inputFileName.Contains("TTToSemiLeptonic") && inputFileName.Contains("1000toInf"));   
+   isTTToLNu0    = (inputFileName.Contains("TTTo2L2Nu") && inputFileName.Contains("0to700"));      
+   isTTToLNu700  = (inputFileName.Contains("TTTo2L2Nu") && inputFileName.Contains("700to1000"));      
+   isTTToLNu1000 = (inputFileName.Contains("TTTo2L2Nu") && inputFileName.Contains("1000toInf"));      
 
   sample_ = inputFileName;
   Int_t slash = sample_.Last('/');

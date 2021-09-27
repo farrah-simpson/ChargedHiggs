@@ -559,13 +559,44 @@ void step2::Loop()
    if(isCHM2500)   sampleType = "CHM2500";
    if(isCHM3000)   sampleType = "CHM3000";
 
+   if(isXXM600MH200)   sampleType = "XXM600MH200";
+   if(isXXM600MH400)   sampleType = "XXM600MH400";
+   if(isXXM700MH200)   sampleType = "XXM700MH200";
+   if(isXXM700MH400)   sampleType = "XXM700MH400";
+   if(isXXM800MH200)   sampleType = "XXM800MH200";
+   if(isXXM800MH400)   sampleType = "XXM800MH400";
+   if(isXXM800MH600)   sampleType = "XXM800MH600";
+   if(isXXM900MH200)   sampleType = "XXM900MH200";
+   if(isXXM900MH400)   sampleType = "XXM900MH400";
+   if(isXXM900MH600)   sampleType = "XXM900MH600";
+   if(isXXM1000MH200)   sampleType = "XXM1000MH200";
+   if(isXXM1000MH400)   sampleType = "XXM1000MH400";
+   if(isXXM1000MH600)   sampleType = "XXM1000MH600";
+   if(isXXM1000MH800)   sampleType = "XXM1000MH800";
+   if(isXXM1100MH200)   sampleType = "XXM1100MH200";
+   if(isXXM1100MH400)   sampleType = "XXM1100MH400";
+   if(isXXM1100MH600)   sampleType = "XXM1100MH600";
+   if(isXXM1100MH800)   sampleType = "XXM1100MH800";
+   if(isXXM1200MH200)   sampleType = "XXM1200MH200";
+   if(isXXM1200MH400)   sampleType = "XXM1200MH400";
+   if(isXXM1200MH600)   sampleType = "XXM1200MH600";
+   if(isXXM1200MH800)   sampleType = "XXM1200MH800";
+   if(isXXM1200MH1000)   sampleType = "XXM1200MH1000";
+   if(isXXM1500MH200)   sampleType = "XXM1500MH200";
+   if(isXXM1500MH400)   sampleType = "XXM1500MH400";
+   if(isXXM1500MH600)   sampleType = "XXM1500MH600";
+   if(isXXM1500MH800)   sampleType = "XXM1500MH800";
+   if(isXXM1500MH1000)   sampleType = "XXM1500MH1000";
 
-
-
-
-
-
- 
+   if(isTTToHad0)   sampleType = "TTToHad0";
+   if(isTTToHad700)   sampleType = "TTToHad700";
+   if(isTTToHad1000)   sampleType = "TTToHad1000";
+   if(isTTToSemiLep0)   sampleType = "TTToSemiLep0";
+   if(isTTToSemiLep700)   sampleType = "TTToSemiLep700";
+   if(isTTToSemiLep1000)   sampleType = "TTToSemiLep1000";
+   if(isTTToLNu0)   sampleType = "TTToLNu0";
+   if(isTTToLNu700)   sampleType = "TTToLNu700";
+   if(isTTToLNu1000)   sampleType = "TTToLNu1000";
 
    std::cout<<sampleType<<std::endl;
          
