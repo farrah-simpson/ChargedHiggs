@@ -26,27 +26,34 @@ cutString=''#'E_nT0p_nW0p_nB2_nJ4'#'lep50_MET30_DR0_1jet50_2jet40'
 pfix='templates'
 if not isCategorized: pfix='kinematics_'+region
 
-massPt='200'#'500'
+massPt='900'
+massPtH = '400'
+massPt2 = '1500'
+
 if len(sys.argv)>3: massPt=str(sys.argv[3])
 
 # /user_data/jlee/chargedHiggs/2017Data/CMSSW_10_2_10/src/SingleLepAnalyzer/makeTemplates/v1/templates_M250_2019_11_18
 if len(sys.argv)>1: templateDir=os.getcwd()+'/'+str(sys.argv[1])+'/'
 else:
     templateDir=os.getcwd()+'/kinematics_CR_M500_2020_11_18_topPtRW_NC/'
-#templateDir2=os.getcwd()+'/v1/templates_M250_2019_12_16/'
+#templateDir2= 'kinematics_PS_R17_2021_10_19/'
+templateDir2 = templateDir
+
 
 splitTTbar = False#True
-isRebinned= '_wNegBinsCorrec_'#_killFirstBins_syFist' #post for ROOT file names
+isRebinned= '_wNegBinsCorrec__rebinned_stat0p3'#_killFirstBins_syFist' #post for ROOT file names
 saveKey = '' # tag for plot names
 
-sig1='X53'#'Hptb'+massPt # choose the 1st signal to plot
-sig1leg='X_{5/3}#bar{X}_{5/3} (1.1 TeV) ('+massPt+' GeV)'
-M1 = '200'
-sig2='X53'
-sig2leg='X_{5/3}#bar{X}_{5/3} LH (1.1 TeV)'
-M2 = '400'
+sig1='X53M'+massPt+'MH'+massPtH # choose the 1st signal to plot
+sig1leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) H^{+} ('+massPtH+' GeV)'
+M1 =  massPt
+M2 = massPt2
+#sig2='X53RHM'+massPt2
+sig2 = 'X53M'+massPt2+'MH'+massPtH
+#sig2leg='X_{5/3}#bar{X}_{5/3} RH ('+massPt2+' GeV)'
+sig2leg='X_{5/3}#bar{X}_{5/3} ('+massPt2+' GeV) H^{+} ('+massPtH+' GeV)'
 plotCombine = True ### make it False for YLD plot
-scaleSignals = False#True
+scaleSignals = False#True ##check
 scaleFact1 = 100
 scaleFact2 = 100
 scaleFact1merged = 100
@@ -81,6 +88,7 @@ systematicList = [
 'CMS_scale_j'       , 'CMS_HPTB_mcreweight_ewk', 'CMS_res_j'        , 'muR_ttbar', 'muF_ttbar',
 'CMS_btag_LF'       , 'CMS_pileup'             , 'CMS_btag_HF'      , 'muR_top'  , 'muF_top'  , 
 'CMS_topreweight' ,
+
 'CMS_btag_LFstat1'  , 'CMS_btag_CFerr1'        , 'CMS_btag_HFstat1' ,  #'QCDscaleHptb'    , 
 'CMS_btag_LFstat2'  , 'CMS_btag_CFerr2'        , 'CMS_btag_HFstat2' , 'muR_ewk'  , 'muF_ewk'   
 ]
@@ -89,9 +97,8 @@ doAllSys = False
 doQ2sys  = False
 if not doAllSys: doQ2sys = False
 addCRsys = False
-doNormByBinWidth=True
-#set true, to see the actual shape of the distributions when the binning is not uniform, e.g binning with 0.3
-doOneBand = False
+doNormByBinWidth=True#set true, to see the actual shape of the distributions when the binning is not uniform, e.g binning with 0.3
+doOneBand = True#False
 if not doAllSys: doOneBand = True # Don't change this!
 blind = True
 blindYLD = True
@@ -117,7 +124,6 @@ if not isCategorized:
     nbtaglist = ['1p']
     njetslist = ['3p']
 
-
 tagList = list(itertools.product(nttaglist,nWtaglist,nbtaglist,njetslist))
 #print tagList
 lumiSys = 0.025 # lumi uncertainty
@@ -128,6 +134,7 @@ corrdSys = math.sqrt(lumiSys**2+trigSys**2+lepIdSys**2+lepIsoSys**2) #cheating w
 
 for tag in tagList:
 	tagStr='nT'+tag[0]+'_nW'+tag[1]+'_nB'+tag[2]+'_nJ'+tag[3]
+	tagStrold='nHOT0p_'+'nT'+tag[1]+'_nW'+tag[2]+'_nB'+tag[3]+'_nJ3p'#+tag[4]
 	modTag = tagStr[tagStr.find('nT'):tagStr.find('nJ')-3]
 	print tagStr
         print modTag
@@ -138,6 +145,7 @@ for tag in tagList:
 	if not addCRsys: #else CR uncertainties are defined in modSyst.py module
 		for proc in bkgProcList:
 			modelingSys[proc+'_'+modTag] = 0.
+
 
 def getNormUnc(hist,ibin,modelingUnc):
 	contentsquared = hist.GetBinContent(ibin)**2
@@ -203,7 +211,7 @@ tagPosY = 0.52
 RFile1 = rt.TFile(templateDir+tempsig.replace(M1,M1))
 print RFile1
 
-#RFile2 = rt.TFile(templateDir2+tempsig.replace(M1,M2))
+RFile2 = rt.TFile(templateDir2+tempsig.replace(M1,M2))#.replace('_wNegBinsCorrec_',''))
 
 #set the tdr style
 tdrstyle.setTDRStyle()
@@ -263,13 +271,16 @@ else: #theta
 blindGlob = blind
 for tag in tagList:
 	tagStr='nT'+tag[0]+'_nW'+tag[1]+'_nB'+tag[2]+'_nJ'+tag[3]
-	if isCR(tag[3],tag[2]): 
+	tagStrold='nHOT0p_'+'nT'+tag[0]+'_nW'+tag[1]+'_nB'+tag[2]+'_nJ3p'#+tag[4]
+
+	postTag = 'isSR_' 
+	#if isCR(tag[3],tag[2]): 
 		#postTag = 'isCR_'
-		postTag = 'isSR_'
-                blind = False
-	else: 
-		postTag = 'isSR_'
-		blind = blindGlob
+	#	postTag = 'isSR_'
+        #        blind = False
+	#else: 
+	#	postTag = 'isSR_'
+	#	blind = blindGlob
 	if not blind:
 		legx1 = 0.48
 		legx2 = legx1+0.50
@@ -288,14 +299,16 @@ for tag in tagList:
 		tagPosX = 0.25
 		tagPosY = 0.65
 
-	if not isCategorized: blind = blindGlob
+#	if not isCategorized: blind = blindGlob
 	if not plotCombine: postTag=''
-	if skip(tag[3],tag[2]) and isCategorized: continue
+	#if skip(tag[3],tag[2]) and isCategorized: continue
 	modTag = tagStr[tagStr.find('nT'):tagStr.find('nJ')-3]
 	for isEM in isEMlist:
 		histPrefix=iPlot+'_'+lumiInTemplates+'fb_'
 		catStr=postTag+'is'+isEM+'_'+tagStr
+		catStrold='is'+isEM+'_'+tagStrold
 		histPrefix+=catStr
+		histPrefixold= iPlot+'_'+lumiInTemplates+'fb_'+catStrold
 		print histPrefix
 		print dataName
 		print 
@@ -313,15 +326,15 @@ for tag in tagList:
 		
 		if plotCombine:
 			print "histPrefix", histPrefix
-			print "sig1", sig1
+			print "sig1", sig1, "sig2", sig2
 			hsig1 = RFile1.Get(histPrefix+'__'+sig1).Clone(histPrefix+'__sig1')
-			#hsig2 = RFile2.Get(histPrefix+'__'+sig2).Clone(histPrefix+'__sig2')
+			hsig2 = RFile2.Get(histPrefix+'__'+sig2).Clone(histPrefix+'__sig2')
 
 		else:
 			hsig1 = RFile1.Get(histPrefix+'__sig').Clone(histPrefix+'__sig1')
-			#hsig2 = RFile2.Get(histPrefix+'__sig').Clone(histPrefix+'__sig2')
+			hsig2 = RFile2.Get(histPrefix+'__sig').Clone(histPrefix+'__sig2')
 		hsig1.Scale(xsec[sig1])
-		#hsig2.Scale(xsec[sig2])
+		hsig2.Scale(xsec[sig2])
 		if doNormByBinWidth:
 			for proc in bkgProcList:
 				try: normByBinWidth(bkghists[proc+catStr])
@@ -392,7 +405,7 @@ for tag in tagList:
 			scaleFact1=1
 			scaleFact2=1
  		hsig1.Scale(scaleFact1)
- 		#hsig2.Scale(scaleFact2)
+ 		hsig2.Scale(scaleFact2)
 
                 ############################################################
 		############## Making Plots of e+jets, mu+jets and e/mu+jets 
@@ -425,10 +438,10 @@ for tag in tagList:
 		hsig1.SetLineColor(sig1Color)
 		hsig1.SetFillStyle(0)
 		hsig1.SetLineWidth(3)
-		# hsig2.SetLineColor(sig2Color)
-		# hsig2.SetLineStyle(7)#5)
-		# hsig2.SetFillStyle(0)
-		# hsig2.SetLineWidth(3)
+		hsig2.SetLineColor(sig2Color)
+		hsig2.SetLineStyle(7)#5)
+		hsig2.SetFillStyle(0)
+		hsig2.SetLineWidth(3)
 		
 		if not drawYields: hData.SetMarkerStyle(20)
 		hData.SetMarkerSize(1.2)
@@ -516,7 +529,7 @@ for tag in tagList:
                 #print 'IM HERE'
  		#print '======'*10
 
-                #hsig2.Draw("SAME HIST")
+                hsig2.Draw("SAME HIST")
 		if not blind: 
 			hData.Draw("esamex0") #redraw data so its not hidden
 			if drawYields: hData.Draw("SAME TEXT00") 
@@ -570,14 +583,14 @@ for tag in tagList:
  		leg.AddEntry(hsig1,sig1leg+scaleFact1Str,"l")
 		try: leg.AddEntry(bkghists['ttcc'+catStr],"t#bar{t}+c#bar{c}","f")
 		except: pass
-# 		leg.AddEntry(hsig2,sig2leg+scaleFact2Str,"l")
+ 		leg.AddEntry(hsig2,sig2leg+scaleFact2Str,"l")
 		try: leg.AddEntry(bkghists['ttb'+catStr],"t#bar{t}+b","f")
 		except: pass
 		try: leg.AddEntry(bkghists['top'+catStr],"TOP","f")
 		except: pass
                 try: leg.AddEntry(bkghists['tt2b'+catStr],"t#bar{t}+2b","f")
 		except: pass
-                print bkghists['ttnobb'+catStr]
+                #print bkghists['ttnobb'+catStr]
                 try: leg.AddEntry(bkghists['ttnobb'+catStr],"t#bar{t}+!b#bar{b}","f")
                 except: pass
 		try: leg.AddEntry(bkghists['ewk'+catStr],"EWK","f")
@@ -702,6 +715,7 @@ for tag in tagList:
 		savePrefix = templateDir.replace(cutString,'')+cutString+'/plots/'
 		if not os.path.exists(savePrefix): os.system('mkdir '+savePrefix)
 		savePrefix+=histPrefix+isRebinned.replace('_rebinned_stat1p1','')+saveKey
+		savePrefix=savePrefix.replace('nHOT0p_','')
 		if nttaglist[0]=='0p': savePrefix=savePrefix.replace('nT0p_','')
 		if nWtaglist[0]=='0p': savePrefix=savePrefix.replace('nW0p_','')
 		if nbtaglist[0]=='0p': savePrefix=savePrefix.replace('nB0p_','')
@@ -729,6 +743,9 @@ for tag in tagList:
 	# Making plots for e+jets/mu+jets combined #
 	histPrefixE = iPlot+'_'+lumiInTemplates+'fb_'+postTag+'isE_'+tagStr
 	histPrefixM = iPlot+'_'+lumiInTemplates+'fb_'+postTag+'isM_'+tagStr
+	histPrefixEold = iPlot+'_'+lumiInTemplates+'fb_'+'isE_'+tagStrold
+	histPrefixMold = iPlot+'_'+lumiInTemplates+'fb_'+'isM_'+tagStrold
+
 	for proc in bkgProcList:
 		try: 
 			bkghistsmerged[proc+'isL'+tagStr] = RFile1.Get(histPrefixE+'__'+proc).Clone()
@@ -744,16 +761,16 @@ for tag in tagList:
  	if plotCombine: 
                 print RFile1
  		hsig1merged = RFile1.Get(histPrefixE+'__'+sig1).Clone(histPrefixE+'__sig1merged')
-# 		hsig2merged = RFile2.Get(histPrefixE+'__'+sig2).Clone(histPrefixE+'__sig2merged')
+ 		hsig2merged = RFile2.Get(histPrefixE+'__'+sig2).Clone(histPrefixE+'__sig2merged')
  		hsig1merged.Add(RFile1.Get(histPrefixM+'__'+sig1).Clone())
-# 		hsig2merged.Add(RFile2.Get(histPrefixM+'__'+sig2).Clone())
+ 		hsig2merged.Add(RFile2.Get(histPrefixM+'__'+sig2).Clone())
 # 		
  	else:
  		hsig1merged = RFile1.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig1merged')
-# 		hsig2merged = RFile2.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig2merged')
+ 		hsig2merged = RFile2.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig2merged')
  		hsig1merged.Add(RFile1.Get(histPrefixM+'__sig').Clone())
-# 		hsig2merged.Add(RFile2.Get(histPrefixM+'__sig').Clone())
- 	if scaleSignalsToXsec: hsig1merged.Scale(xsec[sig1])
+ 		hsig2merged.Add(RFile2.Get(histPrefixM+'__sig').Clone())
+#	hsig1merged.Scale(xsec[sig1])
 # 	hsig2merged.Scale(xsec[sig2])
 	if doNormByBinWidth:
 		for proc in bkgProcList:
@@ -820,15 +837,15 @@ for tag in tagList:
 	errorDnT = 0.	
 	bkgHTgerrmerged = totBkgTemp3['isL'+tagStr].Clone()
 
- 	if scaleFact1merged==0: scaleFact1merged=int((bkgHTmerged.GetMaximum()/hsig1merged.GetMaximum())*0.5)
-# 	if scaleFact2merged==0: scaleFact2merged=int((bkgHTmerged.GetMaximum()/hsig2merged.GetMaximum())*0.5)
+	if scaleFact1merged==0: scaleFact1merged=int((bkgHTmerged.GetMaximum()/hsig1merged.GetMaximum())*0.5)
+ 	if scaleFact2merged==0: scaleFact2merged=int((bkgHTmerged.GetMaximum()/hsig2merged.GetMaximum())*0.5)
 	if scaleFact1merged==0: scaleFact1merged=1
 	if scaleFact2merged==0: scaleFact2merged=1
 	if not scaleSignals:
 		scaleFact1merged=1
 		scaleFact2merged=1
  	hsig1merged.Scale(scaleFact1merged)
-# 	hsig2merged.Scale(scaleFact2merged)
+ 	hsig2merged.Scale(scaleFact2merged)
 	
 	drawQCDmerged = False
 	try: drawQCDmerged = bkghistsmerged['qcdisL'+tagStr].Integral()/bkgHTmerged.Integral()>.005
@@ -853,10 +870,10 @@ for tag in tagList:
  	hsig1merged.SetLineColor(sig1Color)
 	hsig1merged.SetFillStyle(0)
  	hsig1merged.SetLineWidth(3)
-# 	hsig2merged.SetLineColor(sig2Color)
-# 	hsig2merged.SetLineStyle(7)#5)
-# 	hsig2merged.SetFillStyle(0)
-# 	hsig2merged.SetLineWidth(3)
+ 	hsig2merged.SetLineColor(sig2Color)
+ 	hsig2merged.SetLineStyle(7)#5)
+ 	hsig2merged.SetFillStyle(0)
+ 	hsig2merged.SetLineWidth(3)
 	
 	if not drawYields: hDatamerged.SetMarkerStyle(20)
 	hDatamerged.SetMarkerSize(1.2)
@@ -942,7 +959,7 @@ for tag in tagList:
 		bkgHTmerged.Draw("SAME TEXT90")
 
  	hsig1merged.Draw("SAME HIST")
-# 	hsig2merged.Draw("SAME HIST")
+ 	hsig2merged.Draw("SAME HIST")
 	if not blind: 
 		hDatamerged.Draw("esamex0") #redraw data so its not hidden
 		if drawYields: hDatamerged.Draw("SAME TEXT00") 
@@ -996,7 +1013,7 @@ for tag in tagList:
  	legmerged.AddEntry(hsig1merged,sig1leg+scaleFact1Str,"l")
 	try: legmerged.AddEntry(bkghistsmerged['ttccisL'+tagStr],"t#bar{t}+c#bar{c}","f")
 	except: pass
-# 	legmerged.AddEntry(hsig2merged,sig2leg+scaleFact2Str,"l")
+ 	legmerged.AddEntry(hsig2merged,sig2leg+scaleFact2Str,"l")
 	try: legmerged.AddEntry(bkghistsmerged['ttbisL'+tagStr],"t#bar{t}+b","f")
 	except: pass
 	try: legmerged.AddEntry(bkghistsmerged['topisL'+tagStr],"TOP","f")
@@ -1130,8 +1147,8 @@ for tag in tagList:
 
 	#c1merged.Write()
 # 	savePrefixmerged = templateDir.replace(cutString,'')+templateDir.split('/')[-2]+'/plots/'
-# 	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'+sig2
-	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'
+ 	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'+sig2
+#	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'
 	if not os.path.exists(savePrefixmerged): os.system('mkdir '+savePrefixmerged)
 	savePrefixmerged+=histPrefixE.replace('isE','isL')+isRebinned.replace('_rebinned_stat1p1','')+saveKey
 	if nttaglist[0]=='0p': savePrefixmerged=savePrefixmerged.replace('nT0p_','')
@@ -1160,7 +1177,7 @@ for tag in tagList:
 		except: pass
 			
 RFile1.Close()
-# RFile2.Close()
+RFile2.Close()
 
 print("--- %s minutes ---" % (round(time.time() - start_time, 2)/60))
 

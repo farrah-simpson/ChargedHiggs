@@ -23,7 +23,7 @@ if len(sys.argv)>1: massPt=str(sys.argv[1])
 region = 'PS' #PS,SR
 
 isCategorized=args.Categorized#False#False
-doTempEachCategory = True
+doTempEachCategory = False#True
 cutString=''#MET30_1jet40_2jet40'#'lep35_MET30_DR0_1jet40_2jet40'
 
 pfix = args.directory#'templates_M500_2020_11_23_topPtRW_NC_allweights_DJ'#'kinematics_CR_M500_2020_11_23_topPtRW_NC_allweights_DJ' 
@@ -33,7 +33,7 @@ pfix = args.directory#'templates_M500_2020_11_23_topPtRW_NC_allweights_DJ'#'kine
 #pfix+=massPt+'_2020_11_23_topPtRW_NC_allweights'
 outDir = os.getcwd()+'/'+pfix+'/'+cutString
 
-scaleSignalXsecTo1pb = False #True # this has to be "True" if you are making templates for limit calculation!!!!!!!!
+scaleSignalXsecTo1pb = False#True #check! this has to be "True" if you are making templates for limit calculation!!!!!!!!
 doAllSys = False
 doQ2sys  = False
 doPDFsys = False
@@ -65,7 +65,7 @@ if splitTTbar:
                 #bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','OtherT','WJets','ZJets','qcd']#,'VV'
 
 else:
-	bkgGrupList = ['ttbar','top','ewk','qcd', 'WJets']
+	bkgGrupList = ['top','ewk','qcd']
 	#bkgGrupList = ['ttbar','top','ewk','qcd']
 	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd'] #TTV
 bkgProcs = {}
@@ -104,7 +104,7 @@ bkgProcs['ttjj']  = [tt+'_ttjj' for tt in bkgProcs['TTJets']]
 bkgProcs['ttnobb']  = bkgProcs['ttjj'] + bkgProcs['ttcc'] + bkgProcs['tt1b'] + bkgProcs['tt2b']
 
 bkgProcs['qcd']   = ['QCDht200','QCDht300','QCDht500','QCDht700','QCDht1000','QCDht1500','QCDht2000']
-bkgProcs['top']   = bkgProcs['TTV']+bkgProcs['T']#+bkgProcs['OtherT']
+bkgProcs['top']   = bkgProcs['TTJets']+bkgProcs['TTV']+bkgProcs['T']#+bkgProcs['OtherT']
 bkgProcs['ewk']   = bkgProcs['WJets']+bkgProcs['ZJets']+bkgProcs['VV']
 #bkgProcs['ttbb']  = bkgProcs['TTBB']
 #bkgProcs['ttcc']  = bkgProcs['TTCC']
@@ -122,7 +122,7 @@ bkgProcs['wjets'] = bkgProcs['WJets']
 dataList = ['DataE','DataM']
 
 htProcs = ['ewk','WJets']
-topptProcs = ['top','TTJets']#['tt2b','ttbb','ttb','ttcc','ttlf','ttbar','TTJets']
+topptProcs = ['top','ttbar','TTJets']#['tt2b','ttbb','ttb','ttcc','ttlf','ttbar','TTJets']
 bkgProcs['ttbar_q2up'] = ['TTJetsPHQ2U']#,'TtWQ2U','TbtWQ2U']
 bkgProcs['ttbar_q2dn'] = ['TTJetsPHQ2D']#,'TtWQ2D','TbtWQ2D']
 
@@ -130,8 +130,11 @@ whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
 massList = range(600,1500+1,100)
 
 #sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
-sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
-if whichSignal=='Hptb'or 'X53': decays = ['']
+if whichSignal== 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+if whichSignal == 'X53':
+	sigList = [whichSignal+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
+	sigList+= [whichSignal+'RHM'+str(mass) for mass in range(900,1700+1,100)]
+if whichSignal=='Hptb'or 'X53' or 'X53H': decays = ['']
 
 #if massPt not in massList:    MICHAEL COMMENTED OUT THESE TWO LINES
 #	massList.append(massPt)
@@ -160,8 +163,8 @@ if not isCategorized:
     nbtaglist = ['1p']
     njetslist = ['3p']
 
-catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist)) if not skip(item[4] ,item[3])]
-tagList = ['nT'+item[0]+'_nW'+item[1]+'_nB'+item[2]+'_nJ'+item[3] for item in list(itertools.product(nttaglist,nWtaglist,nbtaglist,njetslist)) if not skip(item[3] ,item[2])]
+catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist))] #if not skip(item[4] ,item[3])]
+tagList = ['nT'+item[0]+'_nW'+item[1]+'_nB'+item[2]+'_nJ'+item[3] for item in list(itertools.product(nttaglist,nWtaglist,nbtaglist,njetslist))] #if not skip(item[3] ,item[2])]
 
 lumiSys = 0.025 #lumi uncertainty
 eltrigSys = 0.#05 #electron trigger uncertainty
@@ -395,8 +398,8 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 		i=cat
                 print cat
                 print "=============================================="
-		if '_nB1_' in cat or '_nB2p_' in cat or '_nB2_nJ4' in cat: postTag = 'isCR_'
-		else: postTag = 'isSR_'
+		#if '_nB1_' in cat or '_nB2p_' in cat or '_nB2_nJ4' in cat: postTag = 'isCR_'
+		postTag = 'isSR_'
                 for signal in sigList:
                         #mass = [str(mass) for mass in massList if signal.endswith(str(mass))][0]
                         hists[signal+i].SetName(hists[signal+i].GetName().replace('fb_','fb_'+postTag).replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
@@ -703,10 +706,10 @@ def findfiles(path, filtre):
 def rundoTemp(category):
 	#iPlotList = ['HT''minBBdr','aveBBdr','deltaEta_maxBB','FW_momentum_2','centrality','aveCSVpt','HT','minMlb','Bjet1Pt','mass_maxJJJpt','MTlmet','lepDR_minBBdr','MET']
         iPlotList = [
-                'HT',
+                #'HT',
                 #'HTpt40',
                 #'ST',
-                'minMlb',
+                #'minMlb',
                 #'mass_minBBdr',
                 #'deltaR_lepBJet_maxpt',
                 #'lepDR_minBBdr',
@@ -729,9 +732,11 @@ def rundoTemp(category):
                 #'MTlmet',
                 #'HT',
                 #'hemiout',
-                #'theLeadJetPt',
-                #'MET',
-                #'lepPt',
+                'theLeadJetPt',
+                'MET',
+                'lepPt',
+                'JetPt',
+
                 #'masslepJets0',
                 #'masslepJets1',
                 #'masslepJets2',
@@ -760,8 +765,8 @@ def rundoTemp(category):
                 #'secondcsvb_bb',
                 #'thirdcsvb_bb',
                 #'fourthcsvb_bb',
-                #'NBJets',
-                #'NJets',
+                'NBJets',
+                'NJets',
                 #'HT_2m',
                 #'Sphericity',
                 #'Aplanarity',
@@ -931,7 +936,6 @@ def rundoTemp(category):
 
 		print "       MAKING CATEGORIES FOR TOTAL SIGNALS ..."
 		makeThetaCats(datahists,sighists,bkghists,iPlot,category)
-
 print "outDir+'/'+catList[0][2:]+'/' : ", outDir+'/'+catList[0][2:]+'/'
 
 if doTempEachCategory:

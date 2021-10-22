@@ -62,12 +62,15 @@ bkgList = [
 ttFlvs = []#'_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
 dataList = ['DataE','DataM']
 
-whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
+whichSignal = 'X53H' #Hptb,HTB, TTM, BBM, or X53X53M
 mass = range(600,1500+1,100)
 
 #sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
-sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
-if whichSignal=='Hptb'or 'X53': decays = ['']
+if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+if whichSignal == 'X53':
+	sigList = [whichSignal+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
+	sigList+= [whichSignal+'RHM'+str(mass) for mass in range(900,1700+1,100)]
+if whichSignal=='Hptb'or 'X53' or 'X53H': decays = ['']
 
 sigTrained = 'Low1'
 if len(sys.argv)>10: sigTrained=sys.argv[10]
@@ -335,7 +338,7 @@ print "         X-AXIS TITLE  :",plotList[iPlot][2]
 print "         BINNING USED  :",plotList[iPlot][1]
 
 runData =True
-runBkgs = True
+runBkgs =True
 runSigs =True
 nCats  = len(catList)
 
