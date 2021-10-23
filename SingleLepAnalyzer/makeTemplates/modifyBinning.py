@@ -40,7 +40,7 @@ saveKey = ''#'_50GeV_100GeVnB2'
 # if len(sys.argv)>1: iPlot=str(sys.argv[1])
 cutString = ''#'lep30_MET150_NJets4_DR1_1jet450_2jet150'
 lumiStr = str(targetlumi/1000).replace('.','p')+'fb' # 1/fb
-templateDir = 'kinematics_PS_2021_9_28'#templates_2021_10_5'#'kinematics_PS_2021_9_26'#'templates_M500_2021_4_25_topPtRW_allweights_UL17_Reshape_ReNorm2D_HTnj_WJetsHTbinned_HTonly' 
+templateDir = 'kinematics_PS_TEST2'#templates_2021_10_5'#'kinematics_PS_2021_9_26'#'templates_M500_2021_4_25_topPtRW_allweights_UL17_Reshape_ReNorm2D_HTnj_WJetsHTbinned_HTonly' 
 combinefile = 'templates_'+iPlot+'_'+lumiStr+'_wNegBinsCorrec_.root'
 
 quiet = True #if you don't want to see the warnings that are mostly from the stat. shape algorithm!

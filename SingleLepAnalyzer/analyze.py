@@ -55,7 +55,7 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
 	ljmetCalc = 'JetSubCalc' #JetSubCalc/singleLepCalc switch
 
 	# Define general cuts
-	cut  = ' ((leptonPt_MultiLepCalc > '+str(cutList['lepPtCut'])+' && isElectron) || (leptonPt_MultiLepCalc > '+str(cutList['lepPtCut'])+' && isMuon) )' #((leptonPt_MultiLepCalc > 35 && isElectron) || (leptonPt_MultiLepCalc > 30 && isMuon))'
+	cut  = ' ((leptonPt_MultiLepCalc > '+str(cutList['lepPtCut'])+' && isElectron == 1) || (leptonPt_MultiLepCalc > '+str(cutList['lepPtCut'])+' && isMuon == 1) )' #((leptonPt_MultiLepCalc > 35 && isElectron) || (leptonPt_MultiLepCalc > 30 && isMuon))'
 	cut += ' && (MT_lepMet > '+str(cutList['mtCut'])+')'
 	cut += ' && (theJetPt_JetSubCalc_PtOrdered[2] > '+str(cutList['jet3PtCut'])+')'
 	cut += ' && (minDR_lepJet > 0.4)'
@@ -71,7 +71,7 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
 	else: 
 		cut += ' && (deltaR_lepJets[1] >= '+str(cutList['drCut'])+')' #PS or SR
     
-	if isEM=='E' and isCR(njets,nbtag): cut += ' && (minDPhi_MetJet>0.05)'
+	#if isEM=='E' and isCR(njets,nbtag): cut += ' && (minDPhi_MetJet>0.05)'
 
 	cut += ' && DataPastTriggerX == 1 && MCPastTriggerX == 1'
 	# Define weights
