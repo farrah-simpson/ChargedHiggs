@@ -1,6 +1,0 @@
-
-# DO NOT DELETE
-
-./HardcodedConditions_cc.so: HardcodedConditions.h
-./HardcodedConditions_cc.so: /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/RVersion.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/RConfig.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TClass.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TDictAttributeMap.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TInterpreter.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TROOT.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TBuffer.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TMemberInspector.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TError.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/RtypesImp.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TIsAProxy.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TFileMergeInfo.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/lcg/root/6.14.09-pafccj5/include/TCollectionProxyInfo.h /cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_10_6_19/external/slc7_amd64_gcc820/bin/rootcling
-HardcodedConditions_cc__ROOTBUILDVERSION= 6.14/09
