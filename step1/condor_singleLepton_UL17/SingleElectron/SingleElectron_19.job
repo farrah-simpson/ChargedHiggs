@@ -1,0 +1,13 @@
+use_x509userproxy = true
+universe = vanilla
+Executable = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/compileStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.cpp, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepCSV_106XUL17SF.csv, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepJet_106XUL17SF.csv
+Output = SingleElectron_19.out
+Error = SingleElectron_19.err
+Log = SingleElectron_19.log
+Notification = Never
+Arguments = "SingleElectronRun2017F SingleElectron /store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//SingleElectron 'F2-40 F2-42 F2-43 F2-44 F2-45 F2-47 F2-48 F2-5 F2-50 F2-53 F2-54 F2-55 F2-56 F2-57 F2-58 F2-60 F2-62 F2-63 F2-64 F2-66' 19 2017"
+
+Queue 1

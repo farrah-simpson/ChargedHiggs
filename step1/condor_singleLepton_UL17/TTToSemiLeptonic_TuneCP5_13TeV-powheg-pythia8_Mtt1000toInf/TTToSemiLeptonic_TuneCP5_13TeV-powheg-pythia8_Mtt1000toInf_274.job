@@ -1,0 +1,13 @@
+use_x509userproxy = true
+universe = vanilla
+Executable = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/compileStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.cpp, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepCSV_106XUL17SF.csv, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepJet_106XUL17SF.csv
+Output = TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_274.out
+Error = TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_274.err
+Log = TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_274.log
+Notification = Never
+Arguments = "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf /store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0002 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf '1-2820 1-2821 1-2822 1-2823 1-2824 1-2825 1-2826 1-2827 1-2828 1-2829 1-2830 1-2831 1-2832 1-2833 1-2834 1-2835 1-2836 1-2837 1-2838 1-2839' 274 2017"
+
+Queue 1

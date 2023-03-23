@@ -1,0 +1,13 @@
+use_x509userproxy = true
+universe = vanilla
+Executable = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/compileStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.cpp, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepCSV_106XUL17SF.csv, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepJet_106XUL17SF.csv
+Output = TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_239.out
+Error = TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_239.err
+Log = TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_239.log
+Notification = Never
+Arguments = "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700 /store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0002 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700 '1-2120 1-2121 1-2122 1-2123 1-2124 1-2125 1-2126 1-2127 1-2128 1-2129 1-2130 1-2131 1-2132 1-2133 1-2134 1-2135 1-2136 1-2137 1-2138 1-2139' 239 2017"
+
+Queue 1

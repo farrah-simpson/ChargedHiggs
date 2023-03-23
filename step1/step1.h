@@ -1315,7 +1315,19 @@ step1::step1(TString inputFileName, TString outputFileName, Int_t Year_) : input
     else if(inputFileName.Contains("X53")) isXX = true;
     else if(inputFileName.Contains("TTTT_Tune")) isTTTT = true;
 
-    if(inputFileName.Contains("_M-700")) SigMass = 0; 
+    if(inputFileName.Contains("_MX700")) SigMass = 0; 
+    else if(inputFileName.Contains("_MX800")) SigMass = 1;
+    else if(inputFileName.Contains("_MX900")) SigMass = 2;
+    else if(inputFileName.Contains("_MX1000")) SigMass = 3;
+    else if(inputFileName.Contains("_MX1100")) SigMass = 4;
+    else if(inputFileName.Contains("_MX1200")) SigMass = 5;
+    else if(inputFileName.Contains("_MX1300")) SigMass = 6;
+    else if(inputFileName.Contains("_MX1400")) SigMass = 7;
+    else if(inputFileName.Contains("_MX1500")) SigMass = 8;
+    else if(inputFileName.Contains("_MX1600")) SigMass = 9;
+    else if(inputFileName.Contains("_MX1700")) SigMass = 10;
+    else if(inputFileName.Contains("_MX1800")) SigMass = 11;
+    else if(inputFileName.Contains("_M-700")) SigMass = 0; 
     else if(inputFileName.Contains("_M-800")) SigMass = 1;
     else if(inputFileName.Contains("_M-900")) SigMass = 2;
     else if(inputFileName.Contains("_M-1000")) SigMass = 3;

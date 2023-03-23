@@ -1,0 +1,13 @@
+use_x509userproxy = true
+universe = vanilla
+Executable = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/compileStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.cpp, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepCSV_106XUL17SF.csv, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepJet_106XUL17SF.csv
+Output = TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_197.out
+Error = TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_197.err
+Log = TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf_197.log
+Notification = Never
+Arguments = "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf /store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0001 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt1000toInf '2-1281 2-1282 2-1283 2-1284 2-1285 2-1286 2-1287 2-1288 2-1289 2-1290 2-1291 2-1292 2-1293 2-1294 2-1295 2-1296 2-1297 2-1298 2-1299 2-1300' 197 2017"
+
+Queue 1

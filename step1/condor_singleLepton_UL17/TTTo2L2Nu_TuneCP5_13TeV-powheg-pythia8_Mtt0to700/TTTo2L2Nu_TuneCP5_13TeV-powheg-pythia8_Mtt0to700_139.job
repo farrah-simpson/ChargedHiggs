@@ -1,0 +1,13 @@
+use_x509userproxy = true
+universe = vanilla
+Executable = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/compileStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/makeStep1.C, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/step1.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.cc, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/HardcodedConditions.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.cpp, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/BTagCalibForLJMet.h, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepCSV_106XUL17SF.csv, /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/step1/DeepJet_106XUL17SF.csv
+Output = TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_139.out
+Error = TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_139.err
+Log = TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_139.log
+Notification = Never
+Arguments = "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8 TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt0to700 /store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTTo2L2Nu_fixed/210622_015054/0000 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt0to700 '3-737 3-738 3-739 3-74 3-740 3-741 3-742 3-743 3-744 3-745 3-746 3-747 3-748 3-749 3-75 3-750 3-751 3-752 3-753 3-754' 139 2017"
+
+Queue 1

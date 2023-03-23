@@ -1,0 +1,875 @@
+[FERMIHTC-SINGULARITY]: INFO -- No Singulariy image specified
+[FERMIHTC-SINGULARITY]: INFO -- Running job on the host machine
+
+[FERMIHTC-SINGULARITY]: INFO -- Running ./condor_exec.exe JetHTRun2017F JetHT /store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//JetHT F11 F13 F14 F15 F16 F17 F18 F19 F20 F22 F23 F24 F25 F26 F27 F29 F31 F34 F37 F38 11 2017
+fsimpson-14733019-0-cmswn1710.fnal.gov
+Sat Sep 25 06:25:40 UTC 2021
+/storage/local/data1/condor/execute/dir_9908
+setting macroDir to PWD
+
+Processing compileStep1.C...
+Running step1 over list: F11 F13 F14 F15 F16 F17 F18 F19 F20 F22 F23 F24 F25 F26 F27 F29 F31 F34 F37 F38
+adding JetHT_F11.root to the list by reading JetHTRun2017F_11
+adding JetHT_F13.root to the list by reading JetHTRun2017F_13
+adding JetHT_F14.root to the list by reading JetHTRun2017F_14
+adding JetHT_F15.root to the list by reading JetHTRun2017F_15
+adding JetHT_F16.root to the list by reading JetHTRun2017F_16
+adding JetHT_F17.root to the list by reading JetHTRun2017F_17
+adding JetHT_F18.root to the list by reading JetHTRun2017F_18
+adding JetHT_F19.root to the list by reading JetHTRun2017F_19
+adding JetHT_F20.root to the list by reading JetHTRun2017F_20
+adding JetHT_F22.root to the list by reading JetHTRun2017F_22
+adding JetHT_F23.root to the list by reading JetHTRun2017F_23
+adding JetHT_F24.root to the list by reading JetHTRun2017F_24
+adding JetHT_F25.root to the list by reading JetHTRun2017F_25
+adding JetHT_F26.root to the list by reading JetHTRun2017F_26
+adding JetHT_F27.root to the list by reading JetHTRun2017F_27
+adding JetHT_F29.root to the list by reading JetHTRun2017F_29
+adding JetHT_F31.root to the list by reading JetHTRun2017F_31
+adding JetHT_F34.root to the list by reading JetHTRun2017F_34
+adding JetHT_F37.root to the list by reading JetHTRun2017F_37
+adding JetHT_F38.root to the list by reading JetHTRun2017F_38
+
+Processing makeStep1.C("/storage/local/data1/condor/execute/dir_9908","filelist",2017)...
+CSV reshaping file DeepCSV_106XUL17SF.csv
+Deep Jet reshaping file DeepJet_106XUL17SF.csv
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_11.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4385 events
+Completed 1000 out of 4385 events
+Completed 2000 out of 4385 events
+Completed 3000 out of 4385 events
+Completed 4000 out of 4385 events
+Nelectrons      = 2389 / 4385
+Npassed_ElEta   = 2389 / 4385
+Nmuons          = 1996 / 4385
+NrelIsoFail     = 0 / 4385
+Npassed_MuEta   = 1996 / 4385
+Npassed_nAK8Jets= 4385 / 4385
+Npassed_Trigger = 3568 / 4385
+Npassed_MET     = 2372 / 4385
+Npassed_lepPt   = 2652 / 4385
+Npassed_HT      = 3062 / 4385
+npass_Njets     = 2979 / 4385
+Npassed_ALL     = 707 / 4385
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_13.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4518 events
+Completed 1000 out of 4518 events
+Completed 2000 out of 4518 events
+Completed 3000 out of 4518 events
+Completed 4000 out of 4518 events
+Nelectrons      = 2379 / 4518
+Npassed_ElEta   = 2379 / 4518
+Nmuons          = 2139 / 4518
+NrelIsoFail     = 0 / 4518
+Npassed_MuEta   = 2139 / 4518
+Npassed_nAK8Jets= 4518 / 4518
+Npassed_Trigger = 3655 / 4518
+Npassed_MET     = 2451 / 4518
+Npassed_lepPt   = 2780 / 4518
+Npassed_HT      = 3221 / 4518
+npass_Njets     = 3064 / 4518
+Npassed_ALL     = 760 / 4518
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_14.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4274 events
+Completed 1000 out of 4274 events
+Completed 2000 out of 4274 events
+Completed 3000 out of 4274 events
+Completed 4000 out of 4274 events
+Nelectrons      = 2276 / 4274
+Npassed_ElEta   = 2276 / 4274
+Nmuons          = 1998 / 4274
+NrelIsoFail     = 0 / 4274
+Npassed_MuEta   = 1998 / 4274
+Npassed_nAK8Jets= 4274 / 4274
+Npassed_Trigger = 3464 / 4274
+Npassed_MET     = 2284 / 4274
+Npassed_lepPt   = 2695 / 4274
+Npassed_HT      = 2947 / 4274
+npass_Njets     = 2824 / 4274
+Npassed_ALL     = 684 / 4274
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_15.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 641 events
+Nelectrons      = 327 / 641
+Npassed_ElEta   = 327 / 641
+Nmuons          = 314 / 641
+NrelIsoFail     = 0 / 641
+Npassed_MuEta   = 314 / 641
+Npassed_nAK8Jets= 641 / 641
+Npassed_Trigger = 500 / 641
+Npassed_MET     = 345 / 641
+Npassed_lepPt   = 402 / 641
+Npassed_HT      = 470 / 641
+npass_Njets     = 447 / 641
+Npassed_ALL     = 113 / 641
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_16.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1024 events
+Completed 1000 out of 1024 events
+Nelectrons      = 541 / 1024
+Npassed_ElEta   = 541 / 1024
+Nmuons          = 483 / 1024
+NrelIsoFail     = 0 / 1024
+Npassed_MuEta   = 483 / 1024
+Npassed_nAK8Jets= 1024 / 1024
+Npassed_Trigger = 850 / 1024
+Npassed_MET     = 531 / 1024
+Npassed_lepPt   = 598 / 1024
+Npassed_HT      = 730 / 1024
+npass_Njets     = 702 / 1024
+Npassed_ALL     = 149 / 1024
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_17.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4740 events
+Completed 1000 out of 4740 events
+Completed 2000 out of 4740 events
+Completed 3000 out of 4740 events
+Completed 4000 out of 4740 events
+Nelectrons      = 2477 / 4740
+Npassed_ElEta   = 2477 / 4740
+Nmuons          = 2263 / 4740
+NrelIsoFail     = 0 / 4740
+Npassed_MuEta   = 2263 / 4740
+Npassed_nAK8Jets= 4740 / 4740
+Npassed_Trigger = 3838 / 4740
+Npassed_MET     = 2612 / 4740
+Npassed_lepPt   = 2881 / 4740
+Npassed_HT      = 3409 / 4740
+npass_Njets     = 3338 / 4740
+Npassed_ALL     = 815 / 4740
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_18.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4057 events
+Completed 1000 out of 4057 events
+Completed 2000 out of 4057 events
+Completed 3000 out of 4057 events
+Completed 4000 out of 4057 events
+Nelectrons      = 2114 / 4057
+Npassed_ElEta   = 2114 / 4057
+Nmuons          = 1943 / 4057
+NrelIsoFail     = 0 / 4057
+Npassed_MuEta   = 1943 / 4057
+Npassed_nAK8Jets= 4057 / 4057
+Npassed_Trigger = 3279 / 4057
+Npassed_MET     = 2226 / 4057
+Npassed_lepPt   = 2441 / 4057
+Npassed_HT      = 2858 / 4057
+npass_Njets     = 2725 / 4057
+Npassed_ALL     = 660 / 4057
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_19.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4534 events
+Completed 1000 out of 4534 events
+Completed 2000 out of 4534 events
+Completed 3000 out of 4534 events
+Completed 4000 out of 4534 events
+Nelectrons      = 2324 / 4534
+Npassed_ElEta   = 2324 / 4534
+Nmuons          = 2210 / 4534
+NrelIsoFail     = 0 / 4534
+Npassed_MuEta   = 2210 / 4534
+Npassed_nAK8Jets= 4534 / 4534
+Npassed_Trigger = 3682 / 4534
+Npassed_MET     = 2406 / 4534
+Npassed_lepPt   = 2766 / 4534
+Npassed_HT      = 3240 / 4534
+npass_Njets     = 3140 / 4534
+Npassed_ALL     = 789 / 4534
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_20.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 3931 events
+Completed 1000 out of 3931 events
+Completed 2000 out of 3931 events
+Completed 3000 out of 3931 events
+Nelectrons      = 2049 / 3931
+Npassed_ElEta   = 2049 / 3931
+Nmuons          = 1882 / 3931
+NrelIsoFail     = 0 / 3931
+Npassed_MuEta   = 1882 / 3931
+Npassed_nAK8Jets= 3931 / 3931
+Npassed_Trigger = 3144 / 3931
+Npassed_MET     = 2091 / 3931
+Npassed_lepPt   = 2381 / 3931
+Npassed_HT      = 2778 / 3931
+npass_Njets     = 2623 / 3931
+Npassed_ALL     = 648 / 3931
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_22.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4818 events
+Completed 1000 out of 4818 events
+Completed 2000 out of 4818 events
+Completed 3000 out of 4818 events
+Completed 4000 out of 4818 events
+Nelectrons      = 2531 / 4818
+Npassed_ElEta   = 2531 / 4818
+Nmuons          = 2287 / 4818
+NrelIsoFail     = 0 / 4818
+Npassed_MuEta   = 2287 / 4818
+Npassed_nAK8Jets= 4818 / 4818
+Npassed_Trigger = 3949 / 4818
+Npassed_MET     = 2626 / 4818
+Npassed_lepPt   = 2918 / 4818
+Npassed_HT      = 3391 / 4818
+npass_Njets     = 3395 / 4818
+Npassed_ALL     = 845 / 4818
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_23.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4596 events
+Completed 1000 out of 4596 events
+Completed 2000 out of 4596 events
+Completed 3000 out of 4596 events
+Completed 4000 out of 4596 events
+Nelectrons      = 2406 / 4596
+Npassed_ElEta   = 2406 / 4596
+Nmuons          = 2190 / 4596
+NrelIsoFail     = 0 / 4596
+Npassed_MuEta   = 2190 / 4596
+Npassed_nAK8Jets= 4596 / 4596
+Npassed_Trigger = 3735 / 4596
+Npassed_MET     = 2482 / 4596
+Npassed_lepPt   = 2759 / 4596
+Npassed_HT      = 3284 / 4596
+npass_Njets     = 3132 / 4596
+Npassed_ALL     = 744 / 4596
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_24.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4565 events
+Completed 1000 out of 4565 events
+Completed 2000 out of 4565 events
+Completed 3000 out of 4565 events
+Completed 4000 out of 4565 events
+Nelectrons      = 2344 / 4565
+Npassed_ElEta   = 2344 / 4565
+Nmuons          = 2221 / 4565
+NrelIsoFail     = 0 / 4565
+Npassed_MuEta   = 2221 / 4565
+Npassed_nAK8Jets= 4565 / 4565
+Npassed_Trigger = 3738 / 4565
+Npassed_MET     = 2511 / 4565
+Npassed_lepPt   = 2797 / 4565
+Npassed_HT      = 3214 / 4565
+npass_Njets     = 3124 / 4565
+Npassed_ALL     = 775 / 4565
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_25.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4632 events
+Completed 1000 out of 4632 events
+Completed 2000 out of 4632 events
+Completed 3000 out of 4632 events
+Completed 4000 out of 4632 events
+Nelectrons      = 2352 / 4632
+Npassed_ElEta   = 2352 / 4632
+Nmuons          = 2280 / 4632
+NrelIsoFail     = 0 / 4632
+Npassed_MuEta   = 2280 / 4632
+Npassed_nAK8Jets= 4632 / 4632
+Npassed_Trigger = 3792 / 4632
+Npassed_MET     = 2520 / 4632
+Npassed_lepPt   = 2861 / 4632
+Npassed_HT      = 3286 / 4632
+npass_Njets     = 3194 / 4632
+Npassed_ALL     = 812 / 4632
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_26.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4527 events
+Completed 1000 out of 4527 events
+Completed 2000 out of 4527 events
+Completed 3000 out of 4527 events
+Completed 4000 out of 4527 events
+Nelectrons      = 2335 / 4527
+Npassed_ElEta   = 2335 / 4527
+Nmuons          = 2192 / 4527
+NrelIsoFail     = 0 / 4527
+Npassed_MuEta   = 2192 / 4527
+Npassed_nAK8Jets= 4527 / 4527
+Npassed_Trigger = 3639 / 4527
+Npassed_MET     = 2499 / 4527
+Npassed_lepPt   = 2784 / 4527
+Npassed_HT      = 3212 / 4527
+npass_Njets     = 3093 / 4527
+Npassed_ALL     = 761 / 4527
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_27.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4590 events
+Completed 1000 out of 4590 events
+Completed 2000 out of 4590 events
+Completed 3000 out of 4590 events
+Completed 4000 out of 4590 events
+Nelectrons      = 2417 / 4590
+Npassed_ElEta   = 2417 / 4590
+Nmuons          = 2173 / 4590
+NrelIsoFail     = 0 / 4590
+Npassed_MuEta   = 2173 / 4590
+Npassed_nAK8Jets= 4590 / 4590
+Npassed_Trigger = 3652 / 4590
+Npassed_MET     = 2519 / 4590
+Npassed_lepPt   = 2865 / 4590
+Npassed_HT      = 3337 / 4590
+npass_Njets     = 3150 / 4590
+Npassed_ALL     = 772 / 4590
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_29.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4620 events
+Completed 1000 out of 4620 events
+Completed 2000 out of 4620 events
+Completed 3000 out of 4620 events
+Completed 4000 out of 4620 events
+Nelectrons      = 2451 / 4620
+Npassed_ElEta   = 2451 / 4620
+Nmuons          = 2169 / 4620
+NrelIsoFail     = 0 / 4620
+Npassed_MuEta   = 2169 / 4620
+Npassed_nAK8Jets= 4620 / 4620
+Npassed_Trigger = 3784 / 4620
+Npassed_MET     = 2466 / 4620
+Npassed_lepPt   = 2850 / 4620
+Npassed_HT      = 3284 / 4620
+npass_Njets     = 3161 / 4620
+Npassed_ALL     = 763 / 4620
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_31.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4706 events
+Completed 1000 out of 4706 events
+Completed 2000 out of 4706 events
+Completed 3000 out of 4706 events
+Completed 4000 out of 4706 events
+Nelectrons      = 2456 / 4706
+Npassed_ElEta   = 2456 / 4706
+Nmuons          = 2250 / 4706
+NrelIsoFail     = 0 / 4706
+Npassed_MuEta   = 2250 / 4706
+Npassed_nAK8Jets= 4706 / 4706
+Npassed_Trigger = 3804 / 4706
+Npassed_MET     = 2539 / 4706
+Npassed_lepPt   = 2840 / 4706
+Npassed_HT      = 3337 / 4706
+npass_Njets     = 3297 / 4706
+Npassed_ALL     = 773 / 4706
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_34.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4901 events
+Completed 1000 out of 4901 events
+Completed 2000 out of 4901 events
+Completed 3000 out of 4901 events
+Completed 4000 out of 4901 events
+Nelectrons      = 2521 / 4901
+Npassed_ElEta   = 2521 / 4901
+Nmuons          = 2380 / 4901
+NrelIsoFail     = 0 / 4901
+Npassed_MuEta   = 2380 / 4901
+Npassed_nAK8Jets= 4901 / 4901
+Npassed_Trigger = 3948 / 4901
+Npassed_MET     = 2651 / 4901
+Npassed_lepPt   = 2965 / 4901
+Npassed_HT      = 3482 / 4901
+npass_Njets     = 3290 / 4901
+Npassed_ALL     = 775 / 4901
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_37.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4763 events
+Completed 1000 out of 4763 events
+Completed 2000 out of 4763 events
+Completed 3000 out of 4763 events
+Completed 4000 out of 4763 events
+Nelectrons      = 2454 / 4763
+Npassed_ElEta   = 2454 / 4763
+Nmuons          = 2309 / 4763
+NrelIsoFail     = 0 / 4763
+Npassed_MuEta   = 2309 / 4763
+Npassed_nAK8Jets= 4763 / 4763
+Npassed_Trigger = 3868 / 4763
+Npassed_MET     = 2586 / 4763
+Npassed_lepPt   = 2902 / 4763
+Npassed_HT      = 3333 / 4763
+npass_Njets     = 3242 / 4763
+Npassed_ALL     = 779 / 4763
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017F_fixed/210622_020529/0000/JetHTRun2017F_38.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 4520 events
+Completed 1000 out of 4520 events
+Completed 2000 out of 4520 events
+Completed 3000 out of 4520 events
+Completed 4000 out of 4520 events
+Nelectrons      = 2365 / 4520
+Npassed_ElEta   = 2365 / 4520
+Nmuons          = 2155 / 4520
+NrelIsoFail     = 0 / 4520
+Npassed_MuEta   = 2155 / 4520
+Npassed_nAK8Jets= 4520 / 4520
+Npassed_Trigger = 3644 / 4520
+Npassed_MET     = 2418 / 4520
+Npassed_lepPt   = 2822 / 4520
+Npassed_HT      = 3185 / 4520
+npass_Njets     = 2894 / 4520
+Npassed_ALL     = 738 / 4520
+ROOT Files:
+-rw-r--r-- 1 fsimpson fnalgrid 1520267 Sep 25 07:14 JetHT_F11nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1658025 Sep 25 07:14 JetHT_F13nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1507720 Sep 25 07:14 JetHT_F14nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  307912 Sep 25 07:14 JetHT_F15nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  370430 Sep 25 07:14 JetHT_F16nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1785946 Sep 25 07:14 JetHT_F17nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1534157 Sep 25 07:14 JetHT_F18nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1743365 Sep 25 07:14 JetHT_F19nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1467719 Sep 25 07:14 JetHT_F20nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1858675 Sep 25 07:14 JetHT_F22nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1624386 Sep 25 07:14 JetHT_F23nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1689561 Sep 25 07:14 JetHT_F24nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1911526 Sep 25 07:14 JetHT_F25nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1665654 Sep 25 07:14 JetHT_F26nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1674898 Sep 25 07:14 JetHT_F27nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1690094 Sep 25 07:14 JetHT_F29nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1683303 Sep 25 07:14 JetHT_F31nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1702902 Sep 25 07:14 JetHT_F34nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1847271 Sep 25 07:14 JetHT_F37nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 1576109 Sep 25 07:14 JetHT_F38nominal.root
+xrdcp output for condor
+hadd Target file: JetHT_11nominal_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: JetHT_F11nominal.root
+hadd Source file 2: JetHT_F13nominal.root
+hadd Source file 3: JetHT_F14nominal.root
+hadd Source file 4: JetHT_F15nominal.root
+hadd Source file 5: JetHT_F16nominal.root
+hadd Source file 6: JetHT_F17nominal.root
+hadd Source file 7: JetHT_F18nominal.root
+hadd Source file 8: JetHT_F19nominal.root
+hadd Source file 9: JetHT_F20nominal.root
+hadd Source file 10: JetHT_F22nominal.root
+hadd Source file 11: JetHT_F23nominal.root
+hadd Source file 12: JetHT_F24nominal.root
+hadd Source file 13: JetHT_F25nominal.root
+hadd Source file 14: JetHT_F26nominal.root
+hadd Source file 15: JetHT_F27nominal.root
+hadd Source file 16: JetHT_F29nominal.root
+hadd Source file 17: JetHT_F31nominal.root
+hadd Source file 18: JetHT_F34nominal.root
+hadd Source file 19: JetHT_F37nominal.root
+hadd Source file 20: JetHT_F38nominal.root
+hadd Target path: JetHT_11nominal_hadd.root:/
+xrdcp -f JetHT_11nominal_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//JetHT/JetHT_11.root
+[16MB/29.09MB][ 55%][===========================>                      ][16MB/s]  [29.09MB/29.09MB][100%][==================================================][29.09MB/s]  [29.09MB/29.09MB][100%][==================================================][29.09MB/s]  
+done

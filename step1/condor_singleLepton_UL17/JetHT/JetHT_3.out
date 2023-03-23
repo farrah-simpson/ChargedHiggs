@@ -1,0 +1,103 @@
+[FERMIHTC-SINGULARITY]: INFO -- No Singulariy image specified
+[FERMIHTC-SINGULARITY]: INFO -- Running job on the host machine
+
+[FERMIHTC-SINGULARITY]: INFO -- Running ./condor_exec.exe JetHTRun2017B JetHT /store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017B_fixed/210622_020422/0000 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//JetHT B8 B9 3 2017
+fsimpson-14733011-0-cmswn2046.fnal.gov
+Sat Sep 25 06:25:16 UTC 2021
+/storage/local/data1/condor/execute/dir_34466
+setting macroDir to PWD
+
+Processing compileStep1.C...
+Running step1 over list: B8 B9
+adding JetHT_B8.root to the list by reading JetHTRun2017B_8
+adding JetHT_B9.root to the list by reading JetHTRun2017B_9
+
+Processing makeStep1.C("/storage/local/data1/condor/execute/dir_34466","filelist",2017)...
+CSV reshaping file DeepCSV_106XUL17SF.csv
+Deep Jet reshaping file DeepJet_106XUL17SF.csv
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017B_fixed/210622_020422/0000/JetHTRun2017B_8.root
+RUN CONFIG: YEAR = 2017
+Era = 17B
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017B
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 435 events
+Nelectrons      = 214 / 435
+Npassed_ElEta   = 214 / 435
+Nmuons          = 221 / 435
+NrelIsoFail     = 0 / 435
+Npassed_MuEta   = 221 / 435
+Npassed_nAK8Jets= 435 / 435
+Npassed_Trigger = 388 / 435
+Npassed_MET     = 226 / 435
+Npassed_lepPt   = 289 / 435
+Npassed_HT      = 177 / 435
+npass_Njets     = 194 / 435
+Npassed_ALL     = 43 / 435
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//JetHT/singleLep2017_JetHTRun2017B_fixed/210622_020422/0000/JetHTRun2017B_9.root
+RUN CONFIG: YEAR = 2017
+Era = 17B
+isMC = 0, isSig = 0, SigMass = -1
+isHad =1, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: JetHTRun2017B
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 2392 events
+Completed 1000 out of 2392 events
+Completed 2000 out of 2392 events
+Nelectrons      = 1190 / 2392
+Npassed_ElEta   = 1190 / 2392
+Nmuons          = 1202 / 2392
+NrelIsoFail     = 0 / 2392
+Npassed_MuEta   = 1202 / 2392
+Npassed_nAK8Jets= 2392 / 2392
+Npassed_Trigger = 2040 / 2392
+Npassed_MET     = 1218 / 2392
+Npassed_lepPt   = 1551 / 2392
+Npassed_HT      = 1325 / 2392
+npass_Njets     = 1257 / 2392
+Npassed_ALL     = 291 / 2392
+ROOT Files:
+-rw-r--r-- 1 fsimpson fnalgrid 146250 Sep 25 07:25 JetHT_B8nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 654749 Sep 25 07:25 JetHT_B9nominal.root
+xrdcp output for condor
+hadd Target file: JetHT_3nominal_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: JetHT_B8nominal.root
+hadd Source file 2: JetHT_B9nominal.root
+hadd Target path: JetHT_3nominal_hadd.root:/
+xrdcp -f JetHT_3nominal_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//JetHT/JetHT_3.root
+[773.7kB/773.7kB][100%][==================================================][773.7kB/s]  [773.7kB/773.7kB][100%][==================================================][773.7kB/s]  
+done

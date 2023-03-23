@@ -1,0 +1,4163 @@
+[FERMIHTC-SINGULARITY]: INFO -- No Singulariy image specified
+[FERMIHTC-SINGULARITY]: INFO -- Running job on the host machine
+
+[FERMIHTC-SINGULARITY]: INFO -- Running ./condor_exec.exe WW_TuneCP5_13TeV-pythia8 WW_TuneCP5_13TeV-pythia8 /store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//WW_TuneCP5_13TeV-pythia8 19 190 191 192 193 194 195 196 197 198 199 2 20 200 201 202 203 204 205 206 6 2017
+fsimpson-34672165-0-cmswn1930.fnal.gov
+Sat Sep 25 04:03:03 UTC 2021
+/storage/local/data1/condor/execute/dir_40162
+setting macroDir to PWD
+
+Processing compileStep1.C...
+Running step1 over list: 19 190 191 192 193 194 195 196 197 198 199 2 20 200 201 202 203 204 205 206
+adding WW_TuneCP5_13TeV-pythia8_19.root to the list by reading WW_TuneCP5_13TeV-pythia8_19
+adding WW_TuneCP5_13TeV-pythia8_190.root to the list by reading WW_TuneCP5_13TeV-pythia8_190
+adding WW_TuneCP5_13TeV-pythia8_191.root to the list by reading WW_TuneCP5_13TeV-pythia8_191
+adding WW_TuneCP5_13TeV-pythia8_192.root to the list by reading WW_TuneCP5_13TeV-pythia8_192
+adding WW_TuneCP5_13TeV-pythia8_193.root to the list by reading WW_TuneCP5_13TeV-pythia8_193
+adding WW_TuneCP5_13TeV-pythia8_194.root to the list by reading WW_TuneCP5_13TeV-pythia8_194
+adding WW_TuneCP5_13TeV-pythia8_195.root to the list by reading WW_TuneCP5_13TeV-pythia8_195
+adding WW_TuneCP5_13TeV-pythia8_196.root to the list by reading WW_TuneCP5_13TeV-pythia8_196
+adding WW_TuneCP5_13TeV-pythia8_197.root to the list by reading WW_TuneCP5_13TeV-pythia8_197
+adding WW_TuneCP5_13TeV-pythia8_198.root to the list by reading WW_TuneCP5_13TeV-pythia8_198
+adding WW_TuneCP5_13TeV-pythia8_199.root to the list by reading WW_TuneCP5_13TeV-pythia8_199
+adding WW_TuneCP5_13TeV-pythia8_2.root to the list by reading WW_TuneCP5_13TeV-pythia8_2
+adding WW_TuneCP5_13TeV-pythia8_20.root to the list by reading WW_TuneCP5_13TeV-pythia8_20
+adding WW_TuneCP5_13TeV-pythia8_200.root to the list by reading WW_TuneCP5_13TeV-pythia8_200
+adding WW_TuneCP5_13TeV-pythia8_201.root to the list by reading WW_TuneCP5_13TeV-pythia8_201
+adding WW_TuneCP5_13TeV-pythia8_202.root to the list by reading WW_TuneCP5_13TeV-pythia8_202
+adding WW_TuneCP5_13TeV-pythia8_203.root to the list by reading WW_TuneCP5_13TeV-pythia8_203
+adding WW_TuneCP5_13TeV-pythia8_204.root to the list by reading WW_TuneCP5_13TeV-pythia8_204
+adding WW_TuneCP5_13TeV-pythia8_205.root to the list by reading WW_TuneCP5_13TeV-pythia8_205
+adding WW_TuneCP5_13TeV-pythia8_206.root to the list by reading WW_TuneCP5_13TeV-pythia8_206
+
+Processing makeStep1.C("/storage/local/data1/condor/execute/dir_40162","filelist",2017)...
+CSV reshaping file DeepCSV_106XUL17SF.csv
+Deep Jet reshaping file DeepJet_106XUL17SF.csv
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_19.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1114 events
+Completed 1000 out of 1114 events
+Nelectrons      = 449 / 1114
+Npassed_ElEta   = 449 / 1114
+Nmuons          = 665 / 1114
+NrelIsoFail     = 0 / 1114
+Npassed_MuEta   = 665 / 1114
+Npassed_nAK8Jets= 1114 / 1114
+Npassed_Trigger = 1046 / 1114
+Npassed_MET     = 236 / 1114
+Npassed_lepPt   = 344 / 1114
+Npassed_HT      = 9 / 1114
+npass_Njets     = 25 / 1114
+Npassed_ALL     = 1 / 1114
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_19.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1132 events
+Completed 1000 out of 1132 events
+Nelectrons      = 451 / 1132
+Npassed_ElEta   = 451 / 1132
+Nmuons          = 681 / 1132
+NrelIsoFail     = 0 / 1132
+Npassed_MuEta   = 681 / 1132
+Npassed_nAK8Jets= 1132 / 1132
+Npassed_Trigger = 1065 / 1132
+Npassed_MET     = 253 / 1132
+Npassed_lepPt   = 347 / 1132
+Npassed_HT      = 10 / 1132
+npass_Njets     = 27 / 1132
+Npassed_ALL     = 1 / 1132
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_19.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1099 events
+Completed 1000 out of 1099 events
+Nelectrons      = 444 / 1099
+Npassed_ElEta   = 444 / 1099
+Nmuons          = 655 / 1099
+NrelIsoFail     = 0 / 1099
+Npassed_MuEta   = 655 / 1099
+Npassed_nAK8Jets= 1099 / 1099
+Npassed_Trigger = 1032 / 1099
+Npassed_MET     = 230 / 1099
+Npassed_lepPt   = 339 / 1099
+Npassed_HT      = 9 / 1099
+npass_Njets     = 22 / 1099
+Npassed_ALL     = 1 / 1099
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_19.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1130 events
+Completed 1000 out of 1130 events
+Nelectrons      = 450 / 1130
+Npassed_ElEta   = 450 / 1130
+Nmuons          = 680 / 1130
+NrelIsoFail     = 0 / 1130
+Npassed_MuEta   = 680 / 1130
+Npassed_nAK8Jets= 1130 / 1130
+Npassed_Trigger = 1061 / 1130
+Npassed_MET     = 245 / 1130
+Npassed_lepPt   = 348 / 1130
+Npassed_HT      = 9 / 1130
+npass_Njets     = 25 / 1130
+Npassed_ALL     = 1 / 1130
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_19.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1098 events
+Completed 1000 out of 1098 events
+Nelectrons      = 442 / 1098
+Npassed_ElEta   = 442 / 1098
+Nmuons          = 656 / 1098
+NrelIsoFail     = 0 / 1098
+Npassed_MuEta   = 656 / 1098
+Npassed_nAK8Jets= 1098 / 1098
+Npassed_Trigger = 1030 / 1098
+Npassed_MET     = 231 / 1098
+Npassed_lepPt   = 339 / 1098
+Npassed_HT      = 9 / 1098
+npass_Njets     = 24 / 1098
+Npassed_ALL     = 1 / 1098
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_190.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1087 events
+Completed 1000 out of 1087 events
+Nelectrons      = 444 / 1087
+Npassed_ElEta   = 444 / 1087
+Nmuons          = 643 / 1087
+NrelIsoFail     = 0 / 1087
+Npassed_MuEta   = 643 / 1087
+Npassed_nAK8Jets= 1087 / 1087
+Npassed_Trigger = 1000 / 1087
+Npassed_MET     = 235 / 1087
+Npassed_lepPt   = 333 / 1087
+Npassed_HT      = 7 / 1087
+npass_Njets     = 34 / 1087
+Npassed_ALL     = 0 / 1087
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_190.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1103 events
+Completed 1000 out of 1103 events
+Nelectrons      = 447 / 1103
+Npassed_ElEta   = 447 / 1103
+Nmuons          = 656 / 1103
+NrelIsoFail     = 0 / 1103
+Npassed_MuEta   = 656 / 1103
+Npassed_nAK8Jets= 1103 / 1103
+Npassed_Trigger = 1015 / 1103
+Npassed_MET     = 259 / 1103
+Npassed_lepPt   = 337 / 1103
+Npassed_HT      = 6 / 1103
+npass_Njets     = 34 / 1103
+Npassed_ALL     = 0 / 1103
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_190.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1063 events
+Completed 1000 out of 1063 events
+Nelectrons      = 434 / 1063
+Npassed_ElEta   = 434 / 1063
+Nmuons          = 629 / 1063
+NrelIsoFail     = 0 / 1063
+Npassed_MuEta   = 629 / 1063
+Npassed_nAK8Jets= 1063 / 1063
+Npassed_Trigger = 976 / 1063
+Npassed_MET     = 227 / 1063
+Npassed_lepPt   = 325 / 1063
+Npassed_HT      = 7 / 1063
+npass_Njets     = 34 / 1063
+Npassed_ALL     = 0 / 1063
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_190.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1094 events
+Completed 1000 out of 1094 events
+Nelectrons      = 447 / 1094
+Npassed_ElEta   = 447 / 1094
+Nmuons          = 647 / 1094
+NrelIsoFail     = 0 / 1094
+Npassed_MuEta   = 647 / 1094
+Npassed_nAK8Jets= 1094 / 1094
+Npassed_Trigger = 1007 / 1094
+Npassed_MET     = 245 / 1094
+Npassed_lepPt   = 337 / 1094
+Npassed_HT      = 8 / 1094
+npass_Njets     = 37 / 1094
+Npassed_ALL     = 0 / 1094
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_190.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1078 events
+Completed 1000 out of 1078 events
+Nelectrons      = 439 / 1078
+Npassed_ElEta   = 439 / 1078
+Nmuons          = 639 / 1078
+NrelIsoFail     = 0 / 1078
+Npassed_MuEta   = 639 / 1078
+Npassed_nAK8Jets= 1078 / 1078
+Npassed_Trigger = 991 / 1078
+Npassed_MET     = 228 / 1078
+Npassed_lepPt   = 327 / 1078
+Npassed_HT      = 7 / 1078
+npass_Njets     = 33 / 1078
+Npassed_ALL     = 0 / 1078
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_191.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1081 events
+Completed 1000 out of 1081 events
+Nelectrons      = 425 / 1081
+Npassed_ElEta   = 425 / 1081
+Nmuons          = 656 / 1081
+NrelIsoFail     = 0 / 1081
+Npassed_MuEta   = 656 / 1081
+Npassed_nAK8Jets= 1081 / 1081
+Npassed_Trigger = 998 / 1081
+Npassed_MET     = 249 / 1081
+Npassed_lepPt   = 321 / 1081
+Npassed_HT      = 20 / 1081
+npass_Njets     = 36 / 1081
+Npassed_ALL     = 3 / 1081
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_191.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1096 events
+Completed 1000 out of 1096 events
+Nelectrons      = 432 / 1096
+Npassed_ElEta   = 432 / 1096
+Nmuons          = 664 / 1096
+NrelIsoFail     = 0 / 1096
+Npassed_MuEta   = 664 / 1096
+Npassed_nAK8Jets= 1096 / 1096
+Npassed_Trigger = 1013 / 1096
+Npassed_MET     = 263 / 1096
+Npassed_lepPt   = 326 / 1096
+Npassed_HT      = 20 / 1096
+npass_Njets     = 36 / 1096
+Npassed_ALL     = 3 / 1096
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_191.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1061 events
+Completed 1000 out of 1061 events
+Nelectrons      = 415 / 1061
+Npassed_ElEta   = 415 / 1061
+Nmuons          = 646 / 1061
+NrelIsoFail     = 0 / 1061
+Npassed_MuEta   = 646 / 1061
+Npassed_nAK8Jets= 1061 / 1061
+Npassed_Trigger = 975 / 1061
+Npassed_MET     = 243 / 1061
+Npassed_lepPt   = 316 / 1061
+Npassed_HT      = 20 / 1061
+npass_Njets     = 34 / 1061
+Npassed_ALL     = 3 / 1061
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_191.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1102 events
+Completed 1000 out of 1102 events
+Nelectrons      = 433 / 1102
+Npassed_ElEta   = 433 / 1102
+Nmuons          = 669 / 1102
+NrelIsoFail     = 0 / 1102
+Npassed_MuEta   = 669 / 1102
+Npassed_nAK8Jets= 1102 / 1102
+Npassed_Trigger = 1017 / 1102
+Npassed_MET     = 256 / 1102
+Npassed_lepPt   = 327 / 1102
+Npassed_HT      = 20 / 1102
+npass_Njets     = 37 / 1102
+Npassed_ALL     = 3 / 1102
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_191.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1075 events
+Completed 1000 out of 1075 events
+Nelectrons      = 420 / 1075
+Npassed_ElEta   = 420 / 1075
+Nmuons          = 655 / 1075
+NrelIsoFail     = 0 / 1075
+Npassed_MuEta   = 655 / 1075
+Npassed_nAK8Jets= 1075 / 1075
+Npassed_Trigger = 992 / 1075
+Npassed_MET     = 247 / 1075
+Npassed_lepPt   = 322 / 1075
+Npassed_HT      = 20 / 1075
+npass_Njets     = 36 / 1075
+Npassed_ALL     = 3 / 1075
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_192.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1070 events
+Completed 1000 out of 1070 events
+Nelectrons      = 423 / 1070
+Npassed_ElEta   = 423 / 1070
+Nmuons          = 647 / 1070
+NrelIsoFail     = 0 / 1070
+Npassed_MuEta   = 647 / 1070
+Npassed_nAK8Jets= 1070 / 1070
+Npassed_Trigger = 1007 / 1070
+Npassed_MET     = 253 / 1070
+Npassed_lepPt   = 339 / 1070
+Npassed_HT      = 12 / 1070
+npass_Njets     = 30 / 1070
+Npassed_ALL     = 5 / 1070
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_192.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1086 events
+Completed 1000 out of 1086 events
+Nelectrons      = 425 / 1086
+Npassed_ElEta   = 425 / 1086
+Nmuons          = 661 / 1086
+NrelIsoFail     = 0 / 1086
+Npassed_MuEta   = 661 / 1086
+Npassed_nAK8Jets= 1086 / 1086
+Npassed_Trigger = 1023 / 1086
+Npassed_MET     = 260 / 1086
+Npassed_lepPt   = 341 / 1086
+Npassed_HT      = 13 / 1086
+npass_Njets     = 33 / 1086
+Npassed_ALL     = 5 / 1086
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_192.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1051 events
+Completed 1000 out of 1051 events
+Nelectrons      = 411 / 1051
+Npassed_ElEta   = 411 / 1051
+Nmuons          = 640 / 1051
+NrelIsoFail     = 0 / 1051
+Npassed_MuEta   = 640 / 1051
+Npassed_nAK8Jets= 1051 / 1051
+Npassed_Trigger = 990 / 1051
+Npassed_MET     = 243 / 1051
+Npassed_lepPt   = 337 / 1051
+Npassed_HT      = 11 / 1051
+npass_Njets     = 28 / 1051
+Npassed_ALL     = 4 / 1051
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_192.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1069 events
+Completed 1000 out of 1069 events
+Nelectrons      = 420 / 1069
+Npassed_ElEta   = 420 / 1069
+Nmuons          = 649 / 1069
+NrelIsoFail     = 0 / 1069
+Npassed_MuEta   = 649 / 1069
+Npassed_nAK8Jets= 1069 / 1069
+Npassed_Trigger = 1006 / 1069
+Npassed_MET     = 257 / 1069
+Npassed_lepPt   = 338 / 1069
+Npassed_HT      = 13 / 1069
+npass_Njets     = 31 / 1069
+Npassed_ALL     = 5 / 1069
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_192.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1065 events
+Completed 1000 out of 1065 events
+Nelectrons      = 422 / 1065
+Npassed_ElEta   = 422 / 1065
+Nmuons          = 643 / 1065
+NrelIsoFail     = 0 / 1065
+Npassed_MuEta   = 643 / 1065
+Npassed_nAK8Jets= 1065 / 1065
+Npassed_Trigger = 1005 / 1065
+Npassed_MET     = 256 / 1065
+Npassed_lepPt   = 341 / 1065
+Npassed_HT      = 12 / 1065
+npass_Njets     = 30 / 1065
+Npassed_ALL     = 5 / 1065
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_193.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1050 events
+Completed 1000 out of 1050 events
+Nelectrons      = 402 / 1050
+Npassed_ElEta   = 402 / 1050
+Nmuons          = 648 / 1050
+NrelIsoFail     = 0 / 1050
+Npassed_MuEta   = 648 / 1050
+Npassed_nAK8Jets= 1050 / 1050
+Npassed_Trigger = 980 / 1050
+Npassed_MET     = 245 / 1050
+Npassed_lepPt   = 319 / 1050
+Npassed_HT      = 11 / 1050
+npass_Njets     = 24 / 1050
+Npassed_ALL     = 1 / 1050
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_193.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1070 events
+Completed 1000 out of 1070 events
+Nelectrons      = 403 / 1070
+Npassed_ElEta   = 403 / 1070
+Nmuons          = 667 / 1070
+NrelIsoFail     = 0 / 1070
+Npassed_MuEta   = 667 / 1070
+Npassed_nAK8Jets= 1070 / 1070
+Npassed_Trigger = 999 / 1070
+Npassed_MET     = 257 / 1070
+Npassed_lepPt   = 319 / 1070
+Npassed_HT      = 11 / 1070
+npass_Njets     = 26 / 1070
+Npassed_ALL     = 0 / 1070
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_193.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1035 events
+Completed 1000 out of 1035 events
+Nelectrons      = 389 / 1035
+Npassed_ElEta   = 389 / 1035
+Nmuons          = 646 / 1035
+NrelIsoFail     = 0 / 1035
+Npassed_MuEta   = 646 / 1035
+Npassed_nAK8Jets= 1035 / 1035
+Npassed_Trigger = 966 / 1035
+Npassed_MET     = 234 / 1035
+Npassed_lepPt   = 321 / 1035
+Npassed_HT      = 10 / 1035
+npass_Njets     = 22 / 1035
+Npassed_ALL     = 1 / 1035
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_193.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1060 events
+Completed 1000 out of 1060 events
+Nelectrons      = 410 / 1060
+Npassed_ElEta   = 410 / 1060
+Nmuons          = 650 / 1060
+NrelIsoFail     = 0 / 1060
+Npassed_MuEta   = 650 / 1060
+Npassed_nAK8Jets= 1060 / 1060
+Npassed_Trigger = 988 / 1060
+Npassed_MET     = 248 / 1060
+Npassed_lepPt   = 323 / 1060
+Npassed_HT      = 11 / 1060
+npass_Njets     = 25 / 1060
+Npassed_ALL     = 1 / 1060
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_193.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1048 events
+Completed 1000 out of 1048 events
+Nelectrons      = 396 / 1048
+Npassed_ElEta   = 396 / 1048
+Nmuons          = 652 / 1048
+NrelIsoFail     = 0 / 1048
+Npassed_MuEta   = 652 / 1048
+Npassed_nAK8Jets= 1048 / 1048
+Npassed_Trigger = 977 / 1048
+Npassed_MET     = 243 / 1048
+Npassed_lepPt   = 320 / 1048
+Npassed_HT      = 11 / 1048
+npass_Njets     = 23 / 1048
+Npassed_ALL     = 1 / 1048
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_194.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1059 events
+Completed 1000 out of 1059 events
+Nelectrons      = 428 / 1059
+Npassed_ElEta   = 428 / 1059
+Nmuons          = 631 / 1059
+NrelIsoFail     = 0 / 1059
+Npassed_MuEta   = 631 / 1059
+Npassed_nAK8Jets= 1059 / 1059
+Npassed_Trigger = 989 / 1059
+Npassed_MET     = 233 / 1059
+Npassed_lepPt   = 340 / 1059
+Npassed_HT      = 17 / 1059
+npass_Njets     = 25 / 1059
+Npassed_ALL     = 4 / 1059
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_194.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1091 events
+Completed 1000 out of 1091 events
+Nelectrons      = 438 / 1091
+Npassed_ElEta   = 438 / 1091
+Nmuons          = 653 / 1091
+NrelIsoFail     = 0 / 1091
+Npassed_MuEta   = 653 / 1091
+Npassed_nAK8Jets= 1091 / 1091
+Npassed_Trigger = 1020 / 1091
+Npassed_MET     = 249 / 1091
+Npassed_lepPt   = 349 / 1091
+Npassed_HT      = 17 / 1091
+npass_Njets     = 28 / 1091
+Npassed_ALL     = 4 / 1091
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_194.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1042 events
+Completed 1000 out of 1042 events
+Nelectrons      = 423 / 1042
+Npassed_ElEta   = 423 / 1042
+Nmuons          = 619 / 1042
+NrelIsoFail     = 0 / 1042
+Npassed_MuEta   = 619 / 1042
+Npassed_nAK8Jets= 1042 / 1042
+Npassed_Trigger = 973 / 1042
+Npassed_MET     = 231 / 1042
+Npassed_lepPt   = 340 / 1042
+Npassed_HT      = 17 / 1042
+npass_Njets     = 25 / 1042
+Npassed_ALL     = 4 / 1042
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_194.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1074 events
+Completed 1000 out of 1074 events
+Nelectrons      = 435 / 1074
+Npassed_ElEta   = 435 / 1074
+Nmuons          = 639 / 1074
+NrelIsoFail     = 0 / 1074
+Npassed_MuEta   = 639 / 1074
+Npassed_nAK8Jets= 1074 / 1074
+Npassed_Trigger = 1004 / 1074
+Npassed_MET     = 232 / 1074
+Npassed_lepPt   = 344 / 1074
+Npassed_HT      = 17 / 1074
+npass_Njets     = 27 / 1074
+Npassed_ALL     = 4 / 1074
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_194.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1051 events
+Completed 1000 out of 1051 events
+Nelectrons      = 425 / 1051
+Npassed_ElEta   = 425 / 1051
+Nmuons          = 626 / 1051
+NrelIsoFail     = 0 / 1051
+Npassed_MuEta   = 626 / 1051
+Npassed_nAK8Jets= 1051 / 1051
+Npassed_Trigger = 981 / 1051
+Npassed_MET     = 232 / 1051
+Npassed_lepPt   = 337 / 1051
+Npassed_HT      = 17 / 1051
+npass_Njets     = 25 / 1051
+Npassed_ALL     = 4 / 1051
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_195.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1090 events
+Completed 1000 out of 1090 events
+Nelectrons      = 445 / 1090
+Npassed_ElEta   = 445 / 1090
+Nmuons          = 645 / 1090
+NrelIsoFail     = 0 / 1090
+Npassed_MuEta   = 645 / 1090
+Npassed_nAK8Jets= 1090 / 1090
+Npassed_Trigger = 1010 / 1090
+Npassed_MET     = 233 / 1090
+Npassed_lepPt   = 348 / 1090
+Npassed_HT      = 13 / 1090
+npass_Njets     = 28 / 1090
+Npassed_ALL     = 4 / 1090
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_195.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1104 events
+Completed 1000 out of 1104 events
+Nelectrons      = 445 / 1104
+Npassed_ElEta   = 445 / 1104
+Nmuons          = 659 / 1104
+NrelIsoFail     = 0 / 1104
+Npassed_MuEta   = 659 / 1104
+Npassed_nAK8Jets= 1104 / 1104
+Npassed_Trigger = 1020 / 1104
+Npassed_MET     = 236 / 1104
+Npassed_lepPt   = 355 / 1104
+Npassed_HT      = 13 / 1104
+npass_Njets     = 30 / 1104
+Npassed_ALL     = 4 / 1104
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_195.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1076 events
+Completed 1000 out of 1076 events
+Nelectrons      = 444 / 1076
+Npassed_ElEta   = 444 / 1076
+Nmuons          = 632 / 1076
+NrelIsoFail     = 0 / 1076
+Npassed_MuEta   = 632 / 1076
+Npassed_nAK8Jets= 1076 / 1076
+Npassed_Trigger = 997 / 1076
+Npassed_MET     = 226 / 1076
+Npassed_lepPt   = 344 / 1076
+Npassed_HT      = 12 / 1076
+npass_Njets     = 27 / 1076
+Npassed_ALL     = 4 / 1076
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_195.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1092 events
+Completed 1000 out of 1092 events
+Nelectrons      = 446 / 1092
+Npassed_ElEta   = 446 / 1092
+Nmuons          = 646 / 1092
+NrelIsoFail     = 0 / 1092
+Npassed_MuEta   = 646 / 1092
+Npassed_nAK8Jets= 1092 / 1092
+Npassed_Trigger = 1011 / 1092
+Npassed_MET     = 235 / 1092
+Npassed_lepPt   = 351 / 1092
+Npassed_HT      = 12 / 1092
+npass_Njets     = 29 / 1092
+Npassed_ALL     = 4 / 1092
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_195.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1082 events
+Completed 1000 out of 1082 events
+Nelectrons      = 444 / 1082
+Npassed_ElEta   = 444 / 1082
+Nmuons          = 638 / 1082
+NrelIsoFail     = 0 / 1082
+Npassed_MuEta   = 638 / 1082
+Npassed_nAK8Jets= 1082 / 1082
+Npassed_Trigger = 1002 / 1082
+Npassed_MET     = 231 / 1082
+Npassed_lepPt   = 347 / 1082
+Npassed_HT      = 13 / 1082
+npass_Njets     = 27 / 1082
+Npassed_ALL     = 4 / 1082
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_196.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1082 events
+Completed 1000 out of 1082 events
+Nelectrons      = 442 / 1082
+Npassed_ElEta   = 442 / 1082
+Nmuons          = 640 / 1082
+NrelIsoFail     = 0 / 1082
+Npassed_MuEta   = 640 / 1082
+Npassed_nAK8Jets= 1082 / 1082
+Npassed_Trigger = 1013 / 1082
+Npassed_MET     = 257 / 1082
+Npassed_lepPt   = 347 / 1082
+Npassed_HT      = 18 / 1082
+npass_Njets     = 25 / 1082
+Npassed_ALL     = 1 / 1082
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_196.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1115 events
+Completed 1000 out of 1115 events
+Nelectrons      = 456 / 1115
+Npassed_ElEta   = 456 / 1115
+Nmuons          = 659 / 1115
+NrelIsoFail     = 0 / 1115
+Npassed_MuEta   = 659 / 1115
+Npassed_nAK8Jets= 1115 / 1115
+Npassed_Trigger = 1045 / 1115
+Npassed_MET     = 269 / 1115
+Npassed_lepPt   = 359 / 1115
+Npassed_HT      = 20 / 1115
+npass_Njets     = 31 / 1115
+Npassed_ALL     = 2 / 1115
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_196.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1069 events
+Completed 1000 out of 1069 events
+Nelectrons      = 440 / 1069
+Npassed_ElEta   = 440 / 1069
+Nmuons          = 629 / 1069
+NrelIsoFail     = 0 / 1069
+Npassed_MuEta   = 629 / 1069
+Npassed_nAK8Jets= 1069 / 1069
+Npassed_Trigger = 1001 / 1069
+Npassed_MET     = 248 / 1069
+Npassed_lepPt   = 343 / 1069
+Npassed_HT      = 18 / 1069
+npass_Njets     = 22 / 1069
+Npassed_ALL     = 1 / 1069
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_196.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1089 events
+Completed 1000 out of 1089 events
+Nelectrons      = 447 / 1089
+Npassed_ElEta   = 447 / 1089
+Nmuons          = 642 / 1089
+NrelIsoFail     = 0 / 1089
+Npassed_MuEta   = 642 / 1089
+Npassed_nAK8Jets= 1089 / 1089
+Npassed_Trigger = 1019 / 1089
+Npassed_MET     = 260 / 1089
+Npassed_lepPt   = 347 / 1089
+Npassed_HT      = 17 / 1089
+npass_Njets     = 28 / 1089
+Npassed_ALL     = 1 / 1089
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_196.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1081 events
+Completed 1000 out of 1081 events
+Nelectrons      = 446 / 1081
+Npassed_ElEta   = 446 / 1081
+Nmuons          = 635 / 1081
+NrelIsoFail     = 0 / 1081
+Npassed_MuEta   = 635 / 1081
+Npassed_nAK8Jets= 1081 / 1081
+Npassed_Trigger = 1013 / 1081
+Npassed_MET     = 256 / 1081
+Npassed_lepPt   = 347 / 1081
+Npassed_HT      = 18 / 1081
+npass_Njets     = 24 / 1081
+Npassed_ALL     = 1 / 1081
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_197.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1062 events
+Completed 1000 out of 1062 events
+Nelectrons      = 442 / 1062
+Npassed_ElEta   = 442 / 1062
+Nmuons          = 620 / 1062
+NrelIsoFail     = 0 / 1062
+Npassed_MuEta   = 620 / 1062
+Npassed_nAK8Jets= 1062 / 1062
+Npassed_Trigger = 1006 / 1062
+Npassed_MET     = 233 / 1062
+Npassed_lepPt   = 317 / 1062
+Npassed_HT      = 12 / 1062
+npass_Njets     = 24 / 1062
+Npassed_ALL     = 0 / 1062
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_197.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1086 events
+Completed 1000 out of 1086 events
+Nelectrons      = 454 / 1086
+Npassed_ElEta   = 454 / 1086
+Nmuons          = 632 / 1086
+NrelIsoFail     = 0 / 1086
+Npassed_MuEta   = 632 / 1086
+Npassed_nAK8Jets= 1086 / 1086
+Npassed_Trigger = 1031 / 1086
+Npassed_MET     = 257 / 1086
+Npassed_lepPt   = 322 / 1086
+Npassed_HT      = 11 / 1086
+npass_Njets     = 24 / 1086
+Npassed_ALL     = 0 / 1086
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_197.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1045 events
+Completed 1000 out of 1045 events
+Nelectrons      = 432 / 1045
+Npassed_ElEta   = 432 / 1045
+Nmuons          = 613 / 1045
+NrelIsoFail     = 0 / 1045
+Npassed_MuEta   = 613 / 1045
+Npassed_nAK8Jets= 1045 / 1045
+Npassed_Trigger = 990 / 1045
+Npassed_MET     = 220 / 1045
+Npassed_lepPt   = 316 / 1045
+Npassed_HT      = 13 / 1045
+npass_Njets     = 22 / 1045
+Npassed_ALL     = 0 / 1045
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_197.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1071 events
+Completed 1000 out of 1071 events
+Nelectrons      = 441 / 1071
+Npassed_ElEta   = 441 / 1071
+Nmuons          = 630 / 1071
+NrelIsoFail     = 0 / 1071
+Npassed_MuEta   = 630 / 1071
+Npassed_nAK8Jets= 1071 / 1071
+Npassed_Trigger = 1016 / 1071
+Npassed_MET     = 235 / 1071
+Npassed_lepPt   = 321 / 1071
+Npassed_HT      = 12 / 1071
+npass_Njets     = 23 / 1071
+Npassed_ALL     = 0 / 1071
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_197.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1065 events
+Completed 1000 out of 1065 events
+Nelectrons      = 442 / 1065
+Npassed_ElEta   = 442 / 1065
+Nmuons          = 623 / 1065
+NrelIsoFail     = 0 / 1065
+Npassed_MuEta   = 623 / 1065
+Npassed_nAK8Jets= 1065 / 1065
+Npassed_Trigger = 1010 / 1065
+Npassed_MET     = 234 / 1065
+Npassed_lepPt   = 317 / 1065
+Npassed_HT      = 12 / 1065
+npass_Njets     = 23 / 1065
+Npassed_ALL     = 0 / 1065
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_198.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1146 events
+Completed 1000 out of 1146 events
+Nelectrons      = 467 / 1146
+Npassed_ElEta   = 467 / 1146
+Nmuons          = 679 / 1146
+NrelIsoFail     = 0 / 1146
+Npassed_MuEta   = 679 / 1146
+Npassed_nAK8Jets= 1146 / 1146
+Npassed_Trigger = 1080 / 1146
+Npassed_MET     = 247 / 1146
+Npassed_lepPt   = 378 / 1146
+Npassed_HT      = 12 / 1146
+npass_Njets     = 29 / 1146
+Npassed_ALL     = 2 / 1146
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_198.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1168 events
+Completed 1000 out of 1168 events
+Nelectrons      = 478 / 1168
+Npassed_ElEta   = 478 / 1168
+Nmuons          = 690 / 1168
+NrelIsoFail     = 0 / 1168
+Npassed_MuEta   = 690 / 1168
+Npassed_nAK8Jets= 1168 / 1168
+Npassed_Trigger = 1104 / 1168
+Npassed_MET     = 258 / 1168
+Npassed_lepPt   = 380 / 1168
+Npassed_HT      = 12 / 1168
+npass_Njets     = 31 / 1168
+Npassed_ALL     = 2 / 1168
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_198.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1132 events
+Completed 1000 out of 1132 events
+Nelectrons      = 459 / 1132
+Npassed_ElEta   = 459 / 1132
+Nmuons          = 673 / 1132
+NrelIsoFail     = 0 / 1132
+Npassed_MuEta   = 673 / 1132
+Npassed_nAK8Jets= 1132 / 1132
+Npassed_Trigger = 1066 / 1132
+Npassed_MET     = 241 / 1132
+Npassed_lepPt   = 374 / 1132
+Npassed_HT      = 11 / 1132
+npass_Njets     = 27 / 1132
+Npassed_ALL     = 2 / 1132
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_198.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1150 events
+Completed 1000 out of 1150 events
+Nelectrons      = 467 / 1150
+Npassed_ElEta   = 467 / 1150
+Nmuons          = 683 / 1150
+NrelIsoFail     = 0 / 1150
+Npassed_MuEta   = 683 / 1150
+Npassed_nAK8Jets= 1150 / 1150
+Npassed_Trigger = 1084 / 1150
+Npassed_MET     = 246 / 1150
+Npassed_lepPt   = 376 / 1150
+Npassed_HT      = 11 / 1150
+npass_Njets     = 30 / 1150
+Npassed_ALL     = 2 / 1150
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_198.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1137 events
+Completed 1000 out of 1137 events
+Nelectrons      = 461 / 1137
+Npassed_ElEta   = 461 / 1137
+Nmuons          = 676 / 1137
+NrelIsoFail     = 0 / 1137
+Npassed_MuEta   = 676 / 1137
+Npassed_nAK8Jets= 1137 / 1137
+Npassed_Trigger = 1072 / 1137
+Npassed_MET     = 240 / 1137
+Npassed_lepPt   = 376 / 1137
+Npassed_HT      = 12 / 1137
+npass_Njets     = 28 / 1137
+Npassed_ALL     = 2 / 1137
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_199.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1051 events
+Completed 1000 out of 1051 events
+Nelectrons      = 384 / 1051
+Npassed_ElEta   = 384 / 1051
+Nmuons          = 667 / 1051
+NrelIsoFail     = 0 / 1051
+Npassed_MuEta   = 667 / 1051
+Npassed_nAK8Jets= 1051 / 1051
+Npassed_Trigger = 972 / 1051
+Npassed_MET     = 246 / 1051
+Npassed_lepPt   = 334 / 1051
+Npassed_HT      = 9 / 1051
+npass_Njets     = 36 / 1051
+Npassed_ALL     = 3 / 1051
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_199.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1074 events
+Completed 1000 out of 1074 events
+Nelectrons      = 389 / 1074
+Npassed_ElEta   = 389 / 1074
+Nmuons          = 685 / 1074
+NrelIsoFail     = 0 / 1074
+Npassed_MuEta   = 685 / 1074
+Npassed_nAK8Jets= 1074 / 1074
+Npassed_Trigger = 999 / 1074
+Npassed_MET     = 258 / 1074
+Npassed_lepPt   = 342 / 1074
+Npassed_HT      = 9 / 1074
+npass_Njets     = 40 / 1074
+Npassed_ALL     = 3 / 1074
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_199.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1043 events
+Completed 1000 out of 1043 events
+Nelectrons      = 379 / 1043
+Npassed_ElEta   = 379 / 1043
+Nmuons          = 664 / 1043
+NrelIsoFail     = 0 / 1043
+Npassed_MuEta   = 664 / 1043
+Npassed_nAK8Jets= 1043 / 1043
+Npassed_Trigger = 964 / 1043
+Npassed_MET     = 242 / 1043
+Npassed_lepPt   = 332 / 1043
+Npassed_HT      = 9 / 1043
+npass_Njets     = 30 / 1043
+Npassed_ALL     = 3 / 1043
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_199.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1051 events
+Completed 1000 out of 1051 events
+Nelectrons      = 386 / 1051
+Npassed_ElEta   = 386 / 1051
+Nmuons          = 665 / 1051
+NrelIsoFail     = 0 / 1051
+Npassed_MuEta   = 665 / 1051
+Npassed_nAK8Jets= 1051 / 1051
+Npassed_Trigger = 973 / 1051
+Npassed_MET     = 251 / 1051
+Npassed_lepPt   = 332 / 1051
+Npassed_HT      = 9 / 1051
+npass_Njets     = 36 / 1051
+Npassed_ALL     = 3 / 1051
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_199.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1049 events
+Completed 1000 out of 1049 events
+Nelectrons      = 381 / 1049
+Npassed_ElEta   = 381 / 1049
+Nmuons          = 668 / 1049
+NrelIsoFail     = 0 / 1049
+Npassed_MuEta   = 668 / 1049
+Npassed_nAK8Jets= 1049 / 1049
+Npassed_Trigger = 972 / 1049
+Npassed_MET     = 247 / 1049
+Npassed_lepPt   = 333 / 1049
+Npassed_HT      = 9 / 1049
+npass_Njets     = 35 / 1049
+Npassed_ALL     = 3 / 1049
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_2.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1078 events
+Completed 1000 out of 1078 events
+Nelectrons      = 410 / 1078
+Npassed_ElEta   = 410 / 1078
+Nmuons          = 668 / 1078
+NrelIsoFail     = 0 / 1078
+Npassed_MuEta   = 668 / 1078
+Npassed_nAK8Jets= 1078 / 1078
+Npassed_Trigger = 1024 / 1078
+Npassed_MET     = 236 / 1078
+Npassed_lepPt   = 321 / 1078
+Npassed_HT      = 12 / 1078
+npass_Njets     = 24 / 1078
+Npassed_ALL     = 3 / 1078
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_2.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1098 events
+Completed 1000 out of 1098 events
+Nelectrons      = 419 / 1098
+Npassed_ElEta   = 419 / 1098
+Nmuons          = 679 / 1098
+NrelIsoFail     = 0 / 1098
+Npassed_MuEta   = 679 / 1098
+Npassed_nAK8Jets= 1098 / 1098
+Npassed_Trigger = 1043 / 1098
+Npassed_MET     = 246 / 1098
+Npassed_lepPt   = 325 / 1098
+Npassed_HT      = 13 / 1098
+npass_Njets     = 24 / 1098
+Npassed_ALL     = 3 / 1098
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_2.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1066 events
+Completed 1000 out of 1066 events
+Nelectrons      = 406 / 1066
+Npassed_ElEta   = 406 / 1066
+Nmuons          = 660 / 1066
+NrelIsoFail     = 0 / 1066
+Npassed_MuEta   = 660 / 1066
+Npassed_nAK8Jets= 1066 / 1066
+Npassed_Trigger = 1014 / 1066
+Npassed_MET     = 229 / 1066
+Npassed_lepPt   = 320 / 1066
+Npassed_HT      = 12 / 1066
+npass_Njets     = 22 / 1066
+Npassed_ALL     = 3 / 1066
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_2.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1086 events
+Completed 1000 out of 1086 events
+Nelectrons      = 413 / 1086
+Npassed_ElEta   = 413 / 1086
+Nmuons          = 673 / 1086
+NrelIsoFail     = 0 / 1086
+Npassed_MuEta   = 673 / 1086
+Npassed_nAK8Jets= 1086 / 1086
+Npassed_Trigger = 1032 / 1086
+Npassed_MET     = 243 / 1086
+Npassed_lepPt   = 322 / 1086
+Npassed_HT      = 13 / 1086
+npass_Njets     = 24 / 1086
+Npassed_ALL     = 3 / 1086
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_2.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1073 events
+Completed 1000 out of 1073 events
+Nelectrons      = 411 / 1073
+Npassed_ElEta   = 411 / 1073
+Nmuons          = 662 / 1073
+NrelIsoFail     = 0 / 1073
+Npassed_MuEta   = 662 / 1073
+Npassed_nAK8Jets= 1073 / 1073
+Npassed_Trigger = 1020 / 1073
+Npassed_MET     = 229 / 1073
+Npassed_lepPt   = 321 / 1073
+Npassed_HT      = 12 / 1073
+npass_Njets     = 23 / 1073
+Npassed_ALL     = 3 / 1073
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_20.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1131 events
+Completed 1000 out of 1131 events
+Nelectrons      = 457 / 1131
+Npassed_ElEta   = 457 / 1131
+Nmuons          = 674 / 1131
+NrelIsoFail     = 0 / 1131
+Npassed_MuEta   = 674 / 1131
+Npassed_nAK8Jets= 1131 / 1131
+Npassed_Trigger = 1046 / 1131
+Npassed_MET     = 247 / 1131
+Npassed_lepPt   = 309 / 1131
+Npassed_HT      = 13 / 1131
+npass_Njets     = 30 / 1131
+Npassed_ALL     = 0 / 1131
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_20.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1157 events
+Completed 1000 out of 1157 events
+Nelectrons      = 464 / 1157
+Npassed_ElEta   = 464 / 1157
+Nmuons          = 693 / 1157
+NrelIsoFail     = 0 / 1157
+Npassed_MuEta   = 693 / 1157
+Npassed_nAK8Jets= 1157 / 1157
+Npassed_Trigger = 1068 / 1157
+Npassed_MET     = 262 / 1157
+Npassed_lepPt   = 318 / 1157
+Npassed_HT      = 13 / 1157
+npass_Njets     = 32 / 1157
+Npassed_ALL     = 1 / 1157
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_20.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1108 events
+Completed 1000 out of 1108 events
+Nelectrons      = 452 / 1108
+Npassed_ElEta   = 452 / 1108
+Nmuons          = 656 / 1108
+NrelIsoFail     = 0 / 1108
+Npassed_MuEta   = 656 / 1108
+Npassed_nAK8Jets= 1108 / 1108
+Npassed_Trigger = 1023 / 1108
+Npassed_MET     = 241 / 1108
+Npassed_lepPt   = 308 / 1108
+Npassed_HT      = 13 / 1108
+npass_Njets     = 30 / 1108
+Npassed_ALL     = 0 / 1108
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_20.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1140 events
+Completed 1000 out of 1140 events
+Nelectrons      = 461 / 1140
+Npassed_ElEta   = 461 / 1140
+Nmuons          = 679 / 1140
+NrelIsoFail     = 0 / 1140
+Npassed_MuEta   = 679 / 1140
+Npassed_nAK8Jets= 1140 / 1140
+Npassed_Trigger = 1054 / 1140
+Npassed_MET     = 253 / 1140
+Npassed_lepPt   = 309 / 1140
+Npassed_HT      = 13 / 1140
+npass_Njets     = 31 / 1140
+Npassed_ALL     = 0 / 1140
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_20.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1127 events
+Completed 1000 out of 1127 events
+Nelectrons      = 456 / 1127
+Npassed_ElEta   = 456 / 1127
+Nmuons          = 671 / 1127
+NrelIsoFail     = 0 / 1127
+Npassed_MuEta   = 671 / 1127
+Npassed_nAK8Jets= 1127 / 1127
+Npassed_Trigger = 1041 / 1127
+Npassed_MET     = 244 / 1127
+Npassed_lepPt   = 310 / 1127
+Npassed_HT      = 13 / 1127
+npass_Njets     = 29 / 1127
+Npassed_ALL     = 0 / 1127
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_200.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1067 events
+Completed 1000 out of 1067 events
+Nelectrons      = 417 / 1067
+Npassed_ElEta   = 417 / 1067
+Nmuons          = 650 / 1067
+NrelIsoFail     = 0 / 1067
+Npassed_MuEta   = 650 / 1067
+Npassed_nAK8Jets= 1067 / 1067
+Npassed_Trigger = 992 / 1067
+Npassed_MET     = 232 / 1067
+Npassed_lepPt   = 324 / 1067
+Npassed_HT      = 10 / 1067
+npass_Njets     = 29 / 1067
+Npassed_ALL     = 1 / 1067
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_200.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1077 events
+Completed 1000 out of 1077 events
+Nelectrons      = 418 / 1077
+Npassed_ElEta   = 418 / 1077
+Nmuons          = 659 / 1077
+NrelIsoFail     = 0 / 1077
+Npassed_MuEta   = 659 / 1077
+Npassed_nAK8Jets= 1077 / 1077
+Npassed_Trigger = 1002 / 1077
+Npassed_MET     = 243 / 1077
+Npassed_lepPt   = 323 / 1077
+Npassed_HT      = 10 / 1077
+npass_Njets     = 32 / 1077
+Npassed_ALL     = 1 / 1077
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_200.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1056 events
+Completed 1000 out of 1056 events
+Nelectrons      = 412 / 1056
+Npassed_ElEta   = 412 / 1056
+Nmuons          = 644 / 1056
+NrelIsoFail     = 0 / 1056
+Npassed_MuEta   = 644 / 1056
+Npassed_nAK8Jets= 1056 / 1056
+Npassed_Trigger = 984 / 1056
+Npassed_MET     = 226 / 1056
+Npassed_lepPt   = 319 / 1056
+Npassed_HT      = 10 / 1056
+npass_Njets     = 26 / 1056
+Npassed_ALL     = 1 / 1056
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_200.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1070 events
+Completed 1000 out of 1070 events
+Nelectrons      = 419 / 1070
+Npassed_ElEta   = 419 / 1070
+Nmuons          = 651 / 1070
+NrelIsoFail     = 0 / 1070
+Npassed_MuEta   = 651 / 1070
+Npassed_nAK8Jets= 1070 / 1070
+Npassed_Trigger = 995 / 1070
+Npassed_MET     = 234 / 1070
+Npassed_lepPt   = 323 / 1070
+Npassed_HT      = 10 / 1070
+npass_Njets     = 32 / 1070
+Npassed_ALL     = 1 / 1070
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_200.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1060 events
+Completed 1000 out of 1060 events
+Nelectrons      = 411 / 1060
+Npassed_ElEta   = 411 / 1060
+Nmuons          = 649 / 1060
+NrelIsoFail     = 0 / 1060
+Npassed_MuEta   = 649 / 1060
+Npassed_nAK8Jets= 1060 / 1060
+Npassed_Trigger = 986 / 1060
+Npassed_MET     = 231 / 1060
+Npassed_lepPt   = 322 / 1060
+Npassed_HT      = 10 / 1060
+npass_Njets     = 28 / 1060
+Npassed_ALL     = 1 / 1060
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_201.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1130 events
+Completed 1000 out of 1130 events
+Nelectrons      = 457 / 1130
+Npassed_ElEta   = 457 / 1130
+Nmuons          = 673 / 1130
+NrelIsoFail     = 0 / 1130
+Npassed_MuEta   = 673 / 1130
+Npassed_nAK8Jets= 1130 / 1130
+Npassed_Trigger = 1052 / 1130
+Npassed_MET     = 237 / 1130
+Npassed_lepPt   = 342 / 1130
+Npassed_HT      = 12 / 1130
+npass_Njets     = 21 / 1130
+Npassed_ALL     = 3 / 1130
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_201.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1159 events
+Completed 1000 out of 1159 events
+Nelectrons      = 466 / 1159
+Npassed_ElEta   = 466 / 1159
+Nmuons          = 693 / 1159
+NrelIsoFail     = 0 / 1159
+Npassed_MuEta   = 693 / 1159
+Npassed_nAK8Jets= 1159 / 1159
+Npassed_Trigger = 1078 / 1159
+Npassed_MET     = 249 / 1159
+Npassed_lepPt   = 344 / 1159
+Npassed_HT      = 12 / 1159
+npass_Njets     = 23 / 1159
+Npassed_ALL     = 3 / 1159
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_201.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1111 events
+Completed 1000 out of 1111 events
+Nelectrons      = 450 / 1111
+Npassed_ElEta   = 450 / 1111
+Nmuons          = 661 / 1111
+NrelIsoFail     = 0 / 1111
+Npassed_MuEta   = 661 / 1111
+Npassed_nAK8Jets= 1111 / 1111
+Npassed_Trigger = 1034 / 1111
+Npassed_MET     = 230 / 1111
+Npassed_lepPt   = 341 / 1111
+Npassed_HT      = 12 / 1111
+npass_Njets     = 19 / 1111
+Npassed_ALL     = 3 / 1111
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_201.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1144 events
+Completed 1000 out of 1144 events
+Nelectrons      = 463 / 1144
+Npassed_ElEta   = 463 / 1144
+Nmuons          = 681 / 1144
+NrelIsoFail     = 0 / 1144
+Npassed_MuEta   = 681 / 1144
+Npassed_nAK8Jets= 1144 / 1144
+Npassed_Trigger = 1064 / 1144
+Npassed_MET     = 240 / 1144
+Npassed_lepPt   = 347 / 1144
+Npassed_HT      = 12 / 1144
+npass_Njets     = 21 / 1144
+Npassed_ALL     = 3 / 1144
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_201.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1124 events
+Completed 1000 out of 1124 events
+Nelectrons      = 456 / 1124
+Npassed_ElEta   = 456 / 1124
+Nmuons          = 668 / 1124
+NrelIsoFail     = 0 / 1124
+Npassed_MuEta   = 668 / 1124
+Npassed_nAK8Jets= 1124 / 1124
+Npassed_Trigger = 1046 / 1124
+Npassed_MET     = 229 / 1124
+Npassed_lepPt   = 340 / 1124
+Npassed_HT      = 12 / 1124
+npass_Njets     = 21 / 1124
+Npassed_ALL     = 3 / 1124
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_202.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1135 events
+Completed 1000 out of 1135 events
+Nelectrons      = 457 / 1135
+Npassed_ElEta   = 457 / 1135
+Nmuons          = 678 / 1135
+NrelIsoFail     = 0 / 1135
+Npassed_MuEta   = 678 / 1135
+Npassed_nAK8Jets= 1135 / 1135
+Npassed_Trigger = 1056 / 1135
+Npassed_MET     = 272 / 1135
+Npassed_lepPt   = 338 / 1135
+Npassed_HT      = 9 / 1135
+npass_Njets     = 20 / 1135
+Npassed_ALL     = 1 / 1135
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_202.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1170 events
+Completed 1000 out of 1170 events
+Nelectrons      = 473 / 1170
+Npassed_ElEta   = 473 / 1170
+Nmuons          = 697 / 1170
+NrelIsoFail     = 0 / 1170
+Npassed_MuEta   = 697 / 1170
+Npassed_nAK8Jets= 1170 / 1170
+Npassed_Trigger = 1089 / 1170
+Npassed_MET     = 284 / 1170
+Npassed_lepPt   = 350 / 1170
+Npassed_HT      = 9 / 1170
+npass_Njets     = 20 / 1170
+Npassed_ALL     = 1 / 1170
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_202.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1113 events
+Completed 1000 out of 1113 events
+Nelectrons      = 456 / 1113
+Npassed_ElEta   = 456 / 1113
+Nmuons          = 657 / 1113
+NrelIsoFail     = 0 / 1113
+Npassed_MuEta   = 657 / 1113
+Npassed_nAK8Jets= 1113 / 1113
+Npassed_Trigger = 1035 / 1113
+Npassed_MET     = 259 / 1113
+Npassed_lepPt   = 331 / 1113
+Npassed_HT      = 9 / 1113
+npass_Njets     = 18 / 1113
+Npassed_ALL     = 1 / 1113
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_202.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1138 events
+Completed 1000 out of 1138 events
+Nelectrons      = 457 / 1138
+Npassed_ElEta   = 457 / 1138
+Nmuons          = 681 / 1138
+NrelIsoFail     = 0 / 1138
+Npassed_MuEta   = 681 / 1138
+Npassed_nAK8Jets= 1138 / 1138
+Npassed_Trigger = 1058 / 1138
+Npassed_MET     = 280 / 1138
+Npassed_lepPt   = 343 / 1138
+Npassed_HT      = 9 / 1138
+npass_Njets     = 19 / 1138
+Npassed_ALL     = 1 / 1138
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_202.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1129 events
+Completed 1000 out of 1129 events
+Nelectrons      = 460 / 1129
+Npassed_ElEta   = 460 / 1129
+Nmuons          = 669 / 1129
+NrelIsoFail     = 0 / 1129
+Npassed_MuEta   = 669 / 1129
+Npassed_nAK8Jets= 1129 / 1129
+Npassed_Trigger = 1050 / 1129
+Npassed_MET     = 267 / 1129
+Npassed_lepPt   = 336 / 1129
+Npassed_HT      = 9 / 1129
+npass_Njets     = 21 / 1129
+Npassed_ALL     = 1 / 1129
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_203.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1164 events
+Completed 1000 out of 1164 events
+Nelectrons      = 451 / 1164
+Npassed_ElEta   = 451 / 1164
+Nmuons          = 713 / 1164
+NrelIsoFail     = 0 / 1164
+Npassed_MuEta   = 713 / 1164
+Npassed_nAK8Jets= 1164 / 1164
+Npassed_Trigger = 1071 / 1164
+Npassed_MET     = 255 / 1164
+Npassed_lepPt   = 369 / 1164
+Npassed_HT      = 8 / 1164
+npass_Njets     = 31 / 1164
+Npassed_ALL     = 1 / 1164
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_203.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1174 events
+Completed 1000 out of 1174 events
+Nelectrons      = 448 / 1174
+Npassed_ElEta   = 448 / 1174
+Nmuons          = 726 / 1174
+NrelIsoFail     = 0 / 1174
+Npassed_MuEta   = 726 / 1174
+Npassed_nAK8Jets= 1174 / 1174
+Npassed_Trigger = 1079 / 1174
+Npassed_MET     = 260 / 1174
+Npassed_lepPt   = 370 / 1174
+Npassed_HT      = 8 / 1174
+npass_Njets     = 34 / 1174
+Npassed_ALL     = 1 / 1174
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_203.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1124 events
+Completed 1000 out of 1124 events
+Nelectrons      = 430 / 1124
+Npassed_ElEta   = 430 / 1124
+Nmuons          = 694 / 1124
+NrelIsoFail     = 0 / 1124
+Npassed_MuEta   = 694 / 1124
+Npassed_nAK8Jets= 1124 / 1124
+Npassed_Trigger = 1032 / 1124
+Npassed_MET     = 246 / 1124
+Npassed_lepPt   = 360 / 1124
+Npassed_HT      = 8 / 1124
+npass_Njets     = 29 / 1124
+Npassed_ALL     = 1 / 1124
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_203.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1164 events
+Completed 1000 out of 1164 events
+Nelectrons      = 450 / 1164
+Npassed_ElEta   = 450 / 1164
+Nmuons          = 714 / 1164
+NrelIsoFail     = 0 / 1164
+Npassed_MuEta   = 714 / 1164
+Npassed_nAK8Jets= 1164 / 1164
+Npassed_Trigger = 1071 / 1164
+Npassed_MET     = 252 / 1164
+Npassed_lepPt   = 369 / 1164
+Npassed_HT      = 8 / 1164
+npass_Njets     = 31 / 1164
+Npassed_ALL     = 1 / 1164
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_203.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1146 events
+Completed 1000 out of 1146 events
+Nelectrons      = 444 / 1146
+Npassed_ElEta   = 444 / 1146
+Nmuons          = 702 / 1146
+NrelIsoFail     = 0 / 1146
+Npassed_MuEta   = 702 / 1146
+Npassed_nAK8Jets= 1146 / 1146
+Npassed_Trigger = 1053 / 1146
+Npassed_MET     = 256 / 1146
+Npassed_lepPt   = 363 / 1146
+Npassed_HT      = 7 / 1146
+npass_Njets     = 30 / 1146
+Npassed_ALL     = 1 / 1146
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_204.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1078 events
+Completed 1000 out of 1078 events
+Nelectrons      = 390 / 1078
+Npassed_ElEta   = 390 / 1078
+Nmuons          = 688 / 1078
+NrelIsoFail     = 0 / 1078
+Npassed_MuEta   = 688 / 1078
+Npassed_nAK8Jets= 1078 / 1078
+Npassed_Trigger = 1002 / 1078
+Npassed_MET     = 241 / 1078
+Npassed_lepPt   = 328 / 1078
+Npassed_HT      = 6 / 1078
+npass_Njets     = 20 / 1078
+Npassed_ALL     = 1 / 1078
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_204.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1093 events
+Completed 1000 out of 1093 events
+Nelectrons      = 395 / 1093
+Npassed_ElEta   = 395 / 1093
+Nmuons          = 698 / 1093
+NrelIsoFail     = 0 / 1093
+Npassed_MuEta   = 698 / 1093
+Npassed_nAK8Jets= 1093 / 1093
+Npassed_Trigger = 1019 / 1093
+Npassed_MET     = 252 / 1093
+Npassed_lepPt   = 335 / 1093
+Npassed_HT      = 6 / 1093
+npass_Njets     = 24 / 1093
+Npassed_ALL     = 1 / 1093
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_204.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1058 events
+Completed 1000 out of 1058 events
+Nelectrons      = 383 / 1058
+Npassed_ElEta   = 383 / 1058
+Nmuons          = 675 / 1058
+NrelIsoFail     = 0 / 1058
+Npassed_MuEta   = 675 / 1058
+Npassed_nAK8Jets= 1058 / 1058
+Npassed_Trigger = 984 / 1058
+Npassed_MET     = 225 / 1058
+Npassed_lepPt   = 326 / 1058
+Npassed_HT      = 6 / 1058
+npass_Njets     = 19 / 1058
+Npassed_ALL     = 1 / 1058
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_204.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1075 events
+Completed 1000 out of 1075 events
+Nelectrons      = 390 / 1075
+Npassed_ElEta   = 390 / 1075
+Nmuons          = 685 / 1075
+NrelIsoFail     = 0 / 1075
+Npassed_MuEta   = 685 / 1075
+Npassed_nAK8Jets= 1075 / 1075
+Npassed_Trigger = 999 / 1075
+Npassed_MET     = 242 / 1075
+Npassed_lepPt   = 325 / 1075
+Npassed_HT      = 6 / 1075
+npass_Njets     = 20 / 1075
+Npassed_ALL     = 1 / 1075
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_204.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1079 events
+Completed 1000 out of 1079 events
+Nelectrons      = 388 / 1079
+Npassed_ElEta   = 388 / 1079
+Nmuons          = 691 / 1079
+NrelIsoFail     = 0 / 1079
+Npassed_MuEta   = 691 / 1079
+Npassed_nAK8Jets= 1079 / 1079
+Npassed_Trigger = 1004 / 1079
+Npassed_MET     = 236 / 1079
+Npassed_lepPt   = 326 / 1079
+Npassed_HT      = 6 / 1079
+npass_Njets     = 21 / 1079
+Npassed_ALL     = 1 / 1079
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_205.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1116 events
+Completed 1000 out of 1116 events
+Nelectrons      = 445 / 1116
+Npassed_ElEta   = 445 / 1116
+Nmuons          = 671 / 1116
+NrelIsoFail     = 0 / 1116
+Npassed_MuEta   = 671 / 1116
+Npassed_nAK8Jets= 1116 / 1116
+Npassed_Trigger = 1034 / 1116
+Npassed_MET     = 241 / 1116
+Npassed_lepPt   = 335 / 1116
+Npassed_HT      = 13 / 1116
+npass_Njets     = 38 / 1116
+Npassed_ALL     = 3 / 1116
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_205.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1142 events
+Completed 1000 out of 1142 events
+Nelectrons      = 460 / 1142
+Npassed_ElEta   = 460 / 1142
+Nmuons          = 682 / 1142
+NrelIsoFail     = 0 / 1142
+Npassed_MuEta   = 682 / 1142
+Npassed_nAK8Jets= 1142 / 1142
+Npassed_Trigger = 1059 / 1142
+Npassed_MET     = 250 / 1142
+Npassed_lepPt   = 333 / 1142
+Npassed_HT      = 13 / 1142
+npass_Njets     = 39 / 1142
+Npassed_ALL     = 3 / 1142
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_205.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1108 events
+Completed 1000 out of 1108 events
+Nelectrons      = 447 / 1108
+Npassed_ElEta   = 447 / 1108
+Nmuons          = 661 / 1108
+NrelIsoFail     = 0 / 1108
+Npassed_MuEta   = 661 / 1108
+Npassed_nAK8Jets= 1108 / 1108
+Npassed_Trigger = 1026 / 1108
+Npassed_MET     = 237 / 1108
+Npassed_lepPt   = 335 / 1108
+Npassed_HT      = 12 / 1108
+npass_Njets     = 36 / 1108
+Npassed_ALL     = 3 / 1108
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_205.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1126 events
+Completed 1000 out of 1126 events
+Nelectrons      = 449 / 1126
+Npassed_ElEta   = 449 / 1126
+Nmuons          = 677 / 1126
+NrelIsoFail     = 0 / 1126
+Npassed_MuEta   = 677 / 1126
+Npassed_nAK8Jets= 1126 / 1126
+Npassed_Trigger = 1043 / 1126
+Npassed_MET     = 239 / 1126
+Npassed_lepPt   = 339 / 1126
+Npassed_HT      = 13 / 1126
+npass_Njets     = 37 / 1126
+Npassed_ALL     = 3 / 1126
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_205.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1117 events
+Completed 1000 out of 1117 events
+Nelectrons      = 448 / 1117
+Npassed_ElEta   = 448 / 1117
+Nmuons          = 669 / 1117
+NrelIsoFail     = 0 / 1117
+Npassed_MuEta   = 669 / 1117
+Npassed_nAK8Jets= 1117 / 1117
+Npassed_Trigger = 1035 / 1117
+Npassed_MET     = 239 / 1117
+Npassed_lepPt   = 336 / 1117
+Npassed_HT      = 13 / 1117
+npass_Njets     = 37 / 1117
+Npassed_ALL     = 3 / 1117
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_206.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1049 events
+Completed 1000 out of 1049 events
+Nelectrons      = 419 / 1049
+Npassed_ElEta   = 419 / 1049
+Nmuons          = 630 / 1049
+NrelIsoFail     = 0 / 1049
+Npassed_MuEta   = 630 / 1049
+Npassed_nAK8Jets= 1049 / 1049
+Npassed_Trigger = 968 / 1049
+Npassed_MET     = 241 / 1049
+Npassed_lepPt   = 327 / 1049
+Npassed_HT      = 10 / 1049
+npass_Njets     = 25 / 1049
+Npassed_ALL     = 0 / 1049
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_206.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1070 events
+Completed 1000 out of 1070 events
+Nelectrons      = 425 / 1070
+Npassed_ElEta   = 425 / 1070
+Nmuons          = 645 / 1070
+NrelIsoFail     = 0 / 1070
+Npassed_MuEta   = 645 / 1070
+Npassed_nAK8Jets= 1070 / 1070
+Npassed_Trigger = 987 / 1070
+Npassed_MET     = 243 / 1070
+Npassed_lepPt   = 337 / 1070
+Npassed_HT      = 10 / 1070
+npass_Njets     = 30 / 1070
+Npassed_ALL     = 0 / 1070
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_206.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1032 events
+Completed 1000 out of 1032 events
+Nelectrons      = 412 / 1032
+Npassed_ElEta   = 412 / 1032
+Nmuons          = 620 / 1032
+NrelIsoFail     = 0 / 1032
+Npassed_MuEta   = 620 / 1032
+Npassed_nAK8Jets= 1032 / 1032
+Npassed_Trigger = 950 / 1032
+Npassed_MET     = 240 / 1032
+Npassed_lepPt   = 323 / 1032
+Npassed_HT      = 10 / 1032
+npass_Njets     = 22 / 1032
+Npassed_ALL     = 0 / 1032
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_206.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1060 events
+Completed 1000 out of 1060 events
+Nelectrons      = 418 / 1060
+Npassed_ElEta   = 418 / 1060
+Nmuons          = 642 / 1060
+NrelIsoFail     = 0 / 1060
+Npassed_MuEta   = 642 / 1060
+Npassed_nAK8Jets= 1060 / 1060
+Npassed_Trigger = 979 / 1060
+Npassed_MET     = 240 / 1060
+Npassed_lepPt   = 329 / 1060
+Npassed_HT      = 10 / 1060
+npass_Njets     = 27 / 1060
+Npassed_ALL     = 0 / 1060
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET102X_1lep2017UL_X53//WW_TuneCP5_13TeV-pythia8/singleLep2017/210909_201720/0000/WW_TuneCP5_13TeV-pythia8_206.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 1, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 1, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: WW_TuneCP5_13TeV-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 1038 events
+Completed 1000 out of 1038 events
+Nelectrons      = 413 / 1038
+Npassed_ElEta   = 413 / 1038
+Nmuons          = 625 / 1038
+NrelIsoFail     = 0 / 1038
+Npassed_MuEta   = 625 / 1038
+Npassed_nAK8Jets= 1038 / 1038
+Npassed_Trigger = 956 / 1038
+Npassed_MET     = 239 / 1038
+Npassed_lepPt   = 325 / 1038
+Npassed_HT      = 10 / 1038
+npass_Njets     = 26 / 1038
+Npassed_ALL     = 0 / 1038
+ROOT Files:
+-rw-r--r-- 1 fsimpson fnalgrid  64685 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_190JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  21525 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_190JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64730 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_190JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  64979 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_190JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64730 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_190nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  68597 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_191JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  68833 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_191JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  68673 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_191JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  68408 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_191JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  68895 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_191nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  73555 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_192JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  80320 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_192JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  81953 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_192JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  82219 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_192JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  75064 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_192nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  72203 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_193JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  64717 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_193JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  72203 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_193JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  71928 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_193JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  72077 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_193nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  74462 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_194JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  73849 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_194JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  73769 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_194JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  74072 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_194JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  73931 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_194nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  72358 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_195JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  73296 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_195JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  74128 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_195JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  73908 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_195JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  73557 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_195nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  80999 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_196JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  63866 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_196JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  80537 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_196JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 102515 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_196JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  80648 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_196nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  64736 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_197JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  22447 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_197JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64989 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_197JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  64815 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_197JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64696 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_197nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  64966 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_198JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  65018 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_198JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64945 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_198JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  64991 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_198JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  65244 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_198nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  68501 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_199JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  68427 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_199JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  68612 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_199JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  68355 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_199JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  68669 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_199nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 102293 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_19JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  80636 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_19JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  80453 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_19JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  80116 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_19JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  80764 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_19nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  64544 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_200JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  64552 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_200JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 103678 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_200JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 103483 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_200JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 103542 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_200nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  67398 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_201JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  67582 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_201JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 110092 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_201JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  67652 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_201JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  67698 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_201nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  64822 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_202JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 103817 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_202JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64624 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_202JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  64593 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_202JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64816 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_202nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  66216 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_203JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  66163 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_203JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  66444 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_203JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  66246 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_203JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  66508 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_203nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  63447 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_204JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  63627 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_204JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 103691 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_204JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 103814 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_204JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  63633 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_204nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  68242 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_205JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  73523 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_205JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  68688 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_205JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  67969 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_205JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 111115 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_205nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  64714 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_206JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  64982 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_206JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64990 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_206JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  64982 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_206JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64686 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_206nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  21563 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_20JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 102626 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_20JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64670 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_20JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  64662 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_20JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  64963 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_20nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid  67230 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_2JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  67425 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_2JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid  67352 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_2JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid  67650 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_2JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid  67564 Sep 25 08:35 WW_TuneCP5_13TeV-pythia8_2nominal.root
+xrdcp output for condor
+hadd Target file: WW_TuneCP5_13TeV-pythia8_6nominal_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: WW_TuneCP5_13TeV-pythia8_190nominal.root
+hadd Source file 2: WW_TuneCP5_13TeV-pythia8_191nominal.root
+hadd Source file 3: WW_TuneCP5_13TeV-pythia8_192nominal.root
+hadd Source file 4: WW_TuneCP5_13TeV-pythia8_193nominal.root
+hadd Source file 5: WW_TuneCP5_13TeV-pythia8_194nominal.root
+hadd Source file 6: WW_TuneCP5_13TeV-pythia8_195nominal.root
+hadd Source file 7: WW_TuneCP5_13TeV-pythia8_196nominal.root
+hadd Source file 8: WW_TuneCP5_13TeV-pythia8_197nominal.root
+hadd Source file 9: WW_TuneCP5_13TeV-pythia8_198nominal.root
+hadd Source file 10: WW_TuneCP5_13TeV-pythia8_199nominal.root
+hadd Source file 11: WW_TuneCP5_13TeV-pythia8_19nominal.root
+hadd Source file 12: WW_TuneCP5_13TeV-pythia8_200nominal.root
+hadd Source file 13: WW_TuneCP5_13TeV-pythia8_201nominal.root
+hadd Source file 14: WW_TuneCP5_13TeV-pythia8_202nominal.root
+hadd Source file 15: WW_TuneCP5_13TeV-pythia8_203nominal.root
+hadd Source file 16: WW_TuneCP5_13TeV-pythia8_204nominal.root
+hadd Source file 17: WW_TuneCP5_13TeV-pythia8_205nominal.root
+hadd Source file 18: WW_TuneCP5_13TeV-pythia8_206nominal.root
+hadd Source file 19: WW_TuneCP5_13TeV-pythia8_20nominal.root
+hadd Source file 20: WW_TuneCP5_13TeV-pythia8_2nominal.root
+hadd Target path: WW_TuneCP5_13TeV-pythia8_6nominal_hadd.root:/
+xrdcp -f WW_TuneCP5_13TeV-pythia8_6nominal_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//WW_TuneCP5_13TeV-pythia8/WW_TuneCP5_13TeV-pythia8_6.root
+[751.2kB/751.2kB][100%][==================================================][751.2kB/s]  [751.2kB/751.2kB][100%][==================================================][751.2kB/s]  
+hadd Target file: WW_TuneCP5_13TeV-pythia8_6JECup_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: WW_TuneCP5_13TeV-pythia8_190JECup.root
+hadd Source file 2: WW_TuneCP5_13TeV-pythia8_191JECup.root
+hadd Source file 3: WW_TuneCP5_13TeV-pythia8_192JECup.root
+hadd Source file 4: WW_TuneCP5_13TeV-pythia8_193JECup.root
+hadd Source file 5: WW_TuneCP5_13TeV-pythia8_194JECup.root
+hadd Source file 6: WW_TuneCP5_13TeV-pythia8_195JECup.root
+hadd Source file 7: WW_TuneCP5_13TeV-pythia8_196JECup.root
+hadd Source file 8: WW_TuneCP5_13TeV-pythia8_197JECup.root
+hadd Source file 9: WW_TuneCP5_13TeV-pythia8_198JECup.root
+hadd Source file 10: WW_TuneCP5_13TeV-pythia8_199JECup.root
+hadd Source file 11: WW_TuneCP5_13TeV-pythia8_19JECup.root
+hadd Source file 12: WW_TuneCP5_13TeV-pythia8_200JECup.root
+hadd Source file 13: WW_TuneCP5_13TeV-pythia8_201JECup.root
+hadd Source file 14: WW_TuneCP5_13TeV-pythia8_202JECup.root
+hadd Source file 15: WW_TuneCP5_13TeV-pythia8_203JECup.root
+hadd Source file 16: WW_TuneCP5_13TeV-pythia8_204JECup.root
+hadd Source file 17: WW_TuneCP5_13TeV-pythia8_205JECup.root
+hadd Source file 18: WW_TuneCP5_13TeV-pythia8_206JECup.root
+hadd Source file 19: WW_TuneCP5_13TeV-pythia8_20JECup.root
+hadd Source file 20: WW_TuneCP5_13TeV-pythia8_2JECup.root
+hadd Target path: WW_TuneCP5_13TeV-pythia8_6JECup_hadd.root:/
+xrdcp -f WW_TuneCP5_13TeV-pythia8_6JECup_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/JECup//WW_TuneCP5_13TeV-pythia8/WW_TuneCP5_13TeV-pythia8_6.root
+[757kB/757kB][100%][==================================================][757kB/s]  [757kB/757kB][100%][==================================================][757kB/s]  
+hadd Target file: WW_TuneCP5_13TeV-pythia8_6JECdown_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: WW_TuneCP5_13TeV-pythia8_190JECdown.root
+hadd Source file 2: WW_TuneCP5_13TeV-pythia8_191JECdown.root
+hadd Source file 3: WW_TuneCP5_13TeV-pythia8_192JECdown.root
+hadd Source file 4: WW_TuneCP5_13TeV-pythia8_193JECdown.root
+hadd Source file 5: WW_TuneCP5_13TeV-pythia8_194JECdown.root
+hadd Source file 6: WW_TuneCP5_13TeV-pythia8_195JECdown.root
+hadd Source file 7: WW_TuneCP5_13TeV-pythia8_196JECdown.root
+hadd Source file 8: WW_TuneCP5_13TeV-pythia8_197JECdown.root
+hadd Source file 9: WW_TuneCP5_13TeV-pythia8_198JECdown.root
+hadd Source file 10: WW_TuneCP5_13TeV-pythia8_199JECdown.root
+hadd Source file 11: WW_TuneCP5_13TeV-pythia8_19JECdown.root
+hadd Source file 12: WW_TuneCP5_13TeV-pythia8_200JECdown.root
+hadd Source file 13: WW_TuneCP5_13TeV-pythia8_201JECdown.root
+hadd Source file 14: WW_TuneCP5_13TeV-pythia8_202JECdown.root
+hadd Source file 15: WW_TuneCP5_13TeV-pythia8_203JECdown.root
+hadd Source file 16: WW_TuneCP5_13TeV-pythia8_204JECdown.root
+hadd Source file 17: WW_TuneCP5_13TeV-pythia8_205JECdown.root
+hadd Source file 18: WW_TuneCP5_13TeV-pythia8_206JECdown.root
+hadd Source file 19: WW_TuneCP5_13TeV-pythia8_20JECdown.root
+hadd Source file 20: WW_TuneCP5_13TeV-pythia8_2JECdown.root
+hadd Target path: WW_TuneCP5_13TeV-pythia8_6JECdown_hadd.root:/
+xrdcp -f WW_TuneCP5_13TeV-pythia8_6JECdown_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/JECdown//WW_TuneCP5_13TeV-pythia8/WW_TuneCP5_13TeV-pythia8_6.root
+[746.4kB/746.4kB][100%][==================================================][746.4kB/s]  [746.4kB/746.4kB][100%][==================================================][746.4kB/s]  
+hadd Target file: WW_TuneCP5_13TeV-pythia8_6JERup_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: WW_TuneCP5_13TeV-pythia8_190JERup.root
+hadd Source file 2: WW_TuneCP5_13TeV-pythia8_191JERup.root
+hadd Source file 3: WW_TuneCP5_13TeV-pythia8_192JERup.root
+hadd Source file 4: WW_TuneCP5_13TeV-pythia8_193JERup.root
+hadd Source file 5: WW_TuneCP5_13TeV-pythia8_194JERup.root
+hadd Source file 6: WW_TuneCP5_13TeV-pythia8_195JERup.root
+hadd Source file 7: WW_TuneCP5_13TeV-pythia8_196JERup.root
+hadd Source file 8: WW_TuneCP5_13TeV-pythia8_197JERup.root
+hadd Source file 9: WW_TuneCP5_13TeV-pythia8_198JERup.root
+hadd Source file 10: WW_TuneCP5_13TeV-pythia8_199JERup.root
+hadd Source file 11: WW_TuneCP5_13TeV-pythia8_19JERup.root
+hadd Source file 12: WW_TuneCP5_13TeV-pythia8_200JERup.root
+hadd Source file 13: WW_TuneCP5_13TeV-pythia8_201JERup.root
+hadd Source file 14: WW_TuneCP5_13TeV-pythia8_202JERup.root
+hadd Source file 15: WW_TuneCP5_13TeV-pythia8_203JERup.root
+hadd Source file 16: WW_TuneCP5_13TeV-pythia8_204JERup.root
+hadd Source file 17: WW_TuneCP5_13TeV-pythia8_205JERup.root
+hadd Source file 18: WW_TuneCP5_13TeV-pythia8_206JERup.root
+hadd Source file 19: WW_TuneCP5_13TeV-pythia8_20JERup.root
+hadd Source file 20: WW_TuneCP5_13TeV-pythia8_2JERup.root
+hadd Target path: WW_TuneCP5_13TeV-pythia8_6JERup_hadd.root:/
+xrdcp -f WW_TuneCP5_13TeV-pythia8_6JERup_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/JERup//WW_TuneCP5_13TeV-pythia8/WW_TuneCP5_13TeV-pythia8_6.root
+[750.8kB/750.8kB][100%][==================================================][750.8kB/s]  [750.8kB/750.8kB][100%][==================================================][750.8kB/s]  
+hadd Target file: WW_TuneCP5_13TeV-pythia8_6JERdown_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: WW_TuneCP5_13TeV-pythia8_190JERdown.root
+hadd Source file 2: WW_TuneCP5_13TeV-pythia8_191JERdown.root
+hadd Source file 3: WW_TuneCP5_13TeV-pythia8_192JERdown.root
+hadd Source file 4: WW_TuneCP5_13TeV-pythia8_193JERdown.root
+hadd Source file 5: WW_TuneCP5_13TeV-pythia8_194JERdown.root
+hadd Source file 6: WW_TuneCP5_13TeV-pythia8_195JERdown.root
+hadd Source file 7: WW_TuneCP5_13TeV-pythia8_196JERdown.root
+hadd Source file 8: WW_TuneCP5_13TeV-pythia8_197JERdown.root
+hadd Source file 9: WW_TuneCP5_13TeV-pythia8_198JERdown.root
+hadd Source file 10: WW_TuneCP5_13TeV-pythia8_199JERdown.root
+hadd Source file 11: WW_TuneCP5_13TeV-pythia8_19JERdown.root
+hadd Source file 12: WW_TuneCP5_13TeV-pythia8_200JERdown.root
+hadd Source file 13: WW_TuneCP5_13TeV-pythia8_201JERdown.root
+hadd Source file 14: WW_TuneCP5_13TeV-pythia8_202JERdown.root
+hadd Source file 15: WW_TuneCP5_13TeV-pythia8_203JERdown.root
+hadd Source file 16: WW_TuneCP5_13TeV-pythia8_204JERdown.root
+hadd Source file 17: WW_TuneCP5_13TeV-pythia8_205JERdown.root
+hadd Source file 18: WW_TuneCP5_13TeV-pythia8_206JERdown.root
+hadd Source file 19: WW_TuneCP5_13TeV-pythia8_20JERdown.root
+hadd Source file 20: WW_TuneCP5_13TeV-pythia8_2JERdown.root
+hadd Target path: WW_TuneCP5_13TeV-pythia8_6JERdown_hadd.root:/
+xrdcp -f WW_TuneCP5_13TeV-pythia8_6JERdown_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/JERdown//WW_TuneCP5_13TeV-pythia8/WW_TuneCP5_13TeV-pythia8_6.root
+[751.4kB/751.4kB][100%][==================================================][751.4kB/s]  [751.4kB/751.4kB][100%][==================================================][751.4kB/s]  
+done

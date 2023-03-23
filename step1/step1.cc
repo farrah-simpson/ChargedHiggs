@@ -701,15 +701,15 @@ void step1::Loop(TString inTreeName, TString outTreeName, const BTagCalibrationF
   // ----------------------------------------------------------------------------
 
    // basic cuts
-   float metCut=20;
-   float htCut=0;
+   float metCut=80;
+   float htCut=500;
    int   nAK8jetsCut=0;
-   float lepPtCut=25.0;
-   float elEtaCut=2.4;
+   float lepPtCut=60.0;
+   float elEtaCut=2.5;
    float muEtaCut=2.4;
-   int   njetsCut=4;
-   int   nbjetsCut=0; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
-   float jetPtCut=40;
+   int   njetsCut=3;
+   int   nbjetsCut=1; // events with # of b-tags <nbjetsCut (incl. btag shifts) are removed!
+   float jetPtCut=30;
    float jetEtaCut=2.4;
    float ak8EtaCut=2.4;
    float ak8PtCut=200;
@@ -1950,6 +1950,7 @@ djetWgt_cferr2up(1.0), djetWgt_cferr2dn(1.0), djetWgt_lfstats1up(1.0), djetWgt_l
       	theJetAK8CHSTau1_JetSubCalc_PtOrdered.push_back(theJetAK8CHSTau1_JetSubCalc->at(jetak8ptindpair[ijet].second));      	
 	theJetAK8CHSTau2_JetSubCalc_PtOrdered.push_back(theJetAK8CHSTau2_JetSubCalc->at(jetak8ptindpair[ijet].second));
       	theJetAK8CHSTau3_JetSubCalc_PtOrdered.push_back(theJetAK8CHSTau3_JetSubCalc->at(jetak8ptindpair[ijet].second));
+//add Particle Net
       }
                         
       // ----------------------------------------------------------------------------
@@ -2109,7 +2110,9 @@ djetWgt_cferr2up(1.0), djetWgt_cferr2dn(1.0), djetWgt_lfstats1up(1.0), djetWgt_l
 	  bool isTtagged_JMSdn = (massSD_JMSdn > 105) && (massSD_JMSdn < 220) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
 	  bool isTtagged_JMRup = (massSD_JMRup > 105) && (massSD_JMRup < 220) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
 	  bool isTtagged_JMRdn = (massSD_JMRdn > 105) && (massSD_JMRdn < 220) && (tau32 < tau32WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 400);
-
+	  
+	  //Add Particle Net Top Tagging
+	  
 	  // IF THE JET IS NOT TRUTH-MATCHED, THESE IFS WILL DO NOTHING, SF == 1
 	  int tag_top = applySF(isTtagged,tau32SF,tau32eff);
 	  int tag_top_tau32up = applySF(isTtagged,tau32SFup,tau32eff);
@@ -2161,6 +2164,8 @@ djetWgt_cferr2up(1.0), djetWgt_cferr2dn(1.0), djetWgt_lfstats1up(1.0), djetWgt_l
 	  bool isWtagged_JMRdn = (massSD_JMRdn > 65) && (massSD_JMRdn < 105) && (tau21 < tau21WP) && (theJetAK8Pt_JetSubCalc_PtOrdered.at(ijet) >= 200);
 	  if(isWtagged) { theJetAK8Indx_Wtagged.push_back(ijet); }
  
+	  // Add Particle Net W tagging
+
 	  // IF THE JET IS NOT TRUTH-MATCHED, THESE IFS WILL DO NOTHING, SF == 1
 	  int tag_W = applySF(isWtagged,tau21SF,tau21eff);
  	  int tag_W_tau21up = applySF(isWtagged,tau21SFup,tau21eff);

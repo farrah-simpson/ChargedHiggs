@@ -1,0 +1,2940 @@
+[FERMIHTC-SINGULARITY]: INFO -- No Singulariy image specified
+[FERMIHTC-SINGULARITY]: INFO -- Running job on the host machine
+
+[FERMIHTC-SINGULARITY]: INFO -- Running ./condor_exec.exe SingleElectronRun2017F SingleElectron /store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//SingleElectron F2-9 F2-91 F2-92 F2-93 F2-94 F2-96 F2-97 F2-99 F2 F29 F3-1 F3-10 F3-11 F3-12 F3-13 F3-14 F3-15 F3-17 F3-18 F3-19 21 2017
+fsimpson-14733041-0-cmswn2025.fnal.gov
+Sat Sep 25 06:26:32 UTC 2021
+/storage/local/data1/condor/execute/dir_30499
+setting macroDir to PWD
+
+Processing compileStep1.C...
+Running step1 over list: F2-9 F2-91 F2-92 F2-93 F2-94 F2-96 F2-97 F2-99 F2 F29 F3-1 F3-10 F3-11 F3-12 F3-13 F3-14 F3-15 F3-17 F3-18 F3-19
+adding SingleElectron_F2-9.root to the list by reading SingleElectronRun2017F_2-9
+adding SingleElectron_F2-91.root to the list by reading SingleElectronRun2017F_2-91
+adding SingleElectron_F2-92.root to the list by reading SingleElectronRun2017F_2-92
+adding SingleElectron_F2-93.root to the list by reading SingleElectronRun2017F_2-93
+adding SingleElectron_F2-94.root to the list by reading SingleElectronRun2017F_2-94
+adding SingleElectron_F2-96.root to the list by reading SingleElectronRun2017F_2-96
+adding SingleElectron_F2-97.root to the list by reading SingleElectronRun2017F_2-97
+adding SingleElectron_F2-99.root to the list by reading SingleElectronRun2017F_2-99
+adding SingleElectron_F2.root to the list by reading SingleElectronRun2017F_2
+adding SingleElectron_F29.root to the list by reading SingleElectronRun2017F_29
+adding SingleElectron_F3-1.root to the list by reading SingleElectronRun2017F_3-1
+adding SingleElectron_F3-10.root to the list by reading SingleElectronRun2017F_3-10
+adding SingleElectron_F3-11.root to the list by reading SingleElectronRun2017F_3-11
+adding SingleElectron_F3-12.root to the list by reading SingleElectronRun2017F_3-12
+adding SingleElectron_F3-13.root to the list by reading SingleElectronRun2017F_3-13
+adding SingleElectron_F3-14.root to the list by reading SingleElectronRun2017F_3-14
+adding SingleElectron_F3-15.root to the list by reading SingleElectronRun2017F_3-15
+adding SingleElectron_F3-17.root to the list by reading SingleElectronRun2017F_3-17
+adding SingleElectron_F3-18.root to the list by reading SingleElectronRun2017F_3-18
+adding SingleElectron_F3-19.root to the list by reading SingleElectronRun2017F_3-19
+
+Processing makeStep1.C("/storage/local/data1/condor/execute/dir_30499","filelist",2017)...
+CSV reshaping file DeepCSV_106XUL17SF.csv
+Deep Jet reshaping file DeepJet_106XUL17SF.csv
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_2-9.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 55522 events
+Completed 1000 out of 55522 events
+Completed 2000 out of 55522 events
+Completed 3000 out of 55522 events
+Completed 4000 out of 55522 events
+Completed 5000 out of 55522 events
+Completed 6000 out of 55522 events
+Completed 7000 out of 55522 events
+Completed 8000 out of 55522 events
+Completed 9000 out of 55522 events
+Completed 10000 out of 55522 events
+Completed 11000 out of 55522 events
+Completed 12000 out of 55522 events
+Completed 13000 out of 55522 events
+Completed 14000 out of 55522 events
+Completed 15000 out of 55522 events
+Completed 16000 out of 55522 events
+Completed 17000 out of 55522 events
+Completed 18000 out of 55522 events
+Completed 19000 out of 55522 events
+Completed 20000 out of 55522 events
+Completed 21000 out of 55522 events
+Completed 22000 out of 55522 events
+Completed 23000 out of 55522 events
+Completed 24000 out of 55522 events
+Completed 25000 out of 55522 events
+Completed 26000 out of 55522 events
+Completed 27000 out of 55522 events
+Completed 28000 out of 55522 events
+Completed 29000 out of 55522 events
+Completed 30000 out of 55522 events
+Completed 31000 out of 55522 events
+Completed 32000 out of 55522 events
+Completed 33000 out of 55522 events
+Completed 34000 out of 55522 events
+Completed 35000 out of 55522 events
+Completed 36000 out of 55522 events
+Completed 37000 out of 55522 events
+Completed 38000 out of 55522 events
+Completed 39000 out of 55522 events
+Completed 40000 out of 55522 events
+Completed 41000 out of 55522 events
+Completed 42000 out of 55522 events
+Completed 43000 out of 55522 events
+Completed 44000 out of 55522 events
+Completed 45000 out of 55522 events
+Completed 46000 out of 55522 events
+Completed 47000 out of 55522 events
+Completed 48000 out of 55522 events
+Completed 49000 out of 55522 events
+Completed 50000 out of 55522 events
+Completed 51000 out of 55522 events
+Completed 52000 out of 55522 events
+Completed 53000 out of 55522 events
+Completed 54000 out of 55522 events
+Completed 55000 out of 55522 events
+Nelectrons      = 55503 / 55522
+Npassed_ElEta   = 55503 / 55522
+Nmuons          = 0 / 55522
+NrelIsoFail     = 0 / 55522
+Npassed_MuEta   = 0 / 55522
+Npassed_nAK8Jets= 55503 / 55522
+Npassed_Trigger = 53400 / 55522
+Npassed_MET     = 7296 / 55522
+Npassed_lepPt   = 10516 / 55522
+Npassed_HT      = 393 / 55522
+npass_Njets     = 1114 / 55522
+Npassed_ALL     = 80 / 55522
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_2-91.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 67457 events
+Completed 1000 out of 67457 events
+Completed 2000 out of 67457 events
+Completed 3000 out of 67457 events
+Completed 4000 out of 67457 events
+Completed 5000 out of 67457 events
+Completed 6000 out of 67457 events
+Completed 7000 out of 67457 events
+Completed 8000 out of 67457 events
+Completed 9000 out of 67457 events
+Completed 10000 out of 67457 events
+Completed 11000 out of 67457 events
+Completed 12000 out of 67457 events
+Completed 13000 out of 67457 events
+Completed 14000 out of 67457 events
+Completed 15000 out of 67457 events
+Completed 16000 out of 67457 events
+Completed 17000 out of 67457 events
+Completed 18000 out of 67457 events
+Completed 19000 out of 67457 events
+Completed 20000 out of 67457 events
+Completed 21000 out of 67457 events
+Completed 22000 out of 67457 events
+Completed 23000 out of 67457 events
+Completed 24000 out of 67457 events
+Completed 25000 out of 67457 events
+Completed 26000 out of 67457 events
+Completed 27000 out of 67457 events
+Completed 28000 out of 67457 events
+Completed 29000 out of 67457 events
+Completed 30000 out of 67457 events
+Completed 31000 out of 67457 events
+Completed 32000 out of 67457 events
+Completed 33000 out of 67457 events
+Completed 34000 out of 67457 events
+Completed 35000 out of 67457 events
+Completed 36000 out of 67457 events
+Completed 37000 out of 67457 events
+Completed 38000 out of 67457 events
+Completed 39000 out of 67457 events
+Completed 40000 out of 67457 events
+Completed 41000 out of 67457 events
+Completed 42000 out of 67457 events
+Completed 43000 out of 67457 events
+Completed 44000 out of 67457 events
+Completed 45000 out of 67457 events
+Completed 46000 out of 67457 events
+Completed 47000 out of 67457 events
+Completed 48000 out of 67457 events
+Completed 49000 out of 67457 events
+Completed 50000 out of 67457 events
+Completed 51000 out of 67457 events
+Completed 52000 out of 67457 events
+Completed 53000 out of 67457 events
+Completed 54000 out of 67457 events
+Completed 55000 out of 67457 events
+Completed 56000 out of 67457 events
+Completed 57000 out of 67457 events
+Completed 58000 out of 67457 events
+Completed 59000 out of 67457 events
+Completed 60000 out of 67457 events
+Completed 61000 out of 67457 events
+Completed 62000 out of 67457 events
+Completed 63000 out of 67457 events
+Completed 64000 out of 67457 events
+Completed 65000 out of 67457 events
+Completed 66000 out of 67457 events
+Completed 67000 out of 67457 events
+Nelectrons      = 67414 / 67457
+Npassed_ElEta   = 67414 / 67457
+Nmuons          = 0 / 67457
+NrelIsoFail     = 0 / 67457
+Npassed_MuEta   = 0 / 67457
+Npassed_nAK8Jets= 67414 / 67457
+Npassed_Trigger = 65176 / 67457
+Npassed_MET     = 10857 / 67457
+Npassed_lepPt   = 12032 / 67457
+Npassed_HT      = 429 / 67457
+npass_Njets     = 1442 / 67457
+Npassed_ALL     = 76 / 67457
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_2-92.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 79571 events
+Completed 1000 out of 79571 events
+Completed 2000 out of 79571 events
+Completed 3000 out of 79571 events
+Completed 4000 out of 79571 events
+Completed 5000 out of 79571 events
+Completed 6000 out of 79571 events
+Completed 7000 out of 79571 events
+Completed 8000 out of 79571 events
+Completed 9000 out of 79571 events
+Completed 10000 out of 79571 events
+Completed 11000 out of 79571 events
+Completed 12000 out of 79571 events
+Completed 13000 out of 79571 events
+Completed 14000 out of 79571 events
+Completed 15000 out of 79571 events
+Completed 16000 out of 79571 events
+Completed 17000 out of 79571 events
+Completed 18000 out of 79571 events
+Completed 19000 out of 79571 events
+Completed 20000 out of 79571 events
+Completed 21000 out of 79571 events
+Completed 22000 out of 79571 events
+Completed 23000 out of 79571 events
+Completed 24000 out of 79571 events
+Completed 25000 out of 79571 events
+Completed 26000 out of 79571 events
+Completed 27000 out of 79571 events
+Completed 28000 out of 79571 events
+Completed 29000 out of 79571 events
+Completed 30000 out of 79571 events
+Completed 31000 out of 79571 events
+Completed 32000 out of 79571 events
+Completed 33000 out of 79571 events
+Completed 34000 out of 79571 events
+Completed 35000 out of 79571 events
+Completed 36000 out of 79571 events
+Completed 37000 out of 79571 events
+Completed 38000 out of 79571 events
+Completed 39000 out of 79571 events
+Completed 40000 out of 79571 events
+Completed 41000 out of 79571 events
+Completed 42000 out of 79571 events
+Completed 43000 out of 79571 events
+Completed 44000 out of 79571 events
+Completed 45000 out of 79571 events
+Completed 46000 out of 79571 events
+Completed 47000 out of 79571 events
+Completed 48000 out of 79571 events
+Completed 49000 out of 79571 events
+Completed 50000 out of 79571 events
+Completed 51000 out of 79571 events
+Completed 52000 out of 79571 events
+Completed 53000 out of 79571 events
+Completed 54000 out of 79571 events
+Completed 55000 out of 79571 events
+Completed 56000 out of 79571 events
+Completed 57000 out of 79571 events
+Completed 58000 out of 79571 events
+Completed 59000 out of 79571 events
+Completed 60000 out of 79571 events
+Completed 61000 out of 79571 events
+Completed 62000 out of 79571 events
+Completed 63000 out of 79571 events
+Completed 64000 out of 79571 events
+Completed 65000 out of 79571 events
+Completed 66000 out of 79571 events
+Completed 67000 out of 79571 events
+Completed 68000 out of 79571 events
+Completed 69000 out of 79571 events
+Completed 70000 out of 79571 events
+Completed 71000 out of 79571 events
+Completed 72000 out of 79571 events
+Completed 73000 out of 79571 events
+Completed 74000 out of 79571 events
+Completed 75000 out of 79571 events
+Completed 76000 out of 79571 events
+Completed 77000 out of 79571 events
+Completed 78000 out of 79571 events
+Completed 79000 out of 79571 events
+Nelectrons      = 79531 / 79571
+Npassed_ElEta   = 79531 / 79571
+Nmuons          = 0 / 79571
+NrelIsoFail     = 0 / 79571
+Npassed_MuEta   = 0 / 79571
+Npassed_nAK8Jets= 79531 / 79571
+Npassed_Trigger = 76968 / 79571
+Npassed_MET     = 12968 / 79571
+Npassed_lepPt   = 13768 / 79571
+Npassed_HT      = 433 / 79571
+npass_Njets     = 1543 / 79571
+Npassed_ALL     = 84 / 79571
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_2-93.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 64965 events
+Completed 1000 out of 64965 events
+Completed 2000 out of 64965 events
+Completed 3000 out of 64965 events
+Completed 4000 out of 64965 events
+Completed 5000 out of 64965 events
+Completed 6000 out of 64965 events
+Completed 7000 out of 64965 events
+Completed 8000 out of 64965 events
+Completed 9000 out of 64965 events
+Completed 10000 out of 64965 events
+Completed 11000 out of 64965 events
+Completed 12000 out of 64965 events
+Completed 13000 out of 64965 events
+Completed 14000 out of 64965 events
+Completed 15000 out of 64965 events
+Completed 16000 out of 64965 events
+Completed 17000 out of 64965 events
+Completed 18000 out of 64965 events
+Completed 19000 out of 64965 events
+Completed 20000 out of 64965 events
+Completed 21000 out of 64965 events
+Completed 22000 out of 64965 events
+Completed 23000 out of 64965 events
+Completed 24000 out of 64965 events
+Completed 25000 out of 64965 events
+Completed 26000 out of 64965 events
+Completed 27000 out of 64965 events
+Completed 28000 out of 64965 events
+Completed 29000 out of 64965 events
+Completed 30000 out of 64965 events
+Completed 31000 out of 64965 events
+Completed 32000 out of 64965 events
+Completed 33000 out of 64965 events
+Completed 34000 out of 64965 events
+Completed 35000 out of 64965 events
+Completed 36000 out of 64965 events
+Completed 37000 out of 64965 events
+Completed 38000 out of 64965 events
+Completed 39000 out of 64965 events
+Completed 40000 out of 64965 events
+Completed 41000 out of 64965 events
+Completed 42000 out of 64965 events
+Completed 43000 out of 64965 events
+Completed 44000 out of 64965 events
+Completed 45000 out of 64965 events
+Completed 46000 out of 64965 events
+Completed 47000 out of 64965 events
+Completed 48000 out of 64965 events
+Completed 49000 out of 64965 events
+Completed 50000 out of 64965 events
+Completed 51000 out of 64965 events
+Completed 52000 out of 64965 events
+Completed 53000 out of 64965 events
+Completed 54000 out of 64965 events
+Completed 55000 out of 64965 events
+Completed 56000 out of 64965 events
+Completed 57000 out of 64965 events
+Completed 58000 out of 64965 events
+Completed 59000 out of 64965 events
+Completed 60000 out of 64965 events
+Completed 61000 out of 64965 events
+Completed 62000 out of 64965 events
+Completed 63000 out of 64965 events
+Completed 64000 out of 64965 events
+Nelectrons      = 64934 / 64965
+Npassed_ElEta   = 64934 / 64965
+Nmuons          = 0 / 64965
+NrelIsoFail     = 0 / 64965
+Npassed_MuEta   = 0 / 64965
+Npassed_nAK8Jets= 64934 / 64965
+Npassed_Trigger = 62681 / 64965
+Npassed_MET     = 9015 / 64965
+Npassed_lepPt   = 11768 / 64965
+Npassed_HT      = 391 / 64965
+npass_Njets     = 1303 / 64965
+Npassed_ALL     = 70 / 64965
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_2-94.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 50146 events
+Completed 1000 out of 50146 events
+Completed 2000 out of 50146 events
+Completed 3000 out of 50146 events
+Completed 4000 out of 50146 events
+Completed 5000 out of 50146 events
+Completed 6000 out of 50146 events
+Completed 7000 out of 50146 events
+Completed 8000 out of 50146 events
+Completed 9000 out of 50146 events
+Completed 10000 out of 50146 events
+Completed 11000 out of 50146 events
+Completed 12000 out of 50146 events
+Completed 13000 out of 50146 events
+Completed 14000 out of 50146 events
+Completed 15000 out of 50146 events
+Completed 16000 out of 50146 events
+Completed 17000 out of 50146 events
+Completed 18000 out of 50146 events
+Completed 19000 out of 50146 events
+Completed 20000 out of 50146 events
+Completed 21000 out of 50146 events
+Completed 22000 out of 50146 events
+Completed 23000 out of 50146 events
+Completed 24000 out of 50146 events
+Completed 25000 out of 50146 events
+Completed 26000 out of 50146 events
+Completed 27000 out of 50146 events
+Completed 28000 out of 50146 events
+Completed 29000 out of 50146 events
+Completed 30000 out of 50146 events
+Completed 31000 out of 50146 events
+Completed 32000 out of 50146 events
+Completed 33000 out of 50146 events
+Completed 34000 out of 50146 events
+Completed 35000 out of 50146 events
+Completed 36000 out of 50146 events
+Completed 37000 out of 50146 events
+Completed 38000 out of 50146 events
+Completed 39000 out of 50146 events
+Completed 40000 out of 50146 events
+Completed 41000 out of 50146 events
+Completed 42000 out of 50146 events
+Completed 43000 out of 50146 events
+Completed 44000 out of 50146 events
+Completed 45000 out of 50146 events
+Completed 46000 out of 50146 events
+Completed 47000 out of 50146 events
+Completed 48000 out of 50146 events
+Completed 49000 out of 50146 events
+Completed 50000 out of 50146 events
+Nelectrons      = 50116 / 50146
+Npassed_ElEta   = 50116 / 50146
+Nmuons          = 0 / 50146
+NrelIsoFail     = 0 / 50146
+Npassed_MuEta   = 0 / 50146
+Npassed_nAK8Jets= 50116 / 50146
+Npassed_Trigger = 48241 / 50146
+Npassed_MET     = 5773 / 50146
+Npassed_lepPt   = 9368 / 50146
+Npassed_HT      = 377 / 50146
+npass_Njets     = 1154 / 50146
+Npassed_ALL     = 81 / 50146
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_2-96.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 56103 events
+Completed 1000 out of 56103 events
+Completed 2000 out of 56103 events
+Completed 3000 out of 56103 events
+Completed 4000 out of 56103 events
+Completed 5000 out of 56103 events
+Completed 6000 out of 56103 events
+Completed 7000 out of 56103 events
+Completed 8000 out of 56103 events
+Completed 9000 out of 56103 events
+Completed 10000 out of 56103 events
+Completed 11000 out of 56103 events
+Completed 12000 out of 56103 events
+Completed 13000 out of 56103 events
+Completed 14000 out of 56103 events
+Completed 15000 out of 56103 events
+Completed 16000 out of 56103 events
+Completed 17000 out of 56103 events
+Completed 18000 out of 56103 events
+Completed 19000 out of 56103 events
+Completed 20000 out of 56103 events
+Completed 21000 out of 56103 events
+Completed 22000 out of 56103 events
+Completed 23000 out of 56103 events
+Completed 24000 out of 56103 events
+Completed 25000 out of 56103 events
+Completed 26000 out of 56103 events
+Completed 27000 out of 56103 events
+Completed 28000 out of 56103 events
+Completed 29000 out of 56103 events
+Completed 30000 out of 56103 events
+Completed 31000 out of 56103 events
+Completed 32000 out of 56103 events
+Completed 33000 out of 56103 events
+Completed 34000 out of 56103 events
+Completed 35000 out of 56103 events
+Completed 36000 out of 56103 events
+Completed 37000 out of 56103 events
+Completed 38000 out of 56103 events
+Completed 39000 out of 56103 events
+Completed 40000 out of 56103 events
+Completed 41000 out of 56103 events
+Completed 42000 out of 56103 events
+Completed 43000 out of 56103 events
+Completed 44000 out of 56103 events
+Completed 45000 out of 56103 events
+Completed 46000 out of 56103 events
+Completed 47000 out of 56103 events
+Completed 48000 out of 56103 events
+Completed 49000 out of 56103 events
+Completed 50000 out of 56103 events
+Completed 51000 out of 56103 events
+Completed 52000 out of 56103 events
+Completed 53000 out of 56103 events
+Completed 54000 out of 56103 events
+Completed 55000 out of 56103 events
+Completed 56000 out of 56103 events
+Nelectrons      = 56070 / 56103
+Npassed_ElEta   = 56070 / 56103
+Nmuons          = 0 / 56103
+NrelIsoFail     = 0 / 56103
+Npassed_MuEta   = 0 / 56103
+Npassed_nAK8Jets= 56070 / 56103
+Npassed_Trigger = 53967 / 56103
+Npassed_MET     = 7101 / 56103
+Npassed_lepPt   = 10090 / 56103
+Npassed_HT      = 405 / 56103
+npass_Njets     = 1187 / 56103
+Npassed_ALL     = 57 / 56103
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_2-97.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 50998 events
+Completed 1000 out of 50998 events
+Completed 2000 out of 50998 events
+Completed 3000 out of 50998 events
+Completed 4000 out of 50998 events
+Completed 5000 out of 50998 events
+Completed 6000 out of 50998 events
+Completed 7000 out of 50998 events
+Completed 8000 out of 50998 events
+Completed 9000 out of 50998 events
+Completed 10000 out of 50998 events
+Completed 11000 out of 50998 events
+Completed 12000 out of 50998 events
+Completed 13000 out of 50998 events
+Completed 14000 out of 50998 events
+Completed 15000 out of 50998 events
+Completed 16000 out of 50998 events
+Completed 17000 out of 50998 events
+Completed 18000 out of 50998 events
+Completed 19000 out of 50998 events
+Completed 20000 out of 50998 events
+Completed 21000 out of 50998 events
+Completed 22000 out of 50998 events
+Completed 23000 out of 50998 events
+Completed 24000 out of 50998 events
+Completed 25000 out of 50998 events
+Completed 26000 out of 50998 events
+Completed 27000 out of 50998 events
+Completed 28000 out of 50998 events
+Completed 29000 out of 50998 events
+Completed 30000 out of 50998 events
+Completed 31000 out of 50998 events
+Completed 32000 out of 50998 events
+Completed 33000 out of 50998 events
+Completed 34000 out of 50998 events
+Completed 35000 out of 50998 events
+Completed 36000 out of 50998 events
+Completed 37000 out of 50998 events
+Completed 38000 out of 50998 events
+Completed 39000 out of 50998 events
+Completed 40000 out of 50998 events
+Completed 41000 out of 50998 events
+Completed 42000 out of 50998 events
+Completed 43000 out of 50998 events
+Completed 44000 out of 50998 events
+Completed 45000 out of 50998 events
+Completed 46000 out of 50998 events
+Completed 47000 out of 50998 events
+Completed 48000 out of 50998 events
+Completed 49000 out of 50998 events
+Completed 50000 out of 50998 events
+Nelectrons      = 50974 / 50998
+Npassed_ElEta   = 50974 / 50998
+Nmuons          = 0 / 50998
+NrelIsoFail     = 0 / 50998
+Npassed_MuEta   = 0 / 50998
+Npassed_nAK8Jets= 50974 / 50998
+Npassed_Trigger = 49040 / 50998
+Npassed_MET     = 5573 / 50998
+Npassed_lepPt   = 9876 / 50998
+Npassed_HT      = 380 / 50998
+npass_Njets     = 1117 / 50998
+Npassed_ALL     = 68 / 50998
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_2-99.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 51527 events
+Completed 1000 out of 51527 events
+Completed 2000 out of 51527 events
+Completed 3000 out of 51527 events
+Completed 4000 out of 51527 events
+Completed 5000 out of 51527 events
+Completed 6000 out of 51527 events
+Completed 7000 out of 51527 events
+Completed 8000 out of 51527 events
+Completed 9000 out of 51527 events
+Completed 10000 out of 51527 events
+Completed 11000 out of 51527 events
+Completed 12000 out of 51527 events
+Completed 13000 out of 51527 events
+Completed 14000 out of 51527 events
+Completed 15000 out of 51527 events
+Completed 16000 out of 51527 events
+Completed 17000 out of 51527 events
+Completed 18000 out of 51527 events
+Completed 19000 out of 51527 events
+Completed 20000 out of 51527 events
+Completed 21000 out of 51527 events
+Completed 22000 out of 51527 events
+Completed 23000 out of 51527 events
+Completed 24000 out of 51527 events
+Completed 25000 out of 51527 events
+Completed 26000 out of 51527 events
+Completed 27000 out of 51527 events
+Completed 28000 out of 51527 events
+Completed 29000 out of 51527 events
+Completed 30000 out of 51527 events
+Completed 31000 out of 51527 events
+Completed 32000 out of 51527 events
+Completed 33000 out of 51527 events
+Completed 34000 out of 51527 events
+Completed 35000 out of 51527 events
+Completed 36000 out of 51527 events
+Completed 37000 out of 51527 events
+Completed 38000 out of 51527 events
+Completed 39000 out of 51527 events
+Completed 40000 out of 51527 events
+Completed 41000 out of 51527 events
+Completed 42000 out of 51527 events
+Completed 43000 out of 51527 events
+Completed 44000 out of 51527 events
+Completed 45000 out of 51527 events
+Completed 46000 out of 51527 events
+Completed 47000 out of 51527 events
+Completed 48000 out of 51527 events
+Completed 49000 out of 51527 events
+Completed 50000 out of 51527 events
+Completed 51000 out of 51527 events
+Nelectrons      = 51497 / 51527
+Npassed_ElEta   = 51497 / 51527
+Nmuons          = 0 / 51527
+NrelIsoFail     = 0 / 51527
+Npassed_MuEta   = 0 / 51527
+Npassed_nAK8Jets= 51497 / 51527
+Npassed_Trigger = 49483 / 51527
+Npassed_MET     = 6311 / 51527
+Npassed_lepPt   = 10000 / 51527
+Npassed_HT      = 392 / 51527
+npass_Njets     = 1165 / 51527
+Npassed_ALL     = 60 / 51527
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_2.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 371050 events
+Completed 1000 out of 371050 events
+Completed 2000 out of 371050 events
+Completed 3000 out of 371050 events
+Completed 4000 out of 371050 events
+Completed 5000 out of 371050 events
+Completed 6000 out of 371050 events
+Completed 7000 out of 371050 events
+Completed 8000 out of 371050 events
+Completed 9000 out of 371050 events
+Completed 10000 out of 371050 events
+Completed 11000 out of 371050 events
+Completed 12000 out of 371050 events
+Completed 13000 out of 371050 events
+Completed 14000 out of 371050 events
+Completed 15000 out of 371050 events
+Completed 16000 out of 371050 events
+Completed 17000 out of 371050 events
+Completed 18000 out of 371050 events
+Completed 19000 out of 371050 events
+Completed 20000 out of 371050 events
+Completed 21000 out of 371050 events
+Completed 22000 out of 371050 events
+Completed 23000 out of 371050 events
+Completed 24000 out of 371050 events
+Completed 25000 out of 371050 events
+Completed 26000 out of 371050 events
+Completed 27000 out of 371050 events
+Completed 28000 out of 371050 events
+Completed 29000 out of 371050 events
+Completed 30000 out of 371050 events
+Completed 31000 out of 371050 events
+Completed 32000 out of 371050 events
+Completed 33000 out of 371050 events
+Completed 34000 out of 371050 events
+Completed 35000 out of 371050 events
+Completed 36000 out of 371050 events
+Completed 37000 out of 371050 events
+Completed 38000 out of 371050 events
+Completed 39000 out of 371050 events
+Completed 40000 out of 371050 events
+Completed 41000 out of 371050 events
+Completed 42000 out of 371050 events
+Completed 43000 out of 371050 events
+Completed 44000 out of 371050 events
+Completed 45000 out of 371050 events
+Completed 46000 out of 371050 events
+Completed 47000 out of 371050 events
+Completed 48000 out of 371050 events
+Completed 49000 out of 371050 events
+Completed 50000 out of 371050 events
+Completed 51000 out of 371050 events
+Completed 52000 out of 371050 events
+Completed 53000 out of 371050 events
+Completed 54000 out of 371050 events
+Completed 55000 out of 371050 events
+Completed 56000 out of 371050 events
+Completed 57000 out of 371050 events
+Completed 58000 out of 371050 events
+Completed 59000 out of 371050 events
+Completed 60000 out of 371050 events
+Completed 61000 out of 371050 events
+Completed 62000 out of 371050 events
+Completed 63000 out of 371050 events
+Completed 64000 out of 371050 events
+Completed 65000 out of 371050 events
+Completed 66000 out of 371050 events
+Completed 67000 out of 371050 events
+Completed 68000 out of 371050 events
+Completed 69000 out of 371050 events
+Completed 70000 out of 371050 events
+Completed 71000 out of 371050 events
+Completed 72000 out of 371050 events
+Completed 73000 out of 371050 events
+Completed 74000 out of 371050 events
+Completed 75000 out of 371050 events
+Completed 76000 out of 371050 events
+Completed 77000 out of 371050 events
+Completed 78000 out of 371050 events
+Completed 79000 out of 371050 events
+Completed 80000 out of 371050 events
+Completed 81000 out of 371050 events
+Completed 82000 out of 371050 events
+Completed 83000 out of 371050 events
+Completed 84000 out of 371050 events
+Completed 85000 out of 371050 events
+Completed 86000 out of 371050 events
+Completed 87000 out of 371050 events
+Completed 88000 out of 371050 events
+Completed 89000 out of 371050 events
+Completed 90000 out of 371050 events
+Completed 91000 out of 371050 events
+Completed 92000 out of 371050 events
+Completed 93000 out of 371050 events
+Completed 94000 out of 371050 events
+Completed 95000 out of 371050 events
+Completed 96000 out of 371050 events
+Completed 97000 out of 371050 events
+Completed 98000 out of 371050 events
+Completed 99000 out of 371050 events
+Completed 100000 out of 371050 events
+Completed 101000 out of 371050 events
+Completed 102000 out of 371050 events
+Completed 103000 out of 371050 events
+Completed 104000 out of 371050 events
+Completed 105000 out of 371050 events
+Completed 106000 out of 371050 events
+Completed 107000 out of 371050 events
+Completed 108000 out of 371050 events
+Completed 109000 out of 371050 events
+Completed 110000 out of 371050 events
+Completed 111000 out of 371050 events
+Completed 112000 out of 371050 events
+Completed 113000 out of 371050 events
+Completed 114000 out of 371050 events
+Completed 115000 out of 371050 events
+Completed 116000 out of 371050 events
+Completed 117000 out of 371050 events
+Completed 118000 out of 371050 events
+Completed 119000 out of 371050 events
+Completed 120000 out of 371050 events
+Completed 121000 out of 371050 events
+Completed 122000 out of 371050 events
+Completed 123000 out of 371050 events
+Completed 124000 out of 371050 events
+Completed 125000 out of 371050 events
+Completed 126000 out of 371050 events
+Completed 127000 out of 371050 events
+Completed 128000 out of 371050 events
+Completed 129000 out of 371050 events
+Completed 130000 out of 371050 events
+Completed 131000 out of 371050 events
+Completed 132000 out of 371050 events
+Completed 133000 out of 371050 events
+Completed 134000 out of 371050 events
+Completed 135000 out of 371050 events
+Completed 136000 out of 371050 events
+Completed 137000 out of 371050 events
+Completed 138000 out of 371050 events
+Completed 139000 out of 371050 events
+Completed 140000 out of 371050 events
+Completed 141000 out of 371050 events
+Completed 142000 out of 371050 events
+Completed 143000 out of 371050 events
+Completed 144000 out of 371050 events
+Completed 145000 out of 371050 events
+Completed 146000 out of 371050 events
+Completed 147000 out of 371050 events
+Completed 148000 out of 371050 events
+Completed 149000 out of 371050 events
+Completed 150000 out of 371050 events
+Completed 151000 out of 371050 events
+Completed 152000 out of 371050 events
+Completed 153000 out of 371050 events
+Completed 154000 out of 371050 events
+Completed 155000 out of 371050 events
+Completed 156000 out of 371050 events
+Completed 157000 out of 371050 events
+Completed 158000 out of 371050 events
+Completed 159000 out of 371050 events
+Completed 160000 out of 371050 events
+Completed 161000 out of 371050 events
+Completed 162000 out of 371050 events
+Completed 163000 out of 371050 events
+Completed 164000 out of 371050 events
+Completed 165000 out of 371050 events
+Completed 166000 out of 371050 events
+Completed 167000 out of 371050 events
+Completed 168000 out of 371050 events
+Completed 169000 out of 371050 events
+Completed 170000 out of 371050 events
+Completed 171000 out of 371050 events
+Completed 172000 out of 371050 events
+Completed 173000 out of 371050 events
+Completed 174000 out of 371050 events
+Completed 175000 out of 371050 events
+Completed 176000 out of 371050 events
+Completed 177000 out of 371050 events
+Completed 178000 out of 371050 events
+Completed 179000 out of 371050 events
+Completed 180000 out of 371050 events
+Completed 181000 out of 371050 events
+Completed 182000 out of 371050 events
+Completed 183000 out of 371050 events
+Completed 184000 out of 371050 events
+Completed 185000 out of 371050 events
+Completed 186000 out of 371050 events
+Completed 187000 out of 371050 events
+Completed 188000 out of 371050 events
+Completed 189000 out of 371050 events
+Completed 190000 out of 371050 events
+Completed 191000 out of 371050 events
+Completed 192000 out of 371050 events
+Completed 193000 out of 371050 events
+Completed 194000 out of 371050 events
+Completed 195000 out of 371050 events
+Completed 196000 out of 371050 events
+Completed 197000 out of 371050 events
+Completed 198000 out of 371050 events
+Completed 199000 out of 371050 events
+Completed 200000 out of 371050 events
+Completed 201000 out of 371050 events
+Completed 202000 out of 371050 events
+Completed 203000 out of 371050 events
+Completed 204000 out of 371050 events
+Completed 205000 out of 371050 events
+Completed 206000 out of 371050 events
+Completed 207000 out of 371050 events
+Completed 208000 out of 371050 events
+Completed 209000 out of 371050 events
+Completed 210000 out of 371050 events
+Completed 211000 out of 371050 events
+Completed 212000 out of 371050 events
+Completed 213000 out of 371050 events
+Completed 214000 out of 371050 events
+Completed 215000 out of 371050 events
+Completed 216000 out of 371050 events
+Completed 217000 out of 371050 events
+Completed 218000 out of 371050 events
+Completed 219000 out of 371050 events
+Completed 220000 out of 371050 events
+Completed 221000 out of 371050 events
+Completed 222000 out of 371050 events
+Completed 223000 out of 371050 events
+Completed 224000 out of 371050 events
+Completed 225000 out of 371050 events
+Completed 226000 out of 371050 events
+Completed 227000 out of 371050 events
+Completed 228000 out of 371050 events
+Completed 229000 out of 371050 events
+Completed 230000 out of 371050 events
+Completed 231000 out of 371050 events
+Completed 232000 out of 371050 events
+Completed 233000 out of 371050 events
+Completed 234000 out of 371050 events
+Completed 235000 out of 371050 events
+Completed 236000 out of 371050 events
+Completed 237000 out of 371050 events
+Completed 238000 out of 371050 events
+Completed 239000 out of 371050 events
+Completed 240000 out of 371050 events
+Completed 241000 out of 371050 events
+Completed 242000 out of 371050 events
+Completed 243000 out of 371050 events
+Completed 244000 out of 371050 events
+Completed 245000 out of 371050 events
+Completed 246000 out of 371050 events
+Completed 247000 out of 371050 events
+Completed 248000 out of 371050 events
+Completed 249000 out of 371050 events
+Completed 250000 out of 371050 events
+Completed 251000 out of 371050 events
+Completed 252000 out of 371050 events
+Completed 253000 out of 371050 events
+Completed 254000 out of 371050 events
+Completed 255000 out of 371050 events
+Completed 256000 out of 371050 events
+Completed 257000 out of 371050 events
+Completed 258000 out of 371050 events
+Completed 259000 out of 371050 events
+Completed 260000 out of 371050 events
+Completed 261000 out of 371050 events
+Completed 262000 out of 371050 events
+Completed 263000 out of 371050 events
+Completed 264000 out of 371050 events
+Completed 265000 out of 371050 events
+Completed 266000 out of 371050 events
+Completed 267000 out of 371050 events
+Completed 268000 out of 371050 events
+Completed 269000 out of 371050 events
+Completed 270000 out of 371050 events
+Completed 271000 out of 371050 events
+Completed 272000 out of 371050 events
+Completed 273000 out of 371050 events
+Completed 274000 out of 371050 events
+Completed 275000 out of 371050 events
+Completed 276000 out of 371050 events
+Completed 277000 out of 371050 events
+Completed 278000 out of 371050 events
+Completed 279000 out of 371050 events
+Completed 280000 out of 371050 events
+Completed 281000 out of 371050 events
+Completed 282000 out of 371050 events
+Completed 283000 out of 371050 events
+Completed 284000 out of 371050 events
+Completed 285000 out of 371050 events
+Completed 286000 out of 371050 events
+Completed 287000 out of 371050 events
+Completed 288000 out of 371050 events
+Completed 289000 out of 371050 events
+Completed 290000 out of 371050 events
+Completed 291000 out of 371050 events
+Completed 292000 out of 371050 events
+Completed 293000 out of 371050 events
+Completed 294000 out of 371050 events
+Completed 295000 out of 371050 events
+Completed 296000 out of 371050 events
+Completed 297000 out of 371050 events
+Completed 298000 out of 371050 events
+Completed 299000 out of 371050 events
+Completed 300000 out of 371050 events
+Completed 301000 out of 371050 events
+Completed 302000 out of 371050 events
+Completed 303000 out of 371050 events
+Completed 304000 out of 371050 events
+Completed 305000 out of 371050 events
+Completed 306000 out of 371050 events
+Completed 307000 out of 371050 events
+Completed 308000 out of 371050 events
+Completed 309000 out of 371050 events
+Completed 310000 out of 371050 events
+Completed 311000 out of 371050 events
+Completed 312000 out of 371050 events
+Completed 313000 out of 371050 events
+Completed 314000 out of 371050 events
+Completed 315000 out of 371050 events
+Completed 316000 out of 371050 events
+Completed 317000 out of 371050 events
+Completed 318000 out of 371050 events
+Completed 319000 out of 371050 events
+Completed 320000 out of 371050 events
+Completed 321000 out of 371050 events
+Completed 322000 out of 371050 events
+Completed 323000 out of 371050 events
+Completed 324000 out of 371050 events
+Completed 325000 out of 371050 events
+Completed 326000 out of 371050 events
+Completed 327000 out of 371050 events
+Completed 328000 out of 371050 events
+Completed 329000 out of 371050 events
+Completed 330000 out of 371050 events
+Completed 331000 out of 371050 events
+Completed 332000 out of 371050 events
+Completed 333000 out of 371050 events
+Completed 334000 out of 371050 events
+Completed 335000 out of 371050 events
+Completed 336000 out of 371050 events
+Completed 337000 out of 371050 events
+Completed 338000 out of 371050 events
+Completed 339000 out of 371050 events
+Completed 340000 out of 371050 events
+Completed 341000 out of 371050 events
+Completed 342000 out of 371050 events
+Completed 343000 out of 371050 events
+Completed 344000 out of 371050 events
+Completed 345000 out of 371050 events
+Completed 346000 out of 371050 events
+Completed 347000 out of 371050 events
+Completed 348000 out of 371050 events
+Completed 349000 out of 371050 events
+Completed 350000 out of 371050 events
+Completed 351000 out of 371050 events
+Completed 352000 out of 371050 events
+Completed 353000 out of 371050 events
+Completed 354000 out of 371050 events
+Completed 355000 out of 371050 events
+Completed 356000 out of 371050 events
+Completed 357000 out of 371050 events
+Completed 358000 out of 371050 events
+Completed 359000 out of 371050 events
+Completed 360000 out of 371050 events
+Completed 361000 out of 371050 events
+Completed 362000 out of 371050 events
+Completed 363000 out of 371050 events
+Completed 364000 out of 371050 events
+Completed 365000 out of 371050 events
+Completed 366000 out of 371050 events
+Completed 367000 out of 371050 events
+Completed 368000 out of 371050 events
+Completed 369000 out of 371050 events
+Completed 370000 out of 371050 events
+Completed 371000 out of 371050 events
+Nelectrons      = 370835 / 371050
+Npassed_ElEta   = 370835 / 371050
+Nmuons          = 0 / 371050
+NrelIsoFail     = 0 / 371050
+Npassed_MuEta   = 0 / 371050
+Npassed_nAK8Jets= 370835 / 371050
+Npassed_Trigger = 359867 / 371050
+Npassed_MET     = 68148 / 371050
+Npassed_lepPt   = 63759 / 371050
+Npassed_HT      = 2129 / 371050
+npass_Njets     = 7380 / 371050
+Npassed_ALL     = 401 / 371050
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_29.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 340598 events
+Completed 1000 out of 340598 events
+Completed 2000 out of 340598 events
+Completed 3000 out of 340598 events
+Completed 4000 out of 340598 events
+Completed 5000 out of 340598 events
+Completed 6000 out of 340598 events
+Completed 7000 out of 340598 events
+Completed 8000 out of 340598 events
+Completed 9000 out of 340598 events
+Completed 10000 out of 340598 events
+Completed 11000 out of 340598 events
+Completed 12000 out of 340598 events
+Completed 13000 out of 340598 events
+Completed 14000 out of 340598 events
+Completed 15000 out of 340598 events
+Completed 16000 out of 340598 events
+Completed 17000 out of 340598 events
+Completed 18000 out of 340598 events
+Completed 19000 out of 340598 events
+Completed 20000 out of 340598 events
+Completed 21000 out of 340598 events
+Completed 22000 out of 340598 events
+Completed 23000 out of 340598 events
+Completed 24000 out of 340598 events
+Completed 25000 out of 340598 events
+Completed 26000 out of 340598 events
+Completed 27000 out of 340598 events
+Completed 28000 out of 340598 events
+Completed 29000 out of 340598 events
+Completed 30000 out of 340598 events
+Completed 31000 out of 340598 events
+Completed 32000 out of 340598 events
+Completed 33000 out of 340598 events
+Completed 34000 out of 340598 events
+Completed 35000 out of 340598 events
+Completed 36000 out of 340598 events
+Completed 37000 out of 340598 events
+Completed 38000 out of 340598 events
+Completed 39000 out of 340598 events
+Completed 40000 out of 340598 events
+Completed 41000 out of 340598 events
+Completed 42000 out of 340598 events
+Completed 43000 out of 340598 events
+Completed 44000 out of 340598 events
+Completed 45000 out of 340598 events
+Completed 46000 out of 340598 events
+Completed 47000 out of 340598 events
+Completed 48000 out of 340598 events
+Completed 49000 out of 340598 events
+Completed 50000 out of 340598 events
+Completed 51000 out of 340598 events
+Completed 52000 out of 340598 events
+Completed 53000 out of 340598 events
+Completed 54000 out of 340598 events
+Completed 55000 out of 340598 events
+Completed 56000 out of 340598 events
+Completed 57000 out of 340598 events
+Completed 58000 out of 340598 events
+Completed 59000 out of 340598 events
+Completed 60000 out of 340598 events
+Completed 61000 out of 340598 events
+Completed 62000 out of 340598 events
+Completed 63000 out of 340598 events
+Completed 64000 out of 340598 events
+Completed 65000 out of 340598 events
+Completed 66000 out of 340598 events
+Completed 67000 out of 340598 events
+Completed 68000 out of 340598 events
+Completed 69000 out of 340598 events
+Completed 70000 out of 340598 events
+Completed 71000 out of 340598 events
+Completed 72000 out of 340598 events
+Completed 73000 out of 340598 events
+Completed 74000 out of 340598 events
+Completed 75000 out of 340598 events
+Completed 76000 out of 340598 events
+Completed 77000 out of 340598 events
+Completed 78000 out of 340598 events
+Completed 79000 out of 340598 events
+Completed 80000 out of 340598 events
+Completed 81000 out of 340598 events
+Completed 82000 out of 340598 events
+Completed 83000 out of 340598 events
+Completed 84000 out of 340598 events
+Completed 85000 out of 340598 events
+Completed 86000 out of 340598 events
+Completed 87000 out of 340598 events
+Completed 88000 out of 340598 events
+Completed 89000 out of 340598 events
+Completed 90000 out of 340598 events
+Completed 91000 out of 340598 events
+Completed 92000 out of 340598 events
+Completed 93000 out of 340598 events
+Completed 94000 out of 340598 events
+Completed 95000 out of 340598 events
+Completed 96000 out of 340598 events
+Completed 97000 out of 340598 events
+Completed 98000 out of 340598 events
+Completed 99000 out of 340598 events
+Completed 100000 out of 340598 events
+Completed 101000 out of 340598 events
+Completed 102000 out of 340598 events
+Completed 103000 out of 340598 events
+Completed 104000 out of 340598 events
+Completed 105000 out of 340598 events
+Completed 106000 out of 340598 events
+Completed 107000 out of 340598 events
+Completed 108000 out of 340598 events
+Completed 109000 out of 340598 events
+Completed 110000 out of 340598 events
+Completed 111000 out of 340598 events
+Completed 112000 out of 340598 events
+Completed 113000 out of 340598 events
+Completed 114000 out of 340598 events
+Completed 115000 out of 340598 events
+Completed 116000 out of 340598 events
+Completed 117000 out of 340598 events
+Completed 118000 out of 340598 events
+Completed 119000 out of 340598 events
+Completed 120000 out of 340598 events
+Completed 121000 out of 340598 events
+Completed 122000 out of 340598 events
+Completed 123000 out of 340598 events
+Completed 124000 out of 340598 events
+Completed 125000 out of 340598 events
+Completed 126000 out of 340598 events
+Completed 127000 out of 340598 events
+Completed 128000 out of 340598 events
+Completed 129000 out of 340598 events
+Completed 130000 out of 340598 events
+Completed 131000 out of 340598 events
+Completed 132000 out of 340598 events
+Completed 133000 out of 340598 events
+Completed 134000 out of 340598 events
+Completed 135000 out of 340598 events
+Completed 136000 out of 340598 events
+Completed 137000 out of 340598 events
+Completed 138000 out of 340598 events
+Completed 139000 out of 340598 events
+Completed 140000 out of 340598 events
+Completed 141000 out of 340598 events
+Completed 142000 out of 340598 events
+Completed 143000 out of 340598 events
+Completed 144000 out of 340598 events
+Completed 145000 out of 340598 events
+Completed 146000 out of 340598 events
+Completed 147000 out of 340598 events
+Completed 148000 out of 340598 events
+Completed 149000 out of 340598 events
+Completed 150000 out of 340598 events
+Completed 151000 out of 340598 events
+Completed 152000 out of 340598 events
+Completed 153000 out of 340598 events
+Completed 154000 out of 340598 events
+Completed 155000 out of 340598 events
+Completed 156000 out of 340598 events
+Completed 157000 out of 340598 events
+Completed 158000 out of 340598 events
+Completed 159000 out of 340598 events
+Completed 160000 out of 340598 events
+Completed 161000 out of 340598 events
+Completed 162000 out of 340598 events
+Completed 163000 out of 340598 events
+Completed 164000 out of 340598 events
+Completed 165000 out of 340598 events
+Completed 166000 out of 340598 events
+Completed 167000 out of 340598 events
+Completed 168000 out of 340598 events
+Completed 169000 out of 340598 events
+Completed 170000 out of 340598 events
+Completed 171000 out of 340598 events
+Completed 172000 out of 340598 events
+Completed 173000 out of 340598 events
+Completed 174000 out of 340598 events
+Completed 175000 out of 340598 events
+Completed 176000 out of 340598 events
+Completed 177000 out of 340598 events
+Completed 178000 out of 340598 events
+Completed 179000 out of 340598 events
+Completed 180000 out of 340598 events
+Completed 181000 out of 340598 events
+Completed 182000 out of 340598 events
+Completed 183000 out of 340598 events
+Completed 184000 out of 340598 events
+Completed 185000 out of 340598 events
+Completed 186000 out of 340598 events
+Completed 187000 out of 340598 events
+Completed 188000 out of 340598 events
+Completed 189000 out of 340598 events
+Completed 190000 out of 340598 events
+Completed 191000 out of 340598 events
+Completed 192000 out of 340598 events
+Completed 193000 out of 340598 events
+Completed 194000 out of 340598 events
+Completed 195000 out of 340598 events
+Completed 196000 out of 340598 events
+Completed 197000 out of 340598 events
+Completed 198000 out of 340598 events
+Completed 199000 out of 340598 events
+Completed 200000 out of 340598 events
+Completed 201000 out of 340598 events
+Completed 202000 out of 340598 events
+Completed 203000 out of 340598 events
+Completed 204000 out of 340598 events
+Completed 205000 out of 340598 events
+Completed 206000 out of 340598 events
+Completed 207000 out of 340598 events
+Completed 208000 out of 340598 events
+Completed 209000 out of 340598 events
+Completed 210000 out of 340598 events
+Completed 211000 out of 340598 events
+Completed 212000 out of 340598 events
+Completed 213000 out of 340598 events
+Completed 214000 out of 340598 events
+Completed 215000 out of 340598 events
+Completed 216000 out of 340598 events
+Completed 217000 out of 340598 events
+Completed 218000 out of 340598 events
+Completed 219000 out of 340598 events
+Completed 220000 out of 340598 events
+Completed 221000 out of 340598 events
+Completed 222000 out of 340598 events
+Completed 223000 out of 340598 events
+Completed 224000 out of 340598 events
+Completed 225000 out of 340598 events
+Completed 226000 out of 340598 events
+Completed 227000 out of 340598 events
+Completed 228000 out of 340598 events
+Completed 229000 out of 340598 events
+Completed 230000 out of 340598 events
+Completed 231000 out of 340598 events
+Completed 232000 out of 340598 events
+Completed 233000 out of 340598 events
+Completed 234000 out of 340598 events
+Completed 235000 out of 340598 events
+Completed 236000 out of 340598 events
+Completed 237000 out of 340598 events
+Completed 238000 out of 340598 events
+Completed 239000 out of 340598 events
+Completed 240000 out of 340598 events
+Completed 241000 out of 340598 events
+Completed 242000 out of 340598 events
+Completed 243000 out of 340598 events
+Completed 244000 out of 340598 events
+Completed 245000 out of 340598 events
+Completed 246000 out of 340598 events
+Completed 247000 out of 340598 events
+Completed 248000 out of 340598 events
+Completed 249000 out of 340598 events
+Completed 250000 out of 340598 events
+Completed 251000 out of 340598 events
+Completed 252000 out of 340598 events
+Completed 253000 out of 340598 events
+Completed 254000 out of 340598 events
+Completed 255000 out of 340598 events
+Completed 256000 out of 340598 events
+Completed 257000 out of 340598 events
+Completed 258000 out of 340598 events
+Completed 259000 out of 340598 events
+Completed 260000 out of 340598 events
+Completed 261000 out of 340598 events
+Completed 262000 out of 340598 events
+Completed 263000 out of 340598 events
+Completed 264000 out of 340598 events
+Completed 265000 out of 340598 events
+Completed 266000 out of 340598 events
+Completed 267000 out of 340598 events
+Completed 268000 out of 340598 events
+Completed 269000 out of 340598 events
+Completed 270000 out of 340598 events
+Completed 271000 out of 340598 events
+Completed 272000 out of 340598 events
+Completed 273000 out of 340598 events
+Completed 274000 out of 340598 events
+Completed 275000 out of 340598 events
+Completed 276000 out of 340598 events
+Completed 277000 out of 340598 events
+Completed 278000 out of 340598 events
+Completed 279000 out of 340598 events
+Completed 280000 out of 340598 events
+Completed 281000 out of 340598 events
+Completed 282000 out of 340598 events
+Completed 283000 out of 340598 events
+Completed 284000 out of 340598 events
+Completed 285000 out of 340598 events
+Completed 286000 out of 340598 events
+Completed 287000 out of 340598 events
+Completed 288000 out of 340598 events
+Completed 289000 out of 340598 events
+Completed 290000 out of 340598 events
+Completed 291000 out of 340598 events
+Completed 292000 out of 340598 events
+Completed 293000 out of 340598 events
+Completed 294000 out of 340598 events
+Completed 295000 out of 340598 events
+Completed 296000 out of 340598 events
+Completed 297000 out of 340598 events
+Completed 298000 out of 340598 events
+Completed 299000 out of 340598 events
+Completed 300000 out of 340598 events
+Completed 301000 out of 340598 events
+Completed 302000 out of 340598 events
+Completed 303000 out of 340598 events
+Completed 304000 out of 340598 events
+Completed 305000 out of 340598 events
+Completed 306000 out of 340598 events
+Completed 307000 out of 340598 events
+Completed 308000 out of 340598 events
+Completed 309000 out of 340598 events
+Completed 310000 out of 340598 events
+Completed 311000 out of 340598 events
+Completed 312000 out of 340598 events
+Completed 313000 out of 340598 events
+Completed 314000 out of 340598 events
+Completed 315000 out of 340598 events
+Completed 316000 out of 340598 events
+Completed 317000 out of 340598 events
+Completed 318000 out of 340598 events
+Completed 319000 out of 340598 events
+Completed 320000 out of 340598 events
+Completed 321000 out of 340598 events
+Completed 322000 out of 340598 events
+Completed 323000 out of 340598 events
+Completed 324000 out of 340598 events
+Completed 325000 out of 340598 events
+Completed 326000 out of 340598 events
+Completed 327000 out of 340598 events
+Completed 328000 out of 340598 events
+Completed 329000 out of 340598 events
+Completed 330000 out of 340598 events
+Completed 331000 out of 340598 events
+Completed 332000 out of 340598 events
+Completed 333000 out of 340598 events
+Completed 334000 out of 340598 events
+Completed 335000 out of 340598 events
+Completed 336000 out of 340598 events
+Completed 337000 out of 340598 events
+Completed 338000 out of 340598 events
+Completed 339000 out of 340598 events
+Completed 340000 out of 340598 events
+Nelectrons      = 340438 / 340598
+Npassed_ElEta   = 340438 / 340598
+Nmuons          = 0 / 340598
+NrelIsoFail     = 0 / 340598
+Npassed_MuEta   = 0 / 340598
+Npassed_nAK8Jets= 340438 / 340598
+Npassed_Trigger = 329067 / 340598
+Npassed_MET     = 57606 / 340598
+Npassed_lepPt   = 61601 / 340598
+Npassed_HT      = 2086 / 340598
+npass_Njets     = 7101 / 340598
+Npassed_ALL     = 367 / 340598
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-1.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 87079 events
+Completed 1000 out of 87079 events
+Completed 2000 out of 87079 events
+Completed 3000 out of 87079 events
+Completed 4000 out of 87079 events
+Completed 5000 out of 87079 events
+Completed 6000 out of 87079 events
+Completed 7000 out of 87079 events
+Completed 8000 out of 87079 events
+Completed 9000 out of 87079 events
+Completed 10000 out of 87079 events
+Completed 11000 out of 87079 events
+Completed 12000 out of 87079 events
+Completed 13000 out of 87079 events
+Completed 14000 out of 87079 events
+Completed 15000 out of 87079 events
+Completed 16000 out of 87079 events
+Completed 17000 out of 87079 events
+Completed 18000 out of 87079 events
+Completed 19000 out of 87079 events
+Completed 20000 out of 87079 events
+Completed 21000 out of 87079 events
+Completed 22000 out of 87079 events
+Completed 23000 out of 87079 events
+Completed 24000 out of 87079 events
+Completed 25000 out of 87079 events
+Completed 26000 out of 87079 events
+Completed 27000 out of 87079 events
+Completed 28000 out of 87079 events
+Completed 29000 out of 87079 events
+Completed 30000 out of 87079 events
+Completed 31000 out of 87079 events
+Completed 32000 out of 87079 events
+Completed 33000 out of 87079 events
+Completed 34000 out of 87079 events
+Completed 35000 out of 87079 events
+Completed 36000 out of 87079 events
+Completed 37000 out of 87079 events
+Completed 38000 out of 87079 events
+Completed 39000 out of 87079 events
+Completed 40000 out of 87079 events
+Completed 41000 out of 87079 events
+Completed 42000 out of 87079 events
+Completed 43000 out of 87079 events
+Completed 44000 out of 87079 events
+Completed 45000 out of 87079 events
+Completed 46000 out of 87079 events
+Completed 47000 out of 87079 events
+Completed 48000 out of 87079 events
+Completed 49000 out of 87079 events
+Completed 50000 out of 87079 events
+Completed 51000 out of 87079 events
+Completed 52000 out of 87079 events
+Completed 53000 out of 87079 events
+Completed 54000 out of 87079 events
+Completed 55000 out of 87079 events
+Completed 56000 out of 87079 events
+Completed 57000 out of 87079 events
+Completed 58000 out of 87079 events
+Completed 59000 out of 87079 events
+Completed 60000 out of 87079 events
+Completed 61000 out of 87079 events
+Completed 62000 out of 87079 events
+Completed 63000 out of 87079 events
+Completed 64000 out of 87079 events
+Completed 65000 out of 87079 events
+Completed 66000 out of 87079 events
+Completed 67000 out of 87079 events
+Completed 68000 out of 87079 events
+Completed 69000 out of 87079 events
+Completed 70000 out of 87079 events
+Completed 71000 out of 87079 events
+Completed 72000 out of 87079 events
+Completed 73000 out of 87079 events
+Completed 74000 out of 87079 events
+Completed 75000 out of 87079 events
+Completed 76000 out of 87079 events
+Completed 77000 out of 87079 events
+Completed 78000 out of 87079 events
+Completed 79000 out of 87079 events
+Completed 80000 out of 87079 events
+Completed 81000 out of 87079 events
+Completed 82000 out of 87079 events
+Completed 83000 out of 87079 events
+Completed 84000 out of 87079 events
+Completed 85000 out of 87079 events
+Completed 86000 out of 87079 events
+Completed 87000 out of 87079 events
+Nelectrons      = 87020 / 87079
+Npassed_ElEta   = 87020 / 87079
+Nmuons          = 0 / 87079
+NrelIsoFail     = 0 / 87079
+Npassed_MuEta   = 0 / 87079
+Npassed_nAK8Jets= 87020 / 87079
+Npassed_Trigger = 83890 / 87079
+Npassed_MET     = 12962 / 87079
+Npassed_lepPt   = 16044 / 87079
+Npassed_HT      = 539 / 87079
+npass_Njets     = 1849 / 87079
+Npassed_ALL     = 94 / 87079
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-10.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 78338 events
+Completed 1000 out of 78338 events
+Completed 2000 out of 78338 events
+Completed 3000 out of 78338 events
+Completed 4000 out of 78338 events
+Completed 5000 out of 78338 events
+Completed 6000 out of 78338 events
+Completed 7000 out of 78338 events
+Completed 8000 out of 78338 events
+Completed 9000 out of 78338 events
+Completed 10000 out of 78338 events
+Completed 11000 out of 78338 events
+Completed 12000 out of 78338 events
+Completed 13000 out of 78338 events
+Completed 14000 out of 78338 events
+Completed 15000 out of 78338 events
+Completed 16000 out of 78338 events
+Completed 17000 out of 78338 events
+Completed 18000 out of 78338 events
+Completed 19000 out of 78338 events
+Completed 20000 out of 78338 events
+Completed 21000 out of 78338 events
+Completed 22000 out of 78338 events
+Completed 23000 out of 78338 events
+Completed 24000 out of 78338 events
+Completed 25000 out of 78338 events
+Completed 26000 out of 78338 events
+Completed 27000 out of 78338 events
+Completed 28000 out of 78338 events
+Completed 29000 out of 78338 events
+Completed 30000 out of 78338 events
+Completed 31000 out of 78338 events
+Completed 32000 out of 78338 events
+Completed 33000 out of 78338 events
+Completed 34000 out of 78338 events
+Completed 35000 out of 78338 events
+Completed 36000 out of 78338 events
+Completed 37000 out of 78338 events
+Completed 38000 out of 78338 events
+Completed 39000 out of 78338 events
+Completed 40000 out of 78338 events
+Completed 41000 out of 78338 events
+Completed 42000 out of 78338 events
+Completed 43000 out of 78338 events
+Completed 44000 out of 78338 events
+Completed 45000 out of 78338 events
+Completed 46000 out of 78338 events
+Completed 47000 out of 78338 events
+Completed 48000 out of 78338 events
+Completed 49000 out of 78338 events
+Completed 50000 out of 78338 events
+Completed 51000 out of 78338 events
+Completed 52000 out of 78338 events
+Completed 53000 out of 78338 events
+Completed 54000 out of 78338 events
+Completed 55000 out of 78338 events
+Completed 56000 out of 78338 events
+Completed 57000 out of 78338 events
+Completed 58000 out of 78338 events
+Completed 59000 out of 78338 events
+Completed 60000 out of 78338 events
+Completed 61000 out of 78338 events
+Completed 62000 out of 78338 events
+Completed 63000 out of 78338 events
+Completed 64000 out of 78338 events
+Completed 65000 out of 78338 events
+Completed 66000 out of 78338 events
+Completed 67000 out of 78338 events
+Completed 68000 out of 78338 events
+Completed 69000 out of 78338 events
+Completed 70000 out of 78338 events
+Completed 71000 out of 78338 events
+Completed 72000 out of 78338 events
+Completed 73000 out of 78338 events
+Completed 74000 out of 78338 events
+Completed 75000 out of 78338 events
+Completed 76000 out of 78338 events
+Completed 77000 out of 78338 events
+Completed 78000 out of 78338 events
+Nelectrons      = 78297 / 78338
+Npassed_ElEta   = 78297 / 78338
+Nmuons          = 0 / 78338
+NrelIsoFail     = 0 / 78338
+Npassed_MuEta   = 0 / 78338
+Npassed_nAK8Jets= 78297 / 78338
+Npassed_Trigger = 75348 / 78338
+Npassed_MET     = 10066 / 78338
+Npassed_lepPt   = 14816 / 78338
+Npassed_HT      = 545 / 78338
+npass_Njets     = 1679 / 78338
+Npassed_ALL     = 93 / 78338
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-11.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 78950 events
+Completed 1000 out of 78950 events
+Completed 2000 out of 78950 events
+Completed 3000 out of 78950 events
+Completed 4000 out of 78950 events
+Completed 5000 out of 78950 events
+Completed 6000 out of 78950 events
+Completed 7000 out of 78950 events
+Completed 8000 out of 78950 events
+Completed 9000 out of 78950 events
+Completed 10000 out of 78950 events
+Completed 11000 out of 78950 events
+Completed 12000 out of 78950 events
+Completed 13000 out of 78950 events
+Completed 14000 out of 78950 events
+Completed 15000 out of 78950 events
+Completed 16000 out of 78950 events
+Completed 17000 out of 78950 events
+Completed 18000 out of 78950 events
+Completed 19000 out of 78950 events
+Completed 20000 out of 78950 events
+Completed 21000 out of 78950 events
+Completed 22000 out of 78950 events
+Completed 23000 out of 78950 events
+Completed 24000 out of 78950 events
+Completed 25000 out of 78950 events
+Completed 26000 out of 78950 events
+Completed 27000 out of 78950 events
+Completed 28000 out of 78950 events
+Completed 29000 out of 78950 events
+Completed 30000 out of 78950 events
+Completed 31000 out of 78950 events
+Completed 32000 out of 78950 events
+Completed 33000 out of 78950 events
+Completed 34000 out of 78950 events
+Completed 35000 out of 78950 events
+Completed 36000 out of 78950 events
+Completed 37000 out of 78950 events
+Completed 38000 out of 78950 events
+Completed 39000 out of 78950 events
+Completed 40000 out of 78950 events
+Completed 41000 out of 78950 events
+Completed 42000 out of 78950 events
+Completed 43000 out of 78950 events
+Completed 44000 out of 78950 events
+Completed 45000 out of 78950 events
+Completed 46000 out of 78950 events
+Completed 47000 out of 78950 events
+Completed 48000 out of 78950 events
+Completed 49000 out of 78950 events
+Completed 50000 out of 78950 events
+Completed 51000 out of 78950 events
+Completed 52000 out of 78950 events
+Completed 53000 out of 78950 events
+Completed 54000 out of 78950 events
+Completed 55000 out of 78950 events
+Completed 56000 out of 78950 events
+Completed 57000 out of 78950 events
+Completed 58000 out of 78950 events
+Completed 59000 out of 78950 events
+Completed 60000 out of 78950 events
+Completed 61000 out of 78950 events
+Completed 62000 out of 78950 events
+Completed 63000 out of 78950 events
+Completed 64000 out of 78950 events
+Completed 65000 out of 78950 events
+Completed 66000 out of 78950 events
+Completed 67000 out of 78950 events
+Completed 68000 out of 78950 events
+Completed 69000 out of 78950 events
+Completed 70000 out of 78950 events
+Completed 71000 out of 78950 events
+Completed 72000 out of 78950 events
+Completed 73000 out of 78950 events
+Completed 74000 out of 78950 events
+Completed 75000 out of 78950 events
+Completed 76000 out of 78950 events
+Completed 77000 out of 78950 events
+Completed 78000 out of 78950 events
+Nelectrons      = 78908 / 78950
+Npassed_ElEta   = 78908 / 78950
+Nmuons          = 0 / 78950
+NrelIsoFail     = 0 / 78950
+Npassed_MuEta   = 0 / 78950
+Npassed_nAK8Jets= 78908 / 78950
+Npassed_Trigger = 75900 / 78950
+Npassed_MET     = 10299 / 78950
+Npassed_lepPt   = 15114 / 78950
+Npassed_HT      = 614 / 78950
+npass_Njets     = 1739 / 78950
+Npassed_ALL     = 108 / 78950
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-12.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 85564 events
+Completed 1000 out of 85564 events
+Completed 2000 out of 85564 events
+Completed 3000 out of 85564 events
+Completed 4000 out of 85564 events
+Completed 5000 out of 85564 events
+Completed 6000 out of 85564 events
+Completed 7000 out of 85564 events
+Completed 8000 out of 85564 events
+Completed 9000 out of 85564 events
+Completed 10000 out of 85564 events
+Completed 11000 out of 85564 events
+Completed 12000 out of 85564 events
+Completed 13000 out of 85564 events
+Completed 14000 out of 85564 events
+Completed 15000 out of 85564 events
+Completed 16000 out of 85564 events
+Completed 17000 out of 85564 events
+Completed 18000 out of 85564 events
+Completed 19000 out of 85564 events
+Completed 20000 out of 85564 events
+Completed 21000 out of 85564 events
+Completed 22000 out of 85564 events
+Completed 23000 out of 85564 events
+Completed 24000 out of 85564 events
+Completed 25000 out of 85564 events
+Completed 26000 out of 85564 events
+Completed 27000 out of 85564 events
+Completed 28000 out of 85564 events
+Completed 29000 out of 85564 events
+Completed 30000 out of 85564 events
+Completed 31000 out of 85564 events
+Completed 32000 out of 85564 events
+Completed 33000 out of 85564 events
+Completed 34000 out of 85564 events
+Completed 35000 out of 85564 events
+Completed 36000 out of 85564 events
+Completed 37000 out of 85564 events
+Completed 38000 out of 85564 events
+Completed 39000 out of 85564 events
+Completed 40000 out of 85564 events
+Completed 41000 out of 85564 events
+Completed 42000 out of 85564 events
+Completed 43000 out of 85564 events
+Completed 44000 out of 85564 events
+Completed 45000 out of 85564 events
+Completed 46000 out of 85564 events
+Completed 47000 out of 85564 events
+Completed 48000 out of 85564 events
+Completed 49000 out of 85564 events
+Completed 50000 out of 85564 events
+Completed 51000 out of 85564 events
+Completed 52000 out of 85564 events
+Completed 53000 out of 85564 events
+Completed 54000 out of 85564 events
+Completed 55000 out of 85564 events
+Completed 56000 out of 85564 events
+Completed 57000 out of 85564 events
+Completed 58000 out of 85564 events
+Completed 59000 out of 85564 events
+Completed 60000 out of 85564 events
+Completed 61000 out of 85564 events
+Completed 62000 out of 85564 events
+Completed 63000 out of 85564 events
+Completed 64000 out of 85564 events
+Completed 65000 out of 85564 events
+Completed 66000 out of 85564 events
+Completed 67000 out of 85564 events
+Completed 68000 out of 85564 events
+Completed 69000 out of 85564 events
+Completed 70000 out of 85564 events
+Completed 71000 out of 85564 events
+Completed 72000 out of 85564 events
+Completed 73000 out of 85564 events
+Completed 74000 out of 85564 events
+Completed 75000 out of 85564 events
+Completed 76000 out of 85564 events
+Completed 77000 out of 85564 events
+Completed 78000 out of 85564 events
+Completed 79000 out of 85564 events
+Completed 80000 out of 85564 events
+Completed 81000 out of 85564 events
+Completed 82000 out of 85564 events
+Completed 83000 out of 85564 events
+Completed 84000 out of 85564 events
+Completed 85000 out of 85564 events
+Nelectrons      = 85512 / 85564
+Npassed_ElEta   = 85512 / 85564
+Nmuons          = 0 / 85564
+NrelIsoFail     = 0 / 85564
+Npassed_MuEta   = 0 / 85564
+Npassed_nAK8Jets= 85512 / 85564
+Npassed_Trigger = 82251 / 85564
+Npassed_MET     = 12496 / 85564
+Npassed_lepPt   = 15790 / 85564
+Npassed_HT      = 591 / 85564
+npass_Njets     = 1874 / 85564
+Npassed_ALL     = 100 / 85564
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-13.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 79920 events
+Completed 1000 out of 79920 events
+Completed 2000 out of 79920 events
+Completed 3000 out of 79920 events
+Completed 4000 out of 79920 events
+Completed 5000 out of 79920 events
+Completed 6000 out of 79920 events
+Completed 7000 out of 79920 events
+Completed 8000 out of 79920 events
+Completed 9000 out of 79920 events
+Completed 10000 out of 79920 events
+Completed 11000 out of 79920 events
+Completed 12000 out of 79920 events
+Completed 13000 out of 79920 events
+Completed 14000 out of 79920 events
+Completed 15000 out of 79920 events
+Completed 16000 out of 79920 events
+Completed 17000 out of 79920 events
+Completed 18000 out of 79920 events
+Completed 19000 out of 79920 events
+Completed 20000 out of 79920 events
+Completed 21000 out of 79920 events
+Completed 22000 out of 79920 events
+Completed 23000 out of 79920 events
+Completed 24000 out of 79920 events
+Completed 25000 out of 79920 events
+Completed 26000 out of 79920 events
+Completed 27000 out of 79920 events
+Completed 28000 out of 79920 events
+Completed 29000 out of 79920 events
+Completed 30000 out of 79920 events
+Completed 31000 out of 79920 events
+Completed 32000 out of 79920 events
+Completed 33000 out of 79920 events
+Completed 34000 out of 79920 events
+Completed 35000 out of 79920 events
+Completed 36000 out of 79920 events
+Completed 37000 out of 79920 events
+Completed 38000 out of 79920 events
+Completed 39000 out of 79920 events
+Completed 40000 out of 79920 events
+Completed 41000 out of 79920 events
+Completed 42000 out of 79920 events
+Completed 43000 out of 79920 events
+Completed 44000 out of 79920 events
+Completed 45000 out of 79920 events
+Completed 46000 out of 79920 events
+Completed 47000 out of 79920 events
+Completed 48000 out of 79920 events
+Completed 49000 out of 79920 events
+Completed 50000 out of 79920 events
+Completed 51000 out of 79920 events
+Completed 52000 out of 79920 events
+Completed 53000 out of 79920 events
+Completed 54000 out of 79920 events
+Completed 55000 out of 79920 events
+Completed 56000 out of 79920 events
+Completed 57000 out of 79920 events
+Completed 58000 out of 79920 events
+Completed 59000 out of 79920 events
+Completed 60000 out of 79920 events
+Completed 61000 out of 79920 events
+Completed 62000 out of 79920 events
+Completed 63000 out of 79920 events
+Completed 64000 out of 79920 events
+Completed 65000 out of 79920 events
+Completed 66000 out of 79920 events
+Completed 67000 out of 79920 events
+Completed 68000 out of 79920 events
+Completed 69000 out of 79920 events
+Completed 70000 out of 79920 events
+Completed 71000 out of 79920 events
+Completed 72000 out of 79920 events
+Completed 73000 out of 79920 events
+Completed 74000 out of 79920 events
+Completed 75000 out of 79920 events
+Completed 76000 out of 79920 events
+Completed 77000 out of 79920 events
+Completed 78000 out of 79920 events
+Completed 79000 out of 79920 events
+Nelectrons      = 79875 / 79920
+Npassed_ElEta   = 79875 / 79920
+Nmuons          = 0 / 79920
+NrelIsoFail     = 0 / 79920
+Npassed_MuEta   = 0 / 79920
+Npassed_nAK8Jets= 79875 / 79920
+Npassed_Trigger = 76866 / 79920
+Npassed_MET     = 11012 / 79920
+Npassed_lepPt   = 15214 / 79920
+Npassed_HT      = 591 / 79920
+npass_Njets     = 1709 / 79920
+Npassed_ALL     = 103 / 79920
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-14.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 112761 events
+Completed 1000 out of 112761 events
+Completed 2000 out of 112761 events
+Completed 3000 out of 112761 events
+Completed 4000 out of 112761 events
+Completed 5000 out of 112761 events
+Completed 6000 out of 112761 events
+Completed 7000 out of 112761 events
+Completed 8000 out of 112761 events
+Completed 9000 out of 112761 events
+Completed 10000 out of 112761 events
+Completed 11000 out of 112761 events
+Completed 12000 out of 112761 events
+Completed 13000 out of 112761 events
+Completed 14000 out of 112761 events
+Completed 15000 out of 112761 events
+Completed 16000 out of 112761 events
+Completed 17000 out of 112761 events
+Completed 18000 out of 112761 events
+Completed 19000 out of 112761 events
+Completed 20000 out of 112761 events
+Completed 21000 out of 112761 events
+Completed 22000 out of 112761 events
+Completed 23000 out of 112761 events
+Completed 24000 out of 112761 events
+Completed 25000 out of 112761 events
+Completed 26000 out of 112761 events
+Completed 27000 out of 112761 events
+Completed 28000 out of 112761 events
+Completed 29000 out of 112761 events
+Completed 30000 out of 112761 events
+Completed 31000 out of 112761 events
+Completed 32000 out of 112761 events
+Completed 33000 out of 112761 events
+Completed 34000 out of 112761 events
+Completed 35000 out of 112761 events
+Completed 36000 out of 112761 events
+Completed 37000 out of 112761 events
+Completed 38000 out of 112761 events
+Completed 39000 out of 112761 events
+Completed 40000 out of 112761 events
+Completed 41000 out of 112761 events
+Completed 42000 out of 112761 events
+Completed 43000 out of 112761 events
+Completed 44000 out of 112761 events
+Completed 45000 out of 112761 events
+Completed 46000 out of 112761 events
+Completed 47000 out of 112761 events
+Completed 48000 out of 112761 events
+Completed 49000 out of 112761 events
+Completed 50000 out of 112761 events
+Completed 51000 out of 112761 events
+Completed 52000 out of 112761 events
+Completed 53000 out of 112761 events
+Completed 54000 out of 112761 events
+Completed 55000 out of 112761 events
+Completed 56000 out of 112761 events
+Completed 57000 out of 112761 events
+Completed 58000 out of 112761 events
+Completed 59000 out of 112761 events
+Completed 60000 out of 112761 events
+Completed 61000 out of 112761 events
+Completed 62000 out of 112761 events
+Completed 63000 out of 112761 events
+Completed 64000 out of 112761 events
+Completed 65000 out of 112761 events
+Completed 66000 out of 112761 events
+Completed 67000 out of 112761 events
+Completed 68000 out of 112761 events
+Completed 69000 out of 112761 events
+Completed 70000 out of 112761 events
+Completed 71000 out of 112761 events
+Completed 72000 out of 112761 events
+Completed 73000 out of 112761 events
+Completed 74000 out of 112761 events
+Completed 75000 out of 112761 events
+Completed 76000 out of 112761 events
+Completed 77000 out of 112761 events
+Completed 78000 out of 112761 events
+Completed 79000 out of 112761 events
+Completed 80000 out of 112761 events
+Completed 81000 out of 112761 events
+Completed 82000 out of 112761 events
+Completed 83000 out of 112761 events
+Completed 84000 out of 112761 events
+Completed 85000 out of 112761 events
+Completed 86000 out of 112761 events
+Completed 87000 out of 112761 events
+Completed 88000 out of 112761 events
+Completed 89000 out of 112761 events
+Completed 90000 out of 112761 events
+Completed 91000 out of 112761 events
+Completed 92000 out of 112761 events
+Completed 93000 out of 112761 events
+Completed 94000 out of 112761 events
+Completed 95000 out of 112761 events
+Completed 96000 out of 112761 events
+Completed 97000 out of 112761 events
+Completed 98000 out of 112761 events
+Completed 99000 out of 112761 events
+Completed 100000 out of 112761 events
+Completed 101000 out of 112761 events
+Completed 102000 out of 112761 events
+Completed 103000 out of 112761 events
+Completed 104000 out of 112761 events
+Completed 105000 out of 112761 events
+Completed 106000 out of 112761 events
+Completed 107000 out of 112761 events
+Completed 108000 out of 112761 events
+Completed 109000 out of 112761 events
+Completed 110000 out of 112761 events
+Completed 111000 out of 112761 events
+Completed 112000 out of 112761 events
+Nelectrons      = 112693 / 112761
+Npassed_ElEta   = 112693 / 112761
+Nmuons          = 0 / 112761
+NrelIsoFail     = 0 / 112761
+Npassed_MuEta   = 0 / 112761
+Npassed_nAK8Jets= 112693 / 112761
+Npassed_Trigger = 109026 / 112761
+Npassed_MET     = 20096 / 112761
+Npassed_lepPt   = 19464 / 112761
+Npassed_HT      = 720 / 112761
+npass_Njets     = 2399 / 112761
+Npassed_ALL     = 131 / 112761
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-15.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 102500 events
+Completed 1000 out of 102500 events
+Completed 2000 out of 102500 events
+Completed 3000 out of 102500 events
+Completed 4000 out of 102500 events
+Completed 5000 out of 102500 events
+Completed 6000 out of 102500 events
+Completed 7000 out of 102500 events
+Completed 8000 out of 102500 events
+Completed 9000 out of 102500 events
+Completed 10000 out of 102500 events
+Completed 11000 out of 102500 events
+Completed 12000 out of 102500 events
+Completed 13000 out of 102500 events
+Completed 14000 out of 102500 events
+Completed 15000 out of 102500 events
+Completed 16000 out of 102500 events
+Completed 17000 out of 102500 events
+Completed 18000 out of 102500 events
+Completed 19000 out of 102500 events
+Completed 20000 out of 102500 events
+Completed 21000 out of 102500 events
+Completed 22000 out of 102500 events
+Completed 23000 out of 102500 events
+Completed 24000 out of 102500 events
+Completed 25000 out of 102500 events
+Completed 26000 out of 102500 events
+Completed 27000 out of 102500 events
+Completed 28000 out of 102500 events
+Completed 29000 out of 102500 events
+Completed 30000 out of 102500 events
+Completed 31000 out of 102500 events
+Completed 32000 out of 102500 events
+Completed 33000 out of 102500 events
+Completed 34000 out of 102500 events
+Completed 35000 out of 102500 events
+Completed 36000 out of 102500 events
+Completed 37000 out of 102500 events
+Completed 38000 out of 102500 events
+Completed 39000 out of 102500 events
+Completed 40000 out of 102500 events
+Completed 41000 out of 102500 events
+Completed 42000 out of 102500 events
+Completed 43000 out of 102500 events
+Completed 44000 out of 102500 events
+Completed 45000 out of 102500 events
+Completed 46000 out of 102500 events
+Completed 47000 out of 102500 events
+Completed 48000 out of 102500 events
+Completed 49000 out of 102500 events
+Completed 50000 out of 102500 events
+Completed 51000 out of 102500 events
+Completed 52000 out of 102500 events
+Completed 53000 out of 102500 events
+Completed 54000 out of 102500 events
+Completed 55000 out of 102500 events
+Completed 56000 out of 102500 events
+Completed 57000 out of 102500 events
+Completed 58000 out of 102500 events
+Completed 59000 out of 102500 events
+Completed 60000 out of 102500 events
+Completed 61000 out of 102500 events
+Completed 62000 out of 102500 events
+Completed 63000 out of 102500 events
+Completed 64000 out of 102500 events
+Completed 65000 out of 102500 events
+Completed 66000 out of 102500 events
+Completed 67000 out of 102500 events
+Completed 68000 out of 102500 events
+Completed 69000 out of 102500 events
+Completed 70000 out of 102500 events
+Completed 71000 out of 102500 events
+Completed 72000 out of 102500 events
+Completed 73000 out of 102500 events
+Completed 74000 out of 102500 events
+Completed 75000 out of 102500 events
+Completed 76000 out of 102500 events
+Completed 77000 out of 102500 events
+Completed 78000 out of 102500 events
+Completed 79000 out of 102500 events
+Completed 80000 out of 102500 events
+Completed 81000 out of 102500 events
+Completed 82000 out of 102500 events
+Completed 83000 out of 102500 events
+Completed 84000 out of 102500 events
+Completed 85000 out of 102500 events
+Completed 86000 out of 102500 events
+Completed 87000 out of 102500 events
+Completed 88000 out of 102500 events
+Completed 89000 out of 102500 events
+Completed 90000 out of 102500 events
+Completed 91000 out of 102500 events
+Completed 92000 out of 102500 events
+Completed 93000 out of 102500 events
+Completed 94000 out of 102500 events
+Completed 95000 out of 102500 events
+Completed 96000 out of 102500 events
+Completed 97000 out of 102500 events
+Completed 98000 out of 102500 events
+Completed 99000 out of 102500 events
+Completed 100000 out of 102500 events
+Completed 101000 out of 102500 events
+Completed 102000 out of 102500 events
+Nelectrons      = 102437 / 102500
+Npassed_ElEta   = 102437 / 102500
+Nmuons          = 0 / 102500
+NrelIsoFail     = 0 / 102500
+Npassed_MuEta   = 0 / 102500
+Npassed_nAK8Jets= 102437 / 102500
+Npassed_Trigger = 99008 / 102500
+Npassed_MET     = 17847 / 102500
+Npassed_lepPt   = 18351 / 102500
+Npassed_HT      = 596 / 102500
+npass_Njets     = 2118 / 102500
+Npassed_ALL     = 117 / 102500
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-17.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 114438 events
+Completed 1000 out of 114438 events
+Completed 2000 out of 114438 events
+Completed 3000 out of 114438 events
+Completed 4000 out of 114438 events
+Completed 5000 out of 114438 events
+Completed 6000 out of 114438 events
+Completed 7000 out of 114438 events
+Completed 8000 out of 114438 events
+Completed 9000 out of 114438 events
+Completed 10000 out of 114438 events
+Completed 11000 out of 114438 events
+Completed 12000 out of 114438 events
+Completed 13000 out of 114438 events
+Completed 14000 out of 114438 events
+Completed 15000 out of 114438 events
+Completed 16000 out of 114438 events
+Completed 17000 out of 114438 events
+Completed 18000 out of 114438 events
+Completed 19000 out of 114438 events
+Completed 20000 out of 114438 events
+Completed 21000 out of 114438 events
+Completed 22000 out of 114438 events
+Completed 23000 out of 114438 events
+Completed 24000 out of 114438 events
+Completed 25000 out of 114438 events
+Completed 26000 out of 114438 events
+Completed 27000 out of 114438 events
+Completed 28000 out of 114438 events
+Completed 29000 out of 114438 events
+Completed 30000 out of 114438 events
+Completed 31000 out of 114438 events
+Completed 32000 out of 114438 events
+Completed 33000 out of 114438 events
+Completed 34000 out of 114438 events
+Completed 35000 out of 114438 events
+Completed 36000 out of 114438 events
+Completed 37000 out of 114438 events
+Completed 38000 out of 114438 events
+Completed 39000 out of 114438 events
+Completed 40000 out of 114438 events
+Completed 41000 out of 114438 events
+Completed 42000 out of 114438 events
+Completed 43000 out of 114438 events
+Completed 44000 out of 114438 events
+Completed 45000 out of 114438 events
+Completed 46000 out of 114438 events
+Completed 47000 out of 114438 events
+Completed 48000 out of 114438 events
+Completed 49000 out of 114438 events
+Completed 50000 out of 114438 events
+Completed 51000 out of 114438 events
+Completed 52000 out of 114438 events
+Completed 53000 out of 114438 events
+Completed 54000 out of 114438 events
+Completed 55000 out of 114438 events
+Completed 56000 out of 114438 events
+Completed 57000 out of 114438 events
+Completed 58000 out of 114438 events
+Completed 59000 out of 114438 events
+Completed 60000 out of 114438 events
+Completed 61000 out of 114438 events
+Completed 62000 out of 114438 events
+Completed 63000 out of 114438 events
+Completed 64000 out of 114438 events
+Completed 65000 out of 114438 events
+Completed 66000 out of 114438 events
+Completed 67000 out of 114438 events
+Completed 68000 out of 114438 events
+Completed 69000 out of 114438 events
+Completed 70000 out of 114438 events
+Completed 71000 out of 114438 events
+Completed 72000 out of 114438 events
+Completed 73000 out of 114438 events
+Completed 74000 out of 114438 events
+Completed 75000 out of 114438 events
+Completed 76000 out of 114438 events
+Completed 77000 out of 114438 events
+Completed 78000 out of 114438 events
+Completed 79000 out of 114438 events
+Completed 80000 out of 114438 events
+Completed 81000 out of 114438 events
+Completed 82000 out of 114438 events
+Completed 83000 out of 114438 events
+Completed 84000 out of 114438 events
+Completed 85000 out of 114438 events
+Completed 86000 out of 114438 events
+Completed 87000 out of 114438 events
+Completed 88000 out of 114438 events
+Completed 89000 out of 114438 events
+Completed 90000 out of 114438 events
+Completed 91000 out of 114438 events
+Completed 92000 out of 114438 events
+Completed 93000 out of 114438 events
+Completed 94000 out of 114438 events
+Completed 95000 out of 114438 events
+Completed 96000 out of 114438 events
+Completed 97000 out of 114438 events
+Completed 98000 out of 114438 events
+Completed 99000 out of 114438 events
+Completed 100000 out of 114438 events
+Completed 101000 out of 114438 events
+Completed 102000 out of 114438 events
+Completed 103000 out of 114438 events
+Completed 104000 out of 114438 events
+Completed 105000 out of 114438 events
+Completed 106000 out of 114438 events
+Completed 107000 out of 114438 events
+Completed 108000 out of 114438 events
+Completed 109000 out of 114438 events
+Completed 110000 out of 114438 events
+Completed 111000 out of 114438 events
+Completed 112000 out of 114438 events
+Completed 113000 out of 114438 events
+Completed 114000 out of 114438 events
+Nelectrons      = 114380 / 114438
+Npassed_ElEta   = 114380 / 114438
+Nmuons          = 0 / 114438
+NrelIsoFail     = 0 / 114438
+Npassed_MuEta   = 0 / 114438
+Npassed_nAK8Jets= 114380 / 114438
+Npassed_Trigger = 110989 / 114438
+Npassed_MET     = 20460 / 114438
+Npassed_lepPt   = 19830 / 114438
+Npassed_HT      = 679 / 114438
+npass_Njets     = 2342 / 114438
+Npassed_ALL     = 122 / 114438
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-18.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 120320 events
+Completed 1000 out of 120320 events
+Completed 2000 out of 120320 events
+Completed 3000 out of 120320 events
+Completed 4000 out of 120320 events
+Completed 5000 out of 120320 events
+Completed 6000 out of 120320 events
+Completed 7000 out of 120320 events
+Completed 8000 out of 120320 events
+Completed 9000 out of 120320 events
+Completed 10000 out of 120320 events
+Completed 11000 out of 120320 events
+Completed 12000 out of 120320 events
+Completed 13000 out of 120320 events
+Completed 14000 out of 120320 events
+Completed 15000 out of 120320 events
+Completed 16000 out of 120320 events
+Completed 17000 out of 120320 events
+Completed 18000 out of 120320 events
+Completed 19000 out of 120320 events
+Completed 20000 out of 120320 events
+Completed 21000 out of 120320 events
+Completed 22000 out of 120320 events
+Completed 23000 out of 120320 events
+Completed 24000 out of 120320 events
+Completed 25000 out of 120320 events
+Completed 26000 out of 120320 events
+Completed 27000 out of 120320 events
+Completed 28000 out of 120320 events
+Completed 29000 out of 120320 events
+Completed 30000 out of 120320 events
+Completed 31000 out of 120320 events
+Completed 32000 out of 120320 events
+Completed 33000 out of 120320 events
+Completed 34000 out of 120320 events
+Completed 35000 out of 120320 events
+Completed 36000 out of 120320 events
+Completed 37000 out of 120320 events
+Completed 38000 out of 120320 events
+Completed 39000 out of 120320 events
+Completed 40000 out of 120320 events
+Completed 41000 out of 120320 events
+Completed 42000 out of 120320 events
+Completed 43000 out of 120320 events
+Completed 44000 out of 120320 events
+Completed 45000 out of 120320 events
+Completed 46000 out of 120320 events
+Completed 47000 out of 120320 events
+Completed 48000 out of 120320 events
+Completed 49000 out of 120320 events
+Completed 50000 out of 120320 events
+Completed 51000 out of 120320 events
+Completed 52000 out of 120320 events
+Completed 53000 out of 120320 events
+Completed 54000 out of 120320 events
+Completed 55000 out of 120320 events
+Completed 56000 out of 120320 events
+Completed 57000 out of 120320 events
+Completed 58000 out of 120320 events
+Completed 59000 out of 120320 events
+Completed 60000 out of 120320 events
+Completed 61000 out of 120320 events
+Completed 62000 out of 120320 events
+Completed 63000 out of 120320 events
+Completed 64000 out of 120320 events
+Completed 65000 out of 120320 events
+Completed 66000 out of 120320 events
+Completed 67000 out of 120320 events
+Completed 68000 out of 120320 events
+Completed 69000 out of 120320 events
+Completed 70000 out of 120320 events
+Completed 71000 out of 120320 events
+Completed 72000 out of 120320 events
+Completed 73000 out of 120320 events
+Completed 74000 out of 120320 events
+Completed 75000 out of 120320 events
+Completed 76000 out of 120320 events
+Completed 77000 out of 120320 events
+Completed 78000 out of 120320 events
+Completed 79000 out of 120320 events
+Completed 80000 out of 120320 events
+Completed 81000 out of 120320 events
+Completed 82000 out of 120320 events
+Completed 83000 out of 120320 events
+Completed 84000 out of 120320 events
+Completed 85000 out of 120320 events
+Completed 86000 out of 120320 events
+Completed 87000 out of 120320 events
+Completed 88000 out of 120320 events
+Completed 89000 out of 120320 events
+Completed 90000 out of 120320 events
+Completed 91000 out of 120320 events
+Completed 92000 out of 120320 events
+Completed 93000 out of 120320 events
+Completed 94000 out of 120320 events
+Completed 95000 out of 120320 events
+Completed 96000 out of 120320 events
+Completed 97000 out of 120320 events
+Completed 98000 out of 120320 events
+Completed 99000 out of 120320 events
+Completed 100000 out of 120320 events
+Completed 101000 out of 120320 events
+Completed 102000 out of 120320 events
+Completed 103000 out of 120320 events
+Completed 104000 out of 120320 events
+Completed 105000 out of 120320 events
+Completed 106000 out of 120320 events
+Completed 107000 out of 120320 events
+Completed 108000 out of 120320 events
+Completed 109000 out of 120320 events
+Completed 110000 out of 120320 events
+Completed 111000 out of 120320 events
+Completed 112000 out of 120320 events
+Completed 113000 out of 120320 events
+Completed 114000 out of 120320 events
+Completed 115000 out of 120320 events
+Completed 116000 out of 120320 events
+Completed 117000 out of 120320 events
+Completed 118000 out of 120320 events
+Completed 119000 out of 120320 events
+Completed 120000 out of 120320 events
+Nelectrons      = 120265 / 120320
+Npassed_ElEta   = 120265 / 120320
+Nmuons          = 0 / 120320
+NrelIsoFail     = 0 / 120320
+Npassed_MuEta   = 0 / 120320
+Npassed_nAK8Jets= 120265 / 120320
+Npassed_Trigger = 116688 / 120320
+Npassed_MET     = 21473 / 120320
+Npassed_lepPt   = 20740 / 120320
+Npassed_HT      = 696 / 120320
+npass_Njets     = 2478 / 120320
+Npassed_ALL     = 138 / 120320
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//SingleElectron/singleLep2017_SingleElectronRun2017F_fixed/210622_015413/0000/SingleElectronRun2017F_3-19.root
+RUN CONFIG: YEAR = 2017
+Era = 17DEF
+isMC = 0, isSig = 0, SigMass = -1
+isHad =0, isSE =1, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 0, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 0, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: SingleElectronRun2017F
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 0
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 99427 events
+Completed 1000 out of 99427 events
+Completed 2000 out of 99427 events
+Completed 3000 out of 99427 events
+Completed 4000 out of 99427 events
+Completed 5000 out of 99427 events
+Completed 6000 out of 99427 events
+Completed 7000 out of 99427 events
+Completed 8000 out of 99427 events
+Completed 9000 out of 99427 events
+Completed 10000 out of 99427 events
+Completed 11000 out of 99427 events
+Completed 12000 out of 99427 events
+Completed 13000 out of 99427 events
+Completed 14000 out of 99427 events
+Completed 15000 out of 99427 events
+Completed 16000 out of 99427 events
+Completed 17000 out of 99427 events
+Completed 18000 out of 99427 events
+Completed 19000 out of 99427 events
+Completed 20000 out of 99427 events
+Completed 21000 out of 99427 events
+Completed 22000 out of 99427 events
+Completed 23000 out of 99427 events
+Completed 24000 out of 99427 events
+Completed 25000 out of 99427 events
+Completed 26000 out of 99427 events
+Completed 27000 out of 99427 events
+Completed 28000 out of 99427 events
+Completed 29000 out of 99427 events
+Completed 30000 out of 99427 events
+Completed 31000 out of 99427 events
+Completed 32000 out of 99427 events
+Completed 33000 out of 99427 events
+Completed 34000 out of 99427 events
+Completed 35000 out of 99427 events
+Completed 36000 out of 99427 events
+Completed 37000 out of 99427 events
+Completed 38000 out of 99427 events
+Completed 39000 out of 99427 events
+Completed 40000 out of 99427 events
+Completed 41000 out of 99427 events
+Completed 42000 out of 99427 events
+Completed 43000 out of 99427 events
+Completed 44000 out of 99427 events
+Completed 45000 out of 99427 events
+Completed 46000 out of 99427 events
+Completed 47000 out of 99427 events
+Completed 48000 out of 99427 events
+Completed 49000 out of 99427 events
+Completed 50000 out of 99427 events
+Completed 51000 out of 99427 events
+Completed 52000 out of 99427 events
+Completed 53000 out of 99427 events
+Completed 54000 out of 99427 events
+Completed 55000 out of 99427 events
+Completed 56000 out of 99427 events
+Completed 57000 out of 99427 events
+Completed 58000 out of 99427 events
+Completed 59000 out of 99427 events
+Completed 60000 out of 99427 events
+Completed 61000 out of 99427 events
+Completed 62000 out of 99427 events
+Completed 63000 out of 99427 events
+Completed 64000 out of 99427 events
+Completed 65000 out of 99427 events
+Completed 66000 out of 99427 events
+Completed 67000 out of 99427 events
+Completed 68000 out of 99427 events
+Completed 69000 out of 99427 events
+Completed 70000 out of 99427 events
+Completed 71000 out of 99427 events
+Completed 72000 out of 99427 events
+Completed 73000 out of 99427 events
+Completed 74000 out of 99427 events
+Completed 75000 out of 99427 events
+Completed 76000 out of 99427 events
+Completed 77000 out of 99427 events
+Completed 78000 out of 99427 events
+Completed 79000 out of 99427 events
+Completed 80000 out of 99427 events
+Completed 81000 out of 99427 events
+Completed 82000 out of 99427 events
+Completed 83000 out of 99427 events
+Completed 84000 out of 99427 events
+Completed 85000 out of 99427 events
+Completed 86000 out of 99427 events
+Completed 87000 out of 99427 events
+Completed 88000 out of 99427 events
+Completed 89000 out of 99427 events
+Completed 90000 out of 99427 events
+Completed 91000 out of 99427 events
+Completed 92000 out of 99427 events
+Completed 93000 out of 99427 events
+Completed 94000 out of 99427 events
+Completed 95000 out of 99427 events
+Completed 96000 out of 99427 events
+Completed 97000 out of 99427 events
+Completed 98000 out of 99427 events
+Completed 99000 out of 99427 events
+Nelectrons      = 99381 / 99427
+Npassed_ElEta   = 99381 / 99427
+Nmuons          = 0 / 99427
+NrelIsoFail     = 0 / 99427
+Npassed_MuEta   = 0 / 99427
+Npassed_nAK8Jets= 99381 / 99427
+Npassed_Trigger = 96014 / 99427
+Npassed_MET     = 16536 / 99427
+Npassed_lepPt   = 17831 / 99427
+Npassed_HT      = 598 / 99427
+npass_Njets     = 2135 / 99427
+Npassed_ALL     = 103 / 99427
+ROOT Files:
+-rw-r--r-- 1 fsimpson fnalgrid 214460 Sep 25 08:17 SingleElectron_F2-91nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 226677 Sep 25 08:17 SingleElectron_F2-92nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 197392 Sep 25 08:17 SingleElectron_F2-93nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 222637 Sep 25 08:17 SingleElectron_F2-94nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 169899 Sep 25 08:17 SingleElectron_F2-96nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 190308 Sep 25 08:17 SingleElectron_F2-97nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 181013 Sep 25 08:17 SingleElectron_F2-99nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 217504 Sep 25 08:17 SingleElectron_F2-9nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 781444 Sep 25 08:17 SingleElectron_F29nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 855487 Sep 25 08:17 SingleElectron_F2nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 243938 Sep 25 08:17 SingleElectron_F3-10nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 277844 Sep 25 08:17 SingleElectron_F3-11nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 258390 Sep 25 08:17 SingleElectron_F3-12nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 254201 Sep 25 08:17 SingleElectron_F3-13nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 327853 Sep 25 08:17 SingleElectron_F3-14nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 291754 Sep 25 08:17 SingleElectron_F3-15nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 302825 Sep 25 08:17 SingleElectron_F3-17nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 340968 Sep 25 08:17 SingleElectron_F3-18nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 263373 Sep 25 08:17 SingleElectron_F3-19nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 247039 Sep 25 08:17 SingleElectron_F3-1nominal.root
+xrdcp output for condor
+hadd Target file: SingleElectron_21nominal_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: SingleElectron_F2-91nominal.root
+hadd Source file 2: SingleElectron_F2-92nominal.root
+hadd Source file 3: SingleElectron_F2-93nominal.root
+hadd Source file 4: SingleElectron_F2-94nominal.root
+hadd Source file 5: SingleElectron_F2-96nominal.root
+hadd Source file 6: SingleElectron_F2-97nominal.root
+hadd Source file 7: SingleElectron_F2-99nominal.root
+hadd Source file 8: SingleElectron_F2-9nominal.root
+hadd Source file 9: SingleElectron_F29nominal.root
+hadd Source file 10: SingleElectron_F2nominal.root
+hadd Source file 11: SingleElectron_F3-10nominal.root
+hadd Source file 12: SingleElectron_F3-11nominal.root
+hadd Source file 13: SingleElectron_F3-12nominal.root
+hadd Source file 14: SingleElectron_F3-13nominal.root
+hadd Source file 15: SingleElectron_F3-14nominal.root
+hadd Source file 16: SingleElectron_F3-15nominal.root
+hadd Source file 17: SingleElectron_F3-17nominal.root
+hadd Source file 18: SingleElectron_F3-18nominal.root
+hadd Source file 19: SingleElectron_F3-19nominal.root
+hadd Source file 20: SingleElectron_F3-1nominal.root
+hadd Target path: SingleElectron_21nominal_hadd.root:/
+xrdcp -f SingleElectron_21nominal_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//SingleElectron/SingleElectron_21.root
+[5.416MB/5.416MB][100%][==================================================][5.416MB/s]  [5.416MB/5.416MB][100%][==================================================][5.416MB/s]  
+done

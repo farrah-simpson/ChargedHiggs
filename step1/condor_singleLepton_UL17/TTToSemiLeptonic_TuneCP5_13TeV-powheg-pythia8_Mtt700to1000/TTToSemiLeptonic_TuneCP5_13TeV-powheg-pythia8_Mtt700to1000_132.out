@@ -1,0 +1,2281 @@
+[FERMIHTC-SINGULARITY]: INFO -- No Singulariy image specified
+[FERMIHTC-SINGULARITY]: INFO -- Running job on the host machine
+
+[FERMIHTC-SINGULARITY]: INFO -- Running ./condor_exec.exe TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000 /store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000 /store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000 92 93 94 95 96 97 98 99 132 2017
+fsimpson-34672587-0-cmswn2046.fnal.gov
+Sat Sep 25 04:27:35 UTC 2021
+/storage/local/data1/condor/execute/dir_31760
+setting macroDir to PWD
+
+Processing compileStep1.C...
+Running step1 over list: 92 93 94 95 96 97 98 99
+adding TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92.root to the list by reading TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_92
+adding TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93.root to the list by reading TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_93
+adding TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94.root to the list by reading TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_94
+adding TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95.root to the list by reading TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_95
+adding TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96.root to the list by reading TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_96
+adding TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97.root to the list by reading TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_97
+adding TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98.root to the list by reading TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_98
+adding TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99.root to the list by reading TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_99
+
+Processing makeStep1.C("/storage/local/data1/condor/execute/dir_31760","filelist",2017)...
+CSV reshaping file DeepCSV_106XUL17SF.csv
+Deep Jet reshaping file DeepJet_106XUL17SF.csv
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_92.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13904 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13904 events
+Completed 2000 out of 13904 events
+Completed 3000 out of 13904 events
+Completed 4000 out of 13904 events
+Completed 5000 out of 13904 events
+Completed 6000 out of 13904 events
+Completed 7000 out of 13904 events
+Completed 8000 out of 13904 events
+Completed 9000 out of 13904 events
+Completed 10000 out of 13904 events
+Completed 11000 out of 13904 events
+Completed 12000 out of 13904 events
+Completed 13000 out of 13904 events
+Nelectrons      = 657 / 13904
+Npassed_ElEta   = 657 / 13904
+Nmuons          = 851 / 13904
+NrelIsoFail     = 0 / 13904
+Npassed_MuEta   = 851 / 13904
+Npassed_nAK8Jets= 1508 / 13904
+Npassed_Trigger = 1367 / 13904
+Npassed_MET     = 825 / 13904
+Npassed_lepPt   = 855 / 13904
+Npassed_HT      = 382 / 13904
+npass_Njets     = 869 / 13904
+Npassed_ALL     = 125 / 13904
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_92.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13948 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13948 events
+Completed 2000 out of 13948 events
+Completed 3000 out of 13948 events
+Completed 4000 out of 13948 events
+Completed 5000 out of 13948 events
+Completed 6000 out of 13948 events
+Completed 7000 out of 13948 events
+Completed 8000 out of 13948 events
+Completed 9000 out of 13948 events
+Completed 10000 out of 13948 events
+Completed 11000 out of 13948 events
+Completed 12000 out of 13948 events
+Completed 13000 out of 13948 events
+Nelectrons      = 656 / 13948
+Npassed_ElEta   = 656 / 13948
+Nmuons          = 852 / 13948
+NrelIsoFail     = 0 / 13948
+Npassed_MuEta   = 852 / 13948
+Npassed_nAK8Jets= 1508 / 13948
+Npassed_Trigger = 1368 / 13948
+Npassed_MET     = 833 / 13948
+Npassed_lepPt   = 854 / 13948
+Npassed_HT      = 393 / 13948
+npass_Njets     = 888 / 13948
+Npassed_ALL     = 129 / 13948
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_92.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13883 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13883 events
+Completed 2000 out of 13883 events
+Completed 3000 out of 13883 events
+Completed 4000 out of 13883 events
+Completed 5000 out of 13883 events
+Completed 6000 out of 13883 events
+Completed 7000 out of 13883 events
+Completed 8000 out of 13883 events
+Completed 9000 out of 13883 events
+Completed 10000 out of 13883 events
+Completed 11000 out of 13883 events
+Completed 12000 out of 13883 events
+Completed 13000 out of 13883 events
+Nelectrons      = 660 / 13883
+Npassed_ElEta   = 660 / 13883
+Nmuons          = 849 / 13883
+NrelIsoFail     = 0 / 13883
+Npassed_MuEta   = 849 / 13883
+Npassed_nAK8Jets= 1509 / 13883
+Npassed_Trigger = 1367 / 13883
+Npassed_MET     = 825 / 13883
+Npassed_lepPt   = 855 / 13883
+Npassed_HT      = 376 / 13883
+npass_Njets     = 845 / 13883
+Npassed_ALL     = 123 / 13883
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_92.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13907 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13907 events
+Completed 2000 out of 13907 events
+Completed 3000 out of 13907 events
+Completed 4000 out of 13907 events
+Completed 5000 out of 13907 events
+Completed 6000 out of 13907 events
+Completed 7000 out of 13907 events
+Completed 8000 out of 13907 events
+Completed 9000 out of 13907 events
+Completed 10000 out of 13907 events
+Completed 11000 out of 13907 events
+Completed 12000 out of 13907 events
+Completed 13000 out of 13907 events
+Nelectrons      = 658 / 13907
+Npassed_ElEta   = 658 / 13907
+Nmuons          = 851 / 13907
+NrelIsoFail     = 0 / 13907
+Npassed_MuEta   = 851 / 13907
+Npassed_nAK8Jets= 1509 / 13907
+Npassed_Trigger = 1368 / 13907
+Npassed_MET     = 825 / 13907
+Npassed_lepPt   = 856 / 13907
+Npassed_HT      = 385 / 13907
+npass_Njets     = 871 / 13907
+Npassed_ALL     = 126 / 13907
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_92.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13900 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13900 events
+Completed 2000 out of 13900 events
+Completed 3000 out of 13900 events
+Completed 4000 out of 13900 events
+Completed 5000 out of 13900 events
+Completed 6000 out of 13900 events
+Completed 7000 out of 13900 events
+Completed 8000 out of 13900 events
+Completed 9000 out of 13900 events
+Completed 10000 out of 13900 events
+Completed 11000 out of 13900 events
+Completed 12000 out of 13900 events
+Completed 13000 out of 13900 events
+Nelectrons      = 657 / 13900
+Npassed_ElEta   = 657 / 13900
+Nmuons          = 852 / 13900
+NrelIsoFail     = 0 / 13900
+Npassed_MuEta   = 852 / 13900
+Npassed_nAK8Jets= 1509 / 13900
+Npassed_Trigger = 1367 / 13900
+Npassed_MET     = 825 / 13900
+Npassed_lepPt   = 856 / 13900
+Npassed_HT      = 382 / 13900
+npass_Njets     = 865 / 13900
+Npassed_ALL     = 126 / 13900
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_93.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17685 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17685 events
+Completed 2000 out of 17685 events
+Completed 3000 out of 17685 events
+Completed 4000 out of 17685 events
+Completed 5000 out of 17685 events
+Completed 6000 out of 17685 events
+Completed 7000 out of 17685 events
+Completed 8000 out of 17685 events
+Completed 9000 out of 17685 events
+Completed 10000 out of 17685 events
+Completed 11000 out of 17685 events
+Completed 12000 out of 17685 events
+Completed 13000 out of 17685 events
+Completed 14000 out of 17685 events
+Completed 15000 out of 17685 events
+Completed 16000 out of 17685 events
+Completed 17000 out of 17685 events
+Nelectrons      = 881 / 17685
+Npassed_ElEta   = 881 / 17685
+Nmuons          = 1081 / 17685
+NrelIsoFail     = 0 / 17685
+Npassed_MuEta   = 1081 / 17685
+Npassed_nAK8Jets= 1962 / 17685
+Npassed_Trigger = 1768 / 17685
+Npassed_MET     = 1054 / 17685
+Npassed_lepPt   = 1106 / 17685
+Npassed_HT      = 489 / 17685
+npass_Njets     = 1115 / 17685
+Npassed_ALL     = 154 / 17685
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_93.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17741 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17741 events
+Completed 2000 out of 17741 events
+Completed 3000 out of 17741 events
+Completed 4000 out of 17741 events
+Completed 5000 out of 17741 events
+Completed 6000 out of 17741 events
+Completed 7000 out of 17741 events
+Completed 8000 out of 17741 events
+Completed 9000 out of 17741 events
+Completed 10000 out of 17741 events
+Completed 11000 out of 17741 events
+Completed 12000 out of 17741 events
+Completed 13000 out of 17741 events
+Completed 14000 out of 17741 events
+Completed 15000 out of 17741 events
+Completed 16000 out of 17741 events
+Completed 17000 out of 17741 events
+Nelectrons      = 874 / 17741
+Npassed_ElEta   = 874 / 17741
+Nmuons          = 1089 / 17741
+NrelIsoFail     = 0 / 17741
+Npassed_MuEta   = 1089 / 17741
+Npassed_nAK8Jets= 1963 / 17741
+Npassed_Trigger = 1770 / 17741
+Npassed_MET     = 1061 / 17741
+Npassed_lepPt   = 1111 / 17741
+Npassed_HT      = 518 / 17741
+npass_Njets     = 1139 / 17741
+Npassed_ALL     = 168 / 17741
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_93.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17646 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17646 events
+Completed 2000 out of 17646 events
+Completed 3000 out of 17646 events
+Completed 4000 out of 17646 events
+Completed 5000 out of 17646 events
+Completed 6000 out of 17646 events
+Completed 7000 out of 17646 events
+Completed 8000 out of 17646 events
+Completed 9000 out of 17646 events
+Completed 10000 out of 17646 events
+Completed 11000 out of 17646 events
+Completed 12000 out of 17646 events
+Completed 13000 out of 17646 events
+Completed 14000 out of 17646 events
+Completed 15000 out of 17646 events
+Completed 16000 out of 17646 events
+Completed 17000 out of 17646 events
+Nelectrons      = 882 / 17646
+Npassed_ElEta   = 882 / 17646
+Nmuons          = 1077 / 17646
+NrelIsoFail     = 0 / 17646
+Npassed_MuEta   = 1077 / 17646
+Npassed_nAK8Jets= 1959 / 17646
+Npassed_Trigger = 1764 / 17646
+Npassed_MET     = 1043 / 17646
+Npassed_lepPt   = 1105 / 17646
+Npassed_HT      = 477 / 17646
+npass_Njets     = 1093 / 17646
+Npassed_ALL     = 146 / 17646
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_93.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17687 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17687 events
+Completed 2000 out of 17687 events
+Completed 3000 out of 17687 events
+Completed 4000 out of 17687 events
+Completed 5000 out of 17687 events
+Completed 6000 out of 17687 events
+Completed 7000 out of 17687 events
+Completed 8000 out of 17687 events
+Completed 9000 out of 17687 events
+Completed 10000 out of 17687 events
+Completed 11000 out of 17687 events
+Completed 12000 out of 17687 events
+Completed 13000 out of 17687 events
+Completed 14000 out of 17687 events
+Completed 15000 out of 17687 events
+Completed 16000 out of 17687 events
+Completed 17000 out of 17687 events
+Nelectrons      = 880 / 17687
+Npassed_ElEta   = 880 / 17687
+Nmuons          = 1084 / 17687
+NrelIsoFail     = 0 / 17687
+Npassed_MuEta   = 1084 / 17687
+Npassed_nAK8Jets= 1964 / 17687
+Npassed_Trigger = 1770 / 17687
+Npassed_MET     = 1051 / 17687
+Npassed_lepPt   = 1109 / 17687
+Npassed_HT      = 490 / 17687
+npass_Njets     = 1115 / 17687
+Npassed_ALL     = 155 / 17687
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_93.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17673 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17673 events
+Completed 2000 out of 17673 events
+Completed 3000 out of 17673 events
+Completed 4000 out of 17673 events
+Completed 5000 out of 17673 events
+Completed 6000 out of 17673 events
+Completed 7000 out of 17673 events
+Completed 8000 out of 17673 events
+Completed 9000 out of 17673 events
+Completed 10000 out of 17673 events
+Completed 11000 out of 17673 events
+Completed 12000 out of 17673 events
+Completed 13000 out of 17673 events
+Completed 14000 out of 17673 events
+Completed 15000 out of 17673 events
+Completed 16000 out of 17673 events
+Completed 17000 out of 17673 events
+Nelectrons      = 881 / 17673
+Npassed_ElEta   = 881 / 17673
+Nmuons          = 1079 / 17673
+NrelIsoFail     = 0 / 17673
+Npassed_MuEta   = 1079 / 17673
+Npassed_nAK8Jets= 1960 / 17673
+Npassed_Trigger = 1766 / 17673
+Npassed_MET     = 1048 / 17673
+Npassed_lepPt   = 1105 / 17673
+Npassed_HT      = 488 / 17673
+npass_Njets     = 1117 / 17673
+Npassed_ALL     = 151 / 17673
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_94.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 16317 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 16317 events
+Completed 2000 out of 16317 events
+Completed 3000 out of 16317 events
+Completed 4000 out of 16317 events
+Completed 5000 out of 16317 events
+Completed 6000 out of 16317 events
+Completed 7000 out of 16317 events
+Completed 8000 out of 16317 events
+Completed 9000 out of 16317 events
+Completed 10000 out of 16317 events
+Completed 11000 out of 16317 events
+Completed 12000 out of 16317 events
+Completed 13000 out of 16317 events
+Completed 14000 out of 16317 events
+Completed 15000 out of 16317 events
+Completed 16000 out of 16317 events
+Nelectrons      = 814 / 16317
+Npassed_ElEta   = 814 / 16317
+Nmuons          = 1015 / 16317
+NrelIsoFail     = 0 / 16317
+Npassed_MuEta   = 1015 / 16317
+Npassed_nAK8Jets= 1829 / 16317
+Npassed_Trigger = 1622 / 16317
+Npassed_MET     = 951 / 16317
+Npassed_lepPt   = 1010 / 16317
+Npassed_HT      = 471 / 16317
+npass_Njets     = 1042 / 16317
+Npassed_ALL     = 137 / 16317
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_94.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 16365 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 16365 events
+Completed 2000 out of 16365 events
+Completed 3000 out of 16365 events
+Completed 4000 out of 16365 events
+Completed 5000 out of 16365 events
+Completed 6000 out of 16365 events
+Completed 7000 out of 16365 events
+Completed 8000 out of 16365 events
+Completed 9000 out of 16365 events
+Completed 10000 out of 16365 events
+Completed 11000 out of 16365 events
+Completed 12000 out of 16365 events
+Completed 13000 out of 16365 events
+Completed 14000 out of 16365 events
+Completed 15000 out of 16365 events
+Completed 16000 out of 16365 events
+Nelectrons      = 812 / 16365
+Npassed_ElEta   = 812 / 16365
+Nmuons          = 1019 / 16365
+NrelIsoFail     = 0 / 16365
+Npassed_MuEta   = 1019 / 16365
+Npassed_nAK8Jets= 1831 / 16365
+Npassed_Trigger = 1621 / 16365
+Npassed_MET     = 957 / 16365
+Npassed_lepPt   = 1015 / 16365
+Npassed_HT      = 485 / 16365
+npass_Njets     = 1060 / 16365
+Npassed_ALL     = 149 / 16365
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_94.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 16272 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 16272 events
+Completed 2000 out of 16272 events
+Completed 3000 out of 16272 events
+Completed 4000 out of 16272 events
+Completed 5000 out of 16272 events
+Completed 6000 out of 16272 events
+Completed 7000 out of 16272 events
+Completed 8000 out of 16272 events
+Completed 9000 out of 16272 events
+Completed 10000 out of 16272 events
+Completed 11000 out of 16272 events
+Completed 12000 out of 16272 events
+Completed 13000 out of 16272 events
+Completed 14000 out of 16272 events
+Completed 15000 out of 16272 events
+Completed 16000 out of 16272 events
+Nelectrons      = 811 / 16272
+Npassed_ElEta   = 811 / 16272
+Nmuons          = 1007 / 16272
+NrelIsoFail     = 0 / 16272
+Npassed_MuEta   = 1007 / 16272
+Npassed_nAK8Jets= 1818 / 16272
+Npassed_Trigger = 1612 / 16272
+Npassed_MET     = 943 / 16272
+Npassed_lepPt   = 1004 / 16272
+Npassed_HT      = 453 / 16272
+npass_Njets     = 1024 / 16272
+Npassed_ALL     = 130 / 16272
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_94.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 16323 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 16323 events
+Completed 2000 out of 16323 events
+Completed 3000 out of 16323 events
+Completed 4000 out of 16323 events
+Completed 5000 out of 16323 events
+Completed 6000 out of 16323 events
+Completed 7000 out of 16323 events
+Completed 8000 out of 16323 events
+Completed 9000 out of 16323 events
+Completed 10000 out of 16323 events
+Completed 11000 out of 16323 events
+Completed 12000 out of 16323 events
+Completed 13000 out of 16323 events
+Completed 14000 out of 16323 events
+Completed 15000 out of 16323 events
+Completed 16000 out of 16323 events
+Nelectrons      = 816 / 16323
+Npassed_ElEta   = 816 / 16323
+Nmuons          = 1016 / 16323
+NrelIsoFail     = 0 / 16323
+Npassed_MuEta   = 1016 / 16323
+Npassed_nAK8Jets= 1832 / 16323
+Npassed_Trigger = 1622 / 16323
+Npassed_MET     = 953 / 16323
+Npassed_lepPt   = 1011 / 16323
+Npassed_HT      = 472 / 16323
+npass_Njets     = 1048 / 16323
+Npassed_ALL     = 137 / 16323
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_94.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 16285 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 16285 events
+Completed 2000 out of 16285 events
+Completed 3000 out of 16285 events
+Completed 4000 out of 16285 events
+Completed 5000 out of 16285 events
+Completed 6000 out of 16285 events
+Completed 7000 out of 16285 events
+Completed 8000 out of 16285 events
+Completed 9000 out of 16285 events
+Completed 10000 out of 16285 events
+Completed 11000 out of 16285 events
+Completed 12000 out of 16285 events
+Completed 13000 out of 16285 events
+Completed 14000 out of 16285 events
+Completed 15000 out of 16285 events
+Completed 16000 out of 16285 events
+Nelectrons      = 815 / 16285
+Npassed_ElEta   = 815 / 16285
+Nmuons          = 1014 / 16285
+NrelIsoFail     = 0 / 16285
+Npassed_MuEta   = 1014 / 16285
+Npassed_nAK8Jets= 1829 / 16285
+Npassed_Trigger = 1621 / 16285
+Npassed_MET     = 947 / 16285
+Npassed_lepPt   = 1014 / 16285
+Npassed_HT      = 468 / 16285
+npass_Njets     = 1037 / 16285
+Npassed_ALL     = 135 / 16285
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_95.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17391 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17391 events
+Completed 2000 out of 17391 events
+Completed 3000 out of 17391 events
+Completed 4000 out of 17391 events
+Completed 5000 out of 17391 events
+Completed 6000 out of 17391 events
+Completed 7000 out of 17391 events
+Completed 8000 out of 17391 events
+Completed 9000 out of 17391 events
+Completed 10000 out of 17391 events
+Completed 11000 out of 17391 events
+Completed 12000 out of 17391 events
+Completed 13000 out of 17391 events
+Completed 14000 out of 17391 events
+Completed 15000 out of 17391 events
+Completed 16000 out of 17391 events
+Completed 17000 out of 17391 events
+Nelectrons      = 884 / 17391
+Npassed_ElEta   = 884 / 17391
+Nmuons          = 1032 / 17391
+NrelIsoFail     = 0 / 17391
+Npassed_MuEta   = 1032 / 17391
+Npassed_nAK8Jets= 1916 / 17391
+Npassed_Trigger = 1686 / 17391
+Npassed_MET     = 1027 / 17391
+Npassed_lepPt   = 1093 / 17391
+Npassed_HT      = 513 / 17391
+npass_Njets     = 1104 / 17391
+Npassed_ALL     = 156 / 17391
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_95.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17474 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17474 events
+Completed 2000 out of 17474 events
+Completed 3000 out of 17474 events
+Completed 4000 out of 17474 events
+Completed 5000 out of 17474 events
+Completed 6000 out of 17474 events
+Completed 7000 out of 17474 events
+Completed 8000 out of 17474 events
+Completed 9000 out of 17474 events
+Completed 10000 out of 17474 events
+Completed 11000 out of 17474 events
+Completed 12000 out of 17474 events
+Completed 13000 out of 17474 events
+Completed 14000 out of 17474 events
+Completed 15000 out of 17474 events
+Completed 16000 out of 17474 events
+Completed 17000 out of 17474 events
+Nelectrons      = 888 / 17474
+Npassed_ElEta   = 888 / 17474
+Nmuons          = 1041 / 17474
+NrelIsoFail     = 0 / 17474
+Npassed_MuEta   = 1041 / 17474
+Npassed_nAK8Jets= 1929 / 17474
+Npassed_Trigger = 1696 / 17474
+Npassed_MET     = 1032 / 17474
+Npassed_lepPt   = 1098 / 17474
+Npassed_HT      = 526 / 17474
+npass_Njets     = 1143 / 17474
+Npassed_ALL     = 161 / 17474
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_95.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17376 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17376 events
+Completed 2000 out of 17376 events
+Completed 3000 out of 17376 events
+Completed 4000 out of 17376 events
+Completed 5000 out of 17376 events
+Completed 6000 out of 17376 events
+Completed 7000 out of 17376 events
+Completed 8000 out of 17376 events
+Completed 9000 out of 17376 events
+Completed 10000 out of 17376 events
+Completed 11000 out of 17376 events
+Completed 12000 out of 17376 events
+Completed 13000 out of 17376 events
+Completed 14000 out of 17376 events
+Completed 15000 out of 17376 events
+Completed 16000 out of 17376 events
+Completed 17000 out of 17376 events
+Nelectrons      = 886 / 17376
+Npassed_ElEta   = 886 / 17376
+Nmuons          = 1037 / 17376
+NrelIsoFail     = 0 / 17376
+Npassed_MuEta   = 1037 / 17376
+Npassed_nAK8Jets= 1923 / 17376
+Npassed_Trigger = 1691 / 17376
+Npassed_MET     = 1022 / 17376
+Npassed_lepPt   = 1099 / 17376
+Npassed_HT      = 494 / 17376
+npass_Njets     = 1089 / 17376
+Npassed_ALL     = 145 / 17376
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_95.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17395 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17395 events
+Completed 2000 out of 17395 events
+Completed 3000 out of 17395 events
+Completed 4000 out of 17395 events
+Completed 5000 out of 17395 events
+Completed 6000 out of 17395 events
+Completed 7000 out of 17395 events
+Completed 8000 out of 17395 events
+Completed 9000 out of 17395 events
+Completed 10000 out of 17395 events
+Completed 11000 out of 17395 events
+Completed 12000 out of 17395 events
+Completed 13000 out of 17395 events
+Completed 14000 out of 17395 events
+Completed 15000 out of 17395 events
+Completed 16000 out of 17395 events
+Completed 17000 out of 17395 events
+Nelectrons      = 886 / 17395
+Npassed_ElEta   = 886 / 17395
+Nmuons          = 1034 / 17395
+NrelIsoFail     = 0 / 17395
+Npassed_MuEta   = 1034 / 17395
+Npassed_nAK8Jets= 1920 / 17395
+Npassed_Trigger = 1690 / 17395
+Npassed_MET     = 1035 / 17395
+Npassed_lepPt   = 1096 / 17395
+Npassed_HT      = 514 / 17395
+npass_Njets     = 1104 / 17395
+Npassed_ALL     = 161 / 17395
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_95.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 17384 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 17384 events
+Completed 2000 out of 17384 events
+Completed 3000 out of 17384 events
+Completed 4000 out of 17384 events
+Completed 5000 out of 17384 events
+Completed 6000 out of 17384 events
+Completed 7000 out of 17384 events
+Completed 8000 out of 17384 events
+Completed 9000 out of 17384 events
+Completed 10000 out of 17384 events
+Completed 11000 out of 17384 events
+Completed 12000 out of 17384 events
+Completed 13000 out of 17384 events
+Completed 14000 out of 17384 events
+Completed 15000 out of 17384 events
+Completed 16000 out of 17384 events
+Completed 17000 out of 17384 events
+Nelectrons      = 885 / 17384
+Npassed_ElEta   = 885 / 17384
+Nmuons          = 1032 / 17384
+NrelIsoFail     = 0 / 17384
+Npassed_MuEta   = 1032 / 17384
+Npassed_nAK8Jets= 1917 / 17384
+Npassed_Trigger = 1686 / 17384
+Npassed_MET     = 1035 / 17384
+Npassed_lepPt   = 1096 / 17384
+Npassed_HT      = 511 / 17384
+npass_Njets     = 1102 / 17384
+Npassed_ALL     = 153 / 17384
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_96.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15472 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15472 events
+Completed 2000 out of 15472 events
+Completed 3000 out of 15472 events
+Completed 4000 out of 15472 events
+Completed 5000 out of 15472 events
+Completed 6000 out of 15472 events
+Completed 7000 out of 15472 events
+Completed 8000 out of 15472 events
+Completed 9000 out of 15472 events
+Completed 10000 out of 15472 events
+Completed 11000 out of 15472 events
+Completed 12000 out of 15472 events
+Completed 13000 out of 15472 events
+Completed 14000 out of 15472 events
+Completed 15000 out of 15472 events
+Nelectrons      = 726 / 15472
+Npassed_ElEta   = 726 / 15472
+Nmuons          = 953 / 15472
+NrelIsoFail     = 0 / 15472
+Npassed_MuEta   = 953 / 15472
+Npassed_nAK8Jets= 1679 / 15472
+Npassed_Trigger = 1496 / 15472
+Npassed_MET     = 906 / 15472
+Npassed_lepPt   = 953 / 15472
+Npassed_HT      = 436 / 15472
+npass_Njets     = 940 / 15472
+Npassed_ALL     = 136 / 15472
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_96.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15512 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15512 events
+Completed 2000 out of 15512 events
+Completed 3000 out of 15512 events
+Completed 4000 out of 15512 events
+Completed 5000 out of 15512 events
+Completed 6000 out of 15512 events
+Completed 7000 out of 15512 events
+Completed 8000 out of 15512 events
+Completed 9000 out of 15512 events
+Completed 10000 out of 15512 events
+Completed 11000 out of 15512 events
+Completed 12000 out of 15512 events
+Completed 13000 out of 15512 events
+Completed 14000 out of 15512 events
+Completed 15000 out of 15512 events
+Nelectrons      = 728 / 15512
+Npassed_ElEta   = 728 / 15512
+Nmuons          = 958 / 15512
+NrelIsoFail     = 0 / 15512
+Npassed_MuEta   = 958 / 15512
+Npassed_nAK8Jets= 1686 / 15512
+Npassed_Trigger = 1503 / 15512
+Npassed_MET     = 923 / 15512
+Npassed_lepPt   = 955 / 15512
+Npassed_HT      = 448 / 15512
+npass_Njets     = 972 / 15512
+Npassed_ALL     = 143 / 15512
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_96.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15419 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15419 events
+Completed 2000 out of 15419 events
+Completed 3000 out of 15419 events
+Completed 4000 out of 15419 events
+Completed 5000 out of 15419 events
+Completed 6000 out of 15419 events
+Completed 7000 out of 15419 events
+Completed 8000 out of 15419 events
+Completed 9000 out of 15419 events
+Completed 10000 out of 15419 events
+Completed 11000 out of 15419 events
+Completed 12000 out of 15419 events
+Completed 13000 out of 15419 events
+Completed 14000 out of 15419 events
+Completed 15000 out of 15419 events
+Nelectrons      = 730 / 15419
+Npassed_ElEta   = 730 / 15419
+Nmuons          = 949 / 15419
+NrelIsoFail     = 0 / 15419
+Npassed_MuEta   = 949 / 15419
+Npassed_nAK8Jets= 1679 / 15419
+Npassed_Trigger = 1496 / 15419
+Npassed_MET     = 894 / 15419
+Npassed_lepPt   = 956 / 15419
+Npassed_HT      = 420 / 15419
+npass_Njets     = 917 / 15419
+Npassed_ALL     = 127 / 15419
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_96.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15506 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15506 events
+Completed 2000 out of 15506 events
+Completed 3000 out of 15506 events
+Completed 4000 out of 15506 events
+Completed 5000 out of 15506 events
+Completed 6000 out of 15506 events
+Completed 7000 out of 15506 events
+Completed 8000 out of 15506 events
+Completed 9000 out of 15506 events
+Completed 10000 out of 15506 events
+Completed 11000 out of 15506 events
+Completed 12000 out of 15506 events
+Completed 13000 out of 15506 events
+Completed 14000 out of 15506 events
+Completed 15000 out of 15506 events
+Nelectrons      = 729 / 15506
+Npassed_ElEta   = 729 / 15506
+Nmuons          = 952 / 15506
+NrelIsoFail     = 0 / 15506
+Npassed_MuEta   = 952 / 15506
+Npassed_nAK8Jets= 1681 / 15506
+Npassed_Trigger = 1498 / 15506
+Npassed_MET     = 911 / 15506
+Npassed_lepPt   = 953 / 15506
+Npassed_HT      = 439 / 15506
+npass_Njets     = 941 / 15506
+Npassed_ALL     = 139 / 15506
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_96.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15408 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15408 events
+Completed 2000 out of 15408 events
+Completed 3000 out of 15408 events
+Completed 4000 out of 15408 events
+Completed 5000 out of 15408 events
+Completed 6000 out of 15408 events
+Completed 7000 out of 15408 events
+Completed 8000 out of 15408 events
+Completed 9000 out of 15408 events
+Completed 10000 out of 15408 events
+Completed 11000 out of 15408 events
+Completed 12000 out of 15408 events
+Completed 13000 out of 15408 events
+Completed 14000 out of 15408 events
+Completed 15000 out of 15408 events
+Nelectrons      = 727 / 15408
+Npassed_ElEta   = 727 / 15408
+Nmuons          = 949 / 15408
+NrelIsoFail     = 0 / 15408
+Npassed_MuEta   = 949 / 15408
+Npassed_nAK8Jets= 1676 / 15408
+Npassed_Trigger = 1493 / 15408
+Npassed_MET     = 905 / 15408
+Npassed_lepPt   = 953 / 15408
+Npassed_HT      = 430 / 15408
+npass_Njets     = 942 / 15408
+Npassed_ALL     = 133 / 15408
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_97.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 12304 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 12304 events
+Completed 2000 out of 12304 events
+Completed 3000 out of 12304 events
+Completed 4000 out of 12304 events
+Completed 5000 out of 12304 events
+Completed 6000 out of 12304 events
+Completed 7000 out of 12304 events
+Completed 8000 out of 12304 events
+Completed 9000 out of 12304 events
+Completed 10000 out of 12304 events
+Completed 11000 out of 12304 events
+Completed 12000 out of 12304 events
+Nelectrons      = 597 / 12304
+Npassed_ElEta   = 597 / 12304
+Nmuons          = 795 / 12304
+NrelIsoFail     = 0 / 12304
+Npassed_MuEta   = 795 / 12304
+Npassed_nAK8Jets= 1392 / 12304
+Npassed_Trigger = 1253 / 12304
+Npassed_MET     = 758 / 12304
+Npassed_lepPt   = 793 / 12304
+Npassed_HT      = 345 / 12304
+npass_Njets     = 781 / 12304
+Npassed_ALL     = 97 / 12304
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_97.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 12332 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 12332 events
+Completed 2000 out of 12332 events
+Completed 3000 out of 12332 events
+Completed 4000 out of 12332 events
+Completed 5000 out of 12332 events
+Completed 6000 out of 12332 events
+Completed 7000 out of 12332 events
+Completed 8000 out of 12332 events
+Completed 9000 out of 12332 events
+Completed 10000 out of 12332 events
+Completed 11000 out of 12332 events
+Completed 12000 out of 12332 events
+Nelectrons      = 601 / 12332
+Npassed_ElEta   = 601 / 12332
+Nmuons          = 800 / 12332
+NrelIsoFail     = 0 / 12332
+Npassed_MuEta   = 800 / 12332
+Npassed_nAK8Jets= 1401 / 12332
+Npassed_Trigger = 1263 / 12332
+Npassed_MET     = 760 / 12332
+Npassed_lepPt   = 800 / 12332
+Npassed_HT      = 362 / 12332
+npass_Njets     = 810 / 12332
+Npassed_ALL     = 106 / 12332
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_97.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 12300 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 12300 events
+Completed 2000 out of 12300 events
+Completed 3000 out of 12300 events
+Completed 4000 out of 12300 events
+Completed 5000 out of 12300 events
+Completed 6000 out of 12300 events
+Completed 7000 out of 12300 events
+Completed 8000 out of 12300 events
+Completed 9000 out of 12300 events
+Completed 10000 out of 12300 events
+Completed 11000 out of 12300 events
+Completed 12000 out of 12300 events
+Nelectrons      = 599 / 12300
+Npassed_ElEta   = 599 / 12300
+Nmuons          = 799 / 12300
+NrelIsoFail     = 0 / 12300
+Npassed_MuEta   = 799 / 12300
+Npassed_nAK8Jets= 1398 / 12300
+Npassed_Trigger = 1259 / 12300
+Npassed_MET     = 759 / 12300
+Npassed_lepPt   = 797 / 12300
+Npassed_HT      = 338 / 12300
+npass_Njets     = 763 / 12300
+Npassed_ALL     = 92 / 12300
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_97.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 12296 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 12296 events
+Completed 2000 out of 12296 events
+Completed 3000 out of 12296 events
+Completed 4000 out of 12296 events
+Completed 5000 out of 12296 events
+Completed 6000 out of 12296 events
+Completed 7000 out of 12296 events
+Completed 8000 out of 12296 events
+Completed 9000 out of 12296 events
+Completed 10000 out of 12296 events
+Completed 11000 out of 12296 events
+Completed 12000 out of 12296 events
+Nelectrons      = 598 / 12296
+Npassed_ElEta   = 598 / 12296
+Nmuons          = 799 / 12296
+NrelIsoFail     = 0 / 12296
+Npassed_MuEta   = 799 / 12296
+Npassed_nAK8Jets= 1397 / 12296
+Npassed_Trigger = 1257 / 12296
+Npassed_MET     = 761 / 12296
+Npassed_lepPt   = 797 / 12296
+Npassed_HT      = 349 / 12296
+npass_Njets     = 786 / 12296
+Npassed_ALL     = 99 / 12296
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_97.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 12301 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 12301 events
+Completed 2000 out of 12301 events
+Completed 3000 out of 12301 events
+Completed 4000 out of 12301 events
+Completed 5000 out of 12301 events
+Completed 6000 out of 12301 events
+Completed 7000 out of 12301 events
+Completed 8000 out of 12301 events
+Completed 9000 out of 12301 events
+Completed 10000 out of 12301 events
+Completed 11000 out of 12301 events
+Completed 12000 out of 12301 events
+Nelectrons      = 597 / 12301
+Npassed_ElEta   = 597 / 12301
+Nmuons          = 794 / 12301
+NrelIsoFail     = 0 / 12301
+Npassed_MuEta   = 794 / 12301
+Npassed_nAK8Jets= 1391 / 12301
+Npassed_Trigger = 1253 / 12301
+Npassed_MET     = 754 / 12301
+Npassed_lepPt   = 794 / 12301
+Npassed_HT      = 343 / 12301
+npass_Njets     = 777 / 12301
+Npassed_ALL     = 96 / 12301
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_98.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15223 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15223 events
+Completed 2000 out of 15223 events
+Completed 3000 out of 15223 events
+Completed 4000 out of 15223 events
+Completed 5000 out of 15223 events
+Completed 6000 out of 15223 events
+Completed 7000 out of 15223 events
+Completed 8000 out of 15223 events
+Completed 9000 out of 15223 events
+Completed 10000 out of 15223 events
+Completed 11000 out of 15223 events
+Completed 12000 out of 15223 events
+Completed 13000 out of 15223 events
+Completed 14000 out of 15223 events
+Completed 15000 out of 15223 events
+Nelectrons      = 746 / 15223
+Npassed_ElEta   = 746 / 15223
+Nmuons          = 981 / 15223
+NrelIsoFail     = 0 / 15223
+Npassed_MuEta   = 981 / 15223
+Npassed_nAK8Jets= 1727 / 15223
+Npassed_Trigger = 1527 / 15223
+Npassed_MET     = 960 / 15223
+Npassed_lepPt   = 1005 / 15223
+Npassed_HT      = 463 / 15223
+npass_Njets     = 1009 / 15223
+Npassed_ALL     = 161 / 15223
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_98.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15291 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15291 events
+Completed 2000 out of 15291 events
+Completed 3000 out of 15291 events
+Completed 4000 out of 15291 events
+Completed 5000 out of 15291 events
+Completed 6000 out of 15291 events
+Completed 7000 out of 15291 events
+Completed 8000 out of 15291 events
+Completed 9000 out of 15291 events
+Completed 10000 out of 15291 events
+Completed 11000 out of 15291 events
+Completed 12000 out of 15291 events
+Completed 13000 out of 15291 events
+Completed 14000 out of 15291 events
+Completed 15000 out of 15291 events
+Nelectrons      = 754 / 15291
+Npassed_ElEta   = 754 / 15291
+Nmuons          = 983 / 15291
+NrelIsoFail     = 0 / 15291
+Npassed_MuEta   = 983 / 15291
+Npassed_nAK8Jets= 1737 / 15291
+Npassed_Trigger = 1538 / 15291
+Npassed_MET     = 962 / 15291
+Npassed_lepPt   = 1008 / 15291
+Npassed_HT      = 478 / 15291
+npass_Njets     = 1027 / 15291
+Npassed_ALL     = 164 / 15291
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_98.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15216 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15216 events
+Completed 2000 out of 15216 events
+Completed 3000 out of 15216 events
+Completed 4000 out of 15216 events
+Completed 5000 out of 15216 events
+Completed 6000 out of 15216 events
+Completed 7000 out of 15216 events
+Completed 8000 out of 15216 events
+Completed 9000 out of 15216 events
+Completed 10000 out of 15216 events
+Completed 11000 out of 15216 events
+Completed 12000 out of 15216 events
+Completed 13000 out of 15216 events
+Completed 14000 out of 15216 events
+Completed 15000 out of 15216 events
+Nelectrons      = 748 / 15216
+Npassed_ElEta   = 748 / 15216
+Nmuons          = 981 / 15216
+NrelIsoFail     = 0 / 15216
+Npassed_MuEta   = 981 / 15216
+Npassed_nAK8Jets= 1729 / 15216
+Npassed_Trigger = 1528 / 15216
+Npassed_MET     = 954 / 15216
+Npassed_lepPt   = 1008 / 15216
+Npassed_HT      = 452 / 15216
+npass_Njets     = 996 / 15216
+Npassed_ALL     = 159 / 15216
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_98.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15228 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15228 events
+Completed 2000 out of 15228 events
+Completed 3000 out of 15228 events
+Completed 4000 out of 15228 events
+Completed 5000 out of 15228 events
+Completed 6000 out of 15228 events
+Completed 7000 out of 15228 events
+Completed 8000 out of 15228 events
+Completed 9000 out of 15228 events
+Completed 10000 out of 15228 events
+Completed 11000 out of 15228 events
+Completed 12000 out of 15228 events
+Completed 13000 out of 15228 events
+Completed 14000 out of 15228 events
+Completed 15000 out of 15228 events
+Nelectrons      = 747 / 15228
+Npassed_ElEta   = 747 / 15228
+Nmuons          = 979 / 15228
+NrelIsoFail     = 0 / 15228
+Npassed_MuEta   = 979 / 15228
+Npassed_nAK8Jets= 1726 / 15228
+Npassed_Trigger = 1526 / 15228
+Npassed_MET     = 962 / 15228
+Npassed_lepPt   = 1004 / 15228
+Npassed_HT      = 466 / 15228
+npass_Njets     = 1017 / 15228
+Npassed_ALL     = 161 / 15228
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_98.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 15235 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 15235 events
+Completed 2000 out of 15235 events
+Completed 3000 out of 15235 events
+Completed 4000 out of 15235 events
+Completed 5000 out of 15235 events
+Completed 6000 out of 15235 events
+Completed 7000 out of 15235 events
+Completed 8000 out of 15235 events
+Completed 9000 out of 15235 events
+Completed 10000 out of 15235 events
+Completed 11000 out of 15235 events
+Completed 12000 out of 15235 events
+Completed 13000 out of 15235 events
+Completed 14000 out of 15235 events
+Completed 15000 out of 15235 events
+Nelectrons      = 750 / 15235
+Npassed_ElEta   = 750 / 15235
+Nmuons          = 984 / 15235
+NrelIsoFail     = 0 / 15235
+Npassed_MuEta   = 984 / 15235
+Npassed_nAK8Jets= 1734 / 15235
+Npassed_Trigger = 1533 / 15235
+Npassed_MET     = 958 / 15235
+Npassed_lepPt   = 1009 / 15235
+Npassed_HT      = 464 / 15235
+npass_Njets     = 1011 / 15235
+Npassed_ALL     = 163 / 15235
+
+Running shift nominal
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_99.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13518 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13518 events
+Completed 2000 out of 13518 events
+Completed 3000 out of 13518 events
+Completed 4000 out of 13518 events
+Completed 5000 out of 13518 events
+Completed 6000 out of 13518 events
+Completed 7000 out of 13518 events
+Completed 8000 out of 13518 events
+Completed 9000 out of 13518 events
+Completed 10000 out of 13518 events
+Completed 11000 out of 13518 events
+Completed 12000 out of 13518 events
+Completed 13000 out of 13518 events
+Nelectrons      = 681 / 13518
+Npassed_ElEta   = 681 / 13518
+Nmuons          = 831 / 13518
+NrelIsoFail     = 0 / 13518
+Npassed_MuEta   = 831 / 13518
+Npassed_nAK8Jets= 1512 / 13518
+Npassed_Trigger = 1326 / 13518
+Npassed_MET     = 841 / 13518
+Npassed_lepPt   = 845 / 13518
+Npassed_HT      = 398 / 13518
+npass_Njets     = 857 / 13518
+Npassed_ALL     = 135 / 13518
+
+Running shift JECup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_99.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13605 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13605 events
+Completed 2000 out of 13605 events
+Completed 3000 out of 13605 events
+Completed 4000 out of 13605 events
+Completed 5000 out of 13605 events
+Completed 6000 out of 13605 events
+Completed 7000 out of 13605 events
+Completed 8000 out of 13605 events
+Completed 9000 out of 13605 events
+Completed 10000 out of 13605 events
+Completed 11000 out of 13605 events
+Completed 12000 out of 13605 events
+Completed 13000 out of 13605 events
+Nelectrons      = 681 / 13605
+Npassed_ElEta   = 681 / 13605
+Nmuons          = 837 / 13605
+NrelIsoFail     = 0 / 13605
+Npassed_MuEta   = 837 / 13605
+Npassed_nAK8Jets= 1518 / 13605
+Npassed_Trigger = 1331 / 13605
+Npassed_MET     = 848 / 13605
+Npassed_lepPt   = 842 / 13605
+Npassed_HT      = 410 / 13605
+npass_Njets     = 875 / 13605
+Npassed_ALL     = 141 / 13605
+
+Running shift JECdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_99.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13520 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13520 events
+Completed 2000 out of 13520 events
+Completed 3000 out of 13520 events
+Completed 4000 out of 13520 events
+Completed 5000 out of 13520 events
+Completed 6000 out of 13520 events
+Completed 7000 out of 13520 events
+Completed 8000 out of 13520 events
+Completed 9000 out of 13520 events
+Completed 10000 out of 13520 events
+Completed 11000 out of 13520 events
+Completed 12000 out of 13520 events
+Completed 13000 out of 13520 events
+Nelectrons      = 681 / 13520
+Npassed_ElEta   = 681 / 13520
+Nmuons          = 834 / 13520
+NrelIsoFail     = 0 / 13520
+Npassed_MuEta   = 834 / 13520
+Npassed_nAK8Jets= 1515 / 13520
+Npassed_Trigger = 1328 / 13520
+Npassed_MET     = 830 / 13520
+Npassed_lepPt   = 845 / 13520
+Npassed_HT      = 381 / 13520
+npass_Njets     = 838 / 13520
+Npassed_ALL     = 127 / 13520
+
+Running shift JERup
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_99.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13567 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13567 events
+Completed 2000 out of 13567 events
+Completed 3000 out of 13567 events
+Completed 4000 out of 13567 events
+Completed 5000 out of 13567 events
+Completed 6000 out of 13567 events
+Completed 7000 out of 13567 events
+Completed 8000 out of 13567 events
+Completed 9000 out of 13567 events
+Completed 10000 out of 13567 events
+Completed 11000 out of 13567 events
+Completed 12000 out of 13567 events
+Completed 13000 out of 13567 events
+Nelectrons      = 680 / 13567
+Npassed_ElEta   = 680 / 13567
+Nmuons          = 838 / 13567
+NrelIsoFail     = 0 / 13567
+Npassed_MuEta   = 838 / 13567
+Npassed_nAK8Jets= 1518 / 13567
+Npassed_Trigger = 1331 / 13567
+Npassed_MET     = 842 / 13567
+Npassed_lepPt   = 846 / 13567
+Npassed_HT      = 401 / 13567
+npass_Njets     = 862 / 13567
+Npassed_ALL     = 135 / 13567
+
+Running shift JERdown
+Opening file: root://cmseos.fnal.gov//store/user/lpcljm/FWLJMET_crab_1lep2017_UL_fixed_new//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/singleLep2017_TTToSemiLeptonic_fixed/210622_014735/0000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_99.root
+RUN CONFIG: YEAR = 2017
+Era = 
+isMC = 1, isSig = 0, SigMass = -1
+isHad =0, isSE =0, isSM =0
+isTTTT = 0, isXX = 0, isTpTp = 0, isBpBp = 0
+For W's: isTT = 1, isSTt = 0, isSTtW = 0
+For jets & PDF: isTOP = 1, isMadgraphBkg = 0
+For HOTTagger Efficiencies: isTTV = 0, isTTHbb = 0, isTTHnonbb = 0, isTTTX = 0
+isTTVV = 0, isST = 0, isTTToSemiLeptonHT500Njet9 = 0
+Pileup sample key: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+b-tagging working points: 0.304(DeepJet)0.4506(DeepCSV)
+isTTincMtt0to700: 0
+isTTincMtt0to1000: 0
+isTTincMtt700to1000: 1
+isTTincMtt1000toInf: 0
+isTTSemilepIncHT0Njet0: 0
+isTTSemilepIncHT500Njet9: 0
+outTTLF: 0
+outTTCC: 0
+outTTBB: 0
+outTT1B: 0
+outTT2B: 0
+Completed 0 out of 13518 events
+I don't know this pileup sample, using TTToSemiLeptonic's: TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Completed 1000 out of 13518 events
+Completed 2000 out of 13518 events
+Completed 3000 out of 13518 events
+Completed 4000 out of 13518 events
+Completed 5000 out of 13518 events
+Completed 6000 out of 13518 events
+Completed 7000 out of 13518 events
+Completed 8000 out of 13518 events
+Completed 9000 out of 13518 events
+Completed 10000 out of 13518 events
+Completed 11000 out of 13518 events
+Completed 12000 out of 13518 events
+Completed 13000 out of 13518 events
+Nelectrons      = 683 / 13518
+Npassed_ElEta   = 683 / 13518
+Nmuons          = 836 / 13518
+NrelIsoFail     = 0 / 13518
+Npassed_MuEta   = 836 / 13518
+Npassed_nAK8Jets= 1519 / 13518
+Npassed_Trigger = 1333 / 13518
+Npassed_MET     = 840 / 13518
+Npassed_lepPt   = 849 / 13518
+Npassed_HT      = 397 / 13518
+npass_Njets     = 857 / 13518
+Npassed_ALL     = 135 / 13518
+ROOT Files:
+-rw-r--r-- 1 fsimpson fnalgrid 498387 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 522444 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 509435 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 512672 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 507576 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 588648 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 671326 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 607217 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 623502 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 618842 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 530107 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 600553 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 548822 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 558752 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 557469 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 587105 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 650239 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 615407 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 646935 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 626484 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 515094 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 574213 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 536861 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 558357 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 547614 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 398322 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 450262 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 412823 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 423080 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 416250 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 635446 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 658738 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 653073 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 646001 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 645546 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98nominal.root
+-rw-r--r-- 1 fsimpson fnalgrid 527593 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99JECdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 583365 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99JECup.root
+-rw-r--r-- 1 fsimpson fnalgrid 559818 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99JERdown.root
+-rw-r--r-- 1 fsimpson fnalgrid 559756 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99JERup.root
+-rw-r--r-- 1 fsimpson fnalgrid 558993 Sep 25 13:12 TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99nominal.root
+xrdcp output for condor
+hadd Target file: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132nominal_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92nominal.root
+hadd Source file 2: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93nominal.root
+hadd Source file 3: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94nominal.root
+hadd Source file 4: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95nominal.root
+hadd Source file 5: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96nominal.root
+hadd Source file 6: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97nominal.root
+hadd Source file 7: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98nominal.root
+hadd Source file 8: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99nominal.root
+hadd Target path: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132nominal_hadd.root:/
+xrdcp -f TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132nominal_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/nominal//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132.root
+[4.119MB/4.119MB][100%][==================================================][4.119MB/s]  [4.119MB/4.119MB][100%][==================================================][4.119MB/s]  
+hadd Target file: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JECup_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92JECup.root
+hadd Source file 2: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93JECup.root
+hadd Source file 3: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94JECup.root
+hadd Source file 4: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95JECup.root
+hadd Source file 5: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96JECup.root
+hadd Source file 6: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97JECup.root
+hadd Source file 7: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98JECup.root
+hadd Source file 8: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99JECup.root
+hadd Target path: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JECup_hadd.root:/
+xrdcp -f TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JECup_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/JECup//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132.root
+[4.34MB/4.34MB][100%][==================================================][4.34MB/s]  [4.34MB/4.34MB][100%][==================================================][4.34MB/s]  
+hadd Target file: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JECdown_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92JECdown.root
+hadd Source file 2: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93JECdown.root
+hadd Source file 3: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94JECdown.root
+hadd Source file 4: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95JECdown.root
+hadd Source file 5: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96JECdown.root
+hadd Source file 6: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97JECdown.root
+hadd Source file 7: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98JECdown.root
+hadd Source file 8: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99JECdown.root
+hadd Target path: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JECdown_hadd.root:/
+xrdcp -f TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JECdown_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/JECdown//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132.root
+[3.93MB/3.93MB][100%][==================================================][3.93MB/s]  [3.93MB/3.93MB][100%][==================================================][3.93MB/s]  
+hadd Target file: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JERup_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92JERup.root
+hadd Source file 2: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93JERup.root
+hadd Source file 3: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94JERup.root
+hadd Source file 4: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95JERup.root
+hadd Source file 5: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96JERup.root
+hadd Source file 6: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97JERup.root
+hadd Source file 7: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98JERup.root
+hadd Source file 8: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99JERup.root
+hadd Target path: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JERup_hadd.root:/
+xrdcp -f TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JERup_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/JERup//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132.root
+[4.167MB/4.167MB][100%][==================================================][4.167MB/s]  [4.167MB/4.167MB][100%][==================================================][4.167MB/s]  
+hadd Target file: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JERdown_hadd.root
+hadd compression setting for all ouput: 1
+hadd Source file 1: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_92JERdown.root
+hadd Source file 2: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_93JERdown.root
+hadd Source file 3: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_94JERdown.root
+hadd Source file 4: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_95JERdown.root
+hadd Source file 5: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_96JERdown.root
+hadd Source file 6: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_97JERdown.root
+hadd Source file 7: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_98JERdown.root
+hadd Source file 8: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_99JERdown.root
+hadd Target path: TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JERdown_hadd.root:/
+xrdcp -f TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132JERdown_hadd.root root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new/JERdown//TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_Mtt700to1000_132.root
+[4.085MB/4.085MB][100%][==================================================][4.085MB/s]  [4.085MB/4.085MB][100%][==================================================][4.085MB/s]  
+done
