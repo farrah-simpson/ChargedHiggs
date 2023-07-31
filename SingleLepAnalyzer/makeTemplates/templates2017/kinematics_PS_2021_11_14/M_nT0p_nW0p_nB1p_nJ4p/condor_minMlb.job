@@ -1,0 +1,11 @@
+universe = vanilla
+Executable = MT0pW0pB1pJ4pminMlb.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = analyze.py,doHists.py,utils.py,weights.py,samples.py
+request_memory = 3072
+Output = condor_minMlb.out
+Error = condor_minMlb.err
+Log = condor_minMlb.log
+Arguments = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/SingleLepAnalyzer/makeTemplates minMlb PS 0 M 0p 0p 1p 4p 
+Queue 1

@@ -1,0 +1,11 @@
+universe = vanilla
+Executable = ET0pW0pB1pJ4pNBJets.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = analyze.py,doHists.py,utils.py,weights.py,samples.py
+request_memory = 3072
+Output = condor_NBJets.out
+Error = condor_NBJets.err
+Log = condor_NBJets.log
+Arguments = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_6_19/src/ChargedHiggs/SingleLepAnalyzer/makeTemplates NBJets PS 0 E 0p 0p 1p 4p 
+Queue 1

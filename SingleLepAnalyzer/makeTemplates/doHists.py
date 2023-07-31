@@ -20,7 +20,7 @@ start_time = time.time()
 # args = parser.parse_args()
 
 lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
-step1Dir = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step2/nominal/' #lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_XGBs_added_sys_new/nominal/'
+step1Dir = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/' #lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_XGBs_added_sys_new/nominal/'
 
 """
 Note: 
@@ -33,7 +33,7 @@ where <shape> is for example "JECUp". hadder.py can be used to prepare input fil
 """	
 
 bkgList = [
-		  'DY1MG', 'DY2MG', 'DY3MG', 'DY4MG', #'DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500',
+		  'DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500',
 		  'QCDht200',
           'QCDht300',
                   'QCDht500',
@@ -48,28 +48,27 @@ bkgList = [
 		  'TTJetsHad0','TTJetsHad700','TTJetsHad1000',		 
           #        'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic', 
 		  #'TTJetsSemiLepNjet9bin1','TTJetsSemiLepNjet9bin2','TTJetsSemiLepNjet9bin3',
-		  'TTJetsSemiLep01','TTJetsSemiLep02','TTJetsSemiLep03','TTJetsSemiLep04','TTJetsSemiLep05','TTJetsSemiLep06', 'TTJetsSemiLep07','TTJetsSemiLep08','TTJetsSemiLep09','TTJetsSemiLep010', 		  
-		  'TTJetsSemiLep7001','TTJetsSemiLep7002','TTJetsSemiLep7003','TTJetsSemiLep7004','TTJetsSemiLep7005','TTJetsSemiLep7006', 'TTJetsSemiLep7007','TTJetsSemiLep7008','TTJetsSemiLep7009','TTJetsSemiLep70010', 		  
-		  'TTJetsSemiLep10001','TTJetsSemiLep10002','TTJetsSemiLep10003','TTJetsSemiLep10004','TTJetsSemiLep10005','TTJetsSemiLep10006', 'TTJetsSemiLep10007','TTJetsSemiLep10008','TTJetsSemiLep10009','TTJetsSemiLep100010', 		  
-
+		  #'TTJetsSemiLep01','TTJetsSemiLep02','TTJetsSemiLep03','TTJetsSemiLep04','TTJetsSemiLep05','TTJetsSemiLep06', 'TTJetsSemiLep07','TTJetsSemiLep08','TTJetsSemiLep09','TTJetsSemiLep010', 		  
+		  #'TTJetsSemiLep7001','TTJetsSemiLep7002','TTJetsSemiLep7003','TTJetsSemiLep7004','TTJetsSemiLep7005','TTJetsSemiLep7006', 'TTJetsSemiLep7007','TTJetsSemiLep7008','TTJetsSemiLep7009','TTJetsSemiLep70010', 		  
+		  #'TTJetsSemiLep10001','TTJetsSemiLep10002','TTJetsSemiLep10003','TTJetsSemiLep10004','TTJetsSemiLep10005','TTJetsSemiLep10006', 'TTJetsSemiLep10007','TTJetsSemiLep10008','TTJetsSemiLep10009','TTJetsSemiLep100010', 		  
+		  'TTJetsSemiLep0','TTJetsSemiLep700','TTJetsSemiLep1000',
 		  'TTJets700mtt','TTJets1000mtt',
-		  'TTWl',#'TTWq',
+		  'TTWl','TTWq',
                   'TTZl',#'TTTT',
           'WW','WZ','ZZ',
-		  #'TTHB','TTHnoB',
+		  'TTHB','TTHnoB',
 		  ]
 		  
 ttFlvs = []#'_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
 dataList = ['DataE','DataM']
 
-whichSignal = 'X53H' #Hptb,HTB, TTM, BBM, or X53X53M
-mass = range(600,1500+1,100)
+whichSignal = 'X53'#'X53H' #Hptb,HTB, TTM, BBM, or X53X53M
+mass = range(700,1600+1,100)
 
 #sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
 if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 if whichSignal == 'X53':
-	sigList = [whichSignal+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
-	sigList+= [whichSignal+'RHM'+str(mass) for mass in range(900,1700+1,100)]
+	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
 if whichSignal=='Hptb'or 'X53' or 'X53H': decays = ['']
 
 sigTrained = 'Low1'
@@ -77,13 +76,12 @@ if len(sys.argv)>10: sigTrained=sys.argv[10]
 iPlot = 'HT' #choose a discriminant from plotList below!
 if len(sys.argv)>2: iPlot=sys.argv[2]
 region = 'PS'
-# region = 'BDT'
 if len(sys.argv)>3: region=sys.argv[3]
 isCategorized = False
 BDTSR_Merged = False
 if len(sys.argv)>4: isCategorized=int(sys.argv[4])
 doJetRwt= 0
-doAllSys= False#True 
+doAllSys= False 
 
 cutList = {'lepPtCut':100,'metCut':100,'mtCut':0,'drCut':1.0,'jet1PtCut':200,'jet2PtCut':100,'jet3PtCut':0, 'AK4HTCut':510}
 #cutList = {'lepPtCut':100,'metCut':150,'mtCut':0,'drCut':1.25,'jet1PtCut':200,'jet2PtCut':100,'jet3PtCut':0, 'AK4HTCut':510}
@@ -117,7 +115,7 @@ else:
 
 if len(sys.argv)>9: njetslist=[str(sys.argv[9])]
 else:
-	if not isCategorized: njetslist = ['3p']
+	if not isCategorized: njetslist = ['4p']
 	if not isCategorized and BDTSR_Merged : njetslist = ['5p']
 	else: njetslist = ['3','4','5','6p']
 
@@ -162,7 +160,7 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
 	'deltaRlepJets1':('deltaR_lepJets1',linspace(0,6,51).tolist(),';#DeltaR(l,j_{2})'),
 	'deltaRlepJets2':('deltaR_lepJets2',linspace(0,6,51).tolist(),';#DeltaR(l,j_{3})'),
 	'deltaR_lepBJets0':('deltaR_lepBJets0',linspace(0,6,51).tolist(),';#DeltaR(l,b_{1})'),
-	#'mindeltaRlb':('minDR_lepBJet',linspace(0,6,51).tolist(),';min[#DeltaR(l,b)]'),
+	'mindeltaRlb':('minDR_lepBJet',linspace(0,6,51).tolist(),';min[#DeltaR(l,b)]'),
         'deltaR':('minDR_lepBJet',linspace(0,6,51).tolist(),';min[#DeltaR(l,b)]'),
         
         'deltaPhi_lepJetInMinMljet':('deltaPhi_lepJetInMinMljet', linspace(-4, 4, 51).tolist(),';#DeltaPhi(l,j) with min M(l, j)'),
@@ -188,20 +186,20 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
         'Sphericity':('Sphericity',linspace(0, 1.0, 51).tolist(), ';Sphericity'),
         'Aplanarity':('Aplanarity',linspace(0, 0.5, 51).tolist(), ';Aplanarity'),
 
-        #'MT_lepMet':('MT_lepMet',linspace(0, 1500, 51).tolist(),';#slash{E}_{T,l} [GeV]'))
+        #'MT_lepMet':('MT_lepMet',linspace(0, 1500, 51).tolist(),';#slash{E}_{T,l} [GeV]')),
 
 	'masslepJets':('mass_lepJets',linspace(0,1000,51).tolist(),';M(l,j) [GeV]'),
 	'masslepJets0':('mass_lepJets0',linspace(0,1000,51).tolist(),';M(l,j_{1}) [GeV]'),
 	'masslepJets1':('mass_lepJets1',linspace(0,1000,51).tolist(),';M(l,j_{2}) [GeV]'),
 	'masslepJets2':('mass_lepJets2',linspace(0,1000,51).tolist(),';M(l,j_{3}) [GeV]'),
 	'masslepBJets0':('mass_lepBJet0',linspace(0,1000,51).tolist(),';M(l,b_{1}) [GeV]'),
-	'mindeltaR':('minDR_lepJet',linspace(0, 6, 51).tolist(),';min[#DeltaR(l,j)]'),
-	'MET':('corr_met_MultiLepCalc',linspace(0, 1500, 51).tolist(),';#slash{E}_{T} [GeV]'),
-	'NJets':('NJets_JetSubCalc',linspace(0, 15, 16).tolist(),';jet multiplicity'),
+       'mindeltaR':('minDR_lepJet',linspace(0, 6, 51).tolist(),';min[#DeltaR(l,j)]'),
+       'MET':('corr_met_MultiLepCalc',linspace(0, 1500, 51).tolist(),';#slash{E}_{T} [GeV]'),
+       'NJets':('NJets_JetSubCalc',linspace(0, 15, 16).tolist(),';jet multiplicity'),
 	'NBJetsNoSF':('NJetsCSV_MultiLepCalc',linspace(0, 10, 11).tolist(),';b tag multiplicity'),
-	'NBJets':('NJetsCSVwithSF_MultiLepCalc',linspace(0, 10, 11).tolist(),';b tag multiplicity'),
+       'NBJets':('NJetsCSVwithSF_MultiLepCalc',linspace(0, 10, 11).tolist(),';b tag multiplicity'),
 	'PtRel':('ptRel_lepJet',linspace(0,500,51).tolist(),';p_{T,rel}(l, closest jet) [GeV]'),
-	'theLeadJetPt':('theJetLeadPt',linspace(0, 1500, 51).tolist(),';p_{T}(j_{1}) [GeV]'),
+       'theLeadJetPt':('theJetLeadPt',linspace(0, 1500, 51).tolist(),';p_{T}(j_{1}) [GeV]'),
 	'aveBBdr':('aveBBdr',linspace(0, 6, 51).tolist(),';#bar{#DeltaR(b,b)}'),
 	'minBBdr':('minBBdr',linspace(0, 6, 51).tolist(),';min[#DeltaR(b,b)]'),
 	'mass_maxJJJpt':('mass_maxJJJpt',linspace(0, 3000, 51).tolist(),';M(jjj) with max[p_{T}(jjj)] [GeV]'),
@@ -213,17 +211,17 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
  	'mass_lepBB_minBBdr':('mass_lepBB_minBBdr',linspace(0, 1000, 51).tolist(),';M(l,bb) with min[#DeltaR(b,b)] [GeV]'),
 	'mass_lepJJ_minJJdr':('mass_lepJJ_minJJdr',linspace(0, 1000, 51).tolist(),';M(l,jj) with min[#DeltaR(j,j)], j #neq b [GeV]'),
 	'mass_lepBJet_mindr':('mass_lepBJet_mindr',linspace(0, 1000, 51).tolist(),';M(l,b) with min[#DeltaR(l,b)], [GeV]'),
-    'HTb':('AK4HT',bigbins,';H_{T} [GeV]'),
- 	'ST':('AK4HTpMETpLepPt',linspace(0, 3000, 51).tolist(),';S_{T} [GeV]'),
-	'minMlb':('minMleppBjet',linspace(0, 1000, 51).tolist(),';min[M(l,b)] [GeV]'),
+   	'HTb':('AK4HT',bigbins,';H_{T} [GeV]'),
+	'ST':('AK4HTpMETpLepPt',linspace(0, 3000, 51).tolist(),';S_{T} [GeV]'),
+       'minMlb':('minMleppBjet',linspace(0, 1000, 51).tolist(),';min[M(l,b)] [GeV]'),
 	'BDT':('BDT'+sigTrained,linspace(-1, 1, 126).tolist(),';BDT'),
 
 	'MT2bb':('MT2bb',linspace(0, 700, 71).tolist(),';MT2bb'),
 	'MT2bbl':('MT2bbl',linspace(0, 700, 71).tolist(),';MT2bbl'),
 	'centrality':('centrality',linspace(0, 1, 51).tolist(),';Centrality'),
 	'hemiout':('hemiout',linspace(0, 1700, 51).tolist(),';Hemiout'),
-    'deltaEta_maxBB':('deltaEta_maxBB',linspace(0, 5, 51).tolist(),';max[#Delta#eta(b,b)]'),
-    'deltaR_lepBJet_maxpt':('deltaR_lepBJet_maxpt',linspace(0, 6, 51).tolist(),';#DeltaR(l,b) with max[pT(l,b)]'),
+    	'deltaEta_maxBB':('deltaEta_maxBB',linspace(0, 5, 51).tolist(),';max[#Delta#eta(b,b)]'),
+    	'deltaR_lepBJet_maxpt':('deltaR_lepBJet_maxpt',linspace(0, 6, 51).tolist(),';#DeltaR(l,b) with max[pT(l,b)]'),
     
 	'aveCSVpt':('aveCSVpt',linspace(0, 1, 51).tolist(),';aveCSVpt'),
 	'PtFifthJet':('PtFifthJet',linspace(0, 200, 51).tolist(),';p_{T}(j_{5}) [GeV]'),
@@ -248,78 +246,78 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
         'HadronicTB1_M': ('HadronicTB1_M', linspace(40, 2000, 100).tolist(),';M(t_{had}, b_{1}^{non-top})[GeV]'),
         'HadronicTB2_M': ('HadronicTB2_M', linspace(40, 2000, 100).tolist(),';M(t_{had}, b_{2}^{non-top})[GeV]'),
 
-        'XGB200' : ( 'XGB200', linspace(0, 1, 40).tolist(), '; XGB (200 GeV)'),
-        'XGB220' : ( 'XGB220', linspace(0, 1, 40).tolist(), '; XGB (220 GeV)'),
-        'XGB250' : ( 'XGB250', linspace(0, 1, 40).tolist(), '; XGB (250 GeV)'),
-        'XGB300' : ( 'XGB300', linspace(0, 1, 40).tolist(), '; XGB (300 GeV)'),
-        'XGB350' : ( 'XGB350', linspace(0, 1, 40).tolist(), '; XGB (350 GeV)'),
-        'XGB400' : ( 'XGB400', linspace(0, 1, 40).tolist(), '; XGB (400 GeV)'),
-        'XGB500' : ( 'XGB500', linspace(0, 1, 40).tolist(), '; XGB (500 GeV)'),
-        'XGB600' : ( 'XGB600', linspace(0, 1, 40).tolist(), '; XGB (600 GeV)'),
-        'XGB700' : ( 'XGB700', linspace(0, 1, 40).tolist(), '; XGB (700 GeV)'),
-        'XGB800' : ( 'XGB800', linspace(0, 1, 40).tolist(), '; XGB (800 GeV)'),
-        'XGB1000': ( 'XGB1000', linspace(0, 1, 40).tolist(), ';XGB (1000 GeV)'),
-        'XGB1250': ( 'XGB1250', linspace(0, 1, 40).tolist(), ';XGB (1250 GeV)'),
-        'XGB1500': ( 'XGB1500', linspace(0, 1, 40).tolist(), ';XGB (1500 GeV)'),
-        'XGB1750': ( 'XGB1750', linspace(0, 1, 40).tolist(), ';XGB (1750 GeV)'),
-        'XGB2000': ( 'XGB2000', linspace(0, 1, 40).tolist(), ';XGB (2000 GeV)'),
-        'XGB2500': ( 'XGB2500', linspace(0, 1, 40).tolist(), ';XGB (2500 GeV)'),
-        'XGB3000': ( 'XGB3000', linspace(0, 1, 40).tolist(), ';XGB (3000 GeV)'),
-
-        
-        'XGB200_SR1' : ( 'XGB200_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (200 GeV)'),
-        'XGB220_SR1' : ( 'XGB220_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (220 GeV)'),
-        'XGB250_SR1' : ( 'XGB250_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (250 GeV)'),
-        'XGB300_SR1' : ( 'XGB300_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (300 GeV)'),
-        'XGB350_SR1' : ( 'XGB350_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (350 GeV)'),
-        'XGB400_SR1' : ( 'XGB400_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (400 GeV)'),
-        'XGB500_SR1' : ( 'XGB500_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (500 GeV)'),
-        'XGB600_SR1' : ( 'XGB600_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (600 GeV)'),
-        'XGB700_SR1' : ( 'XGB700_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (700 GeV)'),
-        'XGB800_SR1' : ( 'XGB800_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (800 GeV)'),
-        'XGB1000_SR1': ( 'XGB1000_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (1000 GeV)'),
-        'XGB1250_SR1': ( 'XGB1250_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (1250 GeV)'),
-        'XGB1500_SR1': ( 'XGB1500_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (1500 GeV)'),
-        'XGB1750_SR1': ( 'XGB1750_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (1750 GeV)'),
-        'XGB2000_SR1': ( 'XGB2000_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (2000 GeV)'),
-        'XGB2500_SR1': ( 'XGB2500_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (2500 GeV)'),
-        'XGB3000_SR1': ( 'XGB3000_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (3000 GeV)'),
-
-        'XGB200_SR2' : ( 'XGB200_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (200 GeV)'),
-        'XGB220_SR2' : ( 'XGB220_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (220 GeV)'),
-        'XGB250_SR2' : ( 'XGB250_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (250 GeV)'),
-        'XGB300_SR2' : ( 'XGB300_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (300 GeV)'),
-        'XGB350_SR2' : ( 'XGB350_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (350 GeV)'),
-        'XGB400_SR2' : ( 'XGB400_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (400 GeV)'),
-        'XGB500_SR2' : ( 'XGB500_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (500 GeV)'),
-        'XGB600_SR2' : ( 'XGB600_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (600 GeV)'),
-        'XGB700_SR2' : ( 'XGB700_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (700 GeV)'),
-        'XGB800_SR2' : ( 'XGB800_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (800 GeV)'),
-        'XGB1000_SR2': ( 'XGB1000_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (1000 GeV)'),
-        'XGB1250_SR2': ( 'XGB1250_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (1250 GeV)'),
-        'XGB1500_SR2': ( 'XGB1500_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (1500 GeV)'),
-        'XGB1750_SR2': ( 'XGB1750_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (1750 GeV)'),
-        'XGB2000_SR2': ( 'XGB2000_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (2000 GeV)'),
-        'XGB2500_SR2': ( 'XGB2500_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (2500 GeV)'),
-        'XGB3000_SR2': ( 'XGB3000_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (3000 GeV)'),
-
-        'XGB200_SR3' : ( 'XGB200_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (200 GeV)'),
-        'XGB220_SR3' : ( 'XGB220_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (220 GeV)'),
-        'XGB250_SR3' : ( 'XGB250_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (250 GeV)'),
-        'XGB300_SR3' : ( 'XGB300_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (300 GeV)'),
-        'XGB350_SR3' : ( 'XGB350_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (350 GeV)'),
-        'XGB400_SR3' : ( 'XGB400_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (400 GeV)'),
-        'XGB500_SR3' : ( 'XGB500_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (500 GeV)'),
-        'XGB600_SR3' : ( 'XGB600_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (600 GeV)'),
-        'XGB700_SR3' : ( 'XGB700_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (700 GeV)'),
-        'XGB800_SR3' : ( 'XGB800_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (800 GeV)'),
-        'XGB1000_SR3': ( 'XGB1000_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (1000 GeV)'),
-        'XGB1250_SR3': ( 'XGB1250_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (1250 GeV)'),
-        'XGB1500_SR3': ( 'XGB1500_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (1500 GeV)'),
-        'XGB1750_SR3': ( 'XGB1750_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (1750 GeV)'),
-        'XGB2000_SR3': ( 'XGB2000_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (2000 GeV)'),
-        'XGB2500_SR3': ( 'XGB2500_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (2500 GeV)'),
-        'XGB3000_SR3': ( 'XGB3000_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (3000 GeV)'),
+#        'XGB200' : ( 'XGB200', linspace(0, 1, 40).tolist(), '; XGB (200 GeV)'),
+#        'XGB220' : ( 'XGB220', linspace(0, 1, 40).tolist(), '; XGB (220 GeV)'),
+#        'XGB250' : ( 'XGB250', linspace(0, 1, 40).tolist(), '; XGB (250 GeV)'),
+#        'XGB300' : ( 'XGB300', linspace(0, 1, 40).tolist(), '; XGB (300 GeV)'),
+#        'XGB350' : ( 'XGB350', linspace(0, 1, 40).tolist(), '; XGB (350 GeV)'),
+#        'XGB400' : ( 'XGB400', linspace(0, 1, 40).tolist(), '; XGB (400 GeV)'),
+#        'XGB500' : ( 'XGB500', linspace(0, 1, 40).tolist(), '; XGB (500 GeV)'),
+#        'XGB600' : ( 'XGB600', linspace(0, 1, 40).tolist(), '; XGB (600 GeV)'),
+#        'XGB700' : ( 'XGB700', linspace(0, 1, 40).tolist(), '; XGB (700 GeV)'),
+#        'XGB800' : ( 'XGB800', linspace(0, 1, 40).tolist(), '; XGB (800 GeV)'),
+#        'XGB1000': ( 'XGB1000', linspace(0, 1, 40).tolist(), ';XGB (1000 GeV)'),
+#        'XGB1250': ( 'XGB1250', linspace(0, 1, 40).tolist(), ';XGB (1250 GeV)'),
+#        'XGB1500': ( 'XGB1500', linspace(0, 1, 40).tolist(), ';XGB (1500 GeV)'),
+#        'XGB1750': ( 'XGB1750', linspace(0, 1, 40).tolist(), ';XGB (1750 GeV)'),
+#        'XGB2000': ( 'XGB2000', linspace(0, 1, 40).tolist(), ';XGB (2000 GeV)'),
+#        'XGB2500': ( 'XGB2500', linspace(0, 1, 40).tolist(), ';XGB (2500 GeV)'),
+#        'XGB3000': ( 'XGB3000', linspace(0, 1, 40).tolist(), ';XGB (3000 GeV)'),
+#
+#        
+#        'XGB200_SR1' : ( 'XGB200_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (200 GeV)'),
+#        'XGB220_SR1' : ( 'XGB220_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (220 GeV)'),
+#        'XGB250_SR1' : ( 'XGB250_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (250 GeV)'),
+#        'XGB300_SR1' : ( 'XGB300_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (300 GeV)'),
+#        'XGB350_SR1' : ( 'XGB350_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (350 GeV)'),
+#        'XGB400_SR1' : ( 'XGB400_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (400 GeV)'),
+#        'XGB500_SR1' : ( 'XGB500_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (500 GeV)'),
+#        'XGB600_SR1' : ( 'XGB600_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (600 GeV)'),
+#        'XGB700_SR1' : ( 'XGB700_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (700 GeV)'),
+#        'XGB800_SR1' : ( 'XGB800_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (800 GeV)'),
+#        'XGB1000_SR1': ( 'XGB1000_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (1000 GeV)'),
+#        'XGB1250_SR1': ( 'XGB1250_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (1250 GeV)'),
+#        'XGB1500_SR1': ( 'XGB1500_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (1500 GeV)'),
+#        'XGB1750_SR1': ( 'XGB1750_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (1750 GeV)'),
+#        'XGB2000_SR1': ( 'XGB2000_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (2000 GeV)'),
+#        'XGB2500_SR1': ( 'XGB2500_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (2500 GeV)'),
+#        'XGB3000_SR1': ( 'XGB3000_SR1', linspace(0, 1, 40).tolist(), ';XGB SR1 (3000 GeV)'),
+#
+#        'XGB200_SR2' : ( 'XGB200_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (200 GeV)'),
+#        'XGB220_SR2' : ( 'XGB220_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (220 GeV)'),
+#        'XGB250_SR2' : ( 'XGB250_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (250 GeV)'),
+#        'XGB300_SR2' : ( 'XGB300_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (300 GeV)'),
+#        'XGB350_SR2' : ( 'XGB350_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (350 GeV)'),
+#        'XGB400_SR2' : ( 'XGB400_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (400 GeV)'),
+#        'XGB500_SR2' : ( 'XGB500_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (500 GeV)'),
+#        'XGB600_SR2' : ( 'XGB600_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (600 GeV)'),
+#        'XGB700_SR2' : ( 'XGB700_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (700 GeV)'),
+#        'XGB800_SR2' : ( 'XGB800_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (800 GeV)'),
+#        'XGB1000_SR2': ( 'XGB1000_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (1000 GeV)'),
+#        'XGB1250_SR2': ( 'XGB1250_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (1250 GeV)'),
+#        'XGB1500_SR2': ( 'XGB1500_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (1500 GeV)'),
+#        'XGB1750_SR2': ( 'XGB1750_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (1750 GeV)'),
+#        'XGB2000_SR2': ( 'XGB2000_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (2000 GeV)'),
+#        'XGB2500_SR2': ( 'XGB2500_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (2500 GeV)'),
+#        'XGB3000_SR2': ( 'XGB3000_SR2', linspace(0, 1, 40).tolist(), ';XGB SR2 (3000 GeV)'),
+#
+#        'XGB200_SR3' : ( 'XGB200_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (200 GeV)'),
+#        'XGB220_SR3' : ( 'XGB220_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (220 GeV)'),
+#        'XGB250_SR3' : ( 'XGB250_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (250 GeV)'),
+#        'XGB300_SR3' : ( 'XGB300_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (300 GeV)'),
+#        'XGB350_SR3' : ( 'XGB350_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (350 GeV)'),
+#        'XGB400_SR3' : ( 'XGB400_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (400 GeV)'),
+#        'XGB500_SR3' : ( 'XGB500_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (500 GeV)'),
+#        'XGB600_SR3' : ( 'XGB600_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (600 GeV)'),
+#        'XGB700_SR3' : ( 'XGB700_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (700 GeV)'),
+#        'XGB800_SR3' : ( 'XGB800_SR3', linspace(0, 1, 40).tolist(), '; XGB SR3 (800 GeV)'),
+#        'XGB1000_SR3': ( 'XGB1000_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (1000 GeV)'),
+#        'XGB1250_SR3': ( 'XGB1250_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (1250 GeV)'),
+#        'XGB1500_SR3': ( 'XGB1500_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (1500 GeV)'),
+#        'XGB1750_SR3': ( 'XGB1750_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (1750 GeV)'),
+#        'XGB2000_SR3': ( 'XGB2000_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (2000 GeV)'),
+#        'XGB2500_SR3': ( 'XGB2500_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (2500 GeV)'),
+#        'XGB3000_SR3': ( 'XGB3000_SR3', linspace(0, 1, 40).tolist(), ';XGB SR3 (3000 GeV)'),
 
 
         

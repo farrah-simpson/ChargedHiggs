@@ -14,9 +14,9 @@ args = parser.parse_args()
 
 filename = args.file
 
-tfile = TFile.Open(filename)
+tfile = TFile.Open("/eos/uscms/store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_hadds/nominal/"+filename)
 
-fout = ROOT.TFile("CHiggs_Weights_"+args.label+"_extended_HT_cuts_Sys.root", "RECREATE")
+fout = ROOT.TFile(args.label+"weights_extended_HT_cuts_Sys.root", "RECREATE")
 
 
 h2D_origin = ROOT.TH2F("h2D_origin", "h2D_origin", 3, 4, 7, 40, 150, 4000)

@@ -6,7 +6,7 @@ using namespace std;
 
 void testStep2(){
   TString inputFile=
-     "/eos/uscms/store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_hadds/nominal/DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_hadd.root";//tH_tH_x53x53_narrow_MX900_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root";
+     "/eos/uscms/store/user/fsimpson/FWLJMET106X_1lep2017UL_step1_new_hadds/nominal/DY2JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_hadd.root";//tH_tH_x53x53_narrow_MX900_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root";
 //TTToHadronic_TuneCP5_13TeV-powheg-pythia8_Mtt0to700_hadd.root";
 //"tH_tH_x53x53_narrow_MX900_MH200_TuneCP5_13TeV-madgraph-pythia8_hadd.root";
    //"/eos/uscms/store/user/lpcbril/MC_test/FWLJMET106X_1lep2017_UL_step1_reweight_b0_Sys_haddsnominal/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_ttbb_3_hadd.root";

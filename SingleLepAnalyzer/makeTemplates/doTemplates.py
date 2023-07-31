@@ -20,7 +20,7 @@ lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
 sigTrainedList=[]#'1000']
 massPt=''
 if len(sys.argv)>1: massPt=str(sys.argv[1])
-region = 'PS' #PS,SR
+region = 'SR' #PS,SR
 
 isCategorized=args.Categorized#False#False
 doTempEachCategory = False#True
@@ -33,13 +33,13 @@ pfix = args.directory#'templates_M500_2020_11_23_topPtRW_NC_allweights_DJ'#'kine
 #pfix+=massPt+'_2020_11_23_topPtRW_NC_allweights'
 outDir = os.getcwd()+'/'+pfix+'/'+cutString
 
-scaleSignalXsecTo1pb = False#True #check! this has to be "True" if you are making templates for limit calculation!!!!!!!!
-doAllSys = False
+scaleSignalXsecTo1pb = True#change for comp!!`check! this has to be "True" if you are making templates for limit calculation!!!!!!!!
+doAllSys = True
 doQ2sys  = False
 doPDFsys = False
 if not doAllSys: doQ2sys = False
 addCRsys = False
-systematicList = ['pileup','muRFcorrd','muR','muF','isr','fsr','njet','njetsf','tau32','jmst','jmrt','tau21','jmsW','jmrW','tau21pt','jec','jer']#'trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
+systematicList = ['LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','pileup','muRFcorrd','PNT','jmst','jmrt','PNW','jmsW','jmrW','PNWpt','jec','jer','prefire']#'trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
 systList_jsf = []#'jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
 #'jsfJESPileUpPtBB', 'jsfJESPileUpPtEC1', 'jsfJESPileUpPtEC2', 'jsfJESPileUpPtHF', 'jsfJESPileUpPtRef', 'jsfJESRelativeBal', 'jsfJESRelativeFSR',
 #'jsfJESRelativeJEREC1', 'jsfJESRelativeJEREC2', 'jsfJESRelativeJERHF', 'jsfJESRelativeJERHF', 'jsfJESRelativePtBB', 'jsfJESRelativePtEC1',
@@ -49,7 +49,7 @@ systematicList += systList_jsf
 normalizeRENORM_PDF = False #normalize the renormalization/pdf uncertainties to nominal templates --> normalizes signal processes only !!!!
 rebinBy = -1#4#performs a regular rebinning with "Rebin(rebinBy)", put -1 if rebinning is not wanted
 
-saveKey = '_wNegBinsCorrec_'
+saveKey = ''#_wNegBinsCorrec_'
 splitTTbar = False#True
 splitST = False
 if splitTTbar:  
@@ -67,21 +67,17 @@ if splitTTbar:
 else:
 	bkgGrupList = ['top','ewk','qcd']
 	#bkgGrupList = ['ttbar','top','ewk','qcd']
-	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd'] #TTV
+	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd','TTV']
 bkgProcs = {}
 bkgProcs['WJets']  = ['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800']
 #bkgProcs['WJets'] += ['WJetsMG1200_1','WJetsMG1200_2','WJetsMG1200_3','WJetsMG1200_4','WJetsMG1200_5']
 #bkgProcs['WJets'] += ['WJetsMG2500_1','WJetsMG2500_2','WJetsMG2500_3','WJetsMG2500_4','WJetsMG2500_5']#,'WJetsMG2500_6']
 
-bkgProcs['ZJets'] = ['DY1MG','DY2MG','DY3MG','DY4MG']#['DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500']
-
+bkgProcs['ZJets'] = ['DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500']
 bkgProcs['VV']    = ['WW','WZ','ZZ']
-
 bkgProcs['T']     = ['Tt','Tbt','Ts','TtW','TbtW',]
-#bkgProcs['TTV'] = []
-#bkgProcs['TTV']   = ['TTWl','TTWq','TTZl']
-bkgProcs['TTV']   = ['TTWl','TTZl']
-#bkgProcs['OtherT']= ['TTHB','TTHnoB', 'TTTT']
+bkgProcs['TTV']   = ['TTWl','TTZl', 'TTWq']
+#bkgProcs['OtherT']= ['TTHB','TTHnoB']
 
 #bkgProcs['TTTo2L2Nu'] = ['TTTo2L2Nu_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 #bkgProcs['TTToHadronic'] = ['TTToHadronic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
@@ -89,7 +85,7 @@ bkgProcs['TTV']   = ['TTWl','TTZl']
 bkgProcs['TTJets'] = []
 bkgProcs['TTJets'] += ['TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000']
 bkgProcs['TTJets'] += ['TTJetsHad0','TTJetsHad700','TTJetsHad1000']
-bkgProcs['TTJets'] += ['TTJetsSemiLep01','TTJetsSemiLep02','TTJetsSemiLep03','TTJetsSemiLep04','TTJetsSemiLep05','TTJetsSemiLep06','TTJetsSemiLep07','TTJetsSemiLep08','TTJetsSemiLep09','TTJetsSemiLep010','TTJetsSemiLep7001','TTJetsSemiLep7002','TTJetsSemiLep7003','TTJetsSemiLep7004','TTJetsSemiLep7005','TTJetsSemiLep7006','TTJetsSemiLep7007','TTJetsSemiLep7008','TTJetsSemiLep7009','TTJetsSemiLep70010','TTJetsSemiLep10001','TTJetsSemiLep10002','TTJetsSemiLep10003','TTJetsSemiLep10004','TTJetsSemiLep10005','TTJetsSemiLep10006','TTJetsSemiLep10007','TTJetsSemiLep10008','TTJetsSemiLep10009','TTJetsSemiLep100010', ]
+bkgProcs['TTJets'] += ['TTJetsSemiLep0','TTJetsSemiLep700','TTJetsSemiLep1000', ]
 #bkgProcs['TTJets'] += ['TTJetsHad0','TTJetsHad700','TTJetsHad1000'] 
 #bkgProcs['TTJets'] += ['TTJetsSemiLepNjet9bin1','TTJetsSemiLepNjet9bin2','TTJetsSemiLepNjet9bin3'] 
 #bkgProcs['TTJets'] += ['TTJetsSemiLepbin1','TTJetsSemiLepbin2','TTJetsSemiLepbin3']#,'TTJetsSemiLep4','TTJetsSemiLep5']#,'TTJetsSemiLep6']
@@ -126,14 +122,13 @@ topptProcs = ['top','ttbar','TTJets']#['tt2b','ttbb','ttb','ttcc','ttlf','ttbar'
 bkgProcs['ttbar_q2up'] = ['TTJetsPHQ2U']#,'TtWQ2U','TbtWQ2U']
 bkgProcs['ttbar_q2dn'] = ['TTJetsPHQ2D']#,'TtWQ2D','TbtWQ2D']
 
-whichSignal = 'X53H' #Hptb,HTB, TTM, BBM, or X53X53M
+whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
 massList = range(600,1500+1,100)
 
-#sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
 if whichSignal== 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 if whichSignal == 'X53':
-	sigList = [whichSignal+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
-	sigList+= [whichSignal+'RHM'+str(mass) for mass in range(900,1700+1,100)]
+#	sigList = [whichSignal+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
+	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
 if whichSignal=='Hptb'or 'X53' or 'X53H': decays = ['']
 
 #if massPt not in massList:    MICHAEL COMMENTED OUT THESE TWO LINES
@@ -399,22 +394,22 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
                 print cat
                 print "=============================================="
 		#if '_nB1_' in cat or '_nB2p_' in cat or '_nB2_nJ4' in cat: postTag = 'isCR_'
-		postTag = 'isSR_'
+		postTag = ''#isSR_'
                 for signal in sigList:
                         #mass = [str(mass) for mass in massList if signal.endswith(str(mass))][0]
                         hists[signal+i].SetName(hists[signal+i].GetName().replace('fb_','fb_'+postTag).replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
                         hists[signal+i].Write()
-				# if doAllSys:
-				# 	for syst in systematicList:
-				# 		if syst=='toppt' or syst=='ht': continue
-				# 		hists[signal+i+syst+'Up'].SetName(hists[signal+i+syst+'Up'].GetName().replace('fb_','fb_'+postTag).replace('__plus','Up').replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
-				# 		hists[signal+i+syst+'Down'].SetName(hists[signal+i+syst+'Down'].GetName().replace('fb_','fb_'+postTag).replace('__minus','Down').replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
-				# 		hists[signal+i+syst+'Up'].Write()
-				# 		hists[signal+i+syst+'Down'].Write()
-				# if doPDFsys:
-				# 	for pdfInd in range(100): 
-				# 		hists[signal+i+'pdf'+str(pdfInd)].SetName(hists[signal+i+'pdf'+str(pdfInd)].GetName().replace('fb_','fb_'+postTag).replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
-				# 		hists[signal+i+'pdf'+str(pdfInd)].Write()
+			if doAllSys:
+				 for syst in systematicList:
+				 	if syst=='toppt' or syst=='ht': continue
+				 	hists[signal+i+syst+'Up'].SetName(hists[signal+i+syst+'Up'].GetName().replace('fb_','fb_'+postTag).replace('__plus','Up').replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
+				 	hists[signal+i+syst+'Down'].SetName(hists[signal+i+syst+'Down'].GetName().replace('fb_','fb_'+postTag).replace('__minus','Down').replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
+				 	hists[signal+i+syst+'Up'].Write()
+				 	hists[signal+i+syst+'Down'].Write()
+				 if doPDFsys:
+				 	for pdfInd in range(100): 
+				 		hists[signal+i+'pdf'+str(pdfInd)].SetName(hists[signal+i+'pdf'+str(pdfInd)].GetName().replace('fb_','fb_'+postTag).replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
+				 		hists[signal+i+'pdf'+str(pdfInd)].Write()
 		for proc in bkgGrupList:
 			hists[proc+i].SetName(hists[proc+i].GetName().replace('fb_','fb_'+postTag))
 			hists[proc+i].Write()
@@ -706,176 +701,177 @@ def findfiles(path, filtre):
 def rundoTemp(category):
 	#iPlotList = ['HT''minBBdr','aveBBdr','deltaEta_maxBB','FW_momentum_2','centrality','aveCSVpt','HT','minMlb','Bjet1Pt','mass_maxJJJpt','MTlmet','lepDR_minBBdr','MET']
         iPlotList = [
-                'HT',
-#                #'HTpt40',
+               'HT',
+                #'HTpt40',
 #                'ST',
-#                #'minMlb',
-#                #'mass_minBBdr',
-#                #'deltaR_lepBJet_maxpt',
-#                #'lepDR_minBBdr',
-#                #'centrality',
-#                #'deltaEta_maxBB',
-#                #'aveCSVpt',
-#                #'aveBBdr',
-#                ##'topPt',
-#                ##'FW_momentum_0',
-#                ##'FW_momentum_1', ##TODO
-#                ##'FW_momentum_2', ##TODO
-#                ##'FW_momentum_3',
-#                ##'FW_momentum_4',
-#                ##'FW_momentum_5',
-#                ##'FW_momentum_6',
-#                #'mass_maxJJJpt',
-#                #'Bjet1Pt',
-#                #'deltaR_minBB', ##TODO
-#                ##'deltaR',  ##TODO
-#                #'MTlmet',
-#                #'HT',
-#                #'hemiout',
+#                'minMlb',
+                #'mass_minBBdr',
+                #'deltaR_lepBJet_maxpt',
+                #'lepDR_minBBdr',
+                #'centrality',
+                #'deltaEta_maxBB',
+                #'aveCSVpt',
+                #'aveBBdr',
+                ##'topPt',
+                ##'FW_momentum_0',
+                ##'FW_momentum_1', ##TODO
+                ##'FW_momentum_2', ##TODO
+                ##'FW_momentum_3',
+                ##'FW_momentum_4',
+                ##'FW_momentum_5',
+                ##'FW_momentum_6',
+                #'mass_maxJJJpt',
+                #'Bjet1Pt',
+                #'deltaR_minBB', ##TODO
+                ##'deltaR',  ##TODO
+                #'MTlmet',
+#                'HT',
+                #'hemiout',
 #                'theLeadJetPt',
 #                'MET',
 #                'lepPt',
 #                'JetPt',
-#
-#                #'masslepJets0',
-#                #'masslepJets1',
-#                #'masslepJets2',
-#                #'MT2bb',
-#                #'masslepBJets0',
-#                #'mass_lepBJet_mindr',
-#                # 
-#                ##'secondJetPt',
-#                ##'fifthJetPt',  ## TODO
-#                ##'sixthJetPt', ##TODO
-##               # 'PtFifthJet', ## TODO
-#                #'mass_minLLdr',
-#                #'mass_maxBBmass',
-#                #'deltaR_lepJetInMinMljet',
-#                #'deltaPhi_lepJetInMinMljet',
-#                #'deltaR_lepbJetInMinMlb',
-#                #'deltaPhi_lepbJetInMinMlb',
-#                #'M_allJet_W',
-#                #'HT_bjets',
-#                #'ratio_HTdHT4leadjets',
-#                #'csvJet1',
-#                #'csvJet2',
-#                #'csvJet3',
-#                #'csvJet4',
-#                #'firstcsvb_bb',
-#                #'secondcsvb_bb',
-#                #'thirdcsvb_bb',
-#                #'fourthcsvb_bb',
+#                'Jet1Pt',
+
+                #'masslepJets0',
+                #'masslepJets1',
+                #'masslepJets2',
+                #'MT2bb',
+                #'masslepBJets0',
+                #'mass_lepBJet_mindr',
+                # 
+                ##'secondJetPt',
+                ##'fifthJetPt',  ## TODO
+                ##'sixthJetPt', ##TODO
+#               # 'PtFifthJet', ## TODO
+                #'mass_minLLdr',
+                #'mass_maxBBmass',
+                #'deltaR_lepJetInMinMljet',
+                #'deltaPhi_lepJetInMinMljet',
+                #'deltaR_lepbJetInMinMlb',
+                #'deltaPhi_lepbJetInMinMlb',
+                #'M_allJet_W',
+                #'HT_bjets',
+                #'ratio_HTdHT4leadjets',
+                #'csvJet1',
+                #'csvJet2',
+                #'csvJet3',
+                #'csvJet4',
+                #'firstcsvb_bb',
+                #'secondcsvb_bb',
+                #'thirdcsvb_bb',
+                #'fourthcsvb_bb',
 #                'NBJets',
-                'NJets',
-#                #'HT_2m',
-#                #'Sphericity',
-#                #'Aplanarity',
-#                #'BestTop_Disc',
-#                #'BestTop_Pt', 
-#                #'NoTop_Jet1_CSV', 
-#                #'NoTop_Jet1_Pt', 
-#                #'NoTop_Jet2_CSV',
-#                #'NoTop_Jet2_Pt',
-#
-#               # 'XGB200', 
-#               # 'XGB220', 
-#               # 'XGB250', 
-#               # 'XGB300', 
-#               # 'XGB350', 
-#               # 'XGB400', 
-#               # 'XGB500', 
-#               # 'XGB600', 
-#               # 'XGB700', 
-#               # 'XGB800', 
-#               # 'XGB1000',  
-#               # 'XGB1250',
-#               # 'XGB1500',
-#               # 'XGB1750',
-#               # 'XGB2000',
-#               # 'XGB2500',
-#               # 'XGB3000',
-#               # 
-#               # 'XGB200_SR1', 
-#               # 'XGB220_SR1', 
-#               # 'XGB250_SR1', 
-#               # 'XGB300_SR1', 
-#               # 'XGB350_SR1', 
-#               # 'XGB400_SR1', 
-#               # 'XGB500_SR1', 
-#               # 'XGB600_SR1', 
-#               # 'XGB700_SR1', 
-#               # 'XGB800_SR1', 
-#               # 'XGB1000_SR1', 
-#               # 'XGB1250_SR1',
-#               # 'XGB1500_SR1',
-#               # 'XGB1750_SR1',
-#               # 'XGB2000_SR1',
-#               # 'XGB2500_SR1',
-#               # 'XGB3000_SR1',
-#               # 
-#               # 'XGB200_SR2', 
-#               # 'XGB220_SR2', 
-#               # 'XGB250_SR2', 
-#               # 'XGB300_SR2', 
-#               # 'XGB350_SR2', 
-#               # 'XGB400_SR2', 
-#               # 'XGB500_SR2', 
-#               # 'XGB600_SR2', 
-#               # 'XGB700_SR2', 
-#               # 'XGB800_SR2', 
-#               # 'XGB1000_SR2', 
-#               # 'XGB1250_SR2',
-#               # 'XGB1500_SR2',
-#               # 'XGB1750_SR2',
-#               # 'XGB2000_SR2',
-#               # 'XGB2500_SR2',
-#               # 'XGB3000_SR2',
-#               # 
-#               # 
-#               # 'XGB200_SR3', 
-#               # 'XGB220_SR3', 
-#               # 'XGB250_SR3', 
-#               # 'XGB300_SR3', 
-#               # 'XGB350_SR3', 
-#               # 'XGB400_SR3', 
-#               # 'XGB500_SR3', 
-#               # 'XGB600_SR3', 
-#               # 'XGB700_SR3', 
-#               # 'XGB800_SR3', 
-#               # 'XGB1000_SR3', 
-#               # 'XGB1250_SR3',
-#               # 'XGB1500_SR3',
-#               # 'XGB1750_SR3',
-#               # 'XGB2000_SR3',
-#               # 'XGB2500_SR3',
-#               # 'XGB3000_SR3',
-#
-#
-#
-#                #'XGB300',
-#                #'XGB300_RS',
-#                #'XGB300_3b6j',
-#                #'XGB300_3b6j_RS',
-#                #
-#                #'XGB500',
-#                #'XGB500_RS',
-#                #'XGB500_3b6j',
-#                #'XGB500_3b6j_RS',
-#                #
-#                #'XGB800',
-#                #'XGB800_RS',
-#                #'XGB800_3b6j',
-#                #'XGB800_3b6j_RS',
-#                #
-#                #'XGB1000',
-#                #'XGB1000_RS',
-#                #'XGB1000_3b6j',
-#                #'XGB1000_3b6j_RS',
-#                #
-#                #'XGB1500',
-#                #'XGB1500_RS',
-#                #'XGB1500_3b6j',
-#                #'XGB1500_3b6j_RS',
+#               'NJets',
+                #'HT_2m',
+                #'Sphericity',
+                #'Aplanarity',
+                #'BestTop_Disc',
+                #'BestTop_Pt', 
+                #'NoTop_Jet1_CSV', 
+                #'NoTop_Jet1_Pt', 
+                #'NoTop_Jet2_CSV',
+                #'NoTop_Jet2_Pt',
+
+               # 'XGB200', 
+               # 'XGB220', 
+               # 'XGB250', 
+               # 'XGB300', 
+               # 'XGB350', 
+               # 'XGB400', 
+               # 'XGB500', 
+               # 'XGB600', 
+               # 'XGB700', 
+               # 'XGB800', 
+               # 'XGB1000',  
+               # 'XGB1250',
+               # 'XGB1500',
+               # 'XGB1750',
+               # 'XGB2000',
+               # 'XGB2500',
+               # 'XGB3000',
+               # 
+               # 'XGB200_SR1', 
+               # 'XGB220_SR1', 
+               # 'XGB250_SR1', 
+               # 'XGB300_SR1', 
+               # 'XGB350_SR1', 
+               # 'XGB400_SR1', 
+               # 'XGB500_SR1', 
+               # 'XGB600_SR1', 
+               # 'XGB700_SR1', 
+               # 'XGB800_SR1', 
+               # 'XGB1000_SR1', 
+               # 'XGB1250_SR1',
+               # 'XGB1500_SR1',
+               # 'XGB1750_SR1',
+               # 'XGB2000_SR1',
+               # 'XGB2500_SR1',
+               # 'XGB3000_SR1',
+               # 
+               # 'XGB200_SR2', 
+               # 'XGB220_SR2', 
+               # 'XGB250_SR2', 
+               # 'XGB300_SR2', 
+               # 'XGB350_SR2', 
+               # 'XGB400_SR2', 
+               # 'XGB500_SR2', 
+               # 'XGB600_SR2', 
+               # 'XGB700_SR2', 
+               # 'XGB800_SR2', 
+               # 'XGB1000_SR2', 
+               # 'XGB1250_SR2',
+               # 'XGB1500_SR2',
+               # 'XGB1750_SR2',
+               # 'XGB2000_SR2',
+               # 'XGB2500_SR2',
+               # 'XGB3000_SR2',
+               # 
+               # 
+               # 'XGB200_SR3', 
+               # 'XGB220_SR3', 
+               # 'XGB250_SR3', 
+               # 'XGB300_SR3', 
+               # 'XGB350_SR3', 
+               # 'XGB400_SR3', 
+               # 'XGB500_SR3', 
+               # 'XGB600_SR3', 
+               # 'XGB700_SR3', 
+               # 'XGB800_SR3', 
+               # 'XGB1000_SR3', 
+               # 'XGB1250_SR3',
+               # 'XGB1500_SR3',
+               # 'XGB1750_SR3',
+               # 'XGB2000_SR3',
+               # 'XGB2500_SR3',
+               # 'XGB3000_SR3',
+
+
+
+                #'XGB300',
+                #'XGB300_RS',
+                #'XGB300_3b6j',
+                #'XGB300_3b6j_RS',
+                #
+                #'XGB500',
+                #'XGB500_RS',
+                #'XGB500_3b6j',
+                #'XGB500_3b6j_RS',
+                #
+                #'XGB800',
+                #'XGB800_RS',
+                #'XGB800_3b6j',
+                #'XGB800_3b6j_RS',
+                #
+                #'XGB1000',
+                #'XGB1000_RS',
+                #'XGB1000_3b6j',
+                #'XGB1000_3b6j_RS',
+                #
+                #'XGB1500',
+                #'XGB1500_RS',
+                #'XGB1500_3b6j',
+                #'XGB1500_3b6j_RS',
 
                 ]
 
@@ -929,10 +925,10 @@ def rundoTemp(category):
                         for sig in sighists.keys(): negBinCorrection(sighists[sig]) #should we do the correction after rebinning? -- SS
 
 		#OverFlow Correction
-	#  	print "CORRECTING OVERFLOW BINS ..."
-	#  	for data in datahists.keys(): overflow(datahists[data])
-	#  	for bkg in bkghists.keys():   overflow(bkghists[bkg])
-	#  	for sig in sighists.keys():   overflow(sighists[sig])
+#	  	print "CORRECTING OVERFLOW BINS ..."
+#	  	for data in datahists.keys(): overflow(datahists[data])
+#	  	for bkg in bkghists.keys():   overflow(bkghists[bkg])
+#	  	for sig in sighists.keys():   overflow(sighists[sig])
 
 		print "       MAKING CATEGORIES FOR TOTAL SIGNALS ..."
 		makeThetaCats(datahists,sighists,bkghists,iPlot,category)

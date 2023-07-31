@@ -1,0 +1,11 @@
+universe = vanilla
+Executable = /home/fsimpson/CMSSW_10_2_10/src/singleLepAnalyzer/makeTemplates/kinematics_PS_R17_OLD2/doCondorTemplates.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+request_memory = 3072
+Output = condor_MET.out
+Error = condor_MET.err
+Log = condor_MET.log
+Notification = Error
+Arguments = /home/fsimpson/CMSSW_10_2_10/src/singleLepAnalyzer/makeTemplates/kinematics_PS_R17_OLD2 MET PS 0 R17 M 0p 0p 1p 4p
+Queue 1

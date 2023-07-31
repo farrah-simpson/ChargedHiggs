@@ -1,0 +1,11 @@
+universe = vanilla
+Executable = MT0pW0pB1pJ4pST.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = analyze.py,doHists.py,utils.py,weights.py,samples.py
+request_memory = 3072
+Output = condor_ST.out
+Error = condor_ST.err
+Log = condor_ST.log
+Arguments = /uscms_data/d3/fsimpson/scratch/FWLJMETstuff/CMSSW_10_2_10/src/ChargedHiggs/SingleLepAnalyzer/makeTemplates ST PS 0 M 0p 0p 1p 4p 
+Queue 1

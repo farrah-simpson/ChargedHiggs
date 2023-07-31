@@ -40,13 +40,13 @@ saveKey = ''#'_50GeV_100GeVnB2'
 # if len(sys.argv)>1: iPlot=str(sys.argv[1])
 cutString = ''#'lep30_MET150_NJets4_DR1_1jet450_2jet150'
 lumiStr = str(targetlumi/1000).replace('.','p')+'fb' # 1/fb
-templateDir = 'kinematics_PS_TEST2'#templates_2021_10_5'#'kinematics_PS_2021_9_26'#'templates_M500_2021_4_25_topPtRW_allweights_UL17_Reshape_ReNorm2D_HTnj_WJetsHTbinned_HTonly' 
+templateDir = 'kinematics_PS_2021_12_5'#templates_2021_10_5'#'kinematics_PS_2021_9_26'#'templates_M500_2021_4_25_topPtRW_allweights_UL17_Reshape_ReNorm2D_HTnj_WJetsHTbinned_HTonly' 
 combinefile = 'templates_'+iPlot+'_'+lumiStr+'_wNegBinsCorrec_.root'
 
 quiet = True #if you don't want to see the warnings that are mostly from the stat. shape algorithm!
 rebinCombine = True #else rebins theta templates
 doStatShapes = False
-doSmoothing = True
+doSmoothing = False#True
 smoothingAlgo = ''#'lowess', super, or kern
 symmetrizeSmoothing = True #Symmetrize up/down shifts around nominal before smoothing
 doPDF = False
@@ -554,12 +554,14 @@ nbtaglist=[]
 njetslist=[]
 for chn in channels:
 	print chn
-	if chn.split('_')[1] not in isEMlist: isEMlist.append(chn.split('_')[1])
+	if chn.split('_')[0] not in isEMlist: isEMlist.append(chn.split('_')[0])
 	#if chn.split('_')[1] not in nhottlist: nhottlist.append(chn.split('_')[1])
-	if chn.split('_')[2] not in nttaglist: nttaglist.append(chn.split('_')[2])
-	if chn.split('_')[3] not in nWtaglist: nWtaglist.append(chn.split('_')[3])
-	if chn.split('_')[4] not in nbtaglist: nbtaglist.append(chn.split('_')[4])
-	if chn.split('_')[5] not in njetslist: njetslist.append(chn.split('_')[5])
+	if chn.split('_')[1] not in nttaglist: nttaglist.append(chn.split('_')[1])
+	if chn.split('_')[2] not in nWtaglist: nWtaglist.append(chn.split('_')[2])
+	if chn.split('_')[3] not in nbtaglist: nbtaglist.append(chn.split('_')[3])
+	if chn.split('_')[4] not in njetslist: njetslist.append(chn.split('_')[4])
+print njetslist
+print nttaglist
 
 procNames={}
 procNames['dataOverBkg'] = 'Data/Bkg'

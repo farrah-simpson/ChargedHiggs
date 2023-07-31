@@ -9,14 +9,14 @@ sys.path.append(parent)
 from utils import *
 gROOT.SetBatch(1)
 
-def add_processes_and_observations(cb, prefix='Hptb'):
+def add_processes_and_observations(cb, prefix='X53M'):
 	print '>> Creating processes and observations...'
 	for chn in chns:
 		cats_chn = cats[chn]
 		if 'isCR' not in chn:
 			cb.AddObservations(  ['*'],  [prefix], [era], [chn],                 cats_chn      )
 			cb.AddProcesses(     ['*'],  [prefix], [era], [chn], bkg_procs[chn], cats_chn, False  )
-			cb.AddProcesses(     [''], [prefix], [era], [chn], sig_procs,      cats_chn, True   )
+			cb.AddProcesses(     masses, [prefix], [era], [chn], sig_procs,      cats_chn, True   )
 		else:
 			cb.AddObservations(  ['all'],  [prefix], [era], [chn],                 cats_chn      )
 			cb.AddProcesses(     ['all'],  [prefix], [era], [chn], bkg_procs[chn], cats_chn, False  )
@@ -29,7 +29,7 @@ def add_shapes(cb):
 		cb.cp().channel([chn]).era([era]).backgrounds().ExtractShapes(
 			rfile, bkg_pattern, bkg_pattern + '__$SYSTEMATIC')
 		
-		sig_pattern = iPlot+'_'+lumiStr+'_%s$BIN__$PROCESS$MASS' % chn
+		sig_pattern = iPlot+'_'+lumiStr+'_%s$BIN__$PROCESS$MASSMH400' % chn
 		if 'isCR' not in chn:
 			cb.cp().channel([chn]).era([era]).signals().ExtractShapes(
 				rfile, sig_pattern, sig_pattern + '__$SYSTEMATIC')
@@ -54,7 +54,7 @@ def rename_and_write(cb):
 	print '>> Setting standardised bin names...'
 	ch.SetStandardBinNames(cb)
 	
-	writer = ch.CardWriter('limits_'+signal+'_'+template+saveKey+'/$TAG/$MASS/$ANALYSIS_$CHANNEL_$BINID_$ERA.txt',
+	writer = ch.CardWriter('limits_'+signal+'_'+massH+'_'+template+saveKey+'/$TAG/$MASS/$ANALYSIS_$CHANNEL_$BINID_$ERA.txt',
 						   'limits_'+signal+'_'+template+saveKey+'/$TAG/common/$ANALYSIS_$CHANNEL.input.root')
 	writer.SetVerbosity(1)
 	writer.WriteCards('cmb', cb)
@@ -81,23 +81,38 @@ def add_standard_systematics(cb):
 	cb.cp().process(signal + allbkgs).channel(chnsM).AddSyst(cb, 'SFmu_$ERA', 'lnN', ch.SystMap('era')(['R16'], 1.03)(['R17'], 1.03)(['R18'], 1.03)) # 1% mu id/iso + 2.5% trigger ~ 3%
 	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'jec_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # This one is being studied in B2G-19-001/AN2018_322_v7 (take the uncorrelated one to be conservative!)
 	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'jer_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
-	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'LF_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # B-tagging reweighting systematics, LF
-        cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'HF_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) #B-tagging reweighting systematics, HF
-	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'LFstat1_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
-	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'HFstat1_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
-	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'CFerr1_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
-        
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'LF_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # B-tagging reweighting systematics, LF
+        #cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'HF_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) #B-tagging reweighting systematics, HF
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'LFstat1_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'HFstat1_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'CFerr1_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+       	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'tau32', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+       	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'tau21', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+       	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'tau21pt', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+       	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'jmst', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+       	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'jmsW', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+       	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'jmrt', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+       	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'jmrW', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+
+ 
 	#if era=='R17':
 	#	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'prefire', 'shape', ch.SystMap()(1.0))
-	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'pileup', 'shape', ch.SystMap()(1.0)) # Correlated: https://hypernews.cern.ch/HyperNews/CMS/get/b2g/1381.html
-	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'btag_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
-	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'mistag_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
+	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'pileup', 'shape', ch.SystMap()(1.0)) # Correlated: https://hypernews.cern.ch/HyperNews/CMS/get/b2g/1381.html
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'btag', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'mistag', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
 	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'hotstat_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Use same logic as b-tagging?
 	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'hotcspur_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Use same logic as b-tagging?
 	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'hotclosure_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Use same logic as b-tagging?
 	#for proc in allbkgs:
-	#	if proc in ttbkgs: cb.cp().process([proc]).channel(chns).AddSyst(cb, 'muRF_tt', 'shape', ch.SystMap()(1.0)) # Correlated, PDF and QCD Scale (not recalculated in 2018); Ex: B2G-19-001/AN2018_322_v7 
-	#	else: cb.cp().process([proc]).channel(chns).AddSyst(cb, 'muRF_'+proc, 'shape', ch.SystMap()(1.0)) # Correlated, PDF and QCD Scale (not recalculated in 2018); Ex: B2G-19-001/AN2018_322_v7 
+	#	if proc in ttbkgs: 
+	#		cb.cp().process([proc]).channel(chns).AddSyst(cb, 'muRF_tt', 'shape', ch.SystMap()(1.0)) # Correlated, PDF and QCD Scale (not recalculated in 2018); Ex: B2G-19-001/AN2018_322_v7 
+	#		cb.cp().process([proc]).channel(chns).AddSyst(cb, 'isr_tt', 'shape', ch.SystMap()(1.0))
+	#		cb.cp().process([proc]).channel(chns).AddSyst(cb, smoothAlgo+'fsr_tt', 'shape', ch.SystMap()(1.0))
+	#	else: 
+	#		cb.cp().process([proc]).channel(chns).AddSyst(cb, 'muRF_'+proc, 'shape', ch.SystMap()(1.0)) # Correlated, PDF and QCD Scale (not recalculated in 2018); Ex: B2G-19-001/AN2018_322_v7
+	#		cb.cp().process([proc]).channel(chns).AddSyst(cb, 'isr', 'shape', ch.SystMap()(1.0))
+	#		cb.cp().process([proc]).channel(chns).AddSyst(cb, 'fsr', 'shape', ch.SystMap()(1.0))
+ 
 	#cb.cp().process(signal).channel(chns).AddSyst(cb, 'muRF_tttt', 'shape', ch.SystMap()(1.0)) # Correlated, PDF and QCD Scale (not recalculated in 2018); Ex: B2G-19-001/AN2018_322_v7 
 	#for proc in allbkgs:
 	#	if proc in ttbkgs: cb.cp().process([proc]).channel(chns).AddSyst(cb, 'PSwgt_tt_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; TOP-18-003/AN2018_062_v17 (derived from different datasets and with respect to different MC samples)
@@ -107,9 +122,9 @@ def add_standard_systematics(cb):
  	#cb.cp().process(ttbkgs).channel(chns).AddSyst(cb, 'ue', 'shape', ch.SystMap()(1.0))
  	#cb.cp().process(ttbkgs).channel(chns).AddSyst(cb, 'hdamp', 'shape', ch.SystMap()(1.0))
  	#cb.cp().process(ttbkgs).channel(chns).AddSyst(cb, 'toppt', 'shape', ch.SystMap()(1.0)) # Correlated; Ex: B2G-19-003/AN2015_174_v14 (since it is assumed that the affect of this correction should be consistent across years)
-	cb.cp().process( ttbkgs).channel(chns).AddSyst(cb, 'xsec_ttbar', 'lnN', ch.SystMap()([0.945,1.048])) # (scale and pdf added in quadrature) from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/TtbarNNLO; Ex: HIG-18-004/AN2017_090_v12/Table13 and HIG-19-011/AN2019_094_v10/Table79-80
-	cb.cp().process(['ewk']).channel(chns).AddSyst(cb, 'xsec_ewk', 'lnN', ch.SystMap()(1.038)) # (scale and pdf added in quadrature) from https://twiki.cern.ch/twiki/bin/viewauth/CMS/StandardModelCrossSectionsat13TeV; Ex: HIG-18-004/AN2017_090_v12/Table13 and HIG-19-011/AN2019_094_v10/Table79-80
-	cb.cp().process(['top']).channel(chns).AddSyst(cb, 'xsec_top', 'lnN', ch.SystMap()(1.5)) # ttV,ttH, and tt+XY uncertainties are 50% in OSDL and SSDL analyses, so aligning it with this inflated uncertainty.
+	#cb.cp().process( ttbkgs).channel(chns).AddSyst(cb, 'xsec_ttbar', 'lnN', ch.SystMap()([0.945,1.048])) # (scale and pdf added in quadrature) from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/TtbarNNLO; Ex: HIG-18-004/AN2017_090_v12/Table13 and HIG-19-011/AN2019_094_v10/Table79-80
+	#cb.cp().process(['ewk']).channel(chns).AddSyst(cb, 'xsec_ewk', 'lnN', ch.SystMap()(1.038)) # (scale and pdf added in quadrature) from https://twiki.cern.ch/twiki/bin/viewauth/CMS/StandardModelCrossSectionsat13TeV; Ex: HIG-18-004/AN2017_090_v12/Table13 and HIG-19-011/AN2019_094_v10/Table79-80
+	#cb.cp().process(['top']).channel(chns).AddSyst(cb, 'xsec_top', 'lnN', ch.SystMap()(1.5)) # ttV,ttH, and tt+XY uncertainties are 50% in OSDL and SSDL analyses, so aligning it with this inflated uncertainty.
 	# Additional TOP bkg group x-sec uncertainties tested:
 
 
@@ -179,9 +194,10 @@ def create_workspace(cb):
 	print '>> Creating workspace...'
 	
 	for chn in ['cmb']:#+chns:
-		chnDir = os.getcwd()+'/limits_'+signal+'_'+template+saveKey+'/'+chn+'/'
-		cmd = 'combineTool.py -M T2W -i '+chnDir+' -o workspace.root --parallel 4'
-		os.system(cmd)
+		for mass in masses:
+			chnDir = os.getcwd()+'/limits_'+signal+'_'+massH+'_'+template+saveKey+'/'+chn+'/'+mass 
+			cmd = 'combineTool.py -M T2W -i '+chnDir+' -o workspace.root --parallel 4'
+			os.system(cmd)
 		
 
 def go(cb):
@@ -200,22 +216,24 @@ def go(cb):
 if __name__ == '__main__':
 	cb = ch.CombineHarvester()
 	#cb.SetVerbosity(20)
-	signal = 'Hptb'+sys.argv[4]
-	iPlot= sys.argv[3]#'HT'
-	era = sys.argv[2]#'R18'
+	signal = 'X53M'#'X53M'+sys.argv[4]+'MH'+sys.argv[5]
+	iPlot= 'HT'
+	era = 'R17'
         template = sys.argv[1]
+	#cutString = sys.argv[4]
+	massH = '400'
 	lumiStr = '41p53fb'
 	if era=='R18': lumiStr = '59p97fb'
 	tag = '_wNegBinsCorrec_'#'_50GeV_100GeVnB2'
 	saveKey = '_'+iPlot#'_Njet50pct_centValSF'
-	fileDir = '/uscms_data/d3/jluo/work/CMSSW_dir/CMSSW_10_2_10/src/NewCHiggs_UL/SingleLepAnalyzer/makeTemplates/'
+	fileDir = '/uscms/home/fsimpson/nobackup/scratch/FWLJMETstuff/CMSSW_10_2_10/src/ChargedHiggs/SingleLepAnalyzer/makeTemplates/'
 	#template = 'M500_2020_11_23_topPtRW_NC_allweights_DJ'#era+'_'+sys.argv[3]#nonjetsf_lepPt20_2020_9_3'
-	if not os.path.exists('./limits_'+signal+'_'+template+saveKey): os.system('mkdir ./limits_'+signal+'_'+template+saveKey)
-	os.system('cp '+fileDir+'templates_'+template+'/templates_'+iPlot+'_'+lumiStr+tag+'_rebinned_stat0p2.root ./limits_'+signal+'_'+template+saveKey+'/')
-	rfile = './limits_'+signal+'_'+template+saveKey+'/templates_'+iPlot+'_'+lumiStr+tag+'_rebinned_stat0p2.root'
+	if not os.path.exists('./limits_'+signal+'_'+massH+'_'+template+saveKey): os.system('mkdir ./limits_'+signal+'_'+massH+'_'+template+saveKey)
+	os.system('cp '+fileDir+template+'/templates_'+iPlot+'_'+lumiStr+tag+'_rebinned_stat0p3.root ./limits_'+signal+'_'+massH+'_'+template+saveKey+'/')
+	rfile = './limits_'+signal+'_'+massH+'_'+template+saveKey+'/templates_'+iPlot+'_'+lumiStr+tag+'_rebinned_stat0p3.root'
 	
 	ttbkgs = ['ttnobb','ttbb'] # ['ttjj','ttcc','ttbb','ttbj']
-	allbkgs = ttbkgs + ['top','ewk']
+	allbkgs = ['top','ewk','QCD']
 	dataName = 'data_obs'
 	tfile = TFile(rfile)
 	allHistNames = [k.GetName() for k in tfile.GetListOfKeys() if not (k.GetName().endswith('Up') or k.GetName().endswith('Down'))]
@@ -226,7 +244,7 @@ if __name__ == '__main__':
 	chns_njet = {}
 	for i in range(4,11):
 		chns_njet[i]=[chn for chn in chns if 'nJ'+str(i) in chn]
-	bkg_procs = {chn:[hist.split('__')[-1] for hist in allHistNames if '_'+chn+'_' in hist and not (hist.endswith('Up') or hist.endswith('Down') or hist.endswith(dataName) or hist.find('Hptb')!=-1)] for chn in chns}
+	bkg_procs = {chn:[hist.split('__')[-1] for hist in allHistNames if '_'+chn+'_' in hist and not (hist.endswith('Up') or hist.endswith('Down') or hist.endswith(dataName) or hist.find('X53')!=-1)] for chn in chns}
 	for cat in sorted(bkg_procs.keys()):
 		print cat,bkg_procs[cat]
 		if 'qcd' in bkg_procs[cat]:
@@ -240,5 +258,5 @@ if __name__ == '__main__':
 	cats = {}
 	for chn in chns: cats[chn] = [(0, '')]
 	
-	masses = ch.ValsFromRange('690')
+	masses = ch.ValsFromRange('600,700,800,900,1000,1100,1200,1500')
 	go(cb)

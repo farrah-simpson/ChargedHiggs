@@ -8,127 +8,168 @@ from ROOT import TFile, TCanvas, TH1F
 from ROOT import gStyle
 
 
-fout = TFile("HT_njets_SF_sys.root", "RECREATE")
+fout = TFile("X53_HT_njets_SF_sys.root", "RECREATE")
 
-tfile_ttjj = TFile("CHiggs_Weights_ttjj_extended_HT_cuts_sys.root")
-tfile_ttbb = TFile("CHiggs_Weights_ttbb_extended_HT_cuts_sys.root")
-tfile_ttcc = TFile("CHiggs_Weights_ttcc_extended_HT_cuts_sys.root")
-tfile_tt2b = TFile("CHiggs_Weights_tt2b_extended_HT_cuts_sys.root")
-tfile_tt1b = TFile("CHiggs_Weights_tt1b_extended_HT_cuts_sys.root")
-tfile_STs = TFile("CHiggs_Weights_STs_extended_HT_cuts_sys.root")
-tfile_STtw = TFile("CHiggs_Weights_STtw_extended_HT_cuts_sys.root")
-tfile_STt  = TFile("CHiggs_Weights_STt_extended_HT_cuts_sys.root")
-tfile_WJets = TFile("CHiggs_Weights_WJets_extended_HT_cuts_sys.root")
-tfile_CHM200  = TFile("CHiggs_Weights_CH-M200_extended_HT_cuts_sys.root")
-tfile_CHM220  = TFile("CHiggs_Weights_CH-M220_extended_HT_cuts_sys.root")
-tfile_CHM250  = TFile("CHiggs_Weights_CH-M250_extended_HT_cuts_sys.root")
-tfile_CHM300  = TFile("CHiggs_Weights_CH-M300_extended_HT_cuts_sys.root")
-tfile_CHM350  = TFile("CHiggs_Weights_CH-M350_extended_HT_cuts_sys.root")
-tfile_CHM400  = TFile("CHiggs_Weights_CH-M400_extended_HT_cuts_sys.root")
-tfile_CHM500  = TFile("CHiggs_Weights_CH-M500_extended_HT_cuts_sys.root")
-tfile_CHM600  = TFile("CHiggs_Weights_CH-M600_extended_HT_cuts_sys.root")
-tfile_CHM700  =  TFile("CHiggs_Weights_CH-M700_extended_HT_cuts_sys.root")
-tfile_CHM800  = TFile("CHiggs_Weights_CH-M800_extended_HT_cuts_sys.root")
-tfile_CHM1000 = TFile("CHiggs_Weights_CH-M1000_extended_HT_cuts_sys.root")
-tfile_CHM1250 = TFile("CHiggs_Weights_CH-M1250_extended_HT_cuts_sys.root")
-tfile_CHM1500 = TFile("CHiggs_Weights_CH-M1500_extended_HT_cuts_sys.root")
-tfile_CHM1750 = TFile("CHiggs_Weights_CH-M1750_extended_HT_cuts_sys.root")
-tfile_CHM2000 = TFile("CHiggs_Weights_CH-M2000_extended_HT_cuts_sys.root")
-tfile_CHM2500 = TFile("CHiggs_Weights_CH-M2500_extended_HT_cuts_sys.root")
-tfile_CHM3000 = TFile("CHiggs_Weights_CH-M3000_extended_HT_cuts_sys.root")
+#tfile_Mtt0 = TFile("X53_weights_Mtt0to700_extended_HT_cuts_sys.root")
+#tfile_Mtt700 = TFile("X53_weights_Mtt700to1000_extended_HT_cuts_sys.root")
+#tfile_Mtt1000 = TFile("X53_weights_Mtt1000toInf_extended_HT_cuts_sys.root")
+#tfile_tt2b = TFile("CHiggs_Weights_tt2b_extended_HT_cuts_sys.root")
+#tfile_tt1b = TFile("CHiggs_Weights_tt1b_extended_HT_cuts_sys.root")
+#tfile_STs = TFile("CHiggs_Weights_STs_extended_HT_cuts_sys.root")
+#tfile_STtw = TFile("CHiggs_Weights_STtw_extended_HT_cuts_sys.root")
+#tfile_STt  = TFile("CHiggs_Weights_STt_extended_HT_cuts_sys.root")
+#tfile_WJets = TFile("CHiggs_Weights_WJets_extended_HT_cuts_sys.root")
+
+tfile_XXM600MH200  = TFile("X53_weights_M600_MH200_extended_HT_cuts_Sys.root")
+tfile_XXM600MH400  = TFile("X53_weights_M600_MH400_extended_HT_cuts_Sys.root")
+tfile_XXM700MH400  = TFile("X53_weights_M700_MH400_extended_HT_cuts_Sys.root")
+tfile_XXM800MH200  = TFile("X53_weights_M800_MH200_extended_HT_cuts_Sys.root")
+tfile_XXM800MH400  = TFile("X53_weights_M800_MH400_extended_HT_cuts_Sys.root")
+tfile_XXM800MH600  = TFile("X53_weights_M800_MH600_extended_HT_cuts_Sys.root")
+tfile_XXM900MH200  = TFile("X53_weights_M900_MH200_extended_HT_cuts_Sys.root")
+tfile_XXM900MH400  = TFile("X53_weights_M900_MH400_extended_HT_cuts_Sys.root")
+tfile_XXM1000MH200  = TFile("X53_weights_M1000_MH200_extended_HT_cuts_Sys.root")
+tfile_XXM1000MH400  = TFile("X53_weights_M1000_MH400_extended_HT_cuts_Sys.root")
+tfile_XXM1000MH800  = TFile("X53_weights_M1000_MH800_extended_HT_cuts_Sys.root")
+tfile_XXM1100MH200  = TFile("X53_weights_M1100_MH200_extended_HT_cuts_Sys.root")
+tfile_XXM1100MH400  = TFile("X53_weights_M1100_MH400_extended_HT_cuts_Sys.root")
+tfile_XXM1100MH600  = TFile("X53_weights_M1100_MH600_extended_HT_cuts_Sys.root")
+tfile_XXM1100MH800 = TFile("X53_weights_M1100_MH800_extended_HT_cuts_Sys.root")
+tfile_XXM1200MH200  = TFile("X53_weights_M1200_MH200_extended_HT_cuts_Sys.root")
+tfile_XXM1200MH400  = TFile("X53_weights_M1200_MH400_extended_HT_cuts_Sys.root")
+tfile_XXM1200MH600  = TFile("X53_weights_M1200_MH600_extended_HT_cuts_Sys.root")
+tfile_XXM1200MH800 = TFile("X53_weights_M1200_MH800_extended_HT_cuts_Sys.root")
+tfile_XXM1200MH1000 = TFile("X53_weights_M1200_MH1000_extended_HT_cuts_Sys.root")
+tfile_XXM1500MH200 = TFile("X53_weights_M1500_MH200_extended_HT_cuts_Sys.root")
+tfile_XXM1500MH400 = TFile("X53_weights_M1500_MH400_extended_HT_cuts_Sys.root")
+tfile_XXM1500MH600 = TFile("X53_weights_M1500_MH600_extended_HT_cuts_Sys.root")
+tfile_XXM1500MH800 = TFile("X53_weights_M1500_MH800_extended_HT_cuts_Sys.root")
+tfile_XXM1500MH1000 = TFile("X53_weights_M1500_MH1000_extended_HT_cuts_Sys.root")
+tfile_TTToHad0 =       TFile("TTToHad0weights_extended_HT_cuts_Sys.root")
+tfile_TTToHad700 =     TFile("TTToHad700weights_extended_HT_cuts_Sys.root")
+tfile_TTToHad1000 =     TFile("TTToHad1000weights_extended_HT_cuts_Sys.root")
+tfile_TTToSemiLep0 =   TFile("TTToSemiLep0weights_extended_HT_cuts_Sys.root")
+tfile_TTToSemiLep700 = TFile("TTToSemiLep700weights_extended_HT_cuts_Sys.root")
+tfile_TTToSemiLep1000 = TFile("TTToSemiLep1000weights_extended_HT_cuts_Sys.root")
+tfile_TTToLNu0 =        TFile("TTToLNu0weights_extended_HT_cuts_Sys.root")       
+tfile_TTToLNu700 =      TFile("TTToLNu700weights_extended_HT_cuts_Sys.root")  
+tfile_TTToLNu1000  =     TFile("TTToLNu1000weights_extended_HT_cuts_Sys.root")
 
 
 sys_postfix = ["", "_HFup", "_HFdn", "_LFup", "_LFdn", "_jesup", "_jesdn", "_hfstats1up", "_hfstats1dn", "_hfstats2up", "_hfstats2dn", "_cferr1up", 
         "_cferr1dn", "_cferr2up", "_cferr2dn", "_lfstats1up", "_lfstats1dn", "_lfstats2up", "_lfstats2dn"]
 
-hscale_ttjj = {}
-hscale_ttbb = {}
-hscale_ttcc = {}
-hscale_tt2b = {} 
-hscale_tt1b = {}
-hscale_STs  = {}
-hscale_STtw = {}
-hscale_STt  = {}
-hscale_WJets= {}
-hscale_CHM200  = {} 
-hscale_CHM220  = {}
-hscale_CHM250  = {}
-hscale_CHM300  = {}
-hscale_CHM350  = {}
-hscale_CHM400  = {}
-hscale_CHM500  = {}
-hscale_CHM600  = {}
-hscale_CHM700  = {}
-hscale_CHM800  = {}
-hscale_CHM1000 = {}
-hscale_CHM1250 = {}
-hscale_CHM1500 = {}
-hscale_CHM1750 = {}
-hscale_CHM2000 = {}
-hscale_CHM2500 = {}
-hscale_CHM3000 = {}
+hscale_XXM600MH200   = {}
+hscale_XXM600MH400   = {}
+hscale_XXM700MH400   = {}
+hscale_XXM800MH200   = {} 
+hscale_XXM800MH400   = {}
+hscale_XXM800MH600   = {}
+hscale_XXM900MH200   = {}
+hscale_XXM900MH400   = {}
+hscale_XXM1000MH200  = {}
+hscale_XXM1000MH400  = {} 
+hscale_XXM1000MH800  = {}
+hscale_XXM1100MH200  = {}
+hscale_XXM1100MH400  = {}
+hscale_XXM1100MH600  = {}
+hscale_XXM1100MH800  = {}
+hscale_XXM1200MH200  = {}
+hscale_XXM1200MH400  = {}
+hscale_XXM1200MH600  = {}
+hscale_XXM1200MH800  = {}
+hscale_XXM1200MH1000 = {}
+hscale_XXM1500MH200  = {}
+hscale_XXM1500MH400  = {}
+hscale_XXM1500MH600  = {}
+hscale_XXM1500MH800  = {}
+hscale_XXM1500MH1000 = {}
+hscale_TTToHad0        = {}
+hscale_TTToHad700      = {}
+hscale_TTToHad1000      = {}
+hscale_TTToSemiLep0    = {}
+hscale_TTToSemiLep700  = {}
+hscale_TTToSemiLep1000  = {}
+hscale_TTToLNu0       = {}
+hscale_TTToLNu700      = {}
+hscale_TTToLNu1000    = {}
+
 
 
 for sys in sys_postfix:
 
-    hscale_ttjj[sys] = tfile_ttjj.Get("h2D_scale"+sys).Clone()
-    hscale_ttbb[sys] = tfile_ttbb.Get("h2D_scale"+sys).Clone()
-    hscale_ttcc[sys] = tfile_ttcc.Get("h2D_scale"+sys).Clone()
-    hscale_tt2b[sys] = tfile_tt2b.Get("h2D_scale"+sys).Clone()
-    hscale_tt1b[sys] = tfile_tt1b.Get("h2D_scale"+sys).Clone()
-    hscale_STs[sys]  = tfile_STs.Get("h2D_scale"+sys).Clone()
-    hscale_STtw[sys] = tfile_STtw.Get("h2D_scale"+sys).Clone()
-    hscale_STt[sys]  = tfile_STt.Get("h2D_scale"+sys).Clone()
-    hscale_WJets[sys] = tfile_WJets.Get("h2D_scale"+sys).Clone()
-    
-    hscale_CHM200[sys]  = tfile_CHM200.Get("h2D_scale"+sys).Clone()  
-    hscale_CHM220[sys]  = tfile_CHM220.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM250[sys]  = tfile_CHM250.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM300[sys]  = tfile_CHM300.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM350[sys]  = tfile_CHM350.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM400[sys]  = tfile_CHM400.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM500[sys]  = tfile_CHM500.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM600[sys]  = tfile_CHM600.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM700[sys]  = tfile_CHM700.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM800[sys]  = tfile_CHM800.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM1000[sys] = tfile_CHM1000.Get("h2D_scale"+sys).Clone() 
-    hscale_CHM1250[sys] = tfile_CHM1250.Get("h2D_scale"+sys).Clone()
-    hscale_CHM1500[sys] = tfile_CHM1500.Get("h2D_scale"+sys).Clone()
-    hscale_CHM1750[sys] = tfile_CHM1750.Get("h2D_scale"+sys).Clone()
-    hscale_CHM2000[sys] = tfile_CHM2000.Get("h2D_scale"+sys).Clone()
-    hscale_CHM2500[sys] = tfile_CHM2500.Get("h2D_scale"+sys).Clone()
-    hscale_CHM3000[sys] = tfile_CHM3000.Get("h2D_scale"+sys).Clone()
+    hscale_XXM600MH200[sys]   = tfile_XXM600MH200.Get("h2D_scale"+sys).Clone()
+    hscale_XXM600MH400[sys]   = tfile_XXM600MH400.Get("h2D_scale"+sys).Clone()
+    hscale_XXM700MH400[sys]   = tfile_XXM700MH400.Get("h2D_scale"+sys).Clone()
+    hscale_XXM800MH200[sys]   = tfile_XXM800MH200.Get("h2D_scale"+sys).Clone()
+    hscale_XXM800MH400[sys]   = tfile_XXM800MH400.Get("h2D_scale"+sys).Clone()
+    hscale_XXM800MH600[sys]   = tfile_XXM800MH600.Get("h2D_scale"+sys).Clone()
+    hscale_XXM900MH200[sys]   = tfile_XXM900MH200.Get("h2D_scale"+sys).Clone()
+    hscale_XXM900MH400[sys]   = tfile_XXM900MH400.Get("h2D_scale"+sys).Clone()
+    hscale_XXM1000MH200[sys]  = tfile_XXM1000MH200.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1000MH400[sys]  = tfile_XXM1000MH400.Get("h2D_scale"+sys).Clone()  
+    hscale_XXM1000MH800[sys]  = tfile_XXM1000MH800.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1100MH200[sys]  = tfile_XXM1100MH200.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1100MH400[sys]  = tfile_XXM1100MH400.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1100MH600[sys]  = tfile_XXM1100MH600.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1100MH800[sys]  = tfile_XXM1100MH800.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1200MH200[sys]  = tfile_XXM1200MH200.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1200MH400[sys]  = tfile_XXM1200MH400.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1200MH600[sys]  = tfile_XXM1200MH600.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1200MH800[sys]  = tfile_XXM1200MH800.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1200MH1000[sys] = tfile_XXM1200MH1000.Get("h2D_scale"+sys).Clone() 
+    hscale_XXM1500MH200[sys] =  tfile_XXM1500MH200.Get("h2D_scale"+sys).Clone()
+    hscale_XXM1500MH400[sys] =  tfile_XXM1500MH400.Get("h2D_scale"+sys).Clone()
+    hscale_XXM1500MH600[sys] =  tfile_XXM1500MH600.Get("h2D_scale"+sys).Clone()
+    hscale_XXM1500MH800[sys] =  tfile_XXM1500MH800.Get("h2D_scale"+sys).Clone()
+    hscale_XXM1500MH1000[sys]=  tfile_XXM1500MH1000.Get("h2D_scale"+sys).Clone()
+    hscale_TTToHad0[sys]        = tfile_TTToHad0.Get("h2D_scale"+sys).Clone() 
+    hscale_TTToHad700[sys]  = tfile_TTToHad700.Get("h2D_scale"+sys).Clone() 
+    hscale_TTToHad1000[sys]  = tfile_TTToHad1000.Get("h2D_scale"+sys).Clone() 
+    hscale_TTToSemiLep0[sys] =  tfile_TTToSemiLep0.Get("h2D_scale"+sys).Clone() 
+    hscale_TTToSemiLep700[sys] =  tfile_TTToSemiLep700.Get("h2D_scale"+sys).Clone()
+    hscale_TTToSemiLep1000[sys] =  tfile_TTToSemiLep1000.Get("h2D_scale"+sys).Clone()
+    hscale_TTToLNu0[sys] =  tfile_TTToLNu0.Get("h2D_scale"+sys).Clone()
+    hscale_TTToLNu700[sys] =  tfile_TTToLNu700.Get("h2D_scale"+sys).Clone()
+    hscale_TTToLNu1000[sys] =  tfile_TTToLNu1000.Get("h2D_scale"+sys).Clone()
+
+    fout.WriteTObject( hscale_XXM600MH200[sys],     "hscale_XXM600MH200"  +sys)
+    fout.WriteTObject( hscale_XXM600MH400[sys],     "hscale_XXM600MH400"  +sys)
+    fout.WriteTObject( hscale_XXM700MH400[sys],     "hscale_XXM700MH400"  +sys)
+    fout.WriteTObject( hscale_XXM800MH200[sys],     "hscale_XXM800MH200"  +sys)
+    fout.WriteTObject( hscale_XXM800MH400[sys],     "hscale_XXM800MH400"  +sys)
+    fout.WriteTObject( hscale_XXM800MH600[sys],     "hscale_XXM800MH600"  +sys)
+    fout.WriteTObject( hscale_XXM900MH200[sys],     "hscale_XXM900MH200"  +sys)
+    fout.WriteTObject( hscale_XXM900MH400[sys],     "hscale_XXM900MH400"  +sys)
+    fout.WriteTObject( hscale_XXM1000MH200[sys],     "hscale_XXM1000MH200" +sys)
+    fout.WriteTObject( hscale_XXM1000MH400[sys] ,    "hscale_XXM1000MH400" +sys)  
+    fout.WriteTObject( hscale_XXM1000MH800[sys] ,    "hscale_XXM1000MH800" +sys)  
+    fout.WriteTObject( hscale_XXM1100MH200[sys] ,    "hscale_XXM1100MH200" +sys)  
+    fout.WriteTObject( hscale_XXM1100MH400[sys] ,    "hscale_XXM1100MH400" +sys)  
+    fout.WriteTObject( hscale_XXM1100MH600[sys] ,    "hscale_XXM1100MH600" +sys)  
+    fout.WriteTObject( hscale_XXM1100MH800[sys] ,    "hscale_XXM1100MH800" +sys)  
+    fout.WriteTObject( hscale_XXM1200MH200[sys] ,    "hscale_XXM1200MH200" +sys)  
+    fout.WriteTObject( hscale_XXM1200MH400[sys] ,    "hscale_XXM1200MH400" +sys)  
+    fout.WriteTObject( hscale_XXM1200MH600[sys] ,    "hscale_XXM1200MH600" +sys)  
+    fout.WriteTObject( hscale_XXM1200MH800[sys] ,    "hscale_XXM1200MH800" +sys)  
+    fout.WriteTObject( hscale_XXM1200MH1000[sys] ,    "hscale_XXM1200MH1000" +sys) 
+    fout.WriteTObject( hscale_XXM1500MH200[sys] ,    "hscale_XXM1500MH200" +sys) 
+    fout.WriteTObject( hscale_XXM1500MH400[sys] ,    "hscale_XXM1500MH400" +sys) 
+    fout.WriteTObject( hscale_XXM1500MH600[sys] ,    "hscale_XXM1500MH600" +sys) 
+    fout.WriteTObject( hscale_XXM1500MH800[sys] ,    "hscale_XXM1500MH800" +sys) 
+    fout.WriteTObject( hscale_XXM1500MH1000[sys] ,    "hscale_XXM1500MH1000" +sys) 
+    fout.WriteTObject( hscale_TTToHad0[sys] ,    "hscale_TTToHad0" +sys) 
+    fout.WriteTObject( hscale_TTToHad700[sys] ,    "hscale_TTToHad700" +sys) 
+    fout.WriteTObject( hscale_TTToHad1000[sys] ,    "hscale_TTToHad1000" +sys) 
+    fout.WriteTObject( hscale_TTToSemiLep0[sys] ,    "hscale_TTToSemiLep0" +sys) 
+    fout.WriteTObject( hscale_TTToSemiLep700[sys] ,    "hscale_TTToSemiLep700" +sys) 
+    fout.WriteTObject( hscale_TTToSemiLep1000[sys] ,    "hscale_TTToSemiLep1000" +sys) 
+    fout.WriteTObject( hscale_TTToLNu0[sys] ,    "hscale_TTToLNu0" +sys) 
+    fout.WriteTObject( hscale_TTToLNu700[sys] ,    "hscale_TTToLNu700" +sys) 
+    fout.WriteTObject( hscale_TTToLNu1000[sys] ,    "hscale_TTToLNu1000" +sys) 
 
 
 
-
-    fout.WriteTObject(hscale_ttjj[sys], "hscale_ttjj"+sys)
-    fout.WriteTObject(hscale_ttbb[sys], "hscale_ttbb"+sys)
-    fout.WriteTObject(hscale_ttcc[sys], "hscale_ttcc"+sys)
-    fout.WriteTObject(hscale_tt2b[sys], "hscale_tt2b"+sys)
-    fout.WriteTObject(hscale_tt1b[sys], "hscale_tt1b"+sys)
-    fout.WriteTObject(hscale_STs[sys], "hscale_STs"+sys)
-    fout.WriteTObject(hscale_STtw[sys], "hscale_STtw"+sys)
-    fout.WriteTObject(hscale_STt[sys], "hscale_STt"+sys)
-    fout.WriteTObject(hscale_WJets[sys], "hscale_WJets"+sys)
-    
-    fout.WriteTObject( hscale_CHM200[sys] ,    "hscale_CHM200"+sys)  
-    fout.WriteTObject( hscale_CHM220[sys] ,    "hscale_CHM220"+sys)  
-    fout.WriteTObject( hscale_CHM250[sys] ,    "hscale_CHM250"+sys)  
-    fout.WriteTObject( hscale_CHM300[sys] ,    "hscale_CHM300"+sys)  
-    fout.WriteTObject( hscale_CHM350[sys] ,    "hscale_CHM350"+sys)  
-    fout.WriteTObject( hscale_CHM400[sys] ,    "hscale_CHM400"+sys)  
-    fout.WriteTObject( hscale_CHM500[sys] ,    "hscale_CHM500"+sys)  
-    fout.WriteTObject( hscale_CHM600[sys] ,    "hscale_CHM600"+sys)  
-    fout.WriteTObject( hscale_CHM700[sys] ,    "hscale_CHM700"+sys)  
-    fout.WriteTObject( hscale_CHM800[sys] ,    "hscale_CHM800"+sys)  
-    fout.WriteTObject( hscale_CHM1000[sys] ,    "hscale_CHM1000"+sys) 
-    fout.WriteTObject( hscale_CHM1250[sys] ,    "hscale_CHM1250"+sys) 
-    fout.WriteTObject( hscale_CHM1500[sys] ,    "hscale_CHM1500"+sys) 
-    fout.WriteTObject( hscale_CHM1750[sys] ,    "hscale_CHM1750"+sys) 
-    fout.WriteTObject( hscale_CHM2000[sys] ,    "hscale_CHM2000"+sys) 
-    fout.WriteTObject( hscale_CHM2500[sys] ,    "hscale_CHM2500"+sys) 
-    fout.WriteTObject( hscale_CHM3000[sys] ,    "hscale_CHM3000"+sys) 
 
 
 

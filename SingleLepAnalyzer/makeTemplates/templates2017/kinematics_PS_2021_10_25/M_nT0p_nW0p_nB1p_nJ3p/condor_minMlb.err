@@ -1,0 +1,8 @@
+./condor_exec.exe: line 16: setenv: command not found
+WARNING: In non-interactive mode release checks e.g. deprecated releases, production architectures are disabled.
+Traceback (most recent call last):
+  File "doHists.py", line 371, in <module>
+    datahists.update(analyze(tTreeData,data,data,cutList,False,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
+  File "/storage/local/data1/condor/execute/dir_15581/analyze.py", line 376, in analyze
+    fullcut = cut+isEMCut+nbtagCut+nttagCut+nWtagCut+njetsCut
+UnboundLocalError: local variable 'njetsCut' referenced before assignment

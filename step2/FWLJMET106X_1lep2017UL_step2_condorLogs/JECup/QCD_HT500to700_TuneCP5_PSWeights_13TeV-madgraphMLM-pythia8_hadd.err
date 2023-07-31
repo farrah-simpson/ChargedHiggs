@@ -1,0 +1,121 @@
+WARNING: In non-interactive mode release checks e.g. deprecated releases, production architectures are disabled.
+
+ *** Break *** segmentation violation
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+
+Thread 6 (Thread 0x7fc29324a700 (LWP 149)):
+#0  0x00007fc2a39aed19 in syscall () from /lib64/libc.so.6
+#1  0x00007fc295cb479e in XrdSys::LinuxSemaphore::Wait (this=0xa06e800) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/./XrdSys/XrdSysLinuxSemaphore.hh:161
+#2  XrdCl::SyncQueue<XrdCl::JobManager::JobHelper>::Get (this=0xa29be98) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/./XrdCl/XrdClSyncQueue.hh:67
+#3  XrdCl::JobManager::RunJobs (this=0xa29be80) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdCl/XrdClJobManager.cc:146
+#4  0x00007fc295cb4989 in RunRunnerThread (arg=<optimized out>) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdCl/XrdClJobManager.cc:33
+#5  0x00007fc2a3c8bea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007fc2a39b49fd in clone () from /lib64/libc.so.6
+
+Thread 5 (Thread 0x7fc293a4b700 (LWP 148)):
+#0  0x00007fc2a39aed19 in syscall () from /lib64/libc.so.6
+#1  0x00007fc295cb479e in XrdSys::LinuxSemaphore::Wait (this=0xa06e800) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/./XrdSys/XrdSysLinuxSemaphore.hh:161
+#2  XrdCl::SyncQueue<XrdCl::JobManager::JobHelper>::Get (this=0xa29be98) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/./XrdCl/XrdClSyncQueue.hh:67
+#3  XrdCl::JobManager::RunJobs (this=0xa29be80) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdCl/XrdClJobManager.cc:146
+#4  0x00007fc295cb4989 in RunRunnerThread (arg=<optimized out>) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdCl/XrdClJobManager.cc:33
+#5  0x00007fc2a3c8bea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007fc2a39b49fd in clone () from /lib64/libc.so.6
+
+Thread 4 (Thread 0x7fc29424c700 (LWP 147)):
+#0  0x00007fc2a39aed19 in syscall () from /lib64/libc.so.6
+#1  0x00007fc295cb479e in XrdSys::LinuxSemaphore::Wait (this=0xa06e800) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/./XrdSys/XrdSysLinuxSemaphore.hh:161
+#2  XrdCl::SyncQueue<XrdCl::JobManager::JobHelper>::Get (this=0xa29be98) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/./XrdCl/XrdClSyncQueue.hh:67
+#3  XrdCl::JobManager::RunJobs (this=0xa29be80) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdCl/XrdClJobManager.cc:146
+#4  0x00007fc295cb4989 in RunRunnerThread (arg=<optimized out>) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdCl/XrdClJobManager.cc:33
+#5  0x00007fc2a3c8bea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007fc2a39b49fd in clone () from /lib64/libc.so.6
+
+Thread 3 (Thread 0x7fc294a4d700 (LWP 146)):
+#0  0x00007fc2a3c92e9d in nanosleep () from /lib64/libpthread.so.0
+#1  0x00007fc295dc3ded in XrdSysTimer::Wait (mills=<optimized out>) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdSys/XrdSysTimer.cc:239
+#2  0x00007fc295c58118 in XrdCl::TaskManager::RunTasks (this=0xa28d470) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdCl/XrdClTaskManager.cc:244
+#3  0x00007fc295c58269 in RunRunnerThread (arg=<optimized out>) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdCl/XrdClTaskManager.cc:37
+#4  0x00007fc2a3c8bea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fc2a39b49fd in clone () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7fc29524e700 (LWP 145)):
+#0  0x00007fc2a39b4fd3 in epoll_wait () from /lib64/libc.so.6
+#1  0x00007fc295dc8c17 in XrdSys::IOEvents::PollE::Begin (this=0x92091e0, syncsem=<optimized out>, retcode=<optimized out>, eTxt=<optimized out>) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/./XrdSys/XrdSysIOEventsPollE.icc:213
+#2  0x00007fc295dc54f5 in XrdSys::IOEvents::BootStrap::Start (parg=0x7ffcc2d48830) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdSys/XrdSysIOEvents.cc:131
+#3  0x00007fc295dc35e8 in XrdSysThread_Xeq (myargs=0xa2aaaa0) at /build/cmsbld/auto-builds/CMSSW_10_2_0_pre6-slc7_amd64_gcc700/build/CMSSW_10_2_0_pre6-build/BUILD/slc7_amd64_gcc700/external/xrootd/4.8.3-gnimlf/xrootd-4.8.3/src/XrdSys/XrdSysPthread.cc:86
+#4  0x00007fc2a3c8bea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fc2a39b49fd in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7fc2a4620980 (LWP 121)):
+#0  0x00007fc2a397b549 in waitpid () from /lib64/libc.so.6
+#1  0x00007fc2a38f8f62 in do_system () from /lib64/libc.so.6
+#2  0x00007fc2a38f9311 in system () from /lib64/libc.so.6
+#3  0x00007fc2a44baa8b in TUnixSystem::StackTrace() () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.12.07-gnimlf5/lib/libCore.so
+#4  0x00007fc2a44bd0cc in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.12.07-gnimlf5/lib/libCore.so
+#5  <signal handler called>
+#6  0x00007fc2981c9846 in TTree::GetCurrentFile() const () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.12.07-gnimlf5/lib/libTree.so
+#7  0x00007fc295e7337b in ?? ()
+#8  0x000000000a695190 in ?? ()
+#9  0x000000000a694c90 in ?? ()
+#10 0x000000000a5e3b40 in ?? ()
+#11 0x000000000a5e3640 in ?? ()
+#12 0x000000000a2adc30 in ?? ()
+#13 0x00007ffcc2d4a920 in ?? ()
+#14 0x000000000ca1a600 in ?? ()
+#15 0x000000000ca16700 in ?? ()
+#16 0x000000000a424010 in ?? ()
+#17 0x00007ffcc2d4a920 in ?? ()
+#18 0x00007ffcc2d4a840 in ?? ()
+#19 0x00007fc295e736cc in ?? ()
+#20 0x0000000008c6aa50 in ?? ()
+#21 0x00007ffcc2d4a920 in ?? ()
+#22 0x00007ffcc2d4c700 in ?? ()
+#23 0x00007fc295eb8b31 in ?? ()
+#24 0x0000000009201700 in ?? ()
+#25 0x0000000009201700 in ?? ()
+#26 0x00007ffcc2d4a8a8 in ?? ()
+#27 0x0000000000000006 in ?? ()
+#28 0x0000000000000000 in ?? ()
+===========================================================
+
+
+The lines below might hint at the cause of the crash.
+You may get help by asking at the ROOT forum http://root.cern.ch/forum.
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at http://root.cern.ch/bugs. Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#6  0x00007fc2981c9846 in TTree::GetCurrentFile() const () from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/lcg/root/6.12.07-gnimlf5/lib/libTree.so
+#7  0x00007fc295e7337b in ?? ()
+#8  0x000000000a695190 in ?? ()
+#9  0x000000000a694c90 in ?? ()
+#10 0x000000000a5e3b40 in ?? ()
+#11 0x000000000a5e3640 in ?? ()
+#12 0x000000000a2adc30 in ?? ()
+#13 0x00007ffcc2d4a920 in ?? ()
+#14 0x000000000ca1a600 in ?? ()
+#15 0x000000000ca16700 in ?? ()
+#16 0x000000000a424010 in ?? ()
+#17 0x00007ffcc2d4a920 in ?? ()
+#18 0x00007ffcc2d4a840 in ?? ()
+#19 0x00007fc295e736cc in ?? ()
+#20 0x0000000008c6aa50 in ?? ()
+#21 0x00007ffcc2d4a920 in ?? ()
+#22 0x00007ffcc2d4c700 in ?? ()
+#23 0x00007fc295eb8b31 in ?? ()
+#24 0x0000000009201700 in ?? ()
+#25 0x0000000009201700 in ?? ()
+#26 0x00007ffcc2d4a8a8 in ?? ()
+#27 0x0000000000000006 in ?? ()
+#28 0x0000000000000000 in ?? ()
+===========================================================
+
+
+[250.8kB/250.8kB][100%][==================================================][250.8kB/s]  [250.8kB/250.8kB][100%][==================================================][250.8kB/s]  

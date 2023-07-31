@@ -34,7 +34,7 @@ eosoutdir = "root://cmseos.fnal.gov/"+eosoutdir
 
 for file in rootfiles:
     if 'root' not in file: continue
-#    if not 'QCD_HT200to300_' in file: continue
+#    if not 'tH_tH_x53x53_narrow_MX1200_MH400' in file: continue
 #    if 'TTTo' in file: continue
     rawname = file[:-6]
     count+=1
