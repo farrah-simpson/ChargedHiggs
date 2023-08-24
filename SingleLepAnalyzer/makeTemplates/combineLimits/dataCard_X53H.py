@@ -216,22 +216,26 @@ def go(cb):
 if __name__ == '__main__':
 	cb = ch.CombineHarvester()
 	#cb.SetVerbosity(20)
-	signal = 'X53M'#'X53M'+sys.argv[4]+'MH'+sys.argv[5]
-	iPlot= 'HT'
-	era = 'R17'
+	signal = 'X53M'+sys.argv[4]
+	#Esignal = 'X53M'+sys.argv[4]+'MH'+sys.argv[5]
+	iPlot= sys.argv[3]
+	era = sys.argv[2]
         template = sys.argv[1]
 	#cutString = sys.argv[4]
-	massH = '400'
+	#massH = '400'
 	lumiStr = '41p53fb'
 	if era=='R18': lumiStr = '59p97fb'
-	tag = '_wNegBinsCorrec_'#'_50GeV_100GeVnB2'
+	tag = ''#_wNegBinsCorrec_'#'_50GeV_100GeVnB2'
 	saveKey = '_'+iPlot#'_Njet50pct_centValSF'
 	fileDir = '/uscms/home/fsimpson/nobackup/scratch/FWLJMETstuff/CMSSW_10_2_10/src/ChargedHiggs/SingleLepAnalyzer/makeTemplates/'
 	#template = 'M500_2020_11_23_topPtRW_NC_allweights_DJ'#era+'_'+sys.argv[3]#nonjetsf_lepPt20_2020_9_3'
+	#if not os.path.exists('./limits_'+signal+'_'+massH+'_'+template+saveKey): os.system('mkdir ./limits_'+signal+'_'+massH+'_'+template+saveKey)
+	#os.system('cp '+fileDir+template+'/templates_'+iPlot+'_'+lumiStr+tag+'_rebinned_stat0p3.root ./limits_'+signal+'_'+massH+'_'+template+saveKey+'/')
+	#rfile = './limits_'+signal+'_'+massH+'_'+template+saveKey+'/templates_'+iPlot+'_'+lumiStr+tag+'_rebinned_stat0p3.root'
 	if not os.path.exists('./limits_'+signal+'_'+massH+'_'+template+saveKey): os.system('mkdir ./limits_'+signal+'_'+massH+'_'+template+saveKey)
-	os.system('cp '+fileDir+template+'/templates_'+iPlot+'_'+lumiStr+tag+'_rebinned_stat0p3.root ./limits_'+signal+'_'+massH+'_'+template+saveKey+'/')
-	rfile = './limits_'+signal+'_'+massH+'_'+template+saveKey+'/templates_'+iPlot+'_'+lumiStr+tag+'_rebinned_stat0p3.root'
-	
+	os.system('cp '+fileDir+template+'/templates_'+iPlot+'_'+lumiStr+tag+'.root ./limits_'+signal+'_'+template+saveKey+'/')
+	rfile = './limits_'+signal++'_'+template+saveKey+'/templates_'+iPlot+'_'+lumiStr+tag+'.root'
+		
 	ttbkgs = ['ttnobb','ttbb'] # ['ttjj','ttcc','ttbb','ttbj']
 	allbkgs = ['top','ewk','QCD']
 	dataName = 'data_obs'
@@ -258,5 +262,5 @@ if __name__ == '__main__':
 	cats = {}
 	for chn in chns: cats[chn] = [(0, '')]
 	
-	masses = ch.ValsFromRange('600,700,800,900,1000,1100,1200,1500')
+	masses = ch.ValsFromRange('700,800,900,1000,1100,1200,1500,1600')
 	go(cb)

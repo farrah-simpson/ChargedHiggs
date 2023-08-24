@@ -7,7 +7,7 @@ thisDir = os.getcwd()
 outputDir = thisDir+'/'
 
 region='PS' #SR,CR --> matters only when plotting kinematics
-categorize=0 #1==categorize into t/W/b/j, 0==only split into flavor
+categorize=1 #1==categorize into t/W/b/j, 0==only split into flavor
 
 cTime=datetime.datetime.now()
 date='%i_%i_%i'%(cTime.year,cTime.month,cTime.day)
@@ -17,7 +17,7 @@ iPlotList = [#distribution name as defined in "doHists.py"
 'Jet1Pt',
 'ST',
 'minMlb',
-'topPt',
+#'topPt',
 #'mass_minBBdr',
 #'deltaR_lepBJet_maxpt',
 #'lepDR_minBBdr',
@@ -33,9 +33,9 @@ iPlotList = [#distribution name as defined in "doHists.py"
 #'FW_momentum_5',
 #'FW_momentum_6',
 #'mass_maxJJJpt',
-#'Bjet1Pt',
+'Bjet1Pt',
 #'deltaR_minBB',
-#'deltaR',
+'deltaR',
 #'MTlmet',
 'HT',
 #'hemiout',
@@ -51,7 +51,7 @@ iPlotList = [#distribution name as defined in "doHists.py"
 #'secondJetPt',
 #'fifthJetPt',
 #'sixthJetPt',
-#'PtFifthJet',
+'PtFifthJet',
 #'mass_minLLdr',
 #'mass_maxBBmass',
 #'deltaR_lepJetInMinMljet',

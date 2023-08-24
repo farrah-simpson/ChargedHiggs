@@ -23,9 +23,9 @@ for conf in cutConfigs:
 	{
 	'year':'R17',
 	'variable':'HT',
-	'postfix': 'kinematics_PS_2021_11_16', #'66vars_4j_pt20',
+	'postfix': 'templates_2023_7_27', #'66vars_4j_pt20',
 	'cutString': cutString,
-	'path':'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106X_1lep2017UL_step2/'
+	'path':'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/'
 	},
 	#{
 	#'year':'R17',

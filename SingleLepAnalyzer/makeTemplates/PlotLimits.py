@@ -8,11 +8,11 @@ gROOT.SetBatch(1)
 from tdrstyle import *
 setTDRStyle()
 
-mH = '400' 
 chiral = ''
 year = 'R17'
 blind=True
 signal = 'X53'
+if signal == 'X53H': mH = '400' 
 if year == 'R17':lumiPlot = '41.53' #update '2.3'
 if year == 'R18':lumiPlot = '59.97'
 
@@ -21,7 +21,7 @@ discriminant='HT'
 #if chiral == 'RH': mass_str = ['900','1000','1100','1200','1300','1400','1500','1600','1700']
 #if chiral == 'LH'and year == 'R17': mass_str = ['1100','1200','1400','1700']
 #if chiral == 'LH'and year == 'R18': mass_str = ['1100','1200','1400','1500','1700']
-mass_str = ['600','700','800','900','1000','1100','1200','1500']#'1100','1200','1400','1500','1700']
+mass_str = ['700','800','900','1000','1100','1200','1500','1600']
 
 theory_xsec_dicts = {'600': 1.161,'700':0.455,'800':0.196,'900':0.0903,'1000':0.0440,'1100':0.0224,'1200':0.0118,'1300':0.00639,'1400':0.00354,'1500':0.00200,'1600':0.001148, '1700':0.000666}
 theory_xsec = [theory_xsec_dicts[item] for item in mass_str]
@@ -159,7 +159,7 @@ def PlotLimits(json_file,chiral,binning,saveKey):
 
     expected95.Draw("a3")
     expected95.GetYaxis().SetRangeUser(.0008+.00001,1.45)
-    expected95.GetXaxis().SetRangeUser(600,1500)
+    expected95.GetXaxis().SetRangeUser(900,1700)#(700,1600)
     if signal=='X53':
     	expected95.GetXaxis().SetTitle("X_{5/3} mass [GeV]")
     	expected95.GetYaxis().SetTitle("#sigma(X_{5/3}#bar{X}_{5/3})[pb]")#- "+chiral.replace('left','LH').replace('right','RH'))
@@ -211,10 +211,15 @@ def PlotLimits(json_file,chiral,binning,saveKey):
     folder = '.'
     outDir=folder+'/'+year+'plots'+'/'
     if not os.path.exists(outDir): os.system('mkdir '+outDir)
-    histPrefix=discriminant+'_'+lumiPlot.replace('.','p')+'fb'+chiral
-    c4.SaveAs(outDir+'/LimitPlot_'+histPrefix+'_'+str(binning)+'H'+mH.replace('.','p')+saveKey+'.eps')
-    c4.SaveAs(outDir+'/LimitPlot_'+histPrefix+'_'+str(binning)+'H'+mH.replace('.','p')+saveKey+'.pdf')
-    c4.SaveAs(outDir+'/LimitPlot_'+histPrefix+'_'+str(binning)+'H'+mH.replace('.','p')+saveKey+'.png')
+    histPrefix=discriminant+'_'+lumiPlot.replace('.','p')+'fb'
+    if signal == 'X53H':
+        c4.SaveAs(outDir+'/LimitPlot_'+histPrefix+'_'+str(binning)+'H'+mH.replace('.','p')+saveKey+'.eps')
+        c4.SaveAs(outDir+'/LimitPlot_'+histPrefix+'_'+str(binning)+'H'+mH.replace('.','p')+saveKey+'.pdf')
+        c4.SaveAs(outDir+'/LimitPlot_'+histPrefix+'_'+str(binning)+'H'+mH.replace('.','p')+saveKey+'.png')
+    else:
+        c4.SaveAs(outDir+'/LimitPlot_'+histPrefix+'_'+str(binning).replace('.','p')+saveKey+'.eps')
+        c4.SaveAs(outDir+'/LimitPlot_'+histPrefix+'_'+str(binning).replace('.','p')+saveKey+'.pdf')
+        c4.SaveAs(outDir+'/LimitPlot_'+histPrefix+'_'+str(binning).replace('.','p')+saveKey+'.png')
     return int(round(limExpected)), int(round(limObserved))
 
 #PlotLimits(json_file,chiral,binning,saveKey)
@@ -223,10 +228,10 @@ def PlotLimits(json_file,chiral,binning,saveKey):
 #expLim,obsLim = PlotLimits('LIMITS_LH/limits_isSR_isE.json','LH','0p2','_isE')
 #expLim,obsLim = PlotLimits('LIMITS_LH/limits_isSR_isM.json','LH','0p2','_isM')
 #expLim,obsLim = PlotLimits('LIMITS_LH/limits_cmb.json','LH','0p2','_all')
-#print "=========>>>>>>>>>>> X53X53_RH"
-#expLim,obsLim = PlotLimits('LIMITS_RH/limits_isSR_isE.json','RH','0p2','_isE')
-#expLim,obsLim = PlotLimits('LIMITS_RH/limits_isSR_isM.json','RH','0p2','_isM')
-expLim,obsLim = PlotLimits('limits_X53M_'+mH+'_kinematics_PS_2021_11_16_HT/limits_cmb.json','','','')
+print "=========>>>>>>>>>>> X53X53_RH"
+#expLim,obsLim = PlotLimits('limits_2023_8_14_/limits_isSR_isE.json','RH','0p3','_isE')
+#expLim,obsLim = PlotLimits('limits_2023_8_14_/limits_isSR_isM.json','RH','0p3','_isM')
+expLim,obsLim = PlotLimits('limits'+'_2023_8_21_/limits_cmb.json','RH','rebinned_stat0p3','')
 
 
 

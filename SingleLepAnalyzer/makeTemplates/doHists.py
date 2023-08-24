@@ -43,7 +43,7 @@ bkgList = [
 		  'WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800', 'WJetsMG1200',
 		  #'WJetsMG1200_1','WJetsMG1200_2','WJetsMG1200_3','WJetsMG1200_4','WJetsMG1200_5',
 		  #'WJetsMG2500_1','WJetsMG2500_2','WJetsMG2500_3','WJetsMG2500_4','WJetsMG2500_5', 'WJetsMG2500_6',
-
+		  #'TTHH','TTWH','TTWW','TTWZ','TTZH','TTZZ',
 	 	  'TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000',		  
 		  'TTJetsHad0','TTJetsHad700','TTJetsHad1000',		 
           #        'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic', 
@@ -54,7 +54,7 @@ bkgList = [
 		  'TTJetsSemiLep0','TTJetsSemiLep700','TTJetsSemiLep1000',
 		  'TTJets700mtt','TTJets1000mtt',
 		  'TTWl','TTWq',
-                  'TTZl',#'TTTT',
+                  'TTZlM10','TTZlM1to10',#TTTT',
           'WW','WZ','ZZ',
 		  'TTHB','TTHnoB',
 		  ]
@@ -62,11 +62,9 @@ bkgList = [
 ttFlvs = []#'_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
 dataList = ['DataE','DataM']
 
-whichSignal = 'X53'#'X53H' #Hptb,HTB, TTM, BBM, or X53X53M
-mass = range(700,1600+1,100)
-
+whichSignal = 'X53'#'X53H' #Hptb,HTB, TTM, BBM, or X53X53M mass = range(700,1600+1,100)
 #sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
-if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 if whichSignal == 'X53':
 	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
 if whichSignal=='Hptb'or 'X53' or 'X53H': decays = ['']
@@ -81,7 +79,7 @@ isCategorized = False
 BDTSR_Merged = False
 if len(sys.argv)>4: isCategorized=int(sys.argv[4])
 doJetRwt= 0
-doAllSys= False 
+doAllSys= True 
 
 cutList = {'lepPtCut':100,'metCut':100,'mtCut':0,'drCut':1.0,'jet1PtCut':200,'jet2PtCut':100,'jet3PtCut':0, 'AK4HTCut':510}
 #cutList = {'lepPtCut':100,'metCut':150,'mtCut':0,'drCut':1.25,'jet1PtCut':200,'jet2PtCut':100,'jet3PtCut':0, 'AK4HTCut':510}
@@ -321,13 +319,35 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
 
 
         
-        'HTpt40':('HT_pt40', linspace(0, 5000, 101).tolist(),';H_{T} (pt>40) [GeV]'),
-	'HTpBDT':('AK4HT',linspace(0, 5000, 126).tolist(),';H_{T} [GeV]','BDT'+sigTrained,linspace(-1, 1, 126).tolist(),';BDT'),
-	'HTpDNN':('AK4HT',linspace(0, 5000, 126).tolist(),';H_{T} [GeV]','DNN'+sigTrained,linspace(-1, 1, 126).tolist(),';DNN'),
-	'minMlbpBDT':('minMleppBjet',linspace(0, 1000, 51).tolist(),';min[M(l,b)] [GeV]','BDT'+sigTrained,linspace(-1, 1, 201).tolist(),';BDT'),
+#        'HTpt40':('HT_pt40', linspace(0, 5000, 101).tolist(),';H_{T} (pt>40) [GeV]'),
+#	'HTpBDT':('AK4HT',linspace(0, 5000, 126).tolist(),';H_{T} [GeV]','BDT'+sigTrained,linspace(-1, 1, 126).tolist(),';BDT'),
+#	'HTpDNN':('AK4HT',linspace(0, 5000, 126).tolist(),';H_{T} [GeV]','DNN'+sigTrained,linspace(-1, 1, 126).tolist(),';DNN'),
+#	'minMlbpBDT':('minMleppBjet',linspace(0, 1000, 51).tolist(),';min[M(l,b)] [GeV]','BDT'+sigTrained,linspace(-1, 1, 201).tolist(),';BDT'),
 
 	'NJets_vs_NBJets':('NJets_MultiLepCalc:NJetsCSV_MultiLepCalc',linspace(0, 15, 16).tolist(),';jet multiplicity',linspace(0, 10, 11).tolist(),';b tag multiplicity'),
 
+	'deltaRAK8':('minDR_leadAK8otherAK8',linspace(0,5,51).tolist(),';min #DeltaR(1^{st} AK8 jet, other AK8 jet)'),
+	'MTlmet':('MT_lepMet',linspace(0,250,51).tolist(),';M_{T}(l,#slash{E}_{T}) [GeV]'),
+	'nTrueInt':('nTrueInteractions_MultiLepCalc',linspace(0, 75, 76).tolist(),';# true interactions'),
+	'NWJets':('NJetsWtagged',linspace(0, 6, 7).tolist(),';W-tagged jet multiplicity'),
+	'NTJets':('NJetsTtagged',linspace(0, 4, 5).tolist(),';t-tagged jet multiplicity'),
+	'NJetsAK8':('NJetsAK8_JetSubCalc',linspace(0, 8, 9).tolist(),';AK8 jet multiplicity'),
+	'JetPtAK8':('theJetAK8Pt_JetSubCalc_PtOrdered',linspace(0, 1500, 51).tolist(),';AK8 jet p_{T} [GeV]'),
+	'JetEtaAK8':('theJetAK8Eta_JetSubCalc_PtOrdered',linspace(-4, 4, 41).tolist(),';AK8 jet #eta'),
+	'mindeltaR':('minDR_lepJet',linspace(0, 5, 51).tolist(),';#DeltaR(l, closest jet)'),
+	'deltaRjet1':('deltaR_lepJets[0]',linspace(0, 5, 51).tolist(),';#DeltaR(l,j_{1})'),
+	'deltaRjet2':('deltaR_lepJets[1]',linspace(0, 5, 51).tolist(),';#DeltaR(l,j_{2})'),
+	'deltaRjet3':('deltaR_lepJets[2]',linspace(0, 5, 51).tolist(),';#DeltaR(l,j_{3})'),
+	'METphi':('corr_met_phi_singleLepCalc',linspace(-3.2,3.2,65).tolist(),';#phi(#slash{E}_{T})'),
+	'lepPhi':('leptonPhi_singleLepCalc',linspace(-3.2,3.2,65).tolist(),';#phi(l)'),
+	'WvsQCD':('theJetParticleNeWvsQCD_JetSubCalc_PtOrdered',linspace(0,1,51).tolist(),';AK8 Jet #ParticleNetWvsQCD'),
+	'TvsQCD':('theJetParticleNetTvsQCD_JetSubCalc_PtOrdered',linspace(0,1,51).tolist(),';AK8 Jet #ParticleNet:TvsQCD'),
+	'JetPhi':('theJetPhi_JetSubCalc_PtOrdered',linspace(-3.2,3.2,65).tolist(),';AK4 Jet #phi'),
+	'JetPhiAK8':('theJetAK8Phi_JetSubCalc_PtOrdered',linspace(-3.2,3.2,65).tolist(),';AK8 Jet #phi'),
+	'Wjet1Pt':('WJetLeadPt',linspace(0,1500,51).tolist(),';p_{T}(W_{1}) [GeV]'),
+	'Tjet1Pt':('TJetLeadPt',linspace(0,1500,51).tolist(),';p_{T}(t_{1}) [GeV]'),
+	'minMlj':('minMleppJet',linspace(0,1000,51).tolist(),';min[M(l,j)] [GeV], j #neq b'),
+	'PtRel':('ptRel_lepJet',linspace(0,500,51).tolist(),';p_{T,rel}(l, closest jet) [GeV]'),
 	}
 
 print "PLOTTING:",iPlot
