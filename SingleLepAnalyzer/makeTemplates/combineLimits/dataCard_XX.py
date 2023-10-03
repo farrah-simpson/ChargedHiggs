@@ -9,7 +9,7 @@ sys.path.append(parent)
 from utils import *
 gROOT.SetBatch(1)
 
-def add_processes_and_observations(cb, prefix='X53RH'):#prefix='X53M'):
+def add_processes_and_observations(cb, prefix='X53M'):#prefix='X53RH'):#prefix='X53M'):
 	print '>> Creating processes and observations...'
 	if prefix!='tttt' and not prefix.endswith('M'): prefix+='M'
 	for chn in chns:
@@ -30,7 +30,7 @@ def add_shapes(cb):
 		cb.cp().channel([chn]).era([era]).backgrounds().ExtractShapes(
 			rfile, bkg_pattern, bkg_pattern + '__$SYSTEMATIC')
 		
-		sig_pattern = iPlot+'_'+lumiStr+'_%s$BIN__$PROCESS$MASS' % chn #add MH400
+		sig_pattern = iPlot+'_'+lumiStr+'_%s$BIN__$PROCESS$MASSMH200' % chn #add MH400
 		if 'isCR' not in chn:
 			cb.cp().channel([chn]).era([era]).signals().ExtractShapes(
 				rfile, sig_pattern, sig_pattern + '__$SYSTEMATIC')
@@ -96,7 +96,7 @@ def add_standard_systematics(cb):
 # 	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, smoothAlgo+'JEC_BBEC1', 'shape', ch.SystMap()(1.0))
 # 	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, smoothAlgo+'JEC_BBEC1_'+era.replace('R','20'), 'shape', ch.SystMap()(1.0))
 #	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'JER', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
-	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'PNW', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+#ADD!	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'PNW', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
 ###!	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'PNWpt', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
 ###!   	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'jmst', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) #same as jmr?? Necessary for PN? 
 ###!   	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'jmsW', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) #same as jmr?? Necessary for PN?
@@ -107,7 +107,7 @@ def add_standard_systematics(cb):
 		cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'prefire', 'shape', ch.SystMap()(1.0))
 # 	if era=='R18':
 # 		cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, smoothAlgo+'hem', 'shape', ch.SystMap()(1.0))
-	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'pileup', 'shape', ch.SystMap()(1.0)) # Correlated: https://hypernews.cern.ch/HyperNews/CMS/get/b2g/1381.html
+	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'pileup_$ERA', 'shape', ch.SystMap()(1.0)) # Correlated: https://hypernews.cern.ch/HyperNews/CMS/get/b2g/1381.html
 #	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, smoothAlgo+'btag_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
 #	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, smoothAlgo+'mistag_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
 ### btagging	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'btag', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
@@ -140,6 +140,39 @@ def add_standard_systematics(cb):
 # 	cb.cp().process(ttbkgs).channel(chns).AddSyst(cb, 'hdamp', 'shape', ch.SystMap()(1.0))
  	#cb.cp().process(allbkgs[0]).channel(chns).AddSyst(cb, 'toppt', 'shape', ch.SystMap()(1.0)) # Correlated; Ex: B2G-19-003/AN2015_174_v14 (since it is assumed that the affect of this correction should be consistent across years)
    	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'pdfNew', 'shape', ch.SystMap()(1.0)) 
+
+	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'LFstat1_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'LFstat2_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'HFstat1_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'HFstat2_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'CFerr1_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'CFerr2_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'DJjes_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0))
+        
+	#if era=='R17':
+	#	cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'prefire', 'shape', ch.SystMap()(1.0))
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'pileup', 'shape', ch.SystMap()(1.0)) # Correlated: https://hypernews.cern.ch/HyperNews/CMS/get/b2g/1381.html
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'btag_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'mistag_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Ex: B2G-19-001/AN2018_322_v7
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'hotstat_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Use same logic as b-tagging?
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'hotcspur_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Use same logic as b-tagging?
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'hotclosure_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; Use same logic as b-tagging?
+	#for proc in allbkgs:
+	#	if proc in ttbkgs: cb.cp().process([proc]).channel(chns).AddSyst(cb, 'muRF_tt', 'shape', ch.SystMap()(1.0)) # Correlated, PDF and QCD Scale (not recalculated in 2018); Ex: B2G-19-001/AN2018_322_v7 
+	#	else: cb.cp().process([proc]).channel(chns).AddSyst(cb, 'muRF_'+proc, 'shape', ch.SystMap()(1.0)) # Correlated, PDF and QCD Scale (not recalculated in 2018); Ex: B2G-19-001/AN2018_322_v7 
+	#cb.cp().process(signal).channel(chns).AddSyst(cb, 'muRF_tttt', 'shape', ch.SystMap()(1.0)) # Correlated, PDF and QCD Scale (not recalculated in 2018); Ex: B2G-19-001/AN2018_322_v7 
+	#for proc in allbkgs:
+	#	if proc in ttbkgs: cb.cp().process([proc]).channel(chns).AddSyst(cb, 'PSwgt_tt_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; TOP-18-003/AN2018_062_v17 (derived from different datasets and with respect to different MC samples)
+	#	else: cb.cp().process([proc]).channel(chns).AddSyst(cb, 'PSwgt_'+proc+'_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; TOP-18-003/AN2018_062_v17 (derived from different datasets and with respect to different MC samples)
+	#cb.cp().process(signal).channel(chns).AddSyst(cb, 'PSwgt_tttt_$ERA', 'shape', ch.SystMap('era')(['R16'], 1.0)(['R17'], 1.0)(['R18'], 1.0)) # Uncorrelated; TOP-18-003/AN2018_062_v17 (derived from different datasets and with respect to different MC samples)
+	#cb.cp().process(signal + allbkgs).channel(chns).AddSyst(cb, 'pdf', 'shape', ch.SystMap()(1.0)) # Correlated, PDF and QCD Scale (not recalculated in 2018); Ex: B2G-19-001/AN2018_322_v7 
+ 	#cb.cp().process(ttbkgs).channel(chns).AddSyst(cb, 'ue', 'shape', ch.SystMap()(1.0))
+ 	#cb.cp().process(ttbkgs).channel(chns).AddSyst(cb, 'hdamp', 'shape', ch.SystMap()(1.0))
+ 	#cb.cp().process(ttbkgs).channel(chns).AddSyst(cb, 'toppt', 'shape', ch.SystMap()(1.0)) # Correlated; Ex: B2G-19-003/AN2015_174_v14 (since it is assumed that the affect of this correction should be consistent across years)
+	cb.cp().process( ttbkgs).channel(chns).AddSyst(cb, 'xsec_ttbar', 'lnN', ch.SystMap()([0.945,1.048])) # (scale and pdf added in quadrature) from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/TtbarNNLO; Ex: HIG-18-004/AN2017_090_v12/Table13 and HIG-19-011/AN2019_094_v10/Table79-80
+	cb.cp().process(['ewk']).channel(chns).AddSyst(cb, 'xsec_ewk', 'lnN', ch.SystMap()(1.038)) # (scale and pdf added in quadrature) from https://twiki.cern.ch/twiki/bin/viewauth/CMS/StandardModelCrossSectionsat13TeV; Ex: HIG-18-004/AN2017_090_v12/Table13 and HIG-19-011/AN2019_094_v10/Table79-80
+	cb.cp().process(['top']).channel(chns).AddSyst(cb, 'xsec_top', 'lnN', ch.SystMap()(1.5)) # ttV,ttH, and tt+XY uncertainties are 50% in OSDL and SSDL analyses, so aligning it with this inflated uncertainty.
+	# Additional TOP bkg group x-sec uncertainties tested:
 
 def add_HF_systematics(cb):
 	print '>> Adding HF systematic uncertainties...'
@@ -269,12 +302,14 @@ if __name__ == '__main__':
 # 	if era=='R18':
 # 		bkg_procs['isSR_isE_nHOT1p_nT0p_nW0p_nB4p_nJ9']=['ttbb', 'ttcc', 'ttjj', 'top']
 
-	signal = 'X53RH'	
+	signal = 'X53'#'X53RH'	
 	sig_procs = [signal]
 	if signal!='tttt':sig_procs = [signal+'M']#['tttt']
 	
 	cats = {}
 	for chn in chns: cats[chn] = [(0, '')]
-	#masses = ch.ValsFromRange('700,800,900,1000,1100,1200,1500')
-	masses = ch.ValsFromRange('700:1600|100')
+	masses = ch.ValsFromRange('600,700,800,900,1000,1100,1200,1500')
+#	masses = ch.ValsFromRange('1000,1100,1200,1500')
+
+	#masses = ch.ValsFromRange('700:1600|100')
 	go(cb)

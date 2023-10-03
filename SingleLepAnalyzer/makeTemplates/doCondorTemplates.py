@@ -7,7 +7,7 @@ thisDir = os.getcwd()
 outputDir = thisDir+'/'
 
 region='PS' #SR,CR --> matters only when plotting kinematics
-categorize=1 #1==categorize into t/W/b/j, 0==only split into flavor
+categorize=0 #1==categorize into t/W/b/j, 0==only split into flavor
 
 cTime=datetime.datetime.now()
 date='%i_%i_%i'%(cTime.year,cTime.month,cTime.day)

@@ -21,8 +21,8 @@ plottop = False
 plotewk = False
 plotqcd = False
 region='PS' #SR,PS
-isCategorized=False#True
-iPlot='HT'
+isCategorized=False
+iPlot='theLeadJetPt'
 if len(sys.argv)>2: iPlot=str(sys.argv[2])
 cutString=''
 pfix='templates'
@@ -42,9 +42,9 @@ if len(sys.argv)>3: massPt=str(sys.argv[3])
 
 if len(sys.argv)>1: templateDir=os.getcwd()+'/'+str(sys.argv[1])+'/'
 else:
-    templateDir=os.getcwd()+'/kinematics_PS_2023_8_22/'
+    templateDir=os.getcwd()+'/kinematics_PS_2023_9_16/'
 
-if whichSig == 'X53H': templateDir2 = os.getcwd()+'/kinematics_PS_2023_8_14/'#templateDir change for old X5/3
+if whichSig == 'X53H': templateDir2 = os.getcwd()+'/kinematics_PS_2023_8_24/'#'/kinematics_PS_2023_8_24/'#templateDir change for old X5/3
 
 
 splitTTbar = False#True
@@ -58,7 +58,7 @@ if whichSig == 'X53':
 
 if whichSig == 'X53H':
     sig1='X53M'+massPt+'MH'+massPtH # choose the 1st signal to plot
-    sig1leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) S^{+} ('+massPtH+' GeV)'
+    sig1leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) H^{+} ('+massPtH+' GeV)'
     M =  massPt
     sig2='X53RHM'+massPt
     sig3 = 'X53M'+massPt+'MH'+massPtH3
@@ -68,10 +68,10 @@ if whichSig == 'X53H':
     
     sig2leg='X_{5/3}#bar{X}_{5/3} RH ('+massPt+' GeV)'
     #sig2leg='X_{5/3}#bar{X}_{5/3} ('+massPt2+' GeV) H^{+} ('+massPtH3+' GeV)'
-    sig3leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) S^{+} ('+massPtH3+' GeV)'
-    sig4leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) S^{+} ('+massPtH4+' GeV)'
-    sig5leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) S^{+} ('+massPtH5+' GeV)'
-    sig6leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) S^{+} ('+massPtH6+' GeV)'
+    sig3leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) H^{+} ('+massPtH3+' GeV)'
+    sig4leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) H^{+} ('+massPtH4+' GeV)'
+    sig5leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) H^{+} ('+massPtH5+' GeV)'
+    sig6leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV) H^{+} ('+massPtH6+' GeV)'
 
 plotCombine = True ### make it False for YLD plot
 scaleSignals = False#True ##check
@@ -116,12 +116,13 @@ if plotqcd:
     plotbkg = 'qcd'
 
 bkgHistColors = {'tt2b':rt.kRed+3,'ttbb':rt.kRed,'tt1b':rt.kRed-3,'ttcc':rt.kRed-5,'ttjj':rt.kRed-7,'top':rt.kBlue,'ewk':rt.kGreen-8,'qcd':rt.kOrange+5,'ttbar':rt.kRed,'ttnobb':rt.kRed-7} #HTB
-systematicList = [
-'CMS_scale_j'       , 'CMS_HPTB_mcreweight_ewk', 'CMS_res_j'        , 'muR_ttbar', 'muF_ttbar',
-'CMS_btag_LF'       , 'CMS_pileup'             , 'CMS_btag_HF'      , 'muR_top'  , 'muF_top'  , 
-'CMS_topreweight' , 'CMS_btag_LFstat1'  , 'CMS_btag_CFerr1'        , 'CMS_btag_HFstat1' ,  #'QCDscaleHptb'    , 
-'CMS_btag_LFstat2'  , 'CMS_btag_CFerr2'        , 'CMS_btag_HFstat2' , 'muR_ewk'  , 'muF_ewk'   
-]
+#systematicList = [
+#'CMS_scale_j'       , 'CMS_HPTB_mcreweight_ewk', 'CMS_res_j'        , 'muR_ttbar', 'muF_ttbar',
+#'CMS_btag_LF'       , 'CMS_pileup'             , 'CMS_btag_HF'      , 'muR_top'  , 'muF_top'  , 
+#'CMS_topreweight' , 'CMS_btag_LFstat1'  , 'CMS_btag_CFerr1'        , 'CMS_btag_HFstat1' ,  #'QCDscaleHptb'    , 
+#'CMS_btag_LFstat2'  , 'CMS_btag_CFerr2'        , 'CMS_btag_HFstat2' , 'muR_ewk'  , 'muF_ewk'   
+#]
+systematicList = ['pileup','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','muRFcorrd','jec','jer','prefire']#,'jmst','jmrt','jmsW','jmrW','trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
 
 doAllSys = False
 doQ2sys  = False
@@ -200,15 +201,15 @@ def formatUpperHist(histogram):
 
 	if 'nB0' in histogram.GetName() and 'minMlb' in histogram.GetName(): histogram.GetXaxis().SetTitle("min[M(l,jets)] (GeV)")
 	histogram.GetYaxis().CenterTitle()
-	histogram.SetMinimum(0.1)
+	#histogram.SetMinimum(0.1)
 	#if not doNormByBinWidth: histogram.SetMaximum(1.5*histogram.GetMaximum())
 	if not yLog: 
 		histogram.SetMaximum(1.2*histogram.GetMaximum())
 		histogram.SetMinimum(0.25)
 	if yLog:
 		uPad.SetLogy()
-		if not doNormByBinWidth: histogram.SetMaximum(1000*histogram.GetMaximum())
-		else: histogram.SetMaximum(1000*histogram.GetMaximum())
+		if not doNormByBinWidth: histogram.SetMaximum(10*histogram.GetMaximum()) #*10000
+		else: histogram.SetMaximum(100*histogram.GetMaximum())
 		
 def formatLowerHist(histogram):
 	histogram.GetXaxis().SetLabelSize(.12)
@@ -243,7 +244,7 @@ if whichSig == 'X53H':
     legy5 = legy4+0.37
     legy6 = legy5+0.37
 
-tagPosX = 0.76
+tagPosX = 0.86
 tagPosY = 0.52
 # 	if drawQCDmerged: legmerged = rt.TLegend(0.45,0.52,0.95,0.87)
 # 	if not drawQCDmerged or blind: legmerged = rt.TLegend(0.45,0.64,0.95,0.89)
@@ -427,6 +428,11 @@ for tag in tagList:
 				except: pass
  			normByBinWidth(hsig1) #UNCOMMENNT
  			normByBinWidth(hsig2)
+ 			normByBinWidth(hsig3)
+ 			normByBinWidth(hsig4)
+ 			normByBinWidth(hsig5)
+ 			normByBinWidth(hsig6)
+
 			normByBinWidth(hData)
 
 		if doAllSys:
@@ -614,7 +620,7 @@ for tag in tagList:
 			lPad.SetTicky(0)
 			lPad.Draw()
 		if not doNormByBinWidth: hData.SetMaximum(1.5*max(hData.GetMaximum(),bkgHT.GetMaximum()))
-		hData.SetMinimum(0.1)
+		#hData.SetMinimum(0.1)
 		hData.SetTitle("")
 		if doNormByBinWidth: 
 			hData.GetYaxis().SetTitle("< Events / GeV >")
@@ -627,7 +633,7 @@ for tag in tagList:
 		hData.SetTitle("")
 		if not blind: hData.Draw("esamex0")
 		if blind: 
-			hsig1.SetMinimum(0.1)
+			#hsig1.SetMinimum(0.1)
 			if doNormByBinWidth: 
 				hsig1.GetYaxis().SetTitle("< Events / GeV >")
 				if 'BDT' in iPlot and isSR(tag[3],tag[2]): hsig1.GetYaxis().SetTitle("< Events / 1.0 units >")
@@ -643,7 +649,7 @@ for tag in tagList:
 			if plottop or plotewk or plotqcd:
 				hsig1.SetMaximum(1.1*hsig1.GetMaximum())
 			hsig1.Draw("HIST")
-		#stackbkgHT.Draw("SAME HIST")
+		#stackbkgHT.Draw("SAME HIST") #include bkg
 		if drawYields: 
 			rt.gStyle.SetPaintTextFormat("1.0f")
 			bkgHT.Draw("SAME TEXT90")
@@ -652,7 +658,7 @@ for tag in tagList:
                 #print 'IM HERE'
  		#print '======'*10
 		if whichSig == 'X53H':
-                	hsig2.Draw("SAME HIST")
+                	#hsig2.Draw("SAME HIST")
                 	hsig3.Draw("SAME HIST")
                 	hsig4.Draw("SAME HIST")
                 	hsig5.Draw("SAME HIST")
@@ -662,7 +668,7 @@ for tag in tagList:
 			hData.Draw("esamex0") #redraw data so its not hidden
 			if drawYields: hData.Draw("SAME TEXT00") 
 		uPad.RedrawAxis()
-		#bkgHTgerr.Draw("SAME E2")
+		#bkgHTgerr.Draw("SAME E2") #include bkg
 		
 		chLatex = rt.TLatex()
 		chLatex.SetNDC()
@@ -724,7 +730,7 @@ for tag in tagList:
 		try: leg.AddEntry(bkghists['ttcc'+catStr],"t#bar{t}+c#bar{c}","f")
 		except: pass
 		if whichSig == 'X53H':
- 			leg.AddEntry(hsig2,sig2leg+scaleFact2Str,"l")
+ 			#leg.AddEntry(hsig2,sig2leg+scaleFact2Str,"l")
  			leg.AddEntry(hsig3,sig3leg+scaleFact3Str,"l")
  			leg.AddEntry(hsig4,sig4leg+scaleFact4Str,"l")
  			leg.AddEntry(hsig5,sig5leg+scaleFact5Str,"l")
@@ -948,8 +954,12 @@ for tag in tagList:
 		for proc in bkgProcList:
 			try: normByBinWidth(bkghistsmerged[proc+'isL'+tagStr])
 			except: pass
-# 		normByBinWidth(hsig1merged)
-# 		normByBinWidth(hsig2merged)
+ 		normByBinWidth(hsig1merged) #UNCOMMENT?
+ 		normByBinWidth(hsig2merged)
+ 		normByBinWidth(hsig3merged)
+ 		normByBinWidth(hsig4merged)
+ 		normByBinWidth(hsig5merged)
+ 		normByBinWidth(hsig6merged)
 		normByBinWidth(hDatamerged)
 
 	if doAllSys:
@@ -1135,7 +1145,7 @@ for tag in tagList:
 		lPad.SetTicky(0)
 		lPad.Draw()
 	if not doNormByBinWidth: hDatamerged.SetMaximum(1.5*max(hDatamerged.GetMaximum(),bkgHTmerged.GetMaximum()))
-	hDatamerged.SetMinimum(0.1)
+	#hDatamerged.SetMinimum(0.1)
 	if doNormByBinWidth: 
 		hDatamerged.GetYaxis().SetTitle("< Events / GeV >")
 		if 'BDT' in iPlot and isSR(tag[3],tag[2]): hDatamerged.GetYaxis().SetTitle("< Events / 1.0 units >")
@@ -1148,7 +1158,7 @@ for tag in tagList:
 	if not blind: 
 		hDatamerged.Draw("esamex0")
         if blind: 
-            hsig1merged.SetMinimum(0.1)
+            #hsig1merged.SetMinimum(0.1)
             if doNormByBinWidth: 
                 hsig1merged.GetYaxis().SetTitle("< Events / GeV >")
                 if 'BDT' in iPlot and isSR(tag[3],tag[2]): hsig1merged.GetYaxis().SetTitle("< Events / 1.0 units >")
@@ -1160,14 +1170,14 @@ for tag in tagList:
             formatUpperHist(hsig4merged)
             formatUpperHist(hsig5merged)
             formatUpperHist(hsig6merged)
-            #hsig1merged.SetMaximum(1.5*hDatamerged.GetMaximum())
+            hsig1merged.SetMaximum(1.5*hDatamerged.GetMaximum())
             if plottop or plotewk or plotqcd:
                 hsig1merged.SetMaximum(1.1*hsig1merged.GetMaximum())
             hsig1merged.Draw("HIST")
-	#stackbkgHTmerged.Draw("SAME HIST")
-#	if drawYields: 
-#		rt.gStyle.SetPaintTextFormat("1.0f")
-#		bkgHTmerged.Draw("SAME TEXT90")
+#	stackbkgHTmerged.Draw("SAME HIST") #include bkg
+	if drawYields: 
+		rt.gStyle.SetPaintTextFormat("1.0f")
+		bkgHTmerged.Draw("SAME TEXT90")
 
  	hsig1merged.Draw("SAME HIST")
 	if whichSig == 'X53H':
@@ -1181,7 +1191,7 @@ for tag in tagList:
 		hDatamerged.Draw("esamex0") #redraw data so its not hidden
 		if drawYields: hDatamerged.Draw("SAME TEXT00") 
 	uPad.RedrawAxis()
-	#bkgHTgerrmerged.Draw("SAME E2")
+	#bkgHTgerrmerged.Draw("SAME E2") #include bkg
 
 	chLatexmerged = rt.TLatex()
 	chLatexmerged.SetNDC()
@@ -1247,7 +1257,7 @@ for tag in tagList:
  		legmerged.AddEntry(hsig4merged,sig4leg+scaleFact4Str,"l")
  		legmerged.AddEntry(hsig5merged,sig5leg+scaleFact5Str,"l")
  		legmerged.AddEntry(hsig6merged,sig6leg+scaleFact6Str,"l")
-
+#include bkg
 #	try: legmerged.AddEntry(bkghistsmerged['ttbisL'+tagStr],"t#bar{t}+b","f")
 #	except: pass
 #	try: legmerged.AddEntry(bkghistsmerged['topisL'+tagStr],"TOP","f")
@@ -1263,14 +1273,14 @@ for tag in tagList:
 #        print "===============YESSIR=============="
 #        try: legmerged.AddEntry(bkghistsmerged['ttnobbisL'+tagStr],"t#bar{t}+!b#bar{b}","f")
 #        except: pass
-
+#
 #        if not blind: 
 #		legmerged.AddEntry(hDatamerged,"Data","ep")
 #		legmerged.AddEntry(bkgHTgerrmerged,"Bkg uncert","f")
 #	else:
 #		legmerged.AddEntry(0, "", "")
 #		legmerged.AddEntry(bkgHTgerrmerged,"Bkg uncert","f")
-	legmerged.Draw("same")
+#	legmerged.Draw("same")
 
 	#draw the lumi text on the canvas
 	CMS_lumi.CMS_lumi(uPad, iPeriod, iPos)

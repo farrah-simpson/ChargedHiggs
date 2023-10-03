@@ -11,7 +11,15 @@ from utils import *
 parser = argparse.ArgumentParser(description="template building for the charged Higgs analysis")
 parser.add_argument("-d", "--directory", help="the directory to be processed")
 parser.add_argument("-c", "--Categorized", default=False, action="store_true", help="Categorize or not")
+parser.add_argument("-y", "--year", default="17", help="The data taking year")
 args = parser.parse_args()
+
+
+if args.year=="17":
+    from weights import *
+if args.year=="18":
+    from weights_UL18 import *
+
 
 gROOT.SetBatch(1)
 start_time = time.time()
@@ -20,7 +28,7 @@ lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
 sigTrainedList=[]#'1000']
 massPt=''
 if len(sys.argv)>1: massPt=str(sys.argv[1])
-region = 'SR' #PS,SR
+region = 'PS' #PS,SR
 
 isCategorized=args.Categorized#False#False
 doTempEachCategory = False#True
@@ -39,7 +47,7 @@ doQ2sys  = False
 doPDFsys = False
 if not doAllSys: doQ2sys = False
 addCRsys = False
-systematicList = ['LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','pileup','muRFcorrd','PNT','jmst','jmrt','PNW','jmsW','jmrW','PNWpt','jec','jer','prefire']#'trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
+systematicList = ['muR','muF','isr','fsr','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','pileup','muRFcorrd','PNT','PNW','jec','jer','prefire']#,'jmst','jmrt','jmsW','jmrW','trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
 systList_jsf = []#'jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
 #'jsfJESPileUpPtBB', 'jsfJESPileUpPtEC1', 'jsfJESPileUpPtEC2', 'jsfJESPileUpPtHF', 'jsfJESPileUpPtRef', 'jsfJESRelativeBal', 'jsfJESRelativeFSR',
 #'jsfJESRelativeJEREC1', 'jsfJESRelativeJEREC2', 'jsfJESRelativeJERHF', 'jsfJESRelativeJERHF', 'jsfJESRelativePtBB', 'jsfJESRelativePtEC1',
@@ -67,7 +75,7 @@ if splitTTbar:
 else:
 	bkgGrupList = ['top','ewk','qcd']
 	#bkgGrupList = ['ttbar','top','ewk','qcd']
-	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd','TTV']
+	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd']#,'TTV']
 bkgProcs = {}
 bkgProcs['WJets']  = ['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800']
 #bkgProcs['WJets'] += ['WJetsMG1200_1','WJetsMG1200_2','WJetsMG1200_3','WJetsMG1200_4','WJetsMG1200_5']
@@ -76,8 +84,9 @@ bkgProcs['WJets']  = ['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800']
 bkgProcs['ZJets'] = ['DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500']
 bkgProcs['VV']    = ['WW','WZ','ZZ']
 bkgProcs['T']     = ['Tt','Tbt','Ts','TtW','TbtW',]
-bkgProcs['TTV']   = ['TTWl','TTZl', 'TTWq']
-#bkgProcs['OtherT']= ['TTHB','TTHnoB']
+bkgProcs['TTV']   = ['TTWl','TTZlM10',"TTZlM1to10"]#,'TTWq']
+bkgProcs['OtherT']= ['TTHB','TTHnoB']
+bkgProcs['TTXY']= ['TTHH','TTWH','TTWW','TTWZ','TTZH','TTZZ','TTTJ','TTTW'] 
 
 #bkgProcs['TTTo2L2Nu'] = ['TTTo2L2Nu_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 #bkgProcs['TTToHadronic'] = ['TTToHadronic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
@@ -85,22 +94,23 @@ bkgProcs['TTV']   = ['TTWl','TTZl', 'TTWq']
 bkgProcs['TTJets'] = []
 bkgProcs['TTJets'] += ['TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000']
 bkgProcs['TTJets'] += ['TTJetsHad0','TTJetsHad700','TTJetsHad1000']
-bkgProcs['TTJets'] += ['TTJetsSemiLep0','TTJetsSemiLep700','TTJetsSemiLep1000', ]
+bkgProcs['TTJets'] += ['TTJetsSemiLep0','TTJetsSemiLep700','TTJetsSemiLep1000']
 #bkgProcs['TTJets'] += ['TTJetsHad0','TTJetsHad700','TTJetsHad1000'] 
 #bkgProcs['TTJets'] += ['TTJetsSemiLepNjet9bin1','TTJetsSemiLepNjet9bin2','TTJetsSemiLepNjet9bin3'] 
 #bkgProcs['TTJets'] += ['TTJetsSemiLepbin1','TTJetsSemiLepbin2','TTJetsSemiLepbin3']#,'TTJetsSemiLep4','TTJetsSemiLep5']#,'TTJetsSemiLep6']
-#bkgProcs['TTJets'] += ['TTJets700mtt','TTJets1000mtt']
+bkgProcs['TTJets'] += ['TTJets700mtt','TTJets1000mtt']
 
 bkgProcs['tt2b']  = [tt+'_tt2b' for tt in bkgProcs['TTJets']]
 bkgProcs['ttbb']  = [tt+'_ttbb' for tt in bkgProcs['TTJets']]
 bkgProcs['tt1b']   = [tt+'_tt1b' for tt in bkgProcs['TTJets']]
 bkgProcs['ttcc']  = [tt+'_ttcc' for tt in bkgProcs['TTJets']]
 bkgProcs['ttjj']  = [tt+'_ttjj' for tt in bkgProcs['TTJets']]
-
 bkgProcs['ttnobb']  = bkgProcs['ttjj'] + bkgProcs['ttcc'] + bkgProcs['tt1b'] + bkgProcs['tt2b']
 
 bkgProcs['qcd']   = ['QCDht200','QCDht300','QCDht500','QCDht700','QCDht1000','QCDht1500','QCDht2000']
-bkgProcs['top']   = bkgProcs['TTJets']+bkgProcs['TTV']+bkgProcs['T']#+bkgProcs['OtherT']
+#bkgProcs['top']   = bkgProcs['TTJets']+bkgProcs['T']#bkgProcs['TTV']+bkgProcs['T']+bkgProcs['OtherT']#+bkgProcs['TTXY']
+#bkgProcs['top']   = bkgProcs['TTJets']+bkgProcs['T']+bkgProcs['TTV']+bkgProcs['TTXY']#+bkgProcs['TTXY']+bkgProcs['OtherT']
+bkgProcs['top'] = bkgProcs['T']+bkgProcs['OtherT']+bkgProcs['TTV']+bkgProcs['TTXY']+bkgProcs['TTJets']
 bkgProcs['ewk']   = bkgProcs['WJets']+bkgProcs['ZJets']+bkgProcs['VV']
 #bkgProcs['ttbb']  = bkgProcs['TTBB']
 #bkgProcs['ttcc']  = bkgProcs['TTCC']
@@ -124,8 +134,7 @@ bkgProcs['ttbar_q2dn'] = ['TTJetsPHQ2D']#,'TtWQ2D','TbtWQ2D']
 
 whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
 massList = range(600,1500+1,100)
-
-if whichSignal== 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 if whichSignal == 'X53':
 #	sigList = [whichSignal+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
 	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
@@ -223,7 +232,7 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
  			for signal in sigList:
  				print "histoPrefix ", histoPrefix
  				print "signal+decays[0]", signal+decays[0]
- 				print sighists
+ 				#print sighists
                                 hists[signal+i] = sighists[histoPrefix+'_'+signal+decays[0]].Clone(histoPrefix+'__sig')
  				for decay in decays:
  					if decay!=decays[0]:
@@ -703,8 +712,8 @@ def rundoTemp(category):
         iPlotList = [
                'HT',
                 #'HTpt40',
-#                'ST',
-#                'minMlb',
+                'ST',
+                'minMlb',
                 #'mass_minBBdr',
                 #'deltaR_lepBJet_maxpt',
                 #'lepDR_minBBdr',
@@ -723,13 +732,12 @@ def rundoTemp(category):
                 #'mass_maxJJJpt',
                 #'Bjet1Pt',
                 #'deltaR_minBB', ##TODO
-                ##'deltaR',  ##TODO
+                #'deltaR',  ##TODO
                 #'MTlmet',
-#                'HT',
                 #'hemiout',
-#                'theLeadJetPt',
-#                'MET',
-#                'lepPt',
+                'theLeadJetPt',
+                'MET',
+                'lepPt',
 #                'JetPt',
 #                'Jet1Pt',
 
@@ -740,10 +748,10 @@ def rundoTemp(category):
                 #'masslepBJets0',
                 #'mass_lepBJet_mindr',
                 # 
-                ##'secondJetPt',
+                #'secondJetPt',
                 ##'fifthJetPt',  ## TODO
                 ##'sixthJetPt', ##TODO
-#               # 'PtFifthJet', ## TODO
+               # 'PtFifthJet', ## TODO
                 #'mass_minLLdr',
                 #'mass_maxBBmass',
                 #'deltaR_lepJetInMinMljet',
@@ -761,8 +769,8 @@ def rundoTemp(category):
                 #'secondcsvb_bb',
                 #'thirdcsvb_bb',
                 #'fourthcsvb_bb',
-#                'NBJets',
-#               'NJets',
+                'NBJets',
+               'NJets',
                 #'HT_2m',
                 #'Sphericity',
                 #'Aplanarity',

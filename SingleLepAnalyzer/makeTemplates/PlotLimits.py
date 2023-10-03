@@ -21,7 +21,8 @@ discriminant='HT'
 #if chiral == 'RH': mass_str = ['900','1000','1100','1200','1300','1400','1500','1600','1700']
 #if chiral == 'LH'and year == 'R17': mass_str = ['1100','1200','1400','1700']
 #if chiral == 'LH'and year == 'R18': mass_str = ['1100','1200','1400','1500','1700']
-mass_str = ['700','800','900','1000','1100','1200','1500','1600']
+#mass_str = ['700','800','900','1000','1100','1200','1300','1400','1500','1600']
+mass_str = ['600','700','800','900','1000','1100','1200','1500']
 
 theory_xsec_dicts = {'600': 1.161,'700':0.455,'800':0.196,'900':0.0903,'1000':0.0440,'1100':0.0224,'1200':0.0118,'1300':0.00639,'1400':0.00354,'1500':0.00200,'1600':0.001148, '1700':0.000666}
 theory_xsec = [theory_xsec_dicts[item] for item in mass_str]
@@ -118,9 +119,9 @@ def PlotLimits(json_file,chiral,binning,saveKey):
     print
     signExp = "="
     signObs = "="
-    if limExpected==700: signExp = "<"
-    if limObserved==700: signObs = "<"
-    print "Expected lower limit %s%i GeV (%s,%s,%s,%s)" %(signExp,int(round(limExpected)),json_file,chiral,binning,saveKey)
+    #if limExpected==700: signExp = "<"
+    #if limObserved==700: signObs = "<"
+    print "Expected lower limit %s%i GeV (%s,%s,%s,%s)" %(signExp,int(round(limExpected)),json_file,ycross,binning,saveKey)
     if not blind: print "Observed lower limit %s%i GeV" %(signObs,int(round(limObserved)))
     print
 
@@ -155,11 +156,11 @@ def PlotLimits(json_file,chiral,binning,saveKey):
     c4 = TCanvas("c4","Limits", 1000, 800)
     c4.SetBottomMargin(0.15)
     c4.SetRightMargin(0.06)
-    c4.SetLogy()
+#    c4.SetLogy()
 
     expected95.Draw("a3")
     expected95.GetYaxis().SetRangeUser(.0008+.00001,1.45)
-    expected95.GetXaxis().SetRangeUser(900,1700)#(700,1600)
+    expected95.GetXaxis().SetRangeUser(600,1500)#(900,1700)#(700,1600)
     if signal=='X53':
     	expected95.GetXaxis().SetTitle("X_{5/3} mass [GeV]")
     	expected95.GetYaxis().SetTitle("#sigma(X_{5/3}#bar{X}_{5/3})[pb]")#- "+chiral.replace('left','LH').replace('right','RH'))
@@ -231,7 +232,7 @@ def PlotLimits(json_file,chiral,binning,saveKey):
 print "=========>>>>>>>>>>> X53X53_RH"
 #expLim,obsLim = PlotLimits('limits_2023_8_14_/limits_isSR_isE.json','RH','0p3','_isE')
 #expLim,obsLim = PlotLimits('limits_2023_8_14_/limits_isSR_isM.json','RH','0p3','_isM')
-expLim,obsLim = PlotLimits('limits'+'_2023_8_21_/limits_cmb.json','RH','rebinned_stat0p3','')
+expLim,obsLim = PlotLimits('limits'+'_2023_9_16_/limits_cmb.json','RH','rebinned_stat0p3_MH200','')
 
 
 

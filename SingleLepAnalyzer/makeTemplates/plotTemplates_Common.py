@@ -20,8 +20,8 @@ whichSig = 'X53'
 plottop = False
 plotewk = False
 plotqcd = False
-region='SR' #SR,PS
-isCategorized=True#False
+region='PS' #SR,PS
+isCategorized=False
 iPlot='HT'
 if len(sys.argv)>2: iPlot=str(sys.argv[2])
 cutString=''
@@ -35,10 +35,10 @@ if len(sys.argv)>3: massPt=str(sys.argv[3])
 
 if len(sys.argv)>1: templateDir=os.getcwd()+'/'+str(sys.argv[1])+'/'
 else:
-    templateDir=os.getcwd()+'/templates_2023_8_14/'
+    templateDir=os.getcwd()+'/templates_2023_8_24/'
 
 splitTTbar = False#True
-isRebinned= '_rebinned_stat0p3'#_killFirstBins_syFist' #post for ROOT file names
+isRebinned= ''#_rebinned_stat0p3'#_killFirstBins_syFist' #post for ROOT file names
 saveKey = '' # tag for plot names
 
 if whichSig == 'X53':
@@ -47,20 +47,20 @@ if whichSig == 'X53':
     sig1leg='X_{5/3}#bar{X}_{5/3} ('+massPt+' GeV)' 
 
 plotCombine = True ### make it False for YLD plot
-scaleSignals = False#True ##check
-scaleFact1 = 1
-scaleFact2 = 1
-scaleFact3 = 1
-scaleFact4 = 1
-scaleFact5 = 1
-scaleFact6 = 1
+scaleSignals = True ##check
+scaleFact1 = 100
+scaleFact2 = 100
+scaleFact3 = 100
+scaleFact4 = 100
+scaleFact5 = 100
+scaleFact6 = 100
 
-scaleFact1merged = 1
-scaleFact2merged = 1
-scaleFact3merged = 1
-scaleFact4merged = 1
-scaleFact5merged = 1
-scaleFact6merged = 1
+scaleFact1merged = 100
+scaleFact2merged = 100
+scaleFact3merged = 100
+scaleFact4merged = 100
+scaleFact5merged = 100
+scaleFact6merged = 100
 
 if plotCombine: tempsig='templates_'+iPlot+'_'+lumiInTemplates+'fb'+isRebinned+'.root'
 
@@ -102,10 +102,10 @@ doAllSys = True
 doQ2sys  = False
 if not doAllSys: doQ2sys = False
 addCRsys = False
-doNormByBinWidth=False#set true, to see the actual shape of the distributions when the binning is not uniform, e.g binning with 0.3
+doNormByBinWidth=True#False#set true, to see the actual shape of the distributions when the binning is not uniform, e.g binning with 0.3
 doOneBand = True#False
 if not doAllSys: doOneBand = True # Don't change this!
-blind = True
+blind = False#True
 blindYLD = True
 yLog  = True
 doRealPull = False
@@ -202,21 +202,21 @@ def formatLowerHist(histogram):
 	histogram.GetYaxis().CenterTitle()
 
 legx1 = 0.48
-legx2 = legx1+0.30
+legx2 = legx1+0.40
 legx3 = legx2+0.50
 legx4 = legx3+0.50
 legx5 = legx4+0.50
 legx6 = legx5+0.50
 
-legy1 = 0.5
-legy2 = legy1+0.2
+legy1 = 0.6
+legy2 = legy1+0.3
 legy3 = legy2+0.37
 legy4 = legy3+0.37
 legy5 = legy4+0.37
 legy6 = legy5+0.37
 
 tagPosX = 0.76
-tagPosY = 0.42
+tagPosY = 0.52
 # 	if drawQCDmerged: legmerged = rt.TLegend(0.45,0.52,0.95,0.87)
 # 	if not drawQCDmerged or blind: legmerged = rt.TLegend(0.45,0.64,0.95,0.89)
 
@@ -232,7 +232,7 @@ CMS_lumi.lumi_7TeV = "4.8 fb^{-1}"
 CMS_lumi.lumi_8TeV = "18.3 fb^{-1}"
 CMS_lumi.lumi_13TeV= "41.5 fb^{-1}"
 CMS_lumi.writeExtraText = 1
-CMS_lumi.extraText = "Preliminary"
+CMS_lumi.extraText = "Preliminary"#Work in Progress"
 CMS_lumi.lumi_sqrtS = "13 TeV" # used with iPeriod = 0, e.g. for simulation-only plots (default is an empty string)
 
 iPos = 11
@@ -293,7 +293,7 @@ for tag in tagList:
 	#	blind = blindGlob
 	if not blind:
 		legx1 = 0.48
-		legy1 = 0.5
+		legy1 = 0.65
 
 		legx2 = legx1+0.3
 		legx3 = legx2+0.3
@@ -308,14 +308,14 @@ for tag in tagList:
 		legy6 = legy5+0.2
 
  		tagPosX = 0.76
- 		tagPosY = 0.42
+ 		tagPosY = 0.52
 		#tagPosX = 0.25
 		#tagPosY = 0.65
 
 	else:
 		legx1 = 0.48
-		legy1 = 0.5
-		legx2 = legx1+0.3
+		legy1 = 0.65
+		legx2 = legx1+0.4
 		legx3 = legx2+0.45
 		legx4 = legx3+0.45
 		legx5 = legx4+0.45
@@ -328,7 +328,7 @@ for tag in tagList:
 		legy6 = legy5+0.26
 
 		tagPosX = 0.76
-		tagPosY = 0.42
+		tagPosY = 0.52
 
 #	if not isCategorized: blind = blindGlob
 	if not plotCombine: postTag=''
@@ -552,6 +552,7 @@ for tag in tagList:
 				if 'BDT' in iPlot and isSR(tag[3],tag[2]): hsig1.GetYaxis().SetTitle("< Events / 1.0 units >")
 			elif isRebinned!='': hsig1.GetYaxis().SetTitle("Events / bin")
 			else: hsig1.GetYaxis().SetTitle("Events / bin")
+			#if doNormByBinWidth: normByBinWidth(bkgHT_test)
 			formatUpperHist(hsig1)
 			hsig1.SetMaximum(1.5*hData.GetMaximum())
 			if plottop or plotewk or plotqcd:
@@ -995,7 +996,7 @@ for tag in tagList:
             elif isRebinned!='': hsig1merged.GetYaxis().SetTitle("Events / bin")
             else: hsig1merged.GetYaxis().SetTitle("Events / bin")
             formatUpperHist(hsig1merged)
-            hsig1merged.SetMaximum(1.5*hDatamerged.GetMaximum())
+            hsig1merged.SetMaximum(1.2*hDatamerged.GetMaximum())
             if plottop or plotewk or plotqcd:
                 hsig1merged.SetMaximum(1.1*hsig1merged.GetMaximum())
             hsig1merged.Draw("HIST")

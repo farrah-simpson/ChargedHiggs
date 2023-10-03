@@ -43,7 +43,7 @@ bkgList = [
 		  'WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800', 'WJetsMG1200',
 		  #'WJetsMG1200_1','WJetsMG1200_2','WJetsMG1200_3','WJetsMG1200_4','WJetsMG1200_5',
 		  #'WJetsMG2500_1','WJetsMG2500_2','WJetsMG2500_3','WJetsMG2500_4','WJetsMG2500_5', 'WJetsMG2500_6',
-		  #'TTHH','TTWH','TTWW','TTWZ','TTZH','TTZZ',
+		  'TTHH','TTWH','TTWW','TTWZ','TTZH','TTZZ','TTTJ','TTTW',
 	 	  'TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000',		  
 		  'TTJetsHad0','TTJetsHad700','TTJetsHad1000',		 
           #        'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic', 
@@ -62,7 +62,7 @@ bkgList = [
 ttFlvs = []#'_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
 dataList = ['DataE','DataM']
 
-whichSignal = 'X53'#'X53H' #Hptb,HTB, TTM, BBM, or X53X53M mass = range(700,1600+1,100)
+whichSignal = 'X53'#'X53' #Hptb,HTB, TTM, BBM, or X53X53M mass = range(700,1600+1,100)
 #sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
 if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 if whichSignal == 'X53':

@@ -73,22 +73,18 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
     
 	#if isEM=='E' and isCR(njets,nbtag): cut += ' && (minDPhi_MetJet>0.05)'
 
-	cut += ' && DataPastTriggerX == 1 && MCPastTriggerX == 1'
+	cut += ' && DataPastTriggerX == 1 && MCPastTriggerX == 1 && AK4HT>350'#' && (DataLepPastTrigger == 1 || (DataPastTriggerX==1 && AK4HT>500)) && (MCLepPastTrigger == 1 || (MCPastTriggerX ==1 && AK4HT>500))' #' && DataPastTrigger == 1 && MCPastTrigger == 1'
 
 	# Define weights
-	TrigEff = 'triggerXSF'
+	TrigEff = 'triggerXSF * triggerSF'
 	jetSFstr = '1'
-
+#	TrigEff = 'triggerXSF * triggerSF' new
 	#if doJetRwt and ('WJetsMG' in process or 'QCD' in process) and 'JSF' in process: jetSFstr= 'JetSF_80X'
 
 	weightStr = '1'
 	weightStrBase = '1'
 	trainingSamples=[]#'Tt','Tbt','Ts','TtW','TbtW','TTWl','TTWq','TTZl','TTZq']
 
-# 	if process.startswith('Hptb'):	
-# 		cut  += ' && (isTraining == 0)'
-# 		weightStr = '2'
-# 		weightStrBase = '2'
 ################################################################################################################
 ############################  BDT FLIP BINNING APP############## ############## ############## 
 # 	if ('BDT' in plotTreeName) and (process.startswith('Hptb')): #Add "or 'TTJetsPH' in process" here
@@ -104,10 +100,10 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
 # 		weightStr = '3/2'
 # 		weightStrBase = '3/2'
 ############################  BDT FLIP BINNING BUILDING############## ############## ############## 
-# 	if ('XGB' in plotTreeName) and (process.startswith('Hptb') 'TTToSemiLeptonic' in process) ): #Add "or 'TTJetsPH' in process" here
-# 		cut += ' && (isTraining == 3)'
-# 		weightStr = '3'
-# 		weightStrBase = '3'
+ 	if ('XGB' in plotTreeName) and (process.startswith('Hptb') or ('TTToSemiLeptonic' in process) ): #Add "or 'TTJetsPH' in process" here
+		cut += ' && (isTraining == 3)'
+		weightStr = '5'
+		weightStrBase = '5'
 # 	elif not 'Hptb' in process and not 'TTJets' in process and not 'Data' in process:
 # 		cut += ' && (isTraining == 3)'
 # 		weightStr = '3'
@@ -116,8 +112,6 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
 # 		cut += ' && (isTraining == 3)'
 # 		weightStr = '3'
 # 		weightStrBase = '3'
-
-
 
 	CalibReaderRewgt = 'CalibReaderRewgt'
 	HTweightStr = '1'
@@ -149,7 +143,7 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
 	if 'Data' not in process:
 		#weightStr          += ' * '+topPt13TeVstr+' * '+HTweightStr+' * '+TrigEff+'  * lepIdSF * btagDeepJetWeight * btagDeepJet2DWeight_Pt120 * EGammaGsfSF*(MCWeight_MultiLepCalc/abs(MCWeight_Mu\
 #ltiLepCalc))  *'+str(weight[process])
-                #weightStr          += ' * '+topPt13TeVstr+' * '+HTweightStr+' * '+TrigEff+'  * lepIdSF *'+DJweightStr+'* EGammaGsfSF*(MCWeight_MultiLepCalc/abs(MCWeight_Mu\
+#                weightStr          += ' * '+topPt13TeVstr+' * '+HTweightStr+' * '+TrigEff+'  * lepIdSF *'+DJweightStr+'* EGammaGsfSF*(MCWeight_MultiLepCalc/abs(MCWeight_Mu\
 #ltiLepCalc))  *'+str(weight[process]) 
                 weightStr          += ' * pileupWeight * L1NonPrefiringProb_CommonCalc * '+topPt13TeVstr+' * '+HTweightStr+' * '+TrigEff+'  * lepIdSF *'+DJweightStr+'* isoSF * EGammaGsfSF*(MCWeight_MultiLepCalc/abs(MCWeight_Mu\
 ltiLepCalc))  *'+str(weight[process]) 
@@ -383,9 +377,6 @@ ltiLepCalc))  *'+str(weight[process])
 		elif process.endswith('_tt1b'): fullcut+=' && genTtbarIdCategory_TTbarMassCalc[0]==2'
 		elif process.endswith('_ttcc'): fullcut+=' && genTtbarIdCategory_TTbarMassCalc[0]==1'
 		elif process.endswith('_ttjj'): fullcut+=' && genTtbarIdCategory_TTbarMassCalc[0]==0'
-		elif process.endswith('0'): fullcut+=' && ttbarMass_TTbarMassCalc<=700'
-		elif process.endswith('700'): fullcut+=' && ttbarMass_TTbarMassCalc>=700  && ttbarMass_TTbarMassCalc<1000'
-		elif process.endswith('1000'): fullcut+=' && ttbarMass_TTbarMassCalc>=1000'
 
 	# replace cuts for shifts
 	#cut_btagUp = fullcut.replace(nbtagLJMETname,nbtagLJMETname+'_shifts[0]')
@@ -526,7 +517,7 @@ ltiLepCalc))  *'+str(weight[process])
 		JMSTdnName  = plotTreeName
 		JMRTupName  = plotTreeName
 		JMRTdnName  = plotTreeName
-		if 'Ttagged' in PNTupName or 'Tjet' in PNTupName or 'TJet' in PNTupName: 
+		if 'NJetsTtagged' in PNTupName: #or 'Tjet' in PNTupName or 'TJet' in PNTupName: 
 			PNTupName = PNTupName+'_shifts[0]'
 			PNTdnName = PNTdnName+'_shifts[1]'
 			JMSTupName  = JMSTupName+'_shifts[2]'
@@ -549,18 +540,18 @@ ltiLepCalc))  *'+str(weight[process])
 		JMSWdnName  = plotTreeName
 		JMRWupName  = plotTreeName
 		JMRWdnName  = plotTreeName
-		PNWPTupName = plotTreeName
-		PNWPTdnName = plotTreeName
-		if 'Wtagged' in PNWupName or 'Wjet' in PNWupName or 'WJet' in PNWupName: 
+#		PNWPTupName = plotTreeName
+#		PNWPTdnName = plotTreeName
+		if 'NJetsWtagged' in PNWupName:# or 'Wjet' in PNWupName or 'WJet' in PNWupName: 
 			PNWupName = PNWupName+'_shifts[0]'
 			PNWdnName = PNWdnName+'_shifts[1]'
 			JMSWupName  = JMSWupName+'_shifts[2]'
 			JMSWdnName  = JMSWdnName+'_shifts[3]'
 			JMRWupName  = JMRWupName+'_shifts[4]'
 			JMRWdnName  = JMRWdnName+'_shifts[5]'
-			PNWPTupName = PNWPTupName+'_shifts[6]'
-			PNWPTdnName = PNWPTdnName+'_shifts[7]'
-		print 'WTAG SHIFT LJMET NAMES:',PNWupName,PNWdnName,JMSWupName,JMSWdnName,JMRWupName,JMRWdnName,PNWPTupName,PNWPTdnName
+#			PNWPTupName = PNWPTupName+'_shifts[6]'
+#			PNWPTdnName = PNWPTdnName+'_shifts[7]'
+		print 'WTAG SHIFT LJMET NAMES:',PNWupName,PNWdnName,JMSWupName,JMSWdnName,JMRWupName,JMRWdnName#,PNWPTupName,PNWPTdnName
 		if nWtag!='0p':
 			tTree[tTreePkey].Draw(PNWupName+' >> '+iPlot+'PNWUp_'  +lumiStr+'fb_'+catStr+'_'+process  , weightStr+'*('+cut_PNWUp+')', 'GOFF')
 			tTree[tTreePkey].Draw(PNWdnName+' >> '+iPlot+'PNWDown_'+lumiStr+'fb_'+catStr+'_'+process  , weightStr+'*('+cut_PNWDn+')', 'GOFF')		
@@ -568,8 +559,8 @@ ltiLepCalc))  *'+str(weight[process])
 			tTree[tTreePkey].Draw(JMSWdnName +' >> '+iPlot+'jmsWDown_' +lumiStr+'fb_'+catStr+'_'+process  , weightStr+'*('+cut_jmsWDn+')', 'GOFF')		
 			tTree[tTreePkey].Draw(JMRWupName +' >> '+iPlot+'jmrWUp_'   +lumiStr+'fb_'+catStr+'_'+process  , weightStr+'*('+cut_jmrWUp+')', 'GOFF')
 			tTree[tTreePkey].Draw(JMRWdnName +' >> '+iPlot+'jmrWDown_' +lumiStr+'fb_'+catStr+'_'+process  , weightStr+'*('+cut_jmrWDn+')', 'GOFF')		
-			tTree[tTreePkey].Draw(PNWupName+' >> '+iPlot+'PNWptUp_'+lumiStr+'fb_'+catStr+'_'+process  , weightStr+'*('+cut_PNWptUp+')', 'GOFF')
-			tTree[tTreePkey].Draw(PNWdnName+' >> '+iPlot+'PNWptDown_'+lumiStr+'fb_'+catStr+'_'+process, weightStr+'*('+cut_PNWptDn+')', 'GOFF')		
+			#tTree[tTreePkey].Draw(PNWupName+' >> '+iPlot+'PNWptUp_'+lumiStr+'fb_'+catStr+'_'+process  , weightStr+'*('+cut_PNWptUp+')', 'GOFF')
+			#tTree[tTreePkey].Draw(PNWdnName+' >> '+iPlot+'PNWptDown_'+lumiStr+'fb_'+catStr+'_'+process, weightStr+'*('+cut_PNWptDn+')', 'GOFF')		
 
 		# b-tagging:
 	#	BTAGupName = plotTreeName#.replace('_lepBJets','_bSFup_lepBJets')
