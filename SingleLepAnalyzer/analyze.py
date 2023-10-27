@@ -15,7 +15,7 @@ negative MC weights, ets) applied below should be checked!
 
 lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
 
-def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails,category,region,isCategorized):
+def analyze(tTree,tTreePkey,process,cutList,doAllSys,doJetRwt,iPlot,plotDetails,category,region,isCategorized):
 	print "*****"*20
 	print "*****"*20
 	plotTreeName=plotDetails[0]
@@ -79,7 +79,7 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
 	# Define weights
 	TrigEff = 'triggerXSF * triggerSF'
 	jetSFstr = '1'
-#	TrigEff = 'triggerXSF * triggerSF' new
+
 	#if doJetRwt and ('WJetsMG' in process or 'QCD' in process) and 'JSF' in process: jetSFstr= 'JetSF_80X'
 
 	weightStr = '1'
@@ -308,7 +308,7 @@ ltiLepCalc))  *'+str(weight[process])
 	if isEM=='E': isEMCut+=' && isElectron==1'
 	elif isEM=='M': isEMCut+=' && isMuon==1'
 
-	nbtagLJMETname = 'NJetsCSVwithSF_MultiLepCalc'#+ljmetCalc
+	nbtagLJMETname = 'NJetsCSV_'+ljmetCalc#check!'NJetsCSVwithSF_MultiLepCalc'#+ljmetCalc
 	njetsLJMETname = 'NJets_'+ljmetCalc
 	nttagLJMETname = 'NJetsTtagged'
 	nWtagLJMETname = 'NJetsWtagged'

@@ -104,11 +104,11 @@ doAllSys = True#False
 doQ2sys  = False
 if not doAllSys: doQ2sys = False
 addCRsys = False
-doNormByBinWidth=True#False#set true, to see the actual shape of the distributions when the binning is not uniform, e.g binning with 0.3
+doNormByBinWidth=False#True check!#set true, to see the actual shape of the distributions when the binning is not uniform, e.g binning with 0.3
 doOneBand = True#False
 if not doAllSys: doOneBand = True # Don't change this!
 blind = False#True
-blindYLD = True
+blindYLD = False
 yLog  = True
 doRealPull = False
 if doRealPull: doOneBand=False
@@ -578,7 +578,7 @@ for tag in tagList:
 		chLatex = rt.TLatex()
 		chLatex.SetNDC()
 		chLatex.SetTextSize(0.06)
-		if blind: chLatex.SetTextSize(0.03)
+		if blind: chLatex.SetTextSize(0.03)#0.04
 		chLatex.SetTextAlign(21) # align center
 		flvString = ''
 		tagString = ''
@@ -634,6 +634,7 @@ for tag in tagList:
  		leg.AddEntry(hsig1,sig1leg+scaleFact1Str,"l")
 		try: leg.AddEntry(bkghists['ttcc'+catStr],"t#bar{t}+c#bar{c}","f")
 		except: pass
+ 		leg.AddEntry(hsig1,sig2leg+scaleFact1Str,"l")
 		try: leg.AddEntry(bkghists['ttb'+catStr],"t#bar{t}+b","f")
 		except: pass
 		try: leg.AddEntry(bkghists['top'+catStr],"TOP","f")
@@ -765,7 +766,6 @@ for tag in tagList:
 		savePrefix = templateDir.replace(cutString,'')+cutString+'/plots/'
 		if not os.path.exists(savePrefix): os.system('mkdir '+savePrefix)
 		savePrefix+=histPrefix+isRebinned.replace('_rebinned_stat1p1','')+saveKey
-		savePrefix=savePrefix.replace('nHOT0p_','')
 		if nttaglist[0]=='0p': savePrefix=savePrefix.replace('nT0p_','')
 		if nWtaglist[0]=='0p': savePrefix=savePrefix.replace('nW0p_','')
 		if nbtaglist[0]=='0p': savePrefix=savePrefix.replace('nB0p_','')
@@ -809,13 +809,15 @@ for tag in tagList:
  	if plotCombine: 
                 print RFile1
  		hsig1merged = RFile1.Get(histPrefixE+'__'+sig1).Clone(histPrefixE+'__sig1merged')
+ 		#hsig2merged = RFile1.Get(histPrefixE+'__'+sig2).Clone(histPrefixE+'__sig2merged')
 		hsig1merged.Add(RFile1.Get(histPrefixM+'__'+sig1).Clone())
+		#hsig2merged.Add(RFile1.Get(histPrefixM+'__'+sig2).Clone())
 
  	else:
  		hsig1merged = RFile1.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig1merged')
  		hsig1merged.Add(RFile1.Get(histPrefixM+'__sig').Clone())
 
-	hsig1merged.Scale(xsec[sig1])
+	hsig1merged.Scale(xsec[sig1]) #check!
  	#hsig2merged.Scale(xsec[sig2])
 	if doNormByBinWidth:
 		for proc in bkgProcList:
@@ -883,12 +885,11 @@ for tag in tagList:
 	bkgHTgerrmerged = totBkgTemp3['isL'+tagStr].Clone()
 
 	if scaleFact1merged==0: scaleFact1merged=int((bkgHTmerged.GetMaximum()/hsig1merged.GetMaximum())*0.5)
-	if scaleFact1merged==0: scaleFact1merged=1
-	if scaleFact2merged==0: scaleFact2merged=1
-	if scaleFact3merged==0: scaleFact3merged=1
-	if scaleFact4merged==0: scaleFact4merged=1
-	if scaleFact5merged==0: scaleFact5merged=1
-	if scaleFact6merged==0: scaleFact6merged=1
+	#if scaleFact2merged==0: scaleFact2merged=int((bkgHTmerged.GetMaximum()/hsig2merged.GetMaximum())*0.5)
+	#if scaleFact3merged==0: scaleFact3merged=int((bkgHTmerged.GetMaximum()/hsig3merged.GetMaximum())*0.5)
+	#if scaleFact4merged==0: scaleFact4merged=int((bkgHTmerged.GetMaximum()/hsig4merged.GetMaximum())*0.5)
+	#if scaleFact5merged==0: scaleFact5merged=int((bkgHTmerged.GetMaximum()/hsig5merged.GetMaximum())*0.5)
+	#if scaleFact6merged==0: scaleFact6merged=int((bkgHTmerged.GetMaximum()/hsig6merged.GetMaximum())*0.5)
 
 	if not scaleSignals:
 		scaleFact1merged=1
@@ -923,7 +924,11 @@ for tag in tagList:
  	hsig1merged.SetLineColor(sig1Color)
 	hsig1merged.SetFillStyle(0)
  	hsig1merged.SetLineWidth(3)
-  	
+# 	hsig2merged.SetLineColor(sig2Color)
+# 	hsig2merged.SetLineStyle(7)
+#	hsig2merged.SetFillStyle(0)
+# 	hsig1merged.SetLineWidth(3)
+#   	
 	if not drawYields: hDatamerged.SetMarkerStyle(20)
 	hDatamerged.SetMarkerSize(1.2)
 	hDatamerged.SetMarkerColor(rt.kBlack)
@@ -1008,7 +1013,7 @@ for tag in tagList:
 		bkgHTmerged.Draw("SAME TEXT90")
 
  	hsig1merged.Draw("SAME HIST")
-
+# 	hsig2merged.Draw("SAME HIST") 
 	if not blind: 
 		hDatamerged.Draw("esamex0") #redraw data so its not hidden
 		if drawYields: hDatamerged.Draw("SAME TEXT00") 
@@ -1071,8 +1076,8 @@ for tag in tagList:
 #	try: legmerged.AddEntry(bkghistsmerged['ttlfisL'+tagStr],"t#bar{t}+lf","f")
 #	except: pass
  	legmerged.AddEntry(hsig1merged,sig1leg+scaleFact1Str,"l")
-#	try: legmerged.AddEntry(bkghistsmerged['ttccisL'+tagStr],"t#bar{t}+c#bar{c}","f")
-#	except: pass
+	try: legmerged.AddEntry(bkghistsmerged['ttccisL'+tagStr],"t#bar{t}+c#bar{c}","f")
+	except: pass
 	try: legmerged.AddEntry(bkghistsmerged['ttbisL'+tagStr],"t#bar{t}+b","f")
 	except: pass
 	try: legmerged.AddEntry(bkghistsmerged['topisL'+tagStr],"TOP","f")
@@ -1177,14 +1182,14 @@ for tag in tagList:
 		pullLegendmerged.SetLineColor(0)
 		pullLegendmerged.SetLineStyle(0)
 		pullLegendmerged.SetBorderSize(0)
- 		pullLegendmerged.SetTextFont(42)
+ 		#pullLegendmerged.SetTextFont(22)#42)
 		if not doOneBand: 
 			pullLegendmerged.AddEntry(pullUncBandStat , "Bkg uncert. (shape syst.)" , "f")
 			pullLegendmerged.AddEntry(pullUncBandNorm , "Bkg uncert. (shape #oplus norm. syst.)" , "f")
 			pullLegendmerged.AddEntry(pullUncBandTot , "Bkg uncert. (stat. #oplus all syst.)" , "f")
 		elif not doAllSys: pullLegendmerged.AddEntry(pullUncBandTot , "Bkg uncert. (stat. #oplus norm.)" , "f")
 		else: pullLegendmerged.AddEntry(pullUncBandTot , "Bkg uncert. (stat. #oplus syst.)" , "f")
- 		pullLegendmerged.Draw("SAME")
+ 		#pullLegendmerged.Draw("SAME")
 		pullmerged.Draw("SAME E0")
 		lPad.RedrawAxis()
 
@@ -1206,8 +1211,8 @@ for tag in tagList:
 
 	#c1merged.Write()
 # 	savePrefixmerged = templateDir.replace(cutString,'')+templateDir.split('/')[-2]+'/plots/'
- 	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'#+sig2
-#	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'
+# 	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'+sig2
+	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'
 	if not os.path.exists(savePrefixmerged): os.system('mkdir '+savePrefixmerged)
 	savePrefixmerged+=histPrefixE.replace('isE','isL')+isRebinned.replace('_rebinned_stat1p1','')+saveKey
 	if nttaglist[0]=='0p': savePrefixmerged=savePrefixmerged.replace('nT0p_','')
@@ -1236,6 +1241,8 @@ for tag in tagList:
 		except: pass
 			
 RFile1.Close()
+#RFile2.Close()
+
 
 print("--- %s minutes ---" % (round(time.time() - start_time, 2)/60))
 
