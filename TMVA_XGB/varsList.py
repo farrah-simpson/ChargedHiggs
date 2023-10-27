@@ -137,8 +137,8 @@ varList['BigComb'] = [
 ['fourthcsvb_bb','DeepCSV(4thDeepCSVJet)',''],
 ['NJets_JetSubCalc','AK4 jet multiplicity',''],
 ['HT_2m','HTwoTwoPtBjets','GeV'],
-['Sphericity','Sphericity','Sphericity'],
-['Aplanarity','Aplanarity','Aplanarity'],
+#['Sphericity','Sphericity','Sphericity'],
+#['Aplanarity','Aplanarity','Aplanarity'],
 
 
 ]
@@ -196,8 +196,8 @@ varList['NewComb'] = [
 ['fourthcsvb_bb','DeepCSV(4thDeepCSVJet)',''],
 #['NJets_JetSubCalc','AK4 jet multiplicity',''],
 #['HT_2m','HTwoTwoPtBjets','GeV'],
-['Sphericity','Sphericity','Sphericity'],
-['Aplanarity','Aplanarity','Aplanarity'],
+#['Sphericity','Sphericity','Sphericity'],
+#['Aplanarity','Aplanarity','Aplanarity'],
 
 
 ]
