@@ -11,11 +11,6 @@ samples = {
 'DYMG800':'DYJetsToLL_M-50_HT-800to1200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8',
 'DYMG1200':'DYJetsToLL_M-50_HT-1200to2500_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8',
 'DYMG2500':'DYJetsToLL_M-50_HT-2500toInf_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8',
-#'DY1MG': 'DY1JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8',
-#'DY2MG': 'DY2JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8',
-#'DY3MG': 'DY3JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8',
-#'DY4MG': 'DY4JetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8',
-
 'QCDht200':'QCD_HT200to300_TuneCP5_PSWeights_13TeV-madgraph-pythia8',
 'QCDht300':'QCD_HT300to500_TuneCP5_PSWeights_13TeV-madgraph-pythia8',
 'QCDht500':'QCD_HT500to700_TuneCP5_PSWeights_13TeV-madgraph-pythia8',
@@ -26,11 +21,12 @@ samples = {
 
 #TOP
 'Tt':'ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8',#'ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8', 
-'Tbt': 'ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8',#'ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8', 
+'Tbt':'ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8', 
+#'ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-pythia8',#'ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8', 
 'Ts': 'ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8',#'ST_s-channel_top_leptonDecays_13TeV-PSweights_powheg-pythia',
 #'Tbs':'ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia',
-'TtW':'ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8',
-'TbtW': 'ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8',
+'TtW':'ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8',
+'TbtW': 'ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8', 
 
 #'TTTo2L2Nu'
 'TTJets2L2nu0':'TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_Mtt0to700',
@@ -77,24 +73,40 @@ samples = {
 'TTToHadronic':'TTToHadronic_TuneCP5_13TeV-powheg-pythia8',
 'TTTo2L2Nu': 'TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8',
 'TTToSemiLeptonic': 'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8',
+
 'TTWl':'TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8',
 'TTWq':'TTWJetsToQQ_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8',
 'TTZlM10':'TTZToLLNuNu_M-10_TuneCP5_13TeV-amcatnlo-pythia8',
-'TTZlM1to10':'TTZToLL_M-1to10_TuneCP5_13TeV-amcatnlo-pythia8',
+"TTZlM1to10": "TTZToLL_M-1to10_TuneCP5_13TeV-amcatnlo-pythia8",
+#'TTTT': 'TTTT_TuneCP5_13TeV-amcatnlo-pythia8',
+"TTHH": "TTHH_TuneCP5_13TeV-madgraph-pythia8",
+"TTWH": "TTWH_TuneCP5_13TeV-madgraph-pythia8",
+"TTWW": "TTWW_TuneCP5_13TeV-madgraph-pythia8",
+"TTWZ": "TTWZ_TuneCP5_13TeV-madgraph-pythia8",
+"TTZH": "TTZH_TuneCP5_13TeV-madgraph-pythia8",
+"TTZZ": "TTZZ_TuneCP5_13TeV-madgraph-pythia8",
+"TTHB": "ttHTobb_M125_TuneCP5_13TeV-powheg-pythia8",
+"TTHnoB": "ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8",
+
+
+
+
 #'TTTT':'TTTT_TuneCP5_PSweights_13TeV-amcatnlo-pythia8',
-'WJetsMG':'WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8',
+
+#'WJetsMG':'WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8',
 'WJetsMG200':'WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8',
 'WJetsMG400':'WJetsToLNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8',
 'WJetsMG600':'WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8',
 'WJetsMG800':'WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8',
 'WJetsMG1200':'WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8',
+'WJetsMG2500':'WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8',
+
 #'WJetsMG1200_1':'WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8_1',
 #'WJetsMG1200_2':'WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8_2',
 #'WJetsMG1200_3':'WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8_3',
 #'WJetsMG1200_4':'WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8_4',
 #'WJetsMG1200_5':'WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8_5',
 #
-'WJetsMG2500':'WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8',
 #'WJetsMG2500_2':'WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8_2',
 #'WJetsMG2500_3':'WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8_3',
 #'WJetsMG2500_4':'WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8_4',

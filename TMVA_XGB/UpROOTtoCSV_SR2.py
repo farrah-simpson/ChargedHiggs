@@ -31,12 +31,13 @@ selList = [["NJetsCSV_JetSubCalc", ""],["NJets_JetSubCalc", ""], ["leptonPt_Mult
 weightList = [["pileupWeight", ""], ["lepIdSF", ""], ["EGammaGsfSF", ""], ["MCWeight_MultiLepCalc", ""]] 
 varListKey = args.varListKey
 varList = varsList.varList[varListKey]
-inputDir = varsList.inputDir
+siginputDir = varsList.siginputDir
+bkginputDir = varsList.bkginputDir
 infname = "ChargedHiggs_HplusTB_HplusToTB_M-"+str(args.mass)+"_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root"
 
 print "Loading Signal Sample"
 
-sig_tree = uproot.open(inputDir+infname)["ljmet"]
+sig_tree = uproot.open(siginputDir+infname)["ljmet"]
 sig_df = sig_tree.pandas.df(branches=(iVar[0] for iVar in varList+selList+weightList))
 
 #Event Selection
@@ -51,7 +52,7 @@ back_dfs = []
 bkgList = varsList.bkg
 for ibkg in bkgList:
     print ibkg
-    bkg_tree = uproot.open(inputDir+ibkg)["ljmet"]
+    bkg_tree = uproot.open(bkginputDir+ibkg)["ljmet"]
     bkg_df = bkg_tree.pandas.df(branches=(iVar[0] for iVar in varList+selList+weightList))
     print bkg_df
     bkg_selected = ((bkg_df["isTraining"]==1)|(bkg_df["isTraining"]==2))&((bkg_df["NJets_JetSubCalc"]==4)|(bkg_df["NJets_JetSubCalc"]==5))&(bkg_df["NJetsCSV_JetSubCalc"]>=3)&( ((bkg_df["leptonPt_MultiLepCalc"]>35)&(bkg_df["isElectron"]==True))|((bkg_df["leptonPt_MultiLepCalc"]>30)&(bkg_df["isMuon"]==True)))

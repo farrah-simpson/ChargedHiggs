@@ -36,7 +36,8 @@ else:
 #templateDir2=os.getcwd()+'/v1/templates_M250_2019_12_16/'
 
 splitTTbar = True
-isRebinned= '_wNegBinsCorrec_'#_killFirstBins_syFist' #post for ROOT file names
+#isRebinned= '_wNegBinsCorrec_'#_killFirstBins_syFist' #post for ROOT file names
+isRebinned= '_wNegBinsCorrec__rebinned_stat0p2'#_killFirstBins_syFist' #post for ROOT file names
 saveKey = '' # tag for plot names
 
 sig1='Hptb'+massPt # choose the 1st signal to plot
@@ -58,9 +59,9 @@ if iPlot=='YLD': tempsig='templates_'+iPlot+'_'+sig1+'_'+lumiInTemplates+'fb'+is
 print "tempsig : ",tempsig
 if splitTTbar: 
 
-    #bkgTTBarList = ['ttnobb','ttbb'] 
-    #bkgProcList = bkgTTBarList+['top','ewk','qcd']
-    bkgProcList = ['ttbb','tt2b','tt1b','ttcc','ttjj','top','ewk','qcd']
+    bkgTTBarList = ['ttnobb','ttbb'] 
+    bkgProcList = bkgTTBarList+['top','ewk','qcd']
+    #bkgProcList = ['ttbb','tt2b','tt1b','ttcc','ttjj','top','ewk','qcd']
     #    bkgProcList = ['ttb','ttcc','ttlf','top','ewk','qcd']
 else: 
     bkgProcList = ['ttbar','top','ewk','qcd']
@@ -94,7 +95,7 @@ doNormByBinWidth=False
 #set true, to see the actual shape of the distributions when the binning is not uniform, e.g binning with 0.3
 doOneBand = True
 if not doAllSys: doOneBand = True # Don't change this!
-blind = True
+blind = False#True
 blindYLD = False
 yLog  = True
 doRealPull = False

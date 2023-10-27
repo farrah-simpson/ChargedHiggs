@@ -7,7 +7,8 @@ thisDir = os.getcwd()
 outputDir = thisDir+'/'
 
 region='PS' #SR,CR --> matters only when plotting kinematics
-categorize=0 #1==categorize into t/W/b/j, 0==only split into flavor
+categorize=0 #==categorize into t/W/b/j, 0==only split into flavor
+#sigTrainedList=['500']#['300', '500', '800', '1000', '1500']#,'500','1000']
 
 cTime=datetime.datetime.now()
 date='%i_%i_%i'%(cTime.year,cTime.month,cTime.day)
@@ -82,30 +83,64 @@ iPlotList = [#distribution name as defined in "doHists.py"
 #'NoTop_Jet2_CSV', 
 #'NoTop_Jet2_Pt',
 #
-#'XGB300', 
-#'XGB300_RS', 
-#'XGB300_3b6j',
-#'XGB300_3b6j_RS',
+#'XGB200_SR1',
+#'XGB220_SR1',
+#'XGB250_SR1',
+#'XGB300_SR1',
+#'XGB350_SR1',
+#'XGB400_SR1',
+#'XGB500_SR1',
+#'XGB600_SR1',
+#'XGB700_SR1',
+#'XGB800_SR1',
+#'XGB1000_SR1',
+#'XGB1250_SR1',
+#'XGB1500_SR1',
+#'XGB1750_SR1',
+#'XGB2000_SR1',
+#'XGB2500_SR1',
+#'XGB3000_SR1',
 #
-#'XGB500', 
-#'XGB500_RS', 
-#'XGB500_3b6j',
-#'XGB500_3b6j_RS',
+#'XGB200_SR2',
+#'XGB220_SR2',
+#'XGB250_SR2',
+#'XGB300_SR2',
+#'XGB350_SR2',
+#'XGB400_SR2',
+#'XGB500_SR2',
+#'XGB600_SR2',
+#'XGB700_SR2',
+#'XGB800_SR2',
+#'XGB1000_SR2',
+#'XGB1250_SR2',
+#'XGB1500_SR2',
+#'XGB1750_SR2',
+#'XGB2000_SR2',
+#'XGB2500_SR2',
+#'XGB3000_SR2',
 #
-#'XGB800', 
-#'XGB800_RS', 
-#'XGB800_3b6j',
-#'XGB800_3b6j_RS',
-#
-#'XGB1000', 
-#'XGB1000_RS', 
-#'XGB1000_3b6j',
-#'XGB1000_3b6j_RS',
-#
-#'XGB1500', 
-#'XGB1500_RS', 
-#'XGB1500_3b6j',
-#'XGB1500_3b6j_RS',
+#'XGB200_SR3',
+#'XGB220_SR3',
+#'XGB250_SR3',
+#'XGB300_SR3',
+#'XGB350_SR3',
+#'XGB400_SR3',
+#'XGB500_SR3',
+#'XGB600_SR3',
+#'XGB700_SR3',
+#'XGB800_SR3',
+#'XGB1000_SR3',
+#'XGB1250_SR3',
+#'XGB1500_SR3',
+#'XGB1750_SR3',
+#'XGB2000_SR3',
+#'XGB2500_SR3',
+#'XGB3000_SR3',
+
+
+
+
+
 
 # 			'minBBdr',
 # 			'aveBBdr',
@@ -160,6 +195,7 @@ if 1==1:
 	pfix='templates'
 	if not categorize: pfix='kinematics_'+region
 	pfix+='_'+date#+'_'+time
+	#pfix+='_M'+sigTrained+'_'+date+"_topPtRW_NOHTWeight_Full_FixTrig_forlimit"#+'_'+time
 	outDir = outputDir+pfix
 	if not os.path.exists(outDir): os.system('mkdir '+outDir)
 	os.chdir(outputDir)

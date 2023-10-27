@@ -34,7 +34,7 @@ args = parser.parse_args()
 
 varListKey = args.varListKey
 varList = varsList.varList[varListKey]
-inputDir = varsList.inputDir
+inputDir = varsList.bkginputDir
 infname = args.file
 
 def Reshape(x):
@@ -43,56 +43,56 @@ def Reshape(x):
 
 print("Load Input File")
 
-bst200 = xgb.Booster()
-bst200.load_model("XGB_M200_SRAll.model")
-
-bst220 = xgb.Booster()
-bst220.load_model("XGB_M220_SRAll.model")
-
-bst250 = xgb.Booster()
-bst250.load_model("XGB_M250_SRAll.model")
-
-bst300 = xgb.Booster()
-bst300.load_model("XGB_M300_SRAll.model")
-
-bst350 = xgb.Booster()
-bst350.load_model("XGB_M350_SRAll.model")
-
-bst400 = xgb.Booster()
-bst400.load_model("XGB_M400_SRAll.model")
-
-bst500 = xgb.Booster()
-bst500.load_model("XGB_M500_SRAll.model")
-
-bst600 = xgb.Booster()
-bst600.load_model("XGB_M600_SRAll.model")
-
-bst700 = xgb.Booster()
-bst700.load_model("XGB_M700_SRAll.model")
-
-bst800 = xgb.Booster()
-bst800.load_model("XGB_M800_SRAll.model")
-
-bst1000 = xgb.Booster()
-bst1000.load_model("XGB_M1000_SRAll.model")
-
-bst1250 = xgb.Booster()
-bst1250.load_model("XGB_M1250_SRAll.model")
-
-bst1500 = xgb.Booster()
-bst1500.load_model("XGB_M1500_SRAll.model")
-
-bst1750 = xgb.Booster()
-bst1750.load_model("XGB_M1750_SRAll.model")
-
-bst2000 = xgb.Booster()
-bst2000.load_model("XGB_M2000_SRAll.model")
-
-bst2500 = xgb.Booster()
-bst2500.load_model("XGB_M2500_SRAll.model")
-
-bst3000 = xgb.Booster()
-bst3000.load_model("XGB_M3000_SRAll.model")
+#bst200 = xgb.Booster()
+#bst200.load_model("XGB_M200_SRAll.model")
+#
+#bst220 = xgb.Booster()
+#bst220.load_model("XGB_M220_SRAll.model")
+#
+#bst250 = xgb.Booster()
+#bst250.load_model("XGB_M250_SRAll.model")
+#
+#bst300 = xgb.Booster()
+#bst300.load_model("XGB_M300_SRAll.model")
+#
+#bst350 = xgb.Booster()
+#bst350.load_model("XGB_M350_SRAll.model")
+#
+#bst400 = xgb.Booster()
+#bst400.load_model("XGB_M400_SRAll.model")
+#
+#bst500 = xgb.Booster()
+#bst500.load_model("XGB_M500_SRAll.model")
+#
+#bst600 = xgb.Booster()
+#bst600.load_model("XGB_M600_SRAll.model")
+#
+#bst700 = xgb.Booster()
+#bst700.load_model("XGB_M700_SRAll.model")
+#
+#bst800 = xgb.Booster()
+#bst800.load_model("XGB_M800_SRAll.model")
+#
+#bst1000 = xgb.Booster()
+#bst1000.load_model("XGB_M1000_SRAll.model")
+#
+#bst1250 = xgb.Booster()
+#bst1250.load_model("XGB_M1250_SRAll.model")
+#
+#bst1500 = xgb.Booster()
+#bst1500.load_model("XGB_M1500_SRAll.model")
+#
+#bst1750 = xgb.Booster()
+#bst1750.load_model("XGB_M1750_SRAll.model")
+#
+#bst2000 = xgb.Booster()
+#bst2000.load_model("XGB_M2000_SRAll.model")
+#
+#bst2500 = xgb.Booster()
+#bst2500.load_model("XGB_M2500_SRAll.model")
+#
+#bst3000 = xgb.Booster()
+#bst3000.load_model("XGB_M3000_SRAll.model")
 
 bst200_SR1 = xgb.Booster()
 bst200_SR1.load_model("XGB_M200_SR1.model")
@@ -266,23 +266,23 @@ newfile.cd()
 
 newtree = ttree.CloneTree(0)
  
-XGB200 = array.array('d', [0])
-XGB220 = array.array('d', [0])
-XGB250 = array.array('d', [0])
-XGB300 = array.array('d', [0])
-XGB350 = array.array('d', [0])
-XGB400 = array.array('d', [0])
-XGB500 = array.array('d', [0])
-XGB600 = array.array('d', [0])
-XGB700 = array.array('d', [0])
-XGB800 = array.array('d', [0])
-XGB1000 = array.array('d', [0])
-XGB1250 = array.array('d', [0])
-XGB1500 = array.array('d', [0])
-XGB1750 = array.array('d', [0])
-XGB2000 = array.array('d', [0])
-XGB2500 = array.array('d', [0])
-XGB3000 = array.array('d', [0])
+#XGB200 = array.array('d', [0])
+#XGB220 = array.array('d', [0])
+#XGB250 = array.array('d', [0])
+#XGB300 = array.array('d', [0])
+#XGB350 = array.array('d', [0])
+#XGB400 = array.array('d', [0])
+#XGB500 = array.array('d', [0])
+#XGB600 = array.array('d', [0])
+#XGB700 = array.array('d', [0])
+#XGB800 = array.array('d', [0])
+#XGB1000 = array.array('d', [0])
+#XGB1250 = array.array('d', [0])
+#XGB1500 = array.array('d', [0])
+#XGB1750 = array.array('d', [0])
+#XGB2000 = array.array('d', [0])
+#XGB2500 = array.array('d', [0])
+#XGB3000 = array.array('d', [0])
 
 XGB200_SR1 = array.array('d', [0])
 XGB220_SR1 = array.array('d', [0])
@@ -338,23 +338,23 @@ XGB2000_SR3 = array.array('d', [0])
 XGB2500_SR3 = array.array('d', [0])
 XGB3000_SR3 = array.array('d', [0])
 
-newtree.Branch("XGB200", XGB200, "XGB200/D")
-newtree.Branch("XGB220", XGB220, "XGB220/D")
-newtree.Branch("XGB250", XGB250, "XGB250/D")
-newtree.Branch("XGB300", XGB300, "XGB300/D")
-newtree.Branch("XGB350", XGB350, "XGB350/D")
-newtree.Branch("XGB400", XGB400, "XGB400/D")
-newtree.Branch("XGB500", XGB500, "XGB500/D")
-newtree.Branch("XGB600", XGB600, "XGB600/D")
-newtree.Branch("XGB700", XGB700, "XGB700/D")
-newtree.Branch("XGB800", XGB800, "XGB800/D")
-newtree.Branch("XGB1000", XGB1000, "XGB1000/D")
-newtree.Branch("XGB1250", XGB1250, "XGB1250/D")
-newtree.Branch("XGB1500", XGB1500, "XGB1500/D")
-newtree.Branch("XGB1750", XGB1750, "XGB1750/D")
-newtree.Branch("XGB2000", XGB2000, "XGB2000/D")
-newtree.Branch("XGB2500", XGB2500, "XGB2500/D")
-newtree.Branch("XGB3000", XGB3000, "XGB3000/D")
+#newtree.Branch("XGB200", XGB200, "XGB200/D")
+#newtree.Branch("XGB220", XGB220, "XGB220/D")
+#newtree.Branch("XGB250", XGB250, "XGB250/D")
+#newtree.Branch("XGB300", XGB300, "XGB300/D")
+#newtree.Branch("XGB350", XGB350, "XGB350/D")
+#newtree.Branch("XGB400", XGB400, "XGB400/D")
+#newtree.Branch("XGB500", XGB500, "XGB500/D")
+#newtree.Branch("XGB600", XGB600, "XGB600/D")
+#newtree.Branch("XGB700", XGB700, "XGB700/D")
+#newtree.Branch("XGB800", XGB800, "XGB800/D")
+#newtree.Branch("XGB1000", XGB1000, "XGB1000/D")
+#newtree.Branch("XGB1250", XGB1250, "XGB1250/D")
+#newtree.Branch("XGB1500", XGB1500, "XGB1500/D")
+#newtree.Branch("XGB1750", XGB1750, "XGB1750/D")
+#newtree.Branch("XGB2000", XGB2000, "XGB2000/D")
+#newtree.Branch("XGB2500", XGB2500, "XGB2500/D")
+#newtree.Branch("XGB3000", XGB3000, "XGB3000/D")
 
 newtree.Branch("XGB200_SR1", XGB200_SR1, "XGB200_SR1/D")
 newtree.Branch("XGB220_SR1", XGB220_SR1, "XGB220_SR1/D")
@@ -421,29 +421,30 @@ iev=0
 
 print "Compute XGB"
 
-for chunk in sig_tree.iterate("*", entrysteps=1000, namedecode="utf-8"):
+#for chunk in sig_tree.iterate("*", entrysteps=1000, namedecode="utf-8"):
+for chunk in sig_tree.iterate("*", entrysteps=1000):
     array_var=[]
     for var in train_var:
         array_var.append(chunk[var])
     dataset = np.column_stack(array_var)
     dX = xgb.DMatrix(dataset, feature_names=train_var)
-    XGB200_pred = bst200.predict(dX)
-    XGB220_pred = bst220.predict(dX)
-    XGB250_pred = bst250.predict(dX)
-    XGB300_pred = bst300.predict(dX)
-    XGB350_pred = bst350.predict(dX)
-    XGB400_pred = bst400.predict(dX)
-    XGB500_pred = bst500.predict(dX)
-    XGB600_pred = bst600.predict(dX)
-    XGB700_pred = bst700.predict(dX)
-    XGB800_pred = bst800.predict(dX)
-    XGB1000_pred = bst1000.predict(dX)
-    XGB1250_pred = bst1250.predict(dX)
-    XGB1500_pred = bst1500.predict(dX)
-    XGB1750_pred = bst1750.predict(dX)
-    XGB2000_pred = bst2000.predict(dX)
-    XGB2500_pred = bst2500.predict(dX)
-    XGB3000_pred = bst3000.predict(dX)
+    #XGB200_pred = bst200.predict(dX)
+    #XGB220_pred = bst220.predict(dX)
+    #XGB250_pred = bst250.predict(dX)
+    #XGB300_pred = bst300.predict(dX)
+    #XGB350_pred = bst350.predict(dX)
+    #XGB400_pred = bst400.predict(dX)
+    #XGB500_pred = bst500.predict(dX)
+    #XGB600_pred = bst600.predict(dX)
+    #XGB700_pred = bst700.predict(dX)
+    #XGB800_pred = bst800.predict(dX)
+    #XGB1000_pred = bst1000.predict(dX)
+    #XGB1250_pred = bst1250.predict(dX)
+    #XGB1500_pred = bst1500.predict(dX)
+    #XGB1750_pred = bst1750.predict(dX)
+    #XGB2000_pred = bst2000.predict(dX)
+    #XGB2500_pred = bst2500.predict(dX)
+    #XGB3000_pred = bst3000.predict(dX)
 
     XGB200_SR1_pred = bst200_SR1.predict(dX)
     XGB220_SR1_pred = bst220_SR1.predict(dX)
@@ -500,27 +501,27 @@ for chunk in sig_tree.iterate("*", entrysteps=1000, namedecode="utf-8"):
     XGB3000_SR3_pred = bst3000_SR3.predict(dX)
 
     #ichunk+=1
-    chunck_size = len(XGB300_pred)
+    chunck_size = len(XGB300_SR1_pred)
     for k in range(chunck_size):
         if iev%100000==0:
             print(iev)
-        XGB200[0] = XGB200_pred[k]
-        XGB220[0] = XGB220_pred[k]
-        XGB250[0] = XGB250_pred[k]
-        XGB300[0] = XGB300_pred[k]
-        XGB350[0] = XGB350_pred[k]
-        XGB400[0] = XGB400_pred[k]
-        XGB500[0] = XGB500_pred[k]
-        XGB600[0] = XGB600_pred[k]
-        XGB700[0] = XGB700_pred[k]
-        XGB800[0] = XGB800_pred[k]
-        XGB1000[0] = XGB1000_pred[k]
-        XGB1250[0] = XGB1250_pred[k]
-        XGB1500[0] = XGB1500_pred[k]
-        XGB1750[0] = XGB1750_pred[k]
-        XGB2000[0] = XGB2000_pred[k]
-        XGB2500[0] = XGB2500_pred[k]
-        XGB3000[0] = XGB3000_pred[k]
+        #XGB200[0] = XGB200_pred[k]
+        #XGB220[0] = XGB220_pred[k]
+        #XGB250[0] = XGB250_pred[k]
+        #XGB300[0] = XGB300_pred[k]
+        #XGB350[0] = XGB350_pred[k]
+        #XGB400[0] = XGB400_pred[k]
+        #XGB500[0] = XGB500_pred[k]
+        #XGB600[0] = XGB600_pred[k]
+        #XGB700[0] = XGB700_pred[k]
+        #XGB800[0] = XGB800_pred[k]
+        #XGB1000[0] = XGB1000_pred[k]
+        #XGB1250[0] = XGB1250_pred[k]
+        #XGB1500[0] = XGB1500_pred[k]
+        #XGB1750[0] = XGB1750_pred[k]
+        #XGB2000[0] = XGB2000_pred[k]
+        #XGB2500[0] = XGB2500_pred[k]
+        #XGB3000[0] = XGB3000_pred[k]
 
         XGB200_SR1[0] = XGB200_SR1_pred[k]
         XGB220_SR1[0] = XGB220_SR1_pred[k]

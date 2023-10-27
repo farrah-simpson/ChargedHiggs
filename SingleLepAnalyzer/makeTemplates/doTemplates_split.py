@@ -4,7 +4,7 @@ import argparse
 from ROOT import gROOT,TFile,TH1F
 parent = os.path.dirname(os.getcwd())
 sys.path.append(parent)
-from weights import *
+#from weights import *
 from modSyst import *
 from utils import *
 
@@ -21,13 +21,21 @@ def SplitSR(cat):
     elif "nB3p_nJ6p" in cat:
         return "_SR3"
     else:
-        return ""
+        return "_SR1"
 
 parser = argparse.ArgumentParser(description="template building for the charged Higgs analysis")
 parser.add_argument("-d", "--directory", help="the directory to be processed")
 parser.add_argument("-c", "--Categorized", default=False, action="store_true", help="Categorize or not")
 parser.add_argument("-s", "--sys", default=False, action="store_true", help="build the systematic uncertainty templates")
+parser.add_argument("-y", "--year", default="17", help="The data taking year")
 args = parser.parse_args()
+
+if args.year=="17":
+    from weights import *
+if args.year=="18":
+    from weights_UL18 import *
+
+
 
 gROOT.SetBatch(1)
 start_time = time.time()
@@ -85,19 +93,19 @@ else:
 	#bkgGrupList = ['ttbar','top','ewk','qcd']
 	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd'] #TTV
 bkgProcs = {}
-bkgProcs['WJets']  = ['WJetsMG']#['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800']
+bkgProcs['WJets']  =  ['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800', 'WJetsMG1200']
 #bkgProcs['WJets'] += ['WJetsMG1200_1','WJetsMG1200_2','WJetsMG1200_3','WJetsMG1200_4','WJetsMG1200_5']
 #bkgProcs['WJets'] += ['WJetsMG2500_1','WJetsMG2500_2','WJetsMG2500_3','WJetsMG2500_4','WJetsMG2500_5']#,'WJetsMG2500_6']
 
-bkgProcs['ZJets'] = ['DYMG']#['DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500']
+bkgProcs['ZJets'] = ['DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500']
 
 bkgProcs['VV']    = ['WW','WZ','ZZ']
 
 bkgProcs['T']     = ['Tt','Tbt','Ts','TtW','TbtW',]
 #bkgProcs['TTV'] = []
 #bkgProcs['TTV']   = ['TTWl','TTWq','TTZl']
-bkgProcs['TTV']   = ['TTWl','TTZl']
-#bkgProcs['OtherT']= ['TTHB','TTHnoB', 'TTTT']
+bkgProcs['TTV']   = ['TTWl','TTWq','TTZlM10', 'TTZlM1to10']
+bkgProcs['OtherT']= ['TTHH', 'TTWH', 'TTWW', 'TTWZ', 'TTZH', 'TTZZ', 'TTHB', 'TTHnoB']#['TTHB','TTHnoB', 'TTTT']
 
 #bkgProcs['TTTo2L2Nu'] = ['TTTo2L2Nu_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 #bkgProcs['TTToHadronic'] = ['TTToHadronic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
@@ -111,16 +119,36 @@ bkgProcs['TTJets'] += ['TTToSemiLeptonic']
 #bkgProcs['TTJets'] += ['TTJetsSemiLepbin1','TTJetsSemiLepbin2','TTJetsSemiLepbin3']#,'TTJetsSemiLep4','TTJetsSemiLep5']#,'TTJetsSemiLep6']
 #bkgProcs['TTJets'] += ['TTJets700mtt','TTJets1000mtt']
 
-bkgProcs['tt2b']  = [tt+'_tt2b' for tt in bkgProcs['TTJets']]
-bkgProcs['ttbb']  = [tt+'_ttbb' for tt in bkgProcs['TTJets']]
-bkgProcs['tt1b']   = [tt+'_tt1b' for tt in bkgProcs['TTJets']]
-bkgProcs['ttcc']  = [tt+'_ttcc' for tt in bkgProcs['TTJets']]
-bkgProcs['ttjj']  = [tt+'_ttjj' for tt in bkgProcs['TTJets']]
+#bkgProcs['tt2b']  = [tt+'_tt2b' for tt in bkgProcs['TTJets']]
+bkgProcs['tt2b']  = [tt+'_tt2b' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['tt2b'] += ['TTToSemiLeptonic_HT500Njet9_tt2b']
+bkgProcs['tt2b'] += ['TTToSemiLeptonic_HT0Njet0_tt2b']
+
+#bkgProcs['ttbb']  = [tt+'_ttbb' for tt in bkgProcs['TTJets']]
+bkgProcs['ttbb']  = [tt+'_ttbb' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['ttbb'] += ['TTToSemiLeptonic_HT500Njet9_ttbb']
+bkgProcs['ttbb'] += ['TTToSemiLeptonic_HT0Njet0_ttbb']
+
+#bkgProcs['tt1b']   = [tt+'_tt1b' for tt in bkgProcs['TTJets']]
+bkgProcs['tt1b']   = [tt+'_tt1b' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['tt1b'] += ['TTToSemiLeptonic_HT500Njet9_tt1b']
+bkgProcs['tt1b'] += ['TTToSemiLeptonic_HT0Njet0_tt1b']
+
+#bkgProcs['ttcc']  = [tt+'_ttcc' for tt in bkgProcs['TTJets']]
+bkgProcs['ttcc']  = [tt+'_ttcc' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['ttcc'] += ['TTToSemiLeptonic_HT500Njet9_ttcc']
+bkgProcs['ttcc'] += ['TTToSemiLeptonic_HT0Njet0_ttcc']
+
+#bkgProcs['ttjj']  = [tt+'_ttjj' for tt in bkgProcs['TTJets']]
+bkgProcs['ttjj'] = [tt+'_ttjj' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['ttjj'] += ['TTToSemiLeptonic_HT500Njet9_ttjj']
+bkgProcs['ttjj'] += ['TTToSemiLeptonic_HT0Njet0_'+str(i)+'_ttjj' for i in range(1, 11)]
+
 
 bkgProcs['ttnobb']  = bkgProcs['ttjj'] + bkgProcs['ttcc'] + bkgProcs['tt1b'] + bkgProcs['tt2b']
 
 bkgProcs['qcd']   = ['QCDht200','QCDht300','QCDht500','QCDht700','QCDht1000','QCDht1500','QCDht2000']
-bkgProcs['top']   = bkgProcs['TTV']+bkgProcs['T']#+bkgProcs['OtherT']
+bkgProcs['top']   = bkgProcs['TTV']+bkgProcs['T']+bkgProcs['OtherT']
 bkgProcs['ewk']   = bkgProcs['WJets']+bkgProcs['ZJets']+bkgProcs['VV']
 #bkgProcs['ttbb']  = bkgProcs['TTBB']
 #bkgProcs['ttcc']  = bkgProcs['TTCC']

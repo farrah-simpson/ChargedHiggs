@@ -4,7 +4,7 @@ import argparse
 from ROOT import gROOT,TFile,TH1F
 parent = os.path.dirname(os.getcwd())
 sys.path.append(parent)
-from weights import *
+#from weights import *
 from modSyst import *
 from utils import *
 
@@ -41,19 +41,21 @@ pfix = args.directory#'templates_M500_2020_11_23_topPtRW_NC_allweights_DJ'#'kine
 #pfix+=massPt+'_2020_11_23_topPtRW_NC_allweights'
 outDir = os.getcwd()+'/'+pfix+'/'+cutString
 
-scaleSignalXsecTo1pb = True#change for comp!!`check! this has to be "True" if you are making templates for limit calculation!!!!!!!!
+scaleSignalXsecTo1pb = True # this has to be "True" if you are making templates for limit calculation!!!!!!!!
 doAllSys = True
 doQ2sys  = False
 doPDFsys = False
 if not doAllSys: doQ2sys = False
 addCRsys = False
-systematicList = ['muR','muF','isr','fsr','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','pileup','muRFcorrd','PNT','PNW','jec','jer','prefire']#,'jmst','jmrt','jmsW','jmrW','trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
-systList_jsf = []#'jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
-#'jsfJESPileUpPtBB', 'jsfJESPileUpPtEC1', 'jsfJESPileUpPtEC2', 'jsfJESPileUpPtHF', 'jsfJESPileUpPtRef', 'jsfJESRelativeBal', 'jsfJESRelativeFSR',
-#'jsfJESRelativeJEREC1', 'jsfJESRelativeJEREC2', 'jsfJESRelativeJERHF', 'jsfJESRelativeJERHF', 'jsfJESRelativePtBB', 'jsfJESRelativePtEC1',
-#'jsfJESRelativePtEC2', 'jsfJESRelativePtHF', 'jsfJESRelativeStatEC', 'jsfJESRelativeStatFSR', 'jsfJESRelativeStatHF', 'jsfJESSinglePionECAL',
-#'jsfJESSinglePionHCAL', 'jsfJESTimePtEta']
-systematicList += systList_jsf
+#systematicList = ['muR','muF','isr','fsr','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','pileup','muRFcorrd','PNT','PNW','jec','jer','prefire']#,'jmst','jmrt','jmsW','jmrW','trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2'] include any of these??
+#systematicList = ['trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
+systematicList = ['PNT','PNW','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes']
+systList_jsf = [] #do I need these?? 'jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
+'jsfJESPileUpPtBB', 'jsfJESPileUpPtEC1', 'jsfJESPileUpPtEC2', 'jsfJESPileUpPtHF', 'jsfJESPileUpPtRef', 'jsfJESRelativeBal', 'jsfJESRelativeFSR',
+'jsfJESRelativeJEREC1', 'jsfJESRelativeJEREC2', 'jsfJESRelativeJERHF', 'jsfJESRelativeJERHF', 'jsfJESRelativePtBB', 'jsfJESRelativePtEC1',
+'jsfJESRelativePtEC2', 'jsfJESRelativePtHF', 'jsfJESRelativeStatEC', 'jsfJESRelativeStatFSR', 'jsfJESRelativeStatHF', 'jsfJESSinglePionECAL',
+'jsfJESSinglePionHCAL', 'jsfJESTimePtEta']
+#systematicList += systList_jsf
 normalizeRENORM_PDF = False #normalize the renormalization/pdf uncertainties to nominal templates --> normalizes signal processes only !!!!
 rebinBy = -1#4#performs a regular rebinning with "Rebin(rebinBy)", put -1 if rebinning is not wanted
 
@@ -77,16 +79,19 @@ else:
 	#bkgGrupList = ['ttbar','top','ewk','qcd']
 	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd']#,'TTV']
 bkgProcs = {}
-bkgProcs['WJets']  = ['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800']
+bkgProcs['WJets']  =  ['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800', 'WJetsMG1200', 'WJetsMG2500']
+#bkgProcs['WJets']  =  ['WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800', 'WJetsMG1200', 'WJetsMG2500']
 #bkgProcs['WJets'] += ['WJetsMG1200_1','WJetsMG1200_2','WJetsMG1200_3','WJetsMG1200_4','WJetsMG1200_5']
 #bkgProcs['WJets'] += ['WJetsMG2500_1','WJetsMG2500_2','WJetsMG2500_3','WJetsMG2500_4','WJetsMG2500_5']#,'WJetsMG2500_6']
 
 bkgProcs['ZJets'] = ['DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500']
+
 bkgProcs['VV']    = ['WW','WZ','ZZ']
 bkgProcs['T']     = ['Tt','Tbt','Ts','TtW','TbtW',]
-bkgProcs['TTV']   = ['TTWl','TTZlM10',"TTZlM1to10"]#,'TTWq']
-bkgProcs['OtherT']= ['TTHB','TTHnoB']
-bkgProcs['TTXY']= ['TTHH','TTWH','TTWW','TTWZ','TTZH','TTZZ','TTTJ','TTTW'] 
+#bkgProcs['TTV'] = []
+#bkgProcs['TTV']   = ['TTWl','TTWq','TTZl']
+bkgProcs['TTV']   = ['TTWl','TTWq','TTZlM10', 'TTZlM1to10']
+bkgProcs['OtherT']= ['TTHH', 'TTWH', 'TTWW', 'TTWZ', 'TTZH', 'TTZZ', 'TTHB', 'TTHnoB']#['TTHB','TTHnoB', 'TTTT']
 
 #bkgProcs['TTTo2L2Nu'] = ['TTTo2L2Nu_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 #bkgProcs['TTToHadronic'] = ['TTToHadronic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
@@ -107,10 +112,36 @@ bkgProcs['ttcc']  = [tt+'_ttcc' for tt in bkgProcs['TTJets']]
 bkgProcs['ttjj']  = [tt+'_ttjj' for tt in bkgProcs['TTJets']]
 bkgProcs['ttnobb']  = bkgProcs['ttjj'] + bkgProcs['ttcc'] + bkgProcs['tt1b'] + bkgProcs['tt2b']
 
+#bkgProcs['top'] = bkgProcs['T']+bkgProcs['OtherT']+bkgProcs['TTV']+bkgProcs['TTJets']
+#bkgProcs['tt2b']  = [tt+'_tt2b' for tt in bkgProcs['TTJets']]
+bkgProcs['tt2b']  = [tt+'_tt2b' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['tt2b'] += ['TTToSemiLeptonic_HT500Njet9_tt2b']
+bkgProcs['tt2b'] += ['TTToSemiLeptonic_HT0Njet0_tt2b']
+
+#bkgProcs['ttbb']  = [tt+'_ttbb' for tt in bkgProcs['TTJets']]
+bkgProcs['ttbb']  = [tt+'_ttbb' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['ttbb'] += ['TTToSemiLeptonic_HT500Njet9_ttbb']
+bkgProcs['ttbb'] += ['TTToSemiLeptonic_HT0Njet0_ttbb']
+
+#bkgProcs['tt1b']   = [tt+'_tt1b' for tt in bkgProcs['TTJets']]
+bkgProcs['tt1b']   = [tt+'_tt1b' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['tt1b'] += ['TTToSemiLeptonic_HT500Njet9_tt1b']
+bkgProcs['tt1b'] += ['TTToSemiLeptonic_HT0Njet0_tt1b']
+
+#bkgProcs['ttcc']  = [tt+'_ttcc' for tt in bkgProcs['TTJets']]
+bkgProcs['ttcc']  = [tt+'_ttcc' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['ttcc'] += ['TTToSemiLeptonic_HT500Njet9_ttcc']
+bkgProcs['ttcc'] += ['TTToSemiLeptonic_HT0Njet0_ttcc']
+
+#bkgProcs['ttjj']  = [tt+'_ttjj' for tt in bkgProcs['TTJets']]
+bkgProcs['ttjj'] = [tt+'_ttjj' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
+bkgProcs['ttjj'] += ['TTToSemiLeptonic_HT500Njet9_ttjj']
+bkgProcs['ttjj'] += ['TTToSemiLeptonic_HT0Njet0_'+str(i)+'_ttjj' for i in range(1, 11)]
+
+bkgProcs['ttnobb']  = bkgProcs['ttjj'] + bkgProcs['ttcc'] + bkgProcs['tt1b'] + bkgProcs['tt2b']
+
 bkgProcs['qcd']   = ['QCDht200','QCDht300','QCDht500','QCDht700','QCDht1000','QCDht1500','QCDht2000']
-#bkgProcs['top']   = bkgProcs['TTJets']+bkgProcs['T']#bkgProcs['TTV']+bkgProcs['T']+bkgProcs['OtherT']#+bkgProcs['TTXY']
-#bkgProcs['top']   = bkgProcs['TTJets']+bkgProcs['T']+bkgProcs['TTV']+bkgProcs['TTXY']#+bkgProcs['TTXY']+bkgProcs['OtherT']
-bkgProcs['top'] = bkgProcs['T']+bkgProcs['OtherT']+bkgProcs['TTV']+bkgProcs['TTXY']+bkgProcs['TTJets']
+bkgProcs['top']   = bkgProcs['TTV']+bkgProcs['T']+bkgProcs['OtherT']
 bkgProcs['ewk']   = bkgProcs['WJets']+bkgProcs['ZJets']+bkgProcs['VV']
 #bkgProcs['ttbb']  = bkgProcs['TTBB']
 #bkgProcs['ttcc']  = bkgProcs['TTCC']
@@ -142,6 +173,9 @@ if whichSignal=='Hptb'or 'X53' or 'X53H': decays = ['']
 
 #if massPt not in massList:    MICHAEL COMMENTED OUT THESE TWO LINES
 #	massList.append(massPt)
+#sigList = [whichSignal+str(mass) for mass in massList]
+sigList = [] 
+if whichSignal=='Hptb' or whichSignal == 'Hptb1000': decays = ['']
 
 doBRScan = False
 BRs={}
@@ -230,8 +264,8 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 
         #get signal
  			for signal in sigList:
- 				print "histoPrefix ", histoPrefix
- 				print "signal+decays[0]", signal+decays[0]
+ 				#print "histoPrefix ", histoPrefix
+ 				#print "signal+decays[0]", signal+decays[0]
  				#print sighists
                                 hists[signal+i] = sighists[histoPrefix+'_'+signal+decays[0]].Clone(histoPrefix+'__sig')
  				for decay in decays:
@@ -402,8 +436,9 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 		i=cat
                 print cat
                 print "=============================================="
-		#if '_nB1_' in cat or '_nB2p_' in cat or '_nB2_nJ4' in cat: postTag = 'isCR_'
 		postTag = ''#isSR_'
+		#if '_nB1_' in cat or '_nB2p_' in cat or '_nB2_nJ4' in cat or 'nB1p_' in cat: postTag = 'isCR_'
+		#else: postTag = 'isSR_'
                 for signal in sigList:
                         #mass = [str(mass) for mass in massList if signal.endswith(str(mass))][0]
                         hists[signal+i].SetName(hists[signal+i].GetName().replace('fb_','fb_'+postTag).replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
@@ -710,7 +745,7 @@ def findfiles(path, filtre):
 def rundoTemp(category):
 	#iPlotList = ['HT''minBBdr','aveBBdr','deltaEta_maxBB','FW_momentum_2','centrality','aveCSVpt','HT','minMlb','Bjet1Pt','mass_maxJJJpt','MTlmet','lepDR_minBBdr','MET']
         iPlotList = [
-               'HT',
+                'HT',
                 #'HTpt40',
                 'ST',
                 'minMlb',
@@ -722,30 +757,28 @@ def rundoTemp(category):
                 #'aveCSVpt',
                 #'aveBBdr',
                 ##'topPt',
-                ##'FW_momentum_0',
-                ##'FW_momentum_1', ##TODO
-                ##'FW_momentum_2', ##TODO
-                ##'FW_momentum_3',
-                ##'FW_momentum_4',
-                ##'FW_momentum_5',
-                ##'FW_momentum_6',
+                #'FW_momentum_0',
+                #'FW_momentum_1', ##TODO
+                #'FW_momentum_2', ##TODO
+                #'FW_momentum_3',
+                #'FW_momentum_4',
+                #'FW_momentum_5',
+                #'FW_momentum_6',
                 #'mass_maxJJJpt',
                 #'Bjet1Pt',
                 #'deltaR_minBB', ##TODO
-                #'deltaR',  ##TODO
+                ##'deltaR',  ##TODO
                 #'MTlmet',
+                ##'HT',
                 #'hemiout',
                 'theLeadJetPt',
                 'MET',
                 'lepPt',
-#                'JetPt',
-#                'Jet1Pt',
-
                 #'masslepJets0',
                 #'masslepJets1',
                 #'masslepJets2',
-                #'MT2bb',
-                #'masslepBJets0',
+                ##'MT2bb',
+                ##'masslepBJets0',
                 #'mass_lepBJet_mindr',
                 # 
                 #'secondJetPt',
@@ -776,83 +809,83 @@ def rundoTemp(category):
                 #'Aplanarity',
                 #'BestTop_Disc',
                 #'BestTop_Pt', 
-                #'NoTop_Jet1_CSV', 
+                ##'NoTop_Jet1_CSV', 
                 #'NoTop_Jet1_Pt', 
                 #'NoTop_Jet2_CSV',
                 #'NoTop_Jet2_Pt',
 
-               # 'XGB200', 
-               # 'XGB220', 
-               # 'XGB250', 
-               # 'XGB300', 
-               # 'XGB350', 
-               # 'XGB400', 
-               # 'XGB500', 
-               # 'XGB600', 
-               # 'XGB700', 
-               # 'XGB800', 
-               # 'XGB1000',  
-               # 'XGB1250',
-               # 'XGB1500',
-               # 'XGB1750',
-               # 'XGB2000',
-               # 'XGB2500',
-               # 'XGB3000',
-               # 
-               # 'XGB200_SR1', 
-               # 'XGB220_SR1', 
-               # 'XGB250_SR1', 
-               # 'XGB300_SR1', 
-               # 'XGB350_SR1', 
-               # 'XGB400_SR1', 
-               # 'XGB500_SR1', 
-               # 'XGB600_SR1', 
-               # 'XGB700_SR1', 
-               # 'XGB800_SR1', 
-               # 'XGB1000_SR1', 
-               # 'XGB1250_SR1',
-               # 'XGB1500_SR1',
-               # 'XGB1750_SR1',
-               # 'XGB2000_SR1',
-               # 'XGB2500_SR1',
-               # 'XGB3000_SR1',
-               # 
-               # 'XGB200_SR2', 
-               # 'XGB220_SR2', 
-               # 'XGB250_SR2', 
-               # 'XGB300_SR2', 
-               # 'XGB350_SR2', 
-               # 'XGB400_SR2', 
-               # 'XGB500_SR2', 
-               # 'XGB600_SR2', 
-               # 'XGB700_SR2', 
-               # 'XGB800_SR2', 
-               # 'XGB1000_SR2', 
-               # 'XGB1250_SR2',
-               # 'XGB1500_SR2',
-               # 'XGB1750_SR2',
-               # 'XGB2000_SR2',
-               # 'XGB2500_SR2',
-               # 'XGB3000_SR2',
-               # 
-               # 
-               # 'XGB200_SR3', 
-               # 'XGB220_SR3', 
-               # 'XGB250_SR3', 
-               # 'XGB300_SR3', 
-               # 'XGB350_SR3', 
-               # 'XGB400_SR3', 
-               # 'XGB500_SR3', 
-               # 'XGB600_SR3', 
-               # 'XGB700_SR3', 
-               # 'XGB800_SR3', 
-               # 'XGB1000_SR3', 
-               # 'XGB1250_SR3',
-               # 'XGB1500_SR3',
-               # 'XGB1750_SR3',
-               # 'XGB2000_SR3',
-               # 'XGB2500_SR3',
-               # 'XGB3000_SR3',
+                #'XGB200', 
+                #'XGB220', 
+                #'XGB250', 
+                #'XGB300', 
+                #'XGB350', 
+                #'XGB400', 
+                #'XGB500', 
+                #'XGB600', 
+                #'XGB700', 
+                #'XGB800', 
+                #'XGB1000',  
+                #'XGB1250',
+                #'XGB1500',
+                #'XGB1750',
+                #'XGB2000',
+                #'XGB2500',
+                #'XGB3000',
+                
+                #'XGB200_SR1', 
+                #'XGB220_SR1', 
+                #'XGB250_SR1', 
+                #'XGB300_SR1', 
+                #'XGB350_SR1', 
+                #'XGB400_SR1', 
+                #'XGB500_SR1', 
+                #'XGB600_SR1', 
+                #'XGB700_SR1', 
+                #'XGB800_SR1', 
+                #'XGB1000_SR1', 
+                #'XGB1250_SR1',
+                #'XGB1500_SR1',
+                #'XGB1750_SR1',
+                #'XGB2000_SR1',
+                #'XGB2500_SR1',
+                #'XGB3000_SR1',
+                #
+                #'XGB200_SR2', 
+                #'XGB220_SR2', 
+                #'XGB250_SR2', 
+                #'XGB300_SR2', 
+                #'XGB350_SR2', 
+                #'XGB400_SR2', 
+                #'XGB500_SR2', 
+                #'XGB600_SR2', 
+                #'XGB700_SR2', 
+                #'XGB800_SR2', 
+                #'XGB1000_SR2', 
+                #'XGB1250_SR2',
+                #'XGB1500_SR2',
+                #'XGB1750_SR2',
+                #'XGB2000_SR2',
+                #'XGB2500_SR2',
+                #'XGB3000_SR2',
+                #
+                #
+                #'XGB200_SR3', 
+                #'XGB220_SR3', 
+                #'XGB250_SR3', 
+                #'XGB300_SR3', 
+                #'XGB350_SR3', 
+                #'XGB400_SR3', 
+                #'XGB500_SR3', 
+                #'XGB600_SR3', 
+                #'XGB700_SR3', 
+                #'XGB800_SR3', 
+                #'XGB1000_SR3', 
+                #'XGB1250_SR3',
+                #'XGB1500_SR3',
+                #'XGB1750_SR3',
+                #'XGB2000_SR3',
+                #'XGB2500_SR3',
+                #'XGB3000_SR3',
 
 
 

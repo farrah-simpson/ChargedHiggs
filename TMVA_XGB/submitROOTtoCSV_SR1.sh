@@ -23,7 +23,7 @@ export PATH=$PATH:$macroDir
 
 python UpROOTtoCSV_SR1.py  -k $vListKey -m ${mass} 
 
-xrdcp -f dtrainM${mass}.csv $outputDir/
-xrdcp -f dtestM${mass}.csv $outputDir/
+cp  dtrainM${mass}.csv $outputDir/
+cp  dtestM${mass}.csv $outputDir/
 
 rm *csv

@@ -73,8 +73,9 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
     
 	#if isEM=='E' and isCR(njets,nbtag): cut += ' && (minDPhi_MetJet>0.05)'
 
-	cut += ' && DataPastTriggerX == 1 && MCPastTriggerX == 1 && AK4HT>350'#' && (DataLepPastTrigger == 1 || (DataPastTriggerX==1 && AK4HT>500)) && (MCLepPastTrigger == 1 || (MCPastTriggerX ==1 && AK4HT>500))' #' && DataPastTrigger == 1 && MCPastTrigger == 1'
+	#if isEM=='E' and isCR(njets,nbtag): cut += ' && (minDPhi_MetJet>0.05)'
 
+	cut += ' && DataPastTriggerX == 1 && MCPastTriggerX == 1 && AK4HT>350'#' && (DataLepPastTrigger == 1 || (DataPastTriggerX==1 && AK4HT>500)) && (MCLepPastTrigger == 1 || (MCPastTriggerX ==1 && AK4HT>500))' #' && DataPastTrigger == 1 && MCPastTrigger == 1'
 	# Define weights
 	TrigEff = 'triggerXSF * triggerSF'
 	jetSFstr = '1'
@@ -101,9 +102,9 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
 # 		weightStrBase = '3/2'
 ############################  BDT FLIP BINNING BUILDING############## ############## ############## 
  	if ('XGB' in plotTreeName) and (process.startswith('Hptb') or ('TTToSemiLeptonic' in process) ): #Add "or 'TTJetsPH' in process" here
-		cut += ' && (isTraining == 3)'
-		weightStr = '5'
-		weightStrBase = '5'
+ 		cut += ' && (isTraining == 3)'
+ 		weightStr = '5'
+ 		weightStrBase = '5'
 # 	elif not 'Hptb' in process and not 'TTJets' in process and not 'Data' in process:
 # 		cut += ' && (isTraining == 3)'
 # 		weightStr = '3'
@@ -117,14 +118,16 @@ def analyze(tTree,tTreePkey,process,cutList, doAllSys,doJetRwt,iPlot,plotDetails
 	HTweightStr = '1'
 	HTweightStrUp = '1'
 	HTweightStrDn = '1'
-	DJweightStr = ' btagDeepJetWeight * btagDeepJet2DWeight_HTnj '
+        DJweightStr = ' btagDeepJetWeight * btagDeepJet2DWeight_HTnj '
+
+        
       
 	if 'WJetsMG' in process:
-		HTweightStr   = 'HTSF_Pol'
-		HTweightStrUp = 'HTSF_PolUp'
-		HTweightStrDn = 'HTSF_PolDn'
-
-# 		HTweightStr = str(genHTweight[process])
+	#	HTweightStr   = 'HTSF_Pol'
+	#	HTweightStrUp = 'HTSF_PolUp'
+	#	HTweightStrDn = 'HTSF_PolDown'
+#
+ 		HTweightStr = str(genHTweight[process])
 # 		HTweightStr   = 'HTSF_Pol'
 # 		HTweightStrUp = 'HTSF_PolUp'
 # 		HTweightStrDn = 'HTSF_PolDn'

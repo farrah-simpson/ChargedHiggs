@@ -20,54 +20,62 @@ start_time = time.time()
 # args = parser.parse_args()
 
 lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
+<<<<<<< HEAD
 step1Dir = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/' #lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_XGBs_added_sys_new/nominal/'
+=======
+step1Dir = '/isilon/hadoop/store/user/dali/FWLJMET106XUL_singleLep2017UL_RunIISummer20_3t_step1hadds/' 
+ntupleDir = '/isilon/hadoop/users/jluo48/CHiggs/UL17/step3_XGB/nominal/'
+
+>>>>>>> d4367fa19d33d487c052ec45f8cb205e446dedd1
 
 """
 Note: 
 --Each process in step1 (or step2) directories should have the root files hadded! 
---The code will look for <step1Dir>/<process>_hadd.root for nominal trees.
-The uncertainty shape shifted files will be taken from <step1Dir>/../<shape>/<process>_hadd.root,
+--The code will look for <ntupleDir>/<process>_hadd.root for nominal trees.
+The uncertainty shape shifted files will be taken from <ntupleDir>/../<shape>/<process>_hadd.root,
 where <shape> is for example "JECUp". hadder.py can be used to prepare input files this way! 
 --Each process given in the lists below must have a definition in "samples.py"
 --Check the set of cuts in "analyze.py"
 """	
+N=10
 
 bkgList = [
-		  'DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500',
-		  'QCDht200',
-          'QCDht300',
+		  #'DYMG', 
+                  'DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG2500',
+		  'QCDht200','QCDht300',
                   'QCDht500',
                   'QCDht700','QCDht1000','QCDht1500','QCDht2000',
 		  'Tt','Tbt','Ts','TtW','TbtW',
                   #'WJetsMG',
-		  'WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800', 'WJetsMG1200',
+		  'WJetsMG200','WJetsMG400','WJetsMG600','WJetsMG800', 'WJetsMG1200', 'WJetsMG2500',
 		  #'WJetsMG1200_1','WJetsMG1200_2','WJetsMG1200_3','WJetsMG1200_4','WJetsMG1200_5',
 		  #'WJetsMG2500_1','WJetsMG2500_2','WJetsMG2500_3','WJetsMG2500_4','WJetsMG2500_5', 'WJetsMG2500_6',
-		  'TTHH','TTWH','TTWW','TTWZ','TTZH','TTZZ','TTTJ','TTTW',
 	 	  'TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000',		  
 		  'TTJetsHad0','TTJetsHad700','TTJetsHad1000',		 
-          #        'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic', 
-		  #'TTJetsSemiLepNjet9bin1','TTJetsSemiLepNjet9bin2','TTJetsSemiLepNjet9bin3',
-		  #'TTJetsSemiLep01','TTJetsSemiLep02','TTJetsSemiLep03','TTJetsSemiLep04','TTJetsSemiLep05','TTJetsSemiLep06', 'TTJetsSemiLep07','TTJetsSemiLep08','TTJetsSemiLep09','TTJetsSemiLep010', 		  
-		  #'TTJetsSemiLep7001','TTJetsSemiLep7002','TTJetsSemiLep7003','TTJetsSemiLep7004','TTJetsSemiLep7005','TTJetsSemiLep7006', 'TTJetsSemiLep7007','TTJetsSemiLep7008','TTJetsSemiLep7009','TTJetsSemiLep70010', 		  
-		  #'TTJetsSemiLep10001','TTJetsSemiLep10002','TTJetsSemiLep10003','TTJetsSemiLep10004','TTJetsSemiLep10005','TTJetsSemiLep10006', 'TTJetsSemiLep10007','TTJetsSemiLep10008','TTJetsSemiLep10009','TTJetsSemiLep100010', 		  
 		  'TTJetsSemiLep0','TTJetsSemiLep700','TTJetsSemiLep1000',
-		  'TTJets700mtt','TTJets1000mtt',
-		  'TTWl','TTWq',
-                  'TTZlM10','TTZlM1to10',#TTTT',
+                  #'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic', 
+                  #'TTToSemiLeptonic', 
+		  #'TTJetsSemiLepNjet9bin1','TTJetsSemiLepNjet9bin2','TTJetsSemiLepNjet9bin3',
+		  #'TTJetsSemiLep1','TTJetsSemiLep2','TTJetsSemiLep3','TTJetsSemiLep4','TTJetsSemiLep5','TTJetsSemiLep6',		  
+		  #'TTJets700mtt','TTJets1000mtt',
+		  'TTWl','TTWq','TTZlM10','TTZlM1to10', 'TTHH', 'TTWH', 'TTWW','TTWZ','TTZH','TTZZ','TTHB','TTHnoB',#'TTTT',
           'WW','WZ','ZZ',
-		  'TTHB','TTHnoB',
+		  #'TTHB','TTHnoB',
 		  ]
 		  
-ttFlvs = []#'_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
+ttFlvs = []#['_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
 dataList = ['DataE','DataM']
 
-whichSignal = 'X53'#'X53' #Hptb,HTB, TTM, BBM, or X53X53M mass = range(700,1600+1,100)
-#sigList = [whichSignal+'M'+str(mass)+'MH'+str(massH) for mass in massList]
+whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
+massList = [200, 220, 250, 300, 350, 400, 500, 600, 700, 800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]#[1000]#[250,500,1000]
+#massList = [300] 
 if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 if whichSignal == 'X53':
 	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
-if whichSignal=='Hptb'or 'X53' or 'X53H': decays = ['']
+
+#sigList = [whichSignal+str(mass) for mass in massList]
+#sigList = []
+if whichSignal=='Hptb' or 'X53' or 'X53H': decays = ['']
 
 sigTrained = 'Low1'
 if len(sys.argv)>10: sigTrained=sys.argv[10]
@@ -385,7 +393,7 @@ for cat in catList:
 
 	for data in dataList:
 		print "READING:", data
-		tFileData[data],tTreeData[data]=readTree(step1Dir+'/'+samples[data]+'_hadd.root')
+		tFileData[data],tTreeData[data]=readTree(ntupleDir+'/'+samples[data]+'_hadd.root')
 		datahists.update(analyze(tTreeData,data,data,cutList,False,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
                 if catInd==nCats:
                         del tFileData[data]
@@ -400,46 +408,46 @@ catInd=1
 
 
 for cat in catList:
-        if not runSigs: break
-        catDir = cat[0]+'_nT'+cat[1]+'_nW'+cat[2]+'_nB'+cat[3]+'_nJ'+cat[4]
-        sighists  = {}
-        if len(sys.argv)>1: outDir=sys.argv[1]
-        else:
-                outDir = os.getcwd()
-                outDir+='/'+pfix
-                if not os.path.exists(outDir): os.system('mkdir '+outDir)
-                outDir+='/'+cutString
-                if not os.path.exists(outDir): os.system('mkdir '+outDir)
-                outDir+='/'+catDir
-                if not os.path.exists(outDir): os.system('mkdir '+outDir)
-        category = {'isEM':cat[0],'nttag':cat[1],'nWtag':cat[2],'nbtag':cat[3],'njets':cat[4]}
-
+	if not runSigs: break
+	catDir = cat[0]+'_nT'+cat[1]+'_nW'+cat[2]+'_nB'+cat[3]+'_nJ'+cat[4]
+	sighists  = {}
+	if len(sys.argv)>1: outDir=sys.argv[1]
+	else:
+		outDir = os.getcwd()
+		outDir+='/'+pfix
+		if not os.path.exists(outDir): os.system('mkdir '+outDir)
+		outDir+='/'+cutString
+		if not os.path.exists(outDir): os.system('mkdir '+outDir)
+		outDir+='/'+catDir
+		if not os.path.exists(outDir): os.system('mkdir '+outDir)
+	category = {'isEM':cat[0],'nttag':cat[1],'nWtag':cat[2],'nbtag':cat[3],'njets':cat[4]}
+	
 	for sig in sigList:
-                #if isCategorized and ("XGB" in iPlot):
-                #            sigmass = sig.lstrip("Hptb")
-                #            XGBmass = iPlot.split("_")[0].lstrip("XGB")
-                #            if (int(sigmass)!=int(XGBmass)): continue
-
+	        #if isCategorized and ("XGB" in iPlot):
+	        #            sigmass = sig.lstrip("Hptb")
+	        #            XGBmass = iPlot.split("_")[0].lstrip("XGB")
+	        #            if (int(sigmass)!=int(XGBmass)): continue
+	
 		for decay in decays:
 			print "READING:", sig+decay
 			print "        nominal"
-			tFileSig[sig+decay],tTreeSig[sig+decay]=readTree(step1Dir+'/'+samples[sig+decay]+'_hadd.root')
+			tFileSig[sig+decay],tTreeSig[sig+decay]=readTree(ntupleDir+'/'+samples[sig+decay]+'_hadd.root')
 			if doAllSys:
 				for syst in shapesFiles:
 					for ud in ['Up','Down']:
 						print "        "+syst+ud
-						tFileSig[sig+decay+syst+ud],tTreeSig[sig+decay+syst+ud]=readTree(step1Dir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[sig+decay]+'_hadd.root')
+						tFileSig[sig+decay+syst+ud],tTreeSig[sig+decay+syst+ud]=readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[sig+decay]+'_hadd.root')
 			sighists.update(analyze(tTreeSig,sig+decay,sig+decay,cutList,doAllSys,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
-                        if catInd==nCats:
-                                del tFileSig[sig+decay]
-                                del tTreeSig[sig+decay]
-                        if doAllSys and catInd==nCats:
-                                for syst in shapesFiles:
-                                        for ud in ['Up','Down']:
-                                                del tFileSig[sig+decay+syst+ud]
-                                                del tTreeSig[sig+decay+syst+ud]
-        pickle.dump(sighists,open(outDir+'/sighists_'+iPlot+'.p','wb'))
-        catInd+=1
+	                if catInd==nCats:
+	                        del tFileSig[sig+decay]
+	                        del tTreeSig[sig+decay]
+	                if doAllSys and catInd==nCats:
+	                        for syst in shapesFiles:
+	                                for ud in ['Up','Down']:
+	                                        del tFileSig[sig+decay+syst+ud]
+	                                        del tTreeSig[sig+decay+syst+ud]
+	pickle.dump(sighists,open(outDir+'/sighists_'+iPlot+'.p','wb'))
+	catInd+=1
 
 
 tTreeBkg = {}
@@ -465,25 +473,58 @@ for cat in catList:
 	for bkg in bkgList:
 		print "READING:",bkg
 		print "        nominal"
-	        if 'TTTo' in bkg and len(ttFlvs)!=0:
+	        if (('TTToHadronic' in bkg) or ('TTTo2L2Nu' in bkg)) and len(ttFlvs)!=0:
 	            for flv in ttFlvs:
-	                tFileBkg[bkg+flv],tTreeBkg[bkg+flv] = readTree(step1Dir+'/'+samples[bkg]+flv+'_hadd.root')
-	        else: 
-		    tFileBkg[bkg],tTreeBkg[bkg]=readTree(step1Dir+'/'+samples[bkg]+'_hadd.root')
+	                tFileBkg[bkg+flv],tTreeBkg[bkg+flv] = readTree(ntupleDir+'/'+samples[bkg]+flv+'_hadd.root')
+	        elif ('TTToSemiLeptonic' in bkg) and len(ttFlvs)!=0:
+                    for flv in ttFlvs:
+                        if flv=="_ttjj":
+                            for i in range(1, 11):
+                                tFileBkg[bkg+"_HT0Njet0_"+str(i)+flv], tTreeBkg[bkg+"_HT0Njet0_"+str(i)+flv] = readTree(ntupleDir+'/'+samples[bkg]+"_HT0Njet0"+flv+"_"+str(i)+"_hadd.root")
+                            tFileBkg[bkg+"_HT500Njet9"+flv], tTreeBkg[bkg+"_HT500Njet9"+flv] = readTree(ntupleDir+'/'+samples[bkg]+"_HT500Njet9"+flv+"_hadd.root")
+                        else:
+                            tFileBkg[bkg+"_HT0Njet0"+flv], tTreeBkg[bkg+"_HT0Njet0"+flv] = readTree(ntupleDir+'/'+samples[bkg]+"_HT0Njet0"+flv+"_hadd.root")
+                            tFileBkg[bkg+"_HT500Njet9"+flv], tTreeBkg[bkg+"_HT500Njet9"+flv] = readTree(ntupleDir+'/'+samples[bkg]+"_HT500Njet9"+flv+"_hadd.root")
+                
+                else:
+		    tFileBkg[bkg],tTreeBkg[bkg]=readTree(ntupleDir+'/'+samples[bkg]+'_hadd.root')
+
+
 		if doAllSys:
-			if 'TTTo' in bkg and len(ttFlvs)!=0:
+			if (('TTToHadronic' in bkg) or ('TTTo2L2Nu' in bkg)) and len(ttFlvs)!=0:
+                        	for flv in ttFlvs:
+                                        for syst in shapesFiles:
+                                                for ud in ['Up','Down']:
+                                                        print "        "+bkg+flv+syst+ud
+                                                        tFileBkg[bkg+flv+syst+ud],tTreeBkg[bkg+flv+syst+ud]=readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+flv+'_hadd.root')
+			elif ('TTToSemiLeptonic' in bkg) and len(ttFlvs)!=0:
 				for flv in ttFlvs:
 					for syst in shapesFiles:
-						for ud in ['Up','Down']:
+                                                for ud in ['Up','Down']:
 							print "        "+bkg+flv+syst+ud
-							tFileBkg[bkg+flv+syst+ud],tTreeBkg[bkg+flv+syst+ud]=readTree(step1Dir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+flv+'_hadd.root')
+							if flv=="_ttjj":
+                            					for i in range(1, 11):
+									tFileBkg[bkg+"_HT0Njet0_"+str(i)+flv+syst+ud],tTreeBkg[bkg+"_HT0Njet0_"+str(i)+flv+syst+ud] = readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+"_HT0Njet0"+flv+"_"+str(i)+'_hadd.root') 
+								tFileBkg[bkg+"_HT500Njet9"+flv+syst+ud], tTreeBkg[bkg+"_HT500Njet9"+flv+syst+ud] = readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+"_HT500Njet9"+flv+"_hadd.root")
+							else:
+								tFileBkg[bkg+"_HT0Njet0"+flv+syst+ud], tTreeBkg[bkg+"_HT0Njet0"+flv+syst+ud] = readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+"_HT0Njet0"+flv+"_hadd.root")
+								tFileBkg[bkg+"_HT500Njet9"+flv+syst+ud], tTreeBkg[bkg+"_HT500Njet9"+flv+syst+ud] = readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+"_HT500Njet9"+flv+"_hadd.root")
+
+
+ 
+			#if 'TTTo' in bkg and len(ttFlvs)!=0:
+			#	for flv in ttFlvs:
+			#		for syst in shapesFiles:
+			#			for ud in ['Up','Down']:
+			#				print "        "+bkg+flv+syst+ud
+			#				tFileBkg[bkg+flv+syst+ud],tTreeBkg[bkg+flv+syst+ud]=readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+flv+'_hadd.root')
 			else:
 				for syst in shapesFiles:
 					for ud in ['Up','Down']:
 						print "        "+bkg+syst+ud
-						tFileBkg[bkg+syst+ud],tTreeBkg[bkg+syst+ud]=readTree(step1Dir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+'_hadd.root')
+						tFileBkg[bkg+syst+ud],tTreeBkg[bkg+syst+ud]=readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+'_hadd.root')
 
-                if 'TTTo' in bkg and len(ttFlvs)!=0:
+                if (('TTToHadronic' in bkg) or ('TTTo2L2Nu' in bkg)) and len(ttFlvs)!=0:
                         for flv in ttFlvs:
                                 bkghists.update(analyze(tTreeBkg,bkg+flv,bkg+flv,cutList,doAllSys,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
                                 if catInd==nCats: del tFileBkg[bkg+flv]
@@ -492,6 +533,56 @@ for cat in catList:
                                                 for ud in ['Up','Down']:
                                                         del tFileBkg[bkg+flv+syst+ud]
                                                         del tTreeBkg[bkg+flv+syst+ud]
+
+                elif ('TTToSemiLeptonic' in bkg) and len(ttFlvs)!=0:
+                        for flv in ttFlvs:
+                                if flv=="_ttjj":
+                                        for i in range(1, 11):
+                                                bkghists.update(analyze(tTreeBkg,bkg+"_HT0Njet0_"+str(i)+flv,bkg+"_HT0Njet0_"+str(i)+flv,cutList,doAllSys,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
+                                                if catInd==nCats: del tFileBkg[bkg+"_HT0Njet0_"+str(i)+flv]
+                                                if doAllSys and catInd==nCats:
+                                                        for syst in shapesFiles:
+                                                                for ud in ['Up','Down']:
+                                                                        del tFileBkg[bkg+"_HT0Njet0_"+str(i)+flv+syst+ud]
+                                                                        del tTreeBkg[bkg+"_HT0Njet0_"+str(i)+flv+syst+ud]        
+ 
+                                        bkghists.update(analyze(tTreeBkg,bkg+"_HT500Njet9"+flv,bkg+"_HT500Njet9"+flv,cutList,doAllSys,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
+                                        if catInd==nCats: del tFileBkg[bkg+"_HT500Njet9"+flv]
+                                        if doAllSys and catInd==nCats:
+                                                for syst in shapesFiles:
+                                                        for ud in ['Up','Down']:
+                                                                del tFileBkg[bkg+"_HT500Njet9"+flv+syst+ud]
+                                                                del tTreeBkg[bkg+"_HT500Njet9"+flv+syst+ud]
+ 
+                                else:
+                                        bkghists.update(analyze(tTreeBkg,bkg+"_HT0Njet0"+flv,bkg+"_HT0Njet0"+flv,cutList,doAllSys,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
+                                        if catInd==nCats: del tFileBkg[bkg+"_HT0Njet0"+flv]
+                                        if doAllSys and catInd==nCats:
+                                                for syst in shapesFiles:
+                                                        for ud in ['Up','Down']:
+                                                                del tFileBkg[bkg+"_HT0Njet0"+flv+syst+ud]
+                                                                del tTreeBkg[bkg+"_HT0Njet0"+flv+syst+ud]
+
+
+                                        bkghists.update(analyze(tTreeBkg,bkg+"_HT500Njet9"+flv,bkg+"_HT500Njet9"+flv,cutList,doAllSys,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
+                                        if catInd==nCats: del tFileBkg[bkg+"_HT500Njet9"+flv]
+                                        if doAllSys and catInd==nCats:
+                                                for syst in shapesFiles:
+                                                        for ud in ['Up','Down']:
+                                                                del tFileBkg[bkg+"_HT500Njet9"+flv+syst+ud]
+                                                                del tTreeBkg[bkg+"_HT500Njet9"+flv+syst+ud]
+   
+
+
+                #if 'TTTo' in bkg and len(ttFlvs)!=0:
+                #        for flv in ttFlvs:
+                #                bkghists.update(analyze(tTreeBkg,bkg+flv,bkg+flv,cutList,doAllSys,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
+                #                if catInd==nCats: del tFileBkg[bkg+flv]
+                #                if doAllSys and catInd==nCats:
+                #                        for syst in shapesFiles:
+                #                                for ud in ['Up','Down']:
+                #                                        del tFileBkg[bkg+flv+syst+ud]
+                #                                        del tTreeBkg[bkg+flv+syst+ud]
                 else:
                         bkghists.update(analyze(tTreeBkg,bkg,bkg,cutList,doAllSys,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
                         if catInd==nCats: del tFileBkg[bkg]

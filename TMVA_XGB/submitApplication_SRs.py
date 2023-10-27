@@ -11,8 +11,8 @@ runDir = os.getcwd()
 start_time = time.time()
 shift = sys.argv[1]
 
-inputDir='/eos/uscms/store/user/lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_Sys/'+shift+'/'
-outputDir= '/eos/uscms/store/user/lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_XGBs_added_sys/'+shift+'/' # or 2018
+inputDir='/isilon/hadoop/store/user/dali/FWLJMET106XUL_singleLep2017UL_RunIISummer20_3t_step2/'+shift+'/'
+outputDir= '/isilon/hadoop/users/jluo48/CHiggs/UL17/step3_XGB/'+shift+'/' # or 2018
 condorDir= runDir+'/condor_logs_XGBSRs_sys_added_'+shift+'/'
 
 print 'Starting submission'
@@ -24,11 +24,11 @@ count=0
 rootfiles = os.popen('ls '+inputDir)
 os.system('mkdir -p '+outputDir)
 os.system('mkdir -p '+condorDir)
-eosindir = inputDir[inputDir.find("/store"):]
-eosindir = "root://cmseos.fnal.gov/"+eosindir
+#eosindir = inputDir[inputDir.find("/store"):]
+#eosindir = "root://cmseos.fnal.gov/"+eosindir
 
-eosoutdir = outputDir[outputDir.find("/store"):]
-eosoutdir = "root://cmseos.fnal.gov/"+eosoutdir
+#eosoutdir = outputDir[outputDir.find("/store"):]
+#eosoutdir = "root://cmseos.fnal.gov/"+eosoutdir
 
 for file in rootfiles:
     if 'root' not in file: continue
@@ -37,7 +37,7 @@ for file in rootfiles:
 #    if 'TTTo' in file: continue
     rawname = file[:-6]
     count+=1
-    dict={'RUNDIR':runDir, 'CONDORDIR':condorDir, 'INPUTDIR':eosindir, 'FILENAME':rawname, 'OUTPUTDIR':eosoutdir}
+    dict={'RUNDIR':runDir, 'CONDORDIR':condorDir, 'INPUTDIR':inputDir, 'FILENAME':rawname, 'OUTPUTDIR':outputDir}
     jdfName=condorDir+'/%(FILENAME)s.job'%dict
     print jdfName
     jdf=open(jdfName,'w')
