@@ -31,7 +31,7 @@ if len(sys.argv)>1: massPt=str(sys.argv[1])
 region = 'PS' #PS,SR
 
 isCategorized=args.Categorized#False#False
-doTempEachCategory = False#True
+doTempEachCategory = False
 cutString=''#MET30_1jet40_2jet40'#'lep35_MET30_DR0_1jet40_2jet40'
 
 pfix = args.directory#'templates_M500_2020_11_23_topPtRW_NC_allweights_DJ'#'kinematics_CR_M500_2020_11_23_topPtRW_NC_allweights_DJ' 
@@ -50,7 +50,7 @@ addCRsys = False
 #systematicList = ['muR','muF','isr','fsr','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','pileup','muRFcorrd','PNT','PNW','jec','jer','prefire']#,'jmst','jmrt','jmsW','jmrW','trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2'] include any of these??
 #systematicList = ['trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
 systematicList = ['PNT','PNW','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes']
-systList_jsf = [] #do I need these?? 'jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
+systList_jsf = ['jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
 'jsfJESPileUpPtBB', 'jsfJESPileUpPtEC1', 'jsfJESPileUpPtEC2', 'jsfJESPileUpPtHF', 'jsfJESPileUpPtRef', 'jsfJESRelativeBal', 'jsfJESRelativeFSR',
 'jsfJESRelativeJEREC1', 'jsfJESRelativeJEREC2', 'jsfJESRelativeJERHF', 'jsfJESRelativeJERHF', 'jsfJESRelativePtBB', 'jsfJESRelativePtEC1',
 'jsfJESRelativePtEC2', 'jsfJESRelativePtHF', 'jsfJESRelativeStatEC', 'jsfJESRelativeStatFSR', 'jsfJESRelativeStatHF', 'jsfJESSinglePionECAL',
@@ -59,12 +59,12 @@ systList_jsf = [] #do I need these?? 'jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAb
 normalizeRENORM_PDF = False #normalize the renormalization/pdf uncertainties to nominal templates --> normalizes signal processes only !!!!
 rebinBy = -1#4#performs a regular rebinning with "Rebin(rebinBy)", put -1 if rebinning is not wanted
 
-saveKey = ''#_wNegBinsCorrec_'
-splitTTbar = False#True
+saveKey = '_wNegBinsCorrec_'
+splitTTbar = True
 splitST = False
 if splitTTbar:  
 	bkgTTBarList = ['ttnobb','ttbb']
-        #bkgGrupList = bkgTTBarList + ['top','ewk','qcd','WJets', 'ZJets', 'TTToHadronic', 'TTTo2L2Nu', 'TTJetsSemiLep']
+        #bkgGrupList = bkgTTBarList + ['top','ewk','qcd','WJets', 'ZJets', 'TTToHadronic', 'TTTo2L2Nu', 'TTJetsSemiLeptonic']
         bkgGrupList = bkgTTBarList + ['top','ewk','qcd']
 	bkgProcList = ['tt2b','ttbb','tt1b','ttcc','ttjj','T','TTV','WJets','ZJets','qcd']#,'VV'
         #bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','WJets','ZJets','qcd']#,'VV'
@@ -75,7 +75,7 @@ if splitTTbar:
                 #bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','OtherT','WJets','ZJets','qcd']#,'VV'
 
 else:
-	bkgGrupList = ['top','ewk','qcd']
+	bkgGrupList = ['ttbar','top','ewk','qcd',  'WJets']
 	#bkgGrupList = ['ttbar','top','ewk','qcd']
 	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd']#,'TTV']
 bkgProcs = {}
@@ -95,25 +95,21 @@ bkgProcs['OtherT']= ['TTHH', 'TTWH', 'TTWW', 'TTWZ', 'TTZH', 'TTZZ', 'TTHB', 'TT
 
 #bkgProcs['TTTo2L2Nu'] = ['TTTo2L2Nu_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 #bkgProcs['TTToHadronic'] = ['TTToHadronic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
-#bkgProcs['TTJetsSemiLep'] = ['TTJetsSemiLep_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
+#bkgProcs['TTJetsSemiLeptonic'] = ['TTJetsSemiLeptonic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 bkgProcs['TTJets'] = []
-bkgProcs['TTJets'] += ['TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000']
-bkgProcs['TTJets'] += ['TTJetsHad0','TTJetsHad700','TTJetsHad1000']
-bkgProcs['TTJets'] += ['TTJetsSemiLep0','TTJetsSemiLep700','TTJetsSemiLep1000']
+bkgProcs['TTJets'] += ['TTTo2L2Nu']
+bkgProcs['TTJets'] += ['TTToHadronic']
+bkgProcs['TTJets'] += ['TTToSemiLeptonic']
+#bkgProcs['TTJets'] += ['TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000']
+#bkgProcs['TTJets'] += ['TTJetsHad0','TTJetsHad700','TTJetsHad1000']
+#bkgProcs['TTJets'] += ['TTJetsSemiLep0','TTJetsSemiLep700','TTJetsSemiLep1000']
 #bkgProcs['TTJets'] += ['TTJetsHad0','TTJetsHad700','TTJetsHad1000'] 
 #bkgProcs['TTJets'] += ['TTJetsSemiLepNjet9bin1','TTJetsSemiLepNjet9bin2','TTJetsSemiLepNjet9bin3'] 
 #bkgProcs['TTJets'] += ['TTJetsSemiLepbin1','TTJetsSemiLepbin2','TTJetsSemiLepbin3']#,'TTJetsSemiLep4','TTJetsSemiLep5']#,'TTJetsSemiLep6']
-bkgProcs['TTJets'] += ['TTJets700mtt','TTJets1000mtt']
-
-bkgProcs['tt2b']  = [tt+'_tt2b' for tt in bkgProcs['TTJets']]
-bkgProcs['ttbb']  = [tt+'_ttbb' for tt in bkgProcs['TTJets']]
-bkgProcs['tt1b']   = [tt+'_tt1b' for tt in bkgProcs['TTJets']]
-bkgProcs['ttcc']  = [tt+'_ttcc' for tt in bkgProcs['TTJets']]
-bkgProcs['ttjj']  = [tt+'_ttjj' for tt in bkgProcs['TTJets']]
-bkgProcs['ttnobb']  = bkgProcs['ttjj'] + bkgProcs['ttcc'] + bkgProcs['tt1b'] + bkgProcs['tt2b']
+#bkgProcs['TTJets'] += ['TTJets700mtt','TTJets1000mtt']
 
 #bkgProcs['top'] = bkgProcs['T']+bkgProcs['OtherT']+bkgProcs['TTV']+bkgProcs['TTJets']
-#bkgProcs['tt2b']  = [tt+'_tt2b' for tt in bkgProcs['TTJets']]
+
 bkgProcs['tt2b']  = [tt+'_tt2b' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
 bkgProcs['tt2b'] += ['TTToSemiLeptonic_HT500Njet9_tt2b']
 bkgProcs['tt2b'] += ['TTToSemiLeptonic_HT0Njet0_tt2b']
@@ -136,7 +132,7 @@ bkgProcs['ttcc'] += ['TTToSemiLeptonic_HT0Njet0_ttcc']
 #bkgProcs['ttjj']  = [tt+'_ttjj' for tt in bkgProcs['TTJets']]
 bkgProcs['ttjj'] = [tt+'_ttjj' for tt in ['TTTo2L2Nu', 'TTToHadronic']]
 bkgProcs['ttjj'] += ['TTToSemiLeptonic_HT500Njet9_ttjj']
-bkgProcs['ttjj'] += ['TTToSemiLeptonic_HT0Njet0_'+str(i)+'_ttjj' for i in range(1, 11)]
+bkgProcs['ttjj'] += ['TTToSemiLeptonic_HT0Njet0_'+str(i)+'_ttjj' for i in range(1, 11)] #change
 
 bkgProcs['ttnobb']  = bkgProcs['ttjj'] + bkgProcs['ttcc'] + bkgProcs['tt1b'] + bkgProcs['tt2b']
 
@@ -159,23 +155,21 @@ bkgProcs['wjets'] = bkgProcs['WJets']
 dataList = ['DataE','DataM']
 
 htProcs = ['ewk','WJets']
-topptProcs = ['top','ttbar','TTJets']#['tt2b','ttbb','ttb','ttcc','ttlf','ttbar','TTJets']
-bkgProcs['ttbar_q2up'] = ['TTJetsPHQ2U']#,'TtWQ2U','TbtWQ2U']
-bkgProcs['ttbar_q2dn'] = ['TTJetsPHQ2D']#,'TtWQ2D','TbtWQ2D']
+topptProcs = ['tt2b','ttbb','ttb','ttcc','ttlf','ttbar','TTJets']#['top','ttbar','TTJets']#['tt2b','ttbb','ttb','ttcc','ttlf','ttbar','TTJets']
+#bkgProcs['ttbar_q2up'] = ['TTJetsPHQ2U']#,'TtWQ2U','TbtWQ2U']
+#bkgProcs['ttbar_q2dn'] = ['TTJetsPHQ2D']#,'TtWQ2D','TbtWQ2D']
 
 whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
-massList = range(600,1500+1,100)
-if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
-if whichSignal == 'X53':
-#	sigList = [whichSignal+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
-	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
-if whichSignal=='Hptb'or 'X53' or 'X53H': decays = ['']
-
 #if massPt not in massList:    MICHAEL COMMENTED OUT THESE TWO LINES
 #	massList.append(massPt)
 #sigList = [whichSignal+str(mass) for mass in massList]
 sigList = [] 
 if whichSignal=='Hptb' or whichSignal == 'Hptb1000': decays = ['']
+if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+if whichSignal == 'X53':
+#	sigList = [whichSignal+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
+	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
+if whichSignal=='Hptb'or 'X53' or 'X53H': decays = ['']
 
 doBRScan = False
 BRs={}
@@ -332,7 +326,7 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 
         #prepare yield table
  		for proc in bkgGrupList+bkgProcList+sigList+['data']: 
-		#for proc in bkgGrupList+bkgProcList+['data']: 			
+#		for proc in bkgGrupList+bkgProcList+['data']: 			
 			yieldTable[histoPrefix][proc] = hists[proc+i].Integral()
 # 				print "proc : ",proc
 # 				print "i : ",i
@@ -443,7 +437,7 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
                         #mass = [str(mass) for mass in massList if signal.endswith(str(mass))][0]
                         hists[signal+i].SetName(hists[signal+i].GetName().replace('fb_','fb_'+postTag).replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
                         hists[signal+i].Write()
-			if doAllSys:
+			if doAllSys: #check??
 				 for syst in systematicList:
 				 	if syst=='toppt' or syst=='ht': continue
 				 	hists[signal+i+syst+'Up'].SetName(hists[signal+i+syst+'Up'].GetName().replace('fb_','fb_'+postTag).replace('__plus','Up').replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
@@ -916,13 +910,13 @@ def rundoTemp(category):
 
                 ]
 
-#	for file in findfiles(outDir+'/'+category+'/', '*.p'):
+#	for file in findfiles(outDir+'/'+category+'/', '*.p'): check!
 #		if 'lepPt' not in file: continue
 #		if 'bkghists' not in file: continue
 #		if not os.path.exists(file.replace('bkghists','datahists')): continue
 #                if not os.path.exists(file.replace('bkghists','sighists')): continue
 #		iPlotList.append(file.split('/')[-1].replace('bkghists_','')[:-2])
-#
+
 	print "WORKING DIR:",outDir
 	print iPlotList
 	for iPlot in iPlotList:

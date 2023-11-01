@@ -40,10 +40,10 @@ saveKey = ''#'_50GeV_100GeVnB2'
 # if len(sys.argv)>1: iPlot=str(sys.argv[1])
 cutString = ''#'lep30_MET150_NJets4_DR1_1jet450_2jet150'
 lumiStr = str(targetlumi/1000).replace('.','p')+'fb' # 1/fb
-templateDir = 'kinematics_PS_2023_9_16'
+templateDir = 'kinematics_PS_2023_10_31'
 
 iPlotList = [
-
+'HT'
                 #'XGB200',
                 #'XGB220',
                 #'XGB250',
@@ -125,36 +125,36 @@ for iPlot in iPlotList:
     
     quiet = True #if you don't want to see the warnings that are mostly from the stat. shape algorithm!
     rebinCombine = True #else rebins theta templates
-#    doStatShapes = True#False
-#    doSmoothing = True
-#    smoothingAlgo = 'lowess' #lowess, super, or kern
-#    symmetrizeSmoothing = True #Symmetrize up/down shifts around nominal before smoothing
-#    doPDF = True
-#    doMURF = False#True
-#    doPSWeights = True
-#    normalizeTheorySystSig = True #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for signals
-#    normalizeTheorySystBkg = False #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for backgrounds
-    #tttt, X53, TT, BB, HTB, etc --> this is used to identify signal histograms for combine templates when normalizing the pdf and muRF shapes to nominal!!!!
-    doStatShapes = False
-    doSmoothing = False#True
-    smoothingAlgo = ''#'lowess', super, or kern
+    doStatShapes = True#False
+    doSmoothing = True
+    smoothingAlgo = 'lowess' #lowess, super, or kern
     symmetrizeSmoothing = True #Symmetrize up/down shifts around nominal before smoothing
-    doPDF = False
-    doMURF = True
+    doPDF = False#True check!
+    doMURF = False#True
     doPSWeights = True
-    normalizeTheorySystSig = False ##!True #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for signals
+    normalizeTheorySystSig = True #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for signals
     normalizeTheorySystBkg = False #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for backgrounds
+    #tttt, X53, TT, BB, HTB, etc --> this is used to identify signal histograms for combine templates when normalizing the pdf and muRF shapes to nominal!!!!
+#    doStatShapes = False
+#    doSmoothing = False#True
+#    smoothingAlgo = ''#'lowess', super, or kern
+#    symmetrizeSmoothing = True #Symmetrize up/down shifts around nominal before smoothing
+#    doPDF = False
+#    doMURF = True
+#    doPSWeights = True
+#    normalizeTheorySystSig = False ##!True #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for signals
+#    normalizeTheorySystBkg = False #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for backgrounds
 #tttt, X53, TT, BB, HTB, etc --> this is used to identify signal histograms for combine templates when normalizing the pdf and muRF shapes to nominal!!!!
 
     sigName = 'X53' #MAKE SURE THIS WORKS FOR YOUR ANALYSIS PROPERLY!!!!!!!!!!!
-    massList = [200, 220, 300, 400, 500, 600, 700, 800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]#[300,500,800,1000,1500]
+    massList = [] 
     sigProcList = [sigName+str(mass) for mass in massList]
     if sigName=='tttt': sigProcList = [sigName]
     if sigName=='X53': 
     	#sigProcList = [sigName+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
-    	sigProcList+= [sigName+'RHM'+str(mass) for mass in range(700,1600+1,100)]
+    	sigProcList= [sigName+'RHM'+str(mass) for mass in range(700,1600+1,100)]
     if sigName=='X53H': 
-    	sigProcList+=['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+    	sigProcList=['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
  
     ttProcList = ['ttnobb','ttbb']#['ttjj','ttcc','ttbb','tt1b','tt2b']#['ttnobb','ttbb'] # ['ttjj','ttcc','ttbb','ttbj']
     bkgProcList = ttProcList + ['top','ewk','qcd'] #put the most dominant process first

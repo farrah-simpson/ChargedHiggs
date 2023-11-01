@@ -20,13 +20,8 @@ start_time = time.time()
 # args = parser.parse_args()
 
 lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
-<<<<<<< HEAD
 step1Dir = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/' #lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_XGBs_added_sys_new/nominal/'
-=======
-step1Dir = '/isilon/hadoop/store/user/dali/FWLJMET106XUL_singleLep2017UL_RunIISummer20_3t_step1hadds/' 
-ntupleDir = '/isilon/hadoop/users/jluo48/CHiggs/UL17/step3_XGB/nominal/'
-
->>>>>>> d4367fa19d33d487c052ec45f8cb205e446dedd1
+ntupleDir = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/'
 
 """
 Note: 
@@ -53,7 +48,7 @@ bkgList = [
 	 	  'TTJets2L2nu0','TTJets2L2nu700','TTJets2L2nu1000',		  
 		  'TTJetsHad0','TTJetsHad700','TTJetsHad1000',		 
 		  'TTJetsSemiLep0','TTJetsSemiLep700','TTJetsSemiLep1000',
-                  #'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic', 
+                  'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic', 
                   #'TTToSemiLeptonic', 
 		  #'TTJetsSemiLepNjet9bin1','TTJetsSemiLepNjet9bin2','TTJetsSemiLepNjet9bin3',
 		  #'TTJetsSemiLep1','TTJetsSemiLep2','TTJetsSemiLep3','TTJetsSemiLep4','TTJetsSemiLep5','TTJetsSemiLep6',		  
@@ -63,7 +58,7 @@ bkgList = [
 		  #'TTHB','TTHnoB',
 		  ]
 		  
-ttFlvs = []#['_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
+ttFlvs = ['_tt2b','_ttbb','_tt1b','_ttcc','_ttjj']
 dataList = ['DataE','DataM']
 
 whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
@@ -199,13 +194,13 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
 	'masslepJets1':('mass_lepJets1',linspace(0,1000,51).tolist(),';M(l,j_{2}) [GeV]'),
 	'masslepJets2':('mass_lepJets2',linspace(0,1000,51).tolist(),';M(l,j_{3}) [GeV]'),
 	'masslepBJets0':('mass_lepBJet0',linspace(0,1000,51).tolist(),';M(l,b_{1}) [GeV]'),
-       'mindeltaR':('minDR_lepJet',linspace(0, 6, 51).tolist(),';min[#DeltaR(l,j)]'),
-       'MET':('corr_met_MultiLepCalc',linspace(0, 1500, 51).tolist(),';#slash{E}_{T} [GeV]'),
-       'NJets':('NJets_JetSubCalc',linspace(0, 15, 16).tolist(),';jet multiplicity'),
+        'mindeltaR':('minDR_lepJet',linspace(0, 6, 51).tolist(),';min[#DeltaR(l,j)]'),
+        'MET':('corr_met_MultiLepCalc',linspace(0, 1500, 51).tolist(),';#slash{E}_{T} [GeV]'),
+        'NJets':('NJets_JetSubCalc',linspace(0, 15, 16).tolist(),';jet multiplicity'),
 	'NBJetsNoSF':('NJetsCSV_MultiLepCalc',linspace(0, 10, 11).tolist(),';b tag multiplicity'),
-       'NBJets':('NJetsCSVwithSF_MultiLepCalc',linspace(0, 10, 11).tolist(),';b tag multiplicity'),
+        'NBJets':('NJetsCSVwithSF_MultiLepCalc',linspace(0, 10, 11).tolist(),';b tag multiplicity'),
 	'PtRel':('ptRel_lepJet',linspace(0,500,51).tolist(),';p_{T,rel}(l, closest jet) [GeV]'),
-       'theLeadJetPt':('theJetLeadPt',linspace(0, 1500, 51).tolist(),';p_{T}(j_{1}) [GeV]'),
+        'theLeadJetPt':('theJetLeadPt',linspace(0, 1500, 51).tolist(),';p_{T}(j_{1}) [GeV]'),
 	'aveBBdr':('aveBBdr',linspace(0, 6, 51).tolist(),';#bar{#DeltaR(b,b)}'),
 	'minBBdr':('minBBdr',linspace(0, 6, 51).tolist(),';min[#DeltaR(b,b)]'),
 	'mass_maxJJJpt':('mass_maxJJJpt',linspace(0, 3000, 51).tolist(),';M(jjj) with max[p_{T}(jjj)] [GeV]'),
@@ -219,7 +214,7 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
 	'mass_lepBJet_mindr':('mass_lepBJet_mindr',linspace(0, 1000, 51).tolist(),';M(l,b) with min[#DeltaR(l,b)], [GeV]'),
    	'HTb':('AK4HT',bigbins,';H_{T} [GeV]'),
 	'ST':('AK4HTpMETpLepPt',linspace(0, 3000, 51).tolist(),';S_{T} [GeV]'),
-       'minMlb':('minMleppBjet',linspace(0, 1000, 51).tolist(),';min[M(l,b)] [GeV]'),
+        'minMlb':('minMleppBjet',linspace(0, 1000, 51).tolist(),';min[M(l,b)] [GeV]'),
 	'BDT':('BDT'+sigTrained,linspace(-1, 1, 126).tolist(),';BDT'),
 
 	'MT2bb':('MT2bb',linspace(0, 700, 71).tolist(),';MT2bb'),
@@ -478,8 +473,8 @@ for cat in catList:
 	                tFileBkg[bkg+flv],tTreeBkg[bkg+flv] = readTree(ntupleDir+'/'+samples[bkg]+flv+'_hadd.root')
 	        elif ('TTToSemiLeptonic' in bkg) and len(ttFlvs)!=0:
                     for flv in ttFlvs:
-                        if flv=="_ttjj":
-                            for i in range(1, 11):
+                        if flv=="_ttjj": 
+                            for i in range(1, 12):
                                 tFileBkg[bkg+"_HT0Njet0_"+str(i)+flv], tTreeBkg[bkg+"_HT0Njet0_"+str(i)+flv] = readTree(ntupleDir+'/'+samples[bkg]+"_HT0Njet0"+flv+"_"+str(i)+"_hadd.root")
                             tFileBkg[bkg+"_HT500Njet9"+flv], tTreeBkg[bkg+"_HT500Njet9"+flv] = readTree(ntupleDir+'/'+samples[bkg]+"_HT500Njet9"+flv+"_hadd.root")
                         else:
@@ -502,8 +497,8 @@ for cat in catList:
 					for syst in shapesFiles:
                                                 for ud in ['Up','Down']:
 							print "        "+bkg+flv+syst+ud
-							if flv=="_ttjj":
-                            					for i in range(1, 11):
+							if flv=="_ttjj": 
+                            					for i in range(1, 12):
 									tFileBkg[bkg+"_HT0Njet0_"+str(i)+flv+syst+ud],tTreeBkg[bkg+"_HT0Njet0_"+str(i)+flv+syst+ud] = readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+"_HT0Njet0"+flv+"_"+str(i)+'_hadd.root') 
 								tFileBkg[bkg+"_HT500Njet9"+flv+syst+ud], tTreeBkg[bkg+"_HT500Njet9"+flv+syst+ud] = readTree(ntupleDir.replace('nominal',syst.upper()+ud.lower())+'/'+samples[bkg]+"_HT500Njet9"+flv+"_hadd.root")
 							else:
@@ -537,7 +532,7 @@ for cat in catList:
                 elif ('TTToSemiLeptonic' in bkg) and len(ttFlvs)!=0:
                         for flv in ttFlvs:
                                 if flv=="_ttjj":
-                                        for i in range(1, 11):
+                                        for i in range(1, 12):
                                                 bkghists.update(analyze(tTreeBkg,bkg+"_HT0Njet0_"+str(i)+flv,bkg+"_HT0Njet0_"+str(i)+flv,cutList,doAllSys,doJetRwt,iPlot,plotList[iPlot],category,region,isCategorized))
                                                 if catInd==nCats: del tFileBkg[bkg+"_HT0Njet0_"+str(i)+flv]
                                                 if doAllSys and catInd==nCats:

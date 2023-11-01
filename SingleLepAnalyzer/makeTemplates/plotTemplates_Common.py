@@ -37,8 +37,8 @@ if len(sys.argv)>1: templateDir=os.getcwd()+'/'+str(sys.argv[1])+'/'
 else:
     templateDir=os.getcwd()+'/templates_2023_8_24/'
 
-splitTTbar = False#True
-isRebinned= ''#_rebinned_stat0p3'#_killFirstBins_syFist' #post for ROOT file names
+splitTTbar = True
+isRebinned= '_wNegBinsCorrec_'#_rebinned_stat0p3'#_killFirstBins_syFist' #post for ROOT file names
 saveKey = '' # tag for plot names
 
 if whichSig == 'X53':
@@ -75,7 +75,7 @@ if splitTTbar:
     #    bkgProcList = ['ttbb','tt2b','tt1b','ttcc','ttjj','top','ewk','qcd']
     #    bkgProcList = ['ttb','ttcc','ttlf','top','ewk','qcd']
 else: 
-    bkgProcList = ['top','ewk','qcd']
+    bkgProcList = ['ttbar','top','ewk','qcd']
 
 plotbkg =''
 if plottop: 
@@ -89,16 +89,16 @@ if plotqcd:
     plotbkg = 'qcd'
 
 bkgHistColors = {'tt2b':rt.kRed+3,'ttbb':rt.kRed,'tt1b':rt.kRed-3,'ttcc':rt.kRed-5,'ttjj':rt.kRed-7,'top':rt.kBlue,'ewk':rt.kGreen-8,'qcd':rt.kOrange+5,'ttbar':rt.kRed,'ttnobb':rt.kRed-7} #HTB
-#systematicList = ['pileup','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','muRFcorrd','jec','jer','prefire']#,'jmst','jmrt','jmsW','jmrW','trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
-systematicList = [
-'pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes'
+systematicList = ['pileup','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','muRFcorrd','jec','jer','prefire']#,'jmst','jmrt','jmsW','jmrW','trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
+#systematicList = [
+#'pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes'
 
 #'CMS_scale_j'       , 'CMS_HPTB_mcreweight_ewk', 'CMS_res_j'        , 'muR_ttbar', 'muF_ttbar',
 #'CMS_btag_LF'       , 'CMS_pileup'             , 'CMS_btag_HF'      , 'muR_top'  , 'muF_top'  , 
 #'CMS_topreweight' ,
 #'CMS_btag_LFstat1'  , 'CMS_btag_CFerr1'        , 'CMS_btag_HFstat1' ,  #'QCDscaleHptb'    , 
 #'CMS_btag_LFstat2'  , 'CMS_btag_CFerr2'        , 'CMS_btag_HFstat2' , 'muR_ewk'  , 'muF_ewk'   
-]
+#]
 
 doAllSys = True#False
 doQ2sys  = False
@@ -176,7 +176,7 @@ def formatUpperHist(histogram):
 
 	if 'nB0' in histogram.GetName() and 'minMlb' in histogram.GetName(): histogram.GetXaxis().SetTitle("min[M(l,jets)] (GeV)")
 	histogram.GetYaxis().CenterTitle()
-	#histogram.SetMinimum(0.1)
+	#histogram.SetMinimum(0.1) check?
 	#if not doNormByBinWidth: histogram.SetMaximum(1.5*histogram.GetMaximum())
 	if not yLog: 
 		histogram.SetMaximum(1.2*histogram.GetMaximum())
@@ -535,7 +535,7 @@ for tag in tagList:
 			lPad.SetTicky(0)
 			lPad.Draw()
 		if not doNormByBinWidth: hData.SetMaximum(1.5*max(hData.GetMaximum(),bkgHT.GetMaximum()))
-		#hData.SetMinimum(0.1)
+		hData.SetMinimum(0.1)#check?
 		hData.SetTitle("")
 		if doNormByBinWidth: 
 			hData.GetYaxis().SetTitle("< Events / GeV >")
@@ -634,7 +634,7 @@ for tag in tagList:
  		leg.AddEntry(hsig1,sig1leg+scaleFact1Str,"l")
 		try: leg.AddEntry(bkghists['ttcc'+catStr],"t#bar{t}+c#bar{c}","f")
 		except: pass
- 		leg.AddEntry(hsig1,sig2leg+scaleFact1Str,"l")
+ 		#leg.AddEntry(hsig2,sig2leg+scaleFact1Str,"l")
 		try: leg.AddEntry(bkghists['ttb'+catStr],"t#bar{t}+b","f")
 		except: pass
 		try: leg.AddEntry(bkghists['top'+catStr],"TOP","f")
@@ -809,13 +809,15 @@ for tag in tagList:
  	if plotCombine: 
                 print RFile1
  		hsig1merged = RFile1.Get(histPrefixE+'__'+sig1).Clone(histPrefixE+'__sig1merged')
- 		#hsig2merged = RFile1.Get(histPrefixE+'__'+sig2).Clone(histPrefixE+'__sig2merged')
+ 		#hsig2merged = RFile2.Get(histPrefixE+'__'+sig2).Clone(histPrefixE+'__sig2merged')
 		hsig1merged.Add(RFile1.Get(histPrefixM+'__'+sig1).Clone())
-		#hsig2merged.Add(RFile1.Get(histPrefixM+'__'+sig2).Clone())
+		#hsig2merged.Add(RFile2.Get(histPrefixM+'__'+sig2).Clone())
 
  	else:
  		hsig1merged = RFile1.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig1merged')
  		hsig1merged.Add(RFile1.Get(histPrefixM+'__sig').Clone())
+ 		#hsig2merged = RFile2.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig2merged') 
+		#hsig2merged.Add(RFile2.Get(histPrefixM+'__sig').Clone())
 
 	hsig1merged.Scale(xsec[sig1]) #check!
  	#hsig2merged.Scale(xsec[sig2])
@@ -900,6 +902,7 @@ for tag in tagList:
 		scaleFact6merged=1
 
  	hsig1merged.Scale(scaleFact1merged)
+# 	hsig2merged.Scale(scaleFact2merged)
 	
 	drawQCDmerged = False
 	try: drawQCDmerged = bkghistsmerged['qcdisL'+tagStr].Integral()/bkgHTmerged.Integral()>.005
@@ -927,7 +930,7 @@ for tag in tagList:
 # 	hsig2merged.SetLineColor(sig2Color)
 # 	hsig2merged.SetLineStyle(7)
 #	hsig2merged.SetFillStyle(0)
-# 	hsig1merged.SetLineWidth(3)
+# 	hsig2merged.SetLineWidth(3)
 #   	
 	if not drawYields: hDatamerged.SetMarkerStyle(20)
 	hDatamerged.SetMarkerSize(1.2)
@@ -983,7 +986,7 @@ for tag in tagList:
 		lPad.SetTicky(0)
 		lPad.Draw()
 	if not doNormByBinWidth: hDatamerged.SetMaximum(1.5*max(hDatamerged.GetMaximum(),bkgHTmerged.GetMaximum()))
-	#hDatamerged.SetMinimum(0.1)
+	hDatamerged.SetMinimum(0.1)#check?
 	if doNormByBinWidth: 
 		hDatamerged.GetYaxis().SetTitle("< Events / GeV >")
 		if 'BDT' in iPlot and isSR(tag[3],tag[2]): hDatamerged.GetYaxis().SetTitle("< Events / 1.0 units >")
@@ -996,14 +999,14 @@ for tag in tagList:
 	if not blind: 
 		hDatamerged.Draw("esamex0")
         if blind: 
-            #hsig1merged.SetMinimum(0.1)
+            hsig1merged.SetMinimum(0.1)#check?
             if doNormByBinWidth: 
                 hsig1merged.GetYaxis().SetTitle("< Events / GeV >")
                 if 'BDT' in iPlot and isSR(tag[3],tag[2]): hsig1merged.GetYaxis().SetTitle("< Events / 1.0 units >")
             elif isRebinned!='': hsig1merged.GetYaxis().SetTitle("Events / bin")
             else: hsig1merged.GetYaxis().SetTitle("Events / bin")
             formatUpperHist(hsig1merged)
-            hsig1merged.SetMaximum(1.2*hDatamerged.GetMaximum())
+            hsig1merged.SetMaximum(1.5*hDatamerged.GetMaximum())
             if plottop or plotewk or plotqcd:
                 hsig1merged.SetMaximum(1.1*hsig1merged.GetMaximum())
             hsig1merged.Draw("HIST")
@@ -1013,7 +1016,7 @@ for tag in tagList:
 		bkgHTmerged.Draw("SAME TEXT90")
 
  	hsig1merged.Draw("SAME HIST")
-# 	hsig2merged.Draw("SAME HIST") 
+# 	hsig2merged.Draw("SAME HIST")
 	if not blind: 
 		hDatamerged.Draw("esamex0") #redraw data so its not hidden
 		if drawYields: hDatamerged.Draw("SAME TEXT00") 
@@ -1073,8 +1076,8 @@ for tag in tagList:
 		scaleFact5Str = ''
 		scaleFact6Str = ''
 
-#	try: legmerged.AddEntry(bkghistsmerged['ttlfisL'+tagStr],"t#bar{t}+lf","f")
-#	except: pass
+	try: legmerged.AddEntry(bkghistsmerged['ttlfisL'+tagStr],"t#bar{t}+lf","f")
+	except: pass
  	legmerged.AddEntry(hsig1merged,sig1leg+scaleFact1Str,"l")
 	try: legmerged.AddEntry(bkghistsmerged['ttccisL'+tagStr],"t#bar{t}+c#bar{c}","f")
 	except: pass
