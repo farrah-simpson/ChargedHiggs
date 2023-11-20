@@ -9,8 +9,8 @@ from XRootD import client
 runDir = os.getcwd()
 start_time = time.time()
 
-inputDir='/isilon/hadoop/users/jluo48/CHiggs/UL17/XGB_CSV/SR1'#'/eos/uscms/store/user/lpcbril/MC_test/FWLJMET106X_1lep2017_UL_step2_CSV_SR1_added'
-outputDir= '/isilon/hadoop/users/jluo48/CHiggs/UL17/XBG_models/SR1/' 
+inputDir='/uscms/home/fsimpson/nobackup/scratch/FWLJMETstuff/CMSSW_10_2_10/src/ChargedHiggs/TMVA_XGB/output'#'/eos/uscms/store/user/lpcbril/MC_test/FWLJMET106X_1lep2017_UL_step2_CSV_SR1_added'
+outputDir= '/uscms/home/fsimpson/nobackup/scratch/FWLJMETstuff/CMSSW_10_2_10/src/ChargedHiggs/TMVA_XGB/models' 
 condorDir= runDir+'/condor_logs_CSVtoXGB_SR1_added_new/'
 
 print 'Starting submission'
@@ -28,9 +28,9 @@ os.system('mkdir -p '+condorDir)
 #eosoutdir = outputDir[outputDir.find("/store"):]
 #eosoutdir = "root://cmseos.fnal.gov/"+eosoutdir
 
-Masses = [200, 220, 250, 300, 350, 400, 500, 600, 700, 800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]
+#Masses = [200, 220, 250, 300, 350, 400, 500, 600, 700, 800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]
 #Masses = [500]#[800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]
-
+Masses = [800]#, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600]
 for mass in Masses:
     #if not 'TTToSemiLeptonic' in file: continue
     #if not 'ttjj' in file: continue

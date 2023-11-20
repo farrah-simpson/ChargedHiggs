@@ -33,7 +33,7 @@ varListKey = args.varListKey
 varList = varsList.varList[varListKey]
 siginputDir = varsList.siginputDir
 bkginputDir = varsList.bkginputDir
-infname = "ChargedHiggs_HplusTB_HplusToTB_M-"+str(args.mass)+"_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root"
+infname = "PairVLQ_x53x53_tWtW_narrow_RH_M"+str(args.mass)+"_TuneCP5_13TeV-madgraph-pythia8_hadd.root"
 
 print "Loading Signal Sample"
 
@@ -42,7 +42,7 @@ sig_df = sig_tree.pandas.df(branches=(iVar[0] for iVar in varList+selList+weight
 
 #Event Selection
  
-sig_selected = ((sig_df["isTraining"]==1)|(sig_df["isTraining"]==2))&(sig_df["NJets_JetSubCalc"]>4)&(sig_df["NJetsCSV_JetSubCalc"]==2)&( ((sig_df["leptonPt_MultiLepCalc"]>35)&(sig_df["isElectron"]==True))|((sig_df["leptonPt_MultiLepCalc"]>30)&(sig_df["isMuon"]==True))) 
+sig_selected = ((sig_df["isTraining"]==1)|(sig_df["isTraining"]==2))&(sig_df["NJets_JetSubCalc"]>3)&(sig_df["NJetsCSV_JetSubCalc"]>0)&( ((sig_df["leptonPt_MultiLepCalc"]>35)&(sig_df["isElectron"]==True))|((sig_df["leptonPt_MultiLepCalc"]>30)&(sig_df["isMuon"]==True))) 
 
 sig_df = sig_df[sig_selected]
 

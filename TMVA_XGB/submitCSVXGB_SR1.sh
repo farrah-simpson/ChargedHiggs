@@ -21,16 +21,22 @@ export PATH=$PATH:$macroDir
 #source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.16.00/x86_64-centos7-gcc48-opt/bin/thisroot.sh
 #xrdcp -f ${haddFile} root://cmseos.fnal.gov/${outputDir//$NOM/$SHIFT}/${haddFile//${SHIFT}_hadd/} 2>&1
 
-xrdcp -f $inputDir/dtrainM${mass}.csv ./
-xrdcp -f $inputDir/dtestM${mass}.csv ./
+#xrdcp -f $inputDir/dtrainM${mass}.csv ./
+#xrdcp -f $inputDir/dtestM${mass}.csv ./
+cp $inputDir/dtrainM${mass}.csv ./
+cp $inputDir/dtestM${mass}.csv ./
+
 
 ls
 
 python CSVXGB_SR1.py   -m ${mass}
  
 
-xrdcp -f *model $outputDir/
-xrdcp -f *txt $outputDir/
+#xrdcp -f *model $outputDir/
+#xrdcp -f *txt $outputDir/
+cp *model $outputDir/
+cp *txt $outputDir/
+
 
 rm *model
 rm *txt

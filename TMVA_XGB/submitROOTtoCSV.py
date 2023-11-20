@@ -10,7 +10,7 @@ runDir = os.getcwd()
 start_time = time.time()
 
 #inputDir='/eos/uscms/store/user/lpcbril/MC_test/FWLJMET102X_1lep2017_Oct2019_4t_080420_step2_newvar_updated_Pt40_Eta2p4'
-outputDir= '/eos/uscms/store/user/lpcbril/MC_test/FWLJMET106X_1lep2017_UL_step2_CSV_added/'
+outputDir= '/eos/uscms/store/user/fsimpson/FWLJMET106X_1lep2017_UL_step2_CSV_added/'
 condorDir= runDir+'/condor_logs_CSV/'
 
 print 'Starting submission'
@@ -25,7 +25,7 @@ os.system('mkdir -p '+condorDir)
 eosoutdir = outputDir[outputDir.find("/store"):]
 eosoutdir = "root://cmseos.fnal.gov/"+eosoutdir
 
-Masses = [200, 220, 250, 300, 350, 400, 500, 600, 700,  800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]
+Masses = [700]#,  800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600]
 
 for mass in Masses:
     count+=1

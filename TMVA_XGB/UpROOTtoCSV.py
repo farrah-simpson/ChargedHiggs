@@ -19,9 +19,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler 
 
 parser = argparse.ArgumentParser(description='Convert pandas dataframe to libsvm')
-parser.add_argument("-k", "--varListKey", default="NewVar", help="Input variable list")
+parser.add_argument("-k", "--varListKey", default="BigComb", help="Input variable list")
 parser.add_argument("-l", "--label", default="", help="label for output file")
-parser.add_argument("-m", "--mass", default="500", help="The signal mass point")
+parser.add_argument("-m", "--mass", default="1200", help="The signal mass point")
 
 
 args = parser.parse_args()
@@ -31,8 +31,7 @@ selList = [["NJetsCSV_JetSubCalc", ""],["NJets_JetSubCalc", ""], ["leptonPt_Mult
 weightList = [["pileupWeight", ""], ["lepIdSF", ""], ["EGammaGsfSF", ""], ["MCWeight_MultiLepCalc", ""]] 
 varListKey = args.varListKey
 varList = varsList.varList[varListKey]
-inputDir = varsList.inputDir
-infname = "ChargedHiggs_HplusTB_HplusToTB_M-"+str(args.mass)+"_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root"
+infname = "PairVLQ_x53x53_tWtW_narrow_RH_M"+str(args.mass)+"_TuneCP5_13TeV-madgraph-pythia8_hadd.root"
 
 print "Loading Signal Sample"
 
@@ -54,7 +53,7 @@ for ibkg in bkgList:
     bkg_tree = uproot.open(inputDir+ibkg)["ljmet"]
     bkg_df = bkg_tree.pandas.df(branches=(iVar[0] for iVar in varList+selList+weightList), entrystop=-1)
     print bkg_df
-    bkg_selected = ((bkg_df["isTraining"]==1)|(bkg_df["isTraining"]==2))&(bkg_df["NJets_JetSubCalc"]>4)&(bkg_df["NJetsCSV_JetSubCalc"]>1)&( ((bkg_df["leptonPt_MultiLepCalc"]>35)&(bkg_df["isElectron"]==True))|((bkg_df["leptonPt_MultiLepCalc"]>30)&(bkg_df["isMuon"]==True)))
+    bkg_selected = ((bkg_df["isTraining"]==1)|(bkg_df["isTraining"]==2))&(bkg_df["NJets_JetSubCalc"]>=4)&(bkg_df["NJetsCSV_JetSubCalc"]>=1)&( ((bkg_df["leptonPt_MultiLepCalc"]>35)&(bkg_df["isElectron"]==True))|((bkg_df["leptonPt_MultiLepCalc"]>30)&(bkg_df["isMuon"]==True)))
     bkg_df = bkg_df[bkg_selected]
     print bkg_df
     back_dfs.append(bkg_df)

@@ -3,37 +3,31 @@
 #input variables
 varList = {}
 
-bkginputDir = '/isilon/hadoop/store/user/dali/FWLJMET106XUL_singleLep2017UL_RunIISummer20_3t_step2/nominal/' 
-siginputDir = '/isilon/hadoop/store/group/bruxljmFWLJMET106XUL_singleLep2017UL_RunIISummer20_3t_step2/nominal/' 
+bkginputDir = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/' 
+siginputDir = bkginputDir  
+inputDir = bkginputDir
 
 sig_List = {
-200:'ChargedHiggs_HplusTB_HplusToTB_M-200_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-220:'ChargedHiggs_HplusTB_HplusToTB_M-220_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-250:'ChargedHiggs_HplusTB_HplusToTB_M-250_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root', 
-300:'ChargedHiggs_HplusTB_HplusToTB_M-300_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-350:'ChargedHiggs_HplusTB_HplusToTB_M-350_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-400:'ChargedHiggs_HplusTB_HplusToTB_M-400_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-500:'ChargedHiggs_HplusTB_HplusToTB_M-500_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-600:'ChargedHiggs_HplusTB_HplusToTB_M-600_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-700:'ChargedHiggs_HplusTB_HplusToTB_M-700_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-800:'ChargedHiggs_HplusTB_HplusToTB_M-800_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-1000:'ChargedHiggs_HplusTB_HplusToTB_M-1000_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-1250:'ChargedHiggs_HplusTB_HplusToTB_M-1250_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-1500:'ChargedHiggs_HplusTB_HplusToTB_M-1500_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-1750:'ChargedHiggs_HplusTB_HplusToTB_M-1750_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-2000:'ChargedHiggs_HplusTB_HplusToTB_M-2000_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-2500:'ChargedHiggs_HplusTB_HplusToTB_M-2500_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-3000:'ChargedHiggs_HplusTB_HplusToTB_M-3000_TuneCP5_13TeV_amcatnlo_pythia8_hadd.root',
-
-
+700:'PairVLQ_x53x53_tWtW_narrow_RH_M700_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
+800:'PairVLQ_x53x53_tWtW_narrow_RH_M800_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
+900:'PairVLQ_x53x53_tWtW_narrow_RH_M900_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
+1000:'PairVLQ_x53x53_tWtW_narrow_RH_M1000_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
+1100:'PairVLQ_x53x53_tWtW_narrow_RH_M1100_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
+1200:'PairVLQ_x53x53_tWtW_narrow_RH_M1200_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
+1300:'PairVLQ_x53x53_tWtW_narrow_RH_M1300_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
+1400:'PairVLQ_x53x53_tWtW_narrow_RH_M1400_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
+1500:'PairVLQ_x53x53_tWtW_narrow_RH_M1500_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
+1600:'PairVLQ_x53x53_tWtW_narrow_RH_M1600_TuneCP5_13TeV-madgraph-pythia8_hadd.root',
 
 } 
+
 bkg = [
 
 'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_tt1b_hadd.root', 
 'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_tt2b_hadd.root',
 'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttbb_hadd.root',
 'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttcc_hadd.root',
+'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_11_hadd.root', 
 'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_10_hadd.root', 
 'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_1_hadd.root',
 'TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_HT0Njet0_ttjj_2_hadd.root',
@@ -150,7 +144,7 @@ varList['BigComb'] = [
 ['deltaPhi_lepbJetInMinMlb','#DeltaPhi(l,b) with min M(l, b)',''],
 ['M_allJet_W','M(allJets, leptoninc W)','GeV'],
 ['HT_bjets','HT(bjets)','GeV'],
-['ratio_HTdHT4leadjets','HT/HT(4 leading jets)',''],
+#['ratio_HTdHT4leadjets','HT/HT(4 leading jets)',''],
 ['csvJet3','DeepCSV(3rdPtJet)',''],
 ['csvJet4','DeepCSV(4thPtJet)',''],
 ['thirdcsvb_bb','DeepCSV(3rdDeepCSVJet)',''],

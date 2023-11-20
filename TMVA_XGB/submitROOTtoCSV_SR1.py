@@ -10,7 +10,7 @@ runDir = os.getcwd()
 start_time = time.time()
 
 #inputDir='/eos/uscms/store/user/lpcbril/MC_test/FWLJMET102X_1lep2017_Oct2019_4t_080420_step2_newvar_updated_Pt40_Eta2p4'
-outputDir= '/isilon/hadoop/users/jluo48/CHiggs/UL17/XGB_CSV/SR1'#'/eos/uscms/store/user/lpcbril/MC_test/FWLJMET106X_1lep2017_UL_step2_CSV_SR1_added/'
+outputDir= '/eos/uscms/store/user/fsimpson/FWLJMET106X_1lep2017_UL_step2_CSV_added'
 condorDir= runDir+'/condor_logs_CSV_SR1/'
 
 print 'Starting submission'
@@ -22,14 +22,14 @@ count=0
 os.system('mkdir -p '+outputDir)
 os.system('mkdir -p '+condorDir)
 
-#eosoutdir = outputDir[outputDir.find("/store"):]
-#eosoutdir = "root://cmseos.fnal.gov/"+eosoutdir
+eosoutdir = outputDir[outputDir.find("/store"):]
+eosoutdir = "root://cmseos.fnal.gov/"+eosoutdir
 
-Masses = [200, 220, 250, 300, 350, 400, 500, 600, 700,  800, 1000, 1250, 1500, 1750, 2000, 2500, 3000]
+Masses = [1000]#,  800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600]
 
 for mass in Masses:
     count+=1
-    dict={'RUNDIR':runDir, 'CONDORDIR':condorDir, 'MASS':mass, 'OUTPUTDIR':outputDir}
+    dict={'RUNDIR':runDir, 'CONDORDIR':condorDir, 'MASS':mass, 'OUTPUTDIR':eosoutdir}
     jdfName=condorDir+'/M%(MASS)s.job'%dict
     print jdfName
     jdf=open(jdfName,'w')
@@ -44,7 +44,7 @@ Output = M%(MASS)s.out
 Error = M%(MASS)s.err
 Log = M%(MASS)s.log
 Notification = Never
-Arguments =  %(OUTPUTDIR)s  %(MASS)s  NewVar_added 
+Arguments =  %(OUTPUTDIR)s  %(MASS)s  BigComb
 
 Queue 1"""%dict)
     jdf.close()
