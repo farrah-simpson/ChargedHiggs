@@ -53,10 +53,10 @@ def analyze(tTree,tTreePkey,process,cutList,doAllSys,doPDF,doJetRwt,iPlot,plotDe
 	print "            -using the binning as:", xbins
 	
 	ljmetCalc = 'JetSubCalc' #JetSubCalc/singleLepCalc switch
+
 	# Define general cuts
-	# exclude electrons that fall in this HEM region which resulted in many misidentifications of jets as electrons
-        #cut  = '(( (leptonEta_MultiLepCalc > -1.3 || ( leptonPhi_MultiLepCalc < -1.57 || leptonPhi_MultiLepCalc > -0.87 )) && leptonPt_MultiLepCalc > 35 && isElectron) || (leptonPt_MultiLepCalc > 30 && isMuon))'
-	cut  = '((leptonPt_MultiLepCalc > 35 && isElectron == 1) || (leptonPt_MultiLepCalc > 30 && isMuon == 1))'
+        cut  = '((leptonPt_MultiLepCalc > 35 && isElectron) || (leptonPt_MultiLepCalc > 30 && isMuon))'
+	#cut  = '((leptonPt_MultiLepCalc > 35 && isElectron == 1) || (leptonPt_MultiLepCalc > 30 && isMuon == 1))'
 	cut  += ' && ((leptonPt_MultiLepCalc > '+str(cutList['lepPtCut'])+' && isElectron == 1) || (leptonPt_MultiLepCalc > '+str(cutList['lepPtCut'])+' && isMuon == 1) )' #' #edit
 	cut += ' && (MT_lepMet > '+str(cutList['mtCut'])+')'
 	cut += ' && (theJetPt_JetSubCalc_PtOrdered[2] > '+str(cutList['jet3PtCut'])+')'
@@ -109,7 +109,7 @@ def analyze(tTree,tTreePkey,process,cutList,doAllSys,doPDF,doJetRwt,iPlot,plotDe
  		weightStr = '5'
  		weightStrBase = '5'
 	if('XGB' in plotTreeName and 'CR' in region):
-		cut += ' && ('+(str(plotTreeName))+' <= 0.95)'
+		cut += ' && ('+(str(plotTreeName))+' < 0.95)'
 
 #	if 'SR' in region or 'CR' in region: cut += ' && ('+(str(cutList['XGB']))+' > 0.8)'
 

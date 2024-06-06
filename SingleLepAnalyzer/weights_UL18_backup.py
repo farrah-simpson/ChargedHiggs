@@ -207,16 +207,6 @@ nRun['X53M1200MH400']= 300000.0
 nRun['X53M1200MH600']= 300000.0
 nRun['X53M1200MH800']= 299000.0
 nRun['X53M1200MH1000']= 296000.0
-nRun['X53M1300MH200']= 286000.0
-nRun['X53M1300MH400']= 298000.0
-nRun['X53M1300MH600']= 299000.0
-nRun['X53M1300MH800']= 286000.0
-nRun['X53M1300MH1000']= 296000.0
-nRun['X53M1400MH200']= 291000.0
-nRun['X53M1400MH400']= 290000.0
-nRun['X53M1400MH600']= 288000.0
-nRun['X53M1400MH800']= 291000.0
-nRun['X53M1400MH1000']= 291000.0
 nRun['X53M1500MH200']= 300000.0
 nRun['X53M1500MH400']= 294000.0
 nRun['X53M1500MH600']= 300000.0 
@@ -277,12 +267,13 @@ xsec['TTJetsSemiLep'] = xsec['TTJets'] * BR_TTJetsSemiLep
 xsec['TTJets700mtt_JEC'] = xsec['TTJets700mtt']
 xsec['TTJets1000mtt_JER'] = xsec['TTJets1000mtt']
 
-xsec['Ts'] =10.32#https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopRefXsec 
-#xsec['Tbs'] 
-xsec['Tt'] = 134.2#https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopRefXsec
-xsec['Tbt'] =80.0#https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopRefXsec
-xsec['TtW'] =35.85#https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
-xsec['TbtW']= 35.85#https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
+
+xsec['Ts'] = 11.36/3 #7.20/3 #(1/3 was suggested by Thomas Peiffer to account for the leptonic branching ratio)# https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
+#xsec['Tbs'] = 4.16/3 #(1/3 was suggested by Thomas Peiffer to account for the leptonic branching ratio)# https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
+xsec['Tt'] = 136.02 # https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
+xsec['Tbt'] = 80.95 # https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
+xsec['TtW'] = 35.83 # https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
+xsec['TbtW'] = 35.83 # https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
 
 xsec['WJets'] = 61526.7
 xsec['WJetsMG'] = 61526.7
@@ -324,33 +315,24 @@ xsec['QCDht2000'] = 25.24 # from https://twiki.cern.ch/twiki/bin/viewauth/CMS/Su
 xsec['TTW'] = 0.4611 # from XsecDB, LO
 xsec['TTZ'] = 0.5407 # from XsecDB, LO
 xsec['TTH'] = 0.5269 # from XsecDB, NLO
-xsec['TTWl'] = 0.55*0.3259#0.2043 # from McM
+xsec['TTWl'] = 0.2043 # from McM
 xsec['TTWq'] = 0.4062 # from McM
 #xsec['TTZl'] = 0.2529 # from McM
-xsec['TTZlM10'] =  0.86*(3*(0.0337+0.0667))#0.2439
+xsec['TTZlM10'] =  0.2439
 xsec['TTZlM1to10'] = 0.05324
 
 xsec['TTZq'] = 0.5297 # from McM
 xsec['TTHB'] = 0.2934
 xsec['TTHnoB'] = 0.215
 
-xsec['TTHH'] = 0.00076 
-xsec['TTTJ'] = 0.0004741
-xsec['TTTW'] = 0.000733
-xsec['TTWH'] = 0.00158
-xsec['TTWW'] = 0.01150
-xsec['TTWZ'] = 0.00388
-xsec['TTZH'] = 0.00153
-xsec['TTZZ'] = 0.00198
-
-#xsec['TTHH'] = 0.0007408 # from McM
-#xsec['TTTJ'] = 0.0004741 # from McM
-#xsec['TTTW'] = 0.000733 # from McM
-#xsec['TTWH'] = 0.001359 # from McM
-#xsec['TTWW'] = 0.007883 # from McM
-#xsec['TTWZ'] = 0.002974 # from McM
-#xsec['TTZH'] = 0.001253 # from McM
-#xsec['TTZZ'] = 0.001572 # from McM
+xsec['TTHH'] = 0.0007408 # from McM
+xsec['TTTJ'] = 0.0004741 # from McM
+xsec['TTTW'] = 0.000733 # from McM
+xsec['TTWH'] = 0.001359 # from McM
+xsec['TTWW'] = 0.007883 # from McM
+xsec['TTWZ'] = 0.002974 # from McM
+xsec['TTZH'] = 0.001253 # from McM
+xsec['TTZZ'] = 0.001572 # from McM
 
 #4 Tops
 xsec['TTTT'] = 0.008213 # from McM
@@ -422,16 +404,6 @@ xsec['X53M1200MH400']= 0.0118
 xsec['X53M1200MH600']= 0.0118
 xsec['X53M1200MH800']= 0.0118
 xsec['X53M1200MH1000']= 0.0118
-xsec['X53M1300MH200']= 0.00639 
-xsec['X53M1300MH400']= 0.00639 
-xsec['X53M1300MH600']= 0.00639
-xsec['X53M1300MH800']= 0.00639
-xsec['X53M1300MH1000']=0.00639 
-xsec['X53M1400MH200']= 0.00354 
-xsec['X53M1400MH400']= 0.00354 
-xsec['X53M1400MH600']= 0.00354
-xsec['X53M1400MH800']= 0.00354
-xsec['X53M1400MH1000']=0.00354 
 xsec['X53M1500MH200']= 0.00200
 xsec['X53M1500MH400']= 0.00200
 xsec['X53M1500MH600']= 0.00200

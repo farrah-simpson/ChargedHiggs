@@ -31,19 +31,76 @@ start_time = time.time()
 
 year=sys.argv[1]
 if year=='R17':
-	from weights17 import *
-else:
+	from weights import *
+elif year =='R18':
 	from weights_UL18 import *
-
+elif year == 'R16':from weights_UL16 import *
+elif year == 'R16APV':from weights_UL16APV import *
+ 
 iPlot=sys.argv[2]
+sigName = 'X53H' #MAKE SURE THIS WORKS FOR YOUR ANALYSIS PROPERLY!!!!!!!!!!!
+
 saveKey = ''#'_50GeV_100GeVnB2'
 # if len(sys.argv)>1: iPlot=str(sys.argv[1])
-cutString = ''#'lep30_MET150_NJets4_DR1_1jet450_2jet150'
+#cutString = sys.argv[4]#'lep30_MET150_NJets4_DR1_1jet450_2jet150'
 lumiStr = str(targetlumi/1000).replace('.','p')+'fb' # 1/fb
-templateDir = 'kinematics_PS_2023_10_31'
 
+templateDir = sys.argv[3]#'templates_2023_11_9'
+#templateDir = templateDir+='/cutString'
 iPlotList = [
-'HT'
+'XGB200_SR1', 
+'XGB400_SR1', 
+'XGB600_SR1', 
+'XGB800_SR1', 
+#'XGB1300_SR1', 
+
+#'HT',
+#'ST',
+#'minMlb',
+#'deltaRjet2',
+                #'XGB700', 
+                #'XGB800', 
+                #'XGB900', 
+                #'XGB1000', 
+                #'XGB1100', 
+                #'XGB1200', 
+               #'XGB1300_SR1', 
+                #'XGB1400', 
+                #'XGB1500', 
+                #'XGB1600', 
+               
+                #'XGB700_SR1', 
+                #'XGB800_SR1', 
+                #'XGB900_SR1', 
+#                'XGB1000_SR1', 
+                #'XGB1100_SR1', 
+                #'XGB1200_SR1', 
+                #'XGB1500_SR1', 
+                #'XGB1600_SR1', 
+                #
+                #'XGB700_SR2', 
+                #'XGB800_SR2', 
+                #'XGB900_SR2', 
+                #'XGB1000_SR2', 
+                #'XGB1100_SR2', 
+                #'XGB1200_SR2', 
+                #'XGB1300_SR2', 
+                #'XGB1400_SR2', 
+                #'XGB1500_SR2', 
+                #'XGB1600_SR2', 
+                #
+                #'XGB700_SR3', 
+                #'XGB800_SR3', 
+                #'XGB900_SR3', 
+                #'XGB1000_SR3', 
+                #'XGB1100_SR3', 
+                #'XGB1200_SR3', 
+                #'XGB1300_SR3', 
+                #'XGB1400_SR3', 
+                #'XGB1500_SR3', 
+                #'XGB1600_SR3', 
+
+
                 #'XGB200',
                 #'XGB220',
                 #'XGB250',
@@ -125,14 +182,14 @@ for iPlot in iPlotList:
     
     quiet = True #if you don't want to see the warnings that are mostly from the stat. shape algorithm!
     rebinCombine = True #else rebins theta templates
-    doStatShapes = True#False
-    doSmoothing = True
-    smoothingAlgo = 'lowess' #lowess, super, or kern
+    doStatShapes = False#True
+    doSmoothing = False
+    smoothingAlgo = ''#lowess' #lowess, super, or kern
     symmetrizeSmoothing = True #Symmetrize up/down shifts around nominal before smoothing
-    doPDF = False#True check!
-    doMURF = False#True
+    doPDF = True 
+    doMURF = True
     doPSWeights = True
-    normalizeTheorySystSig = True #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for signals
+    normalizeTheorySystSig = True#False#True #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for signals
     normalizeTheorySystBkg = False #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for backgrounds
     #tttt, X53, TT, BB, HTB, etc --> this is used to identify signal histograms for combine templates when normalizing the pdf and muRF shapes to nominal!!!!
 #    doStatShapes = False
@@ -146,7 +203,6 @@ for iPlot in iPlotList:
 #    normalizeTheorySystBkg = False #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for backgrounds
 #tttt, X53, TT, BB, HTB, etc --> this is used to identify signal histograms for combine templates when normalizing the pdf and muRF shapes to nominal!!!!
 
-    sigName = 'X53' #MAKE SURE THIS WORKS FOR YOUR ANALYSIS PROPERLY!!!!!!!!!!!
     massList = [] 
     sigProcList = [sigName+str(mass) for mass in massList]
     if sigName=='tttt': sigProcList = [sigName]
@@ -154,17 +210,17 @@ for iPlot in iPlotList:
     	#sigProcList = [sigName+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
     	sigProcList= [sigName+'RHM'+str(mass) for mass in range(700,1600+1,100)]
     if sigName=='X53H': 
-    	sigProcList=['X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+    	sigProcList=['X53M1300MH200','X53M1300MH400','X53M1300MH600','X53M1300MH800','X53M1300MH1000','X53M1400MH200','X53M1400MH400','X53M1400MH600','X53M1400MH800','X53M1400MH1000','X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
  
     ttProcList = ['ttnobb','ttbb']#['ttjj','ttcc','ttbb','tt1b','tt2b']#['ttnobb','ttbb'] # ['ttjj','ttcc','ttbb','ttbj']
     bkgProcList = ttProcList + ['top','ewk','qcd'] #put the most dominant process first
     removeSystFromYields = ['hdamp','ue','njet','njetsf'] #list of systematics to be removed from yield errors
     
     minNbins=1 #min number of bins to be merged
-    stat = 0.2 #0.3 check! #statistical uncertainty requirement (enter >1.0 for no rebinning; i.g., "1.1")
+    stat = 0.2 #0.2 check! #statistical uncertainty requirement (enter >1.0 for no rebinning; i.g., "1.1")
     statThres = 0.05 #statistical uncertainty threshold on total background to assign BB nuisances -- enter 0.0 to assign BB for all bins
     #if len(sys.argv)>1: stat=float(sys.argv[1])
-    singleBinCR = True#check!
+    singleBinCR = False#True#check!
     symmetrizeTopPtShift = False
     scaleSignalsToXsec = False # !!!!!Make sure you know signal x-sec used in input files to this script. If this is True, it will scale signal histograms by x-sec in weights.py!!!!!
     zero = 1E-12
@@ -184,11 +240,14 @@ for iPlot in iPlotList:
     	minNbins=2 #(assuming initial hists are 15 GeV bins) min 30GeV bin width
     	xMin = 500
     	xMax = 4000
-    if iPlot=='BDT' and stat<1.: 
+    if iPlot=='XGB' and stat<1.: 
     	minNbins=2 #(assuming initial hists are 15 GeV bins) min 30GeV bin width
     	xMin = -1
     	xMax = 1
-    		
+#    if 'XGB' in iPlot and 'CR' in templateDir: 
+#    	xMax = 0.95
+#	print 'max is 0.95'
+     		
     if rebinCombine:
     	dataName = 'data_obs'
     	upTag = 'Up'
@@ -202,12 +261,14 @@ for iPlot in iPlotList:
     addShapes = True
     lumiSys = 0.025 # lumi uncertainty
     if year=='R17': lumiSys = 0.023
-    eltrigSys = 0.0 #electron trigger uncertainty
-    mutrigSys = 0.0 #muon trigger uncertainty
-    elIdSys = 0.03 #electron id uncertainty
-    muIdSys = 0.03 #muon id uncertainty
-    elIsoSys = 0.0 #electron isolation uncertainty
-    muIsoSys = 0.0 #muon isolation uncertainty
+    if year=='R16': lumiSys = 0.012
+
+    eltrigSys = 0.05 #electron trigger uncertainty
+    mutrigSys = 0.05 #muon trigger uncertainty
+    elIdSys = 0.015 #electron id uncertainty
+    muIdSys = 0.01 #muon id uncertainty
+    elIsoSys = 0.025 #electron isolation uncertainty
+    muIsoSys = 0.025 #muon isolation uncertainty
     htRwtSys = 0.0
     #njetSys = 0.048
     #if year=='R17': njetSys = 0.075
@@ -282,7 +343,7 @@ for iPlot in iPlotList:
     		totDataTempBinErrSquared_E += dataHists_[chn].GetBinError(Nbins+1-iBin)**2
     		totDataTempBinErrSquared_M += dataHists_[chn.replace('isE','isM')].GetBinError(Nbins+1-iBin)**2
     		nBinsMerged+=1
-    		#if nBinsMerged<minNbins: continue
+    		if nBinsMerged<minNbins: continue#here
     		if nBinsMerged<minNbins or ('_nB2_' in chn and nBinsMerged<4 and (iPlot.startswith('HT') or iPlot=='ST' or iPlot=='BDT')): continue
     		if totTempBinContent_E>0. and totTempBinContent_M>0.:
     			if math.sqrt(totTempBinErrSquared_E)/totTempBinContent_E<=stat and math.sqrt(totTempBinErrSquared_M)/totTempBinContent_M<=stat:
@@ -364,7 +425,7 @@ for iPlot in iPlotList:
     			underflow(rebinnedHists[hist])
     			if '__pdf' in hist:
     				if upTag not in hist and downTag not in hist: continue
-    			if '__mu' in hist or '__isr' in hist or '__fsr' in hist: continue
+    			if '__mu' in hist or '__isr' in hist or '__fsr' in hist: continue #why? here
     			if any([item in hist and not removalKeys[item] for item in removalKeys.keys()]): continue
     			if '__toppt'+downTag in hist and symmetrizeTopPtShift:
     				for ibin in range(1, rebinnedHists[hist].GetNbinsX()+1):
@@ -450,8 +511,8 @@ for iPlot in iPlotList:
     						continue
     					error = rebinnedHists[chnHistName.replace(dataName,sig)].GetBinError(ibin)
     					if error/val<=statThres: continue
-    					err_up_name = rebinnedHists[chnHistName.replace(dataName,sig)].GetName()+'__CMS_'+sigName+'_'+chn+'_'+year+'_'+sigNameNoMass+"_bin_%iUp" % ibin
-    					err_dn_name = rebinnedHists[chnHistName.replace(dataName,sig)].GetName()+'__CMS_'+sigName+'_'+chn+'_'+year+'_'+sigNameNoMass+"_bin_%iDown" % ibin
+    					err_up_name = rebinnedHists[chnHistName.replace(dataName,sig)].GetName()+sigName+'_'+chn+'_'+year+'_'+sigNameNoMass+"_bin_%iUp" % ibin
+    					err_dn_name = rebinnedHists[chnHistName.replace(dataName,sig)].GetName()+sigName+'_'+chn+'_'+year+'_'+sigNameNoMass+"_bin_%iDown" % ibin
     					rebinnedHists[err_up_name] = rebinnedHists[chnHistName.replace(dataName,sig)].Clone(err_up_name)
     					rebinnedHists[err_dn_name] = rebinnedHists[chnHistName.replace(dataName,sig)].Clone(err_dn_name)
     					rebinnedHists[err_up_name].SetBinContent(ibin, val + error)
@@ -562,6 +623,42 @@ for iPlot in iPlotList:
     				PSwgtDnHist4 = PSwgtDnHist.Clone(hist.replace('isr'+upTag,newPSwgtName+'_'+year+downTag))
     				PSwgtUpHist4.Write()
     				PSwgtDnHist4.Write()
+				#Write also ISR/FSR uncertainties separately, in addition to their envelope above.
+				rebinnedHists[hist].Write()
+				rebinnedHists[hist.replace('isr'+upTag,'isr'+downTag)].Write()
+				rebinnedHists[hist.replace('isr'+upTag,'fsr'+upTag)].Write()
+				rebinnedHists[hist.replace('isr'+upTag,'fsr'+downTag)].Write()
+				
+				#Decorrelate PSwgt systematic ("PSwgt" still need to be removed in doThetaLimits.py!):
+				PSwgtUpHist2 = PSwgtUpHist.Clone(hist.replace('isr'+upTag,newPSwgtName+'_'+proc_+upTag))
+				PSwgtDnHist2 = PSwgtDnHist.Clone(hist.replace('isr'+upTag,newPSwgtName+'_'+proc_+downTag))
+				PSwgtUpHist2.Write()
+				PSwgtDnHist2.Write()
+
+				#Write also ISR/FSR uncertainties separately, in addition to their envelope above.
+				isrUpHist2 = rebinnedHists[hist].Clone(hist.replace('isr'+upTag,'isr_'+proc_+upTag))
+				isrDnHist2 = rebinnedHists[hist.replace('isr'+upTag,'isr'+downTag)].Clone(hist.replace('isr'+upTag,'isr_'+proc_+downTag))
+				fsrUpHist2 = rebinnedHists[hist.replace('isr'+upTag,'fsr'+upTag)].Clone(hist.replace('isr'+upTag,'fsr_'+proc_+upTag))
+				fsrDnHist2 = rebinnedHists[hist.replace('isr'+upTag,'fsr'+downTag)].Clone(hist.replace('isr'+upTag,'fsr_'+proc_+downTag))
+				isrUpHist2.Write()
+				isrDnHist2.Write()
+				fsrUpHist2.Write()
+				fsrDnHist2.Write()
+
+				#Add additional shift histograms to be able to uncorrelate them across years
+				PSwgtUpHist3 = PSwgtUpHist.Clone(hist.replace('isr'+upTag,newPSwgtName+'_'+proc_+'_'+year+upTag))
+				PSwgtDnHist3 = PSwgtDnHist.Clone(hist.replace('isr'+upTag,newPSwgtName+'_'+proc_+'_'+year+downTag))
+				PSwgtUpHist3.Write()
+				PSwgtDnHist3.Write()
+
+				isrUpHist3 = rebinnedHists[hist].Clone(hist.replace('isr'+upTag,'isr_'+proc_+'_'+year+upTag))
+				isrDnHist3 = rebinnedHists[hist.replace('isr'+upTag,'isr'+downTag)].Clone(hist.replace('isr'+upTag,'isr_'+proc_+'_'+year+downTag))
+				fsrUpHist3 = rebinnedHists[hist.replace('isr'+upTag,'fsr'+upTag)].Clone(hist.replace('isr'+upTag,'fsr_'+proc_+'_'+year+upTag))
+				fsrDnHist3 = rebinnedHists[hist.replace('isr'+upTag,'fsr'+downTag)].Clone(hist.replace('isr'+upTag,'fsr_'+proc_+'_'+year+downTag))
+				isrUpHist3.Write()
+				isrDnHist3.Write()
+				fsrUpHist3.Write()
+				fsrDnHist3.Write()
     
     		#Constructing PDF shapes
     		if doPDF:
@@ -643,12 +740,13 @@ for iPlot in iPlotList:
     njetslist=[]
     for chn in channels:
     	print chn
-    	if chn.split('_')[1] not in isEMlist: isEMlist.append(chn.split('_')[1])
+    	if chn.split('_')[0] not in isEMlist: isEMlist.append(chn.split('_')[1])
     	#if chn.split('_')[1] not in nhottlist: nhottlist.append(chn.split('_')[1])
-    	if chn.split('_')[2] not in nttaglist: nttaglist.append(chn.split('_')[2])
-    	if chn.split('_')[3] not in nWtaglist: nWtaglist.append(chn.split('_')[3])
-    	if chn.split('_')[4] not in nbtaglist: nbtaglist.append(chn.split('_')[4])
-    	if chn.split('_')[5] not in njetslist: njetslist.append(chn.split('_')[5])
+    	print isEMlist
+    	if chn.split('_')[1] not in nttaglist: nttaglist.append(chn.split('_')[2])
+    	if chn.split('_')[2] not in nWtaglist: nWtaglist.append(chn.split('_')[3])
+    	if chn.split('_')[3] not in nbtaglist: nbtaglist.append(chn.split('_')[4])
+    	if chn.split('_')[4] not in njetslist: njetslist.append(chn.split('_')[5])
     
     procNames={}
     procNames['dataOverBkg'] = 'Data/Bkg'
