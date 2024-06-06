@@ -6,9 +6,9 @@ parent = os.path.dirname(os.getcwd())
 sys.path.append(parent)
 from numpy import linspace
 import argparse
-from weights_UL18 import *
-from analyze_UL18 import *
-from samples_UL18 import *
+from weights_UL16 import *
+from analyze_UL16 import *
+from samples import *
 from utils import *
 
 gROOT.SetBatch(1)
@@ -20,7 +20,7 @@ start_time = time.time()
 # args = parser.parse_args()
 doOpt = False
 lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
-ntupleDir = 'root://cmseos.fnal.gov//store/user/fsimpson/UL18/step3_XGB_final/nominal/'#'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/' 
+ntupleDir = 'root://cmseos.fnal.gov//store/user/fsimpson/UL16/step3_XGB_final/nominal/'#'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/' 
 #step1Dir = 'root://cmseos.fnal.gov//store/user/fsimpson/UL17/step3_XGB/nominal/'#'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2018UL_RunIISummer20v2_step2/nominal/' #lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_XGBs_added_sys_new/nominal/'
 #ntupleDir  = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/'#/UL17/step3_XGB_final/nominal/'
 #ntupleDir  = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2016APVUL_RunIISummer20v2_step2/nominal/'#'root://cmseos.fnal.gov//store/user/fsimpson/UL17/step3_XGB/nominal/'
@@ -75,9 +75,9 @@ if whichSignal=='Hptb' or 'X53' or 'X53H': decays = ['']
 sigTrained = 'Low1'
 if not doOpt:
 	if len(sys.argv)>10: sigTrained=sys.argv[10]
-iPlot = 'ST' #choose a discriminant from plotList below!
+iPlot = 'XGB1000_SR1' #choose a discriminant from plotList below!
 if len(sys.argv)>2: iPlot=sys.argv[2]
-region = 'SR'
+region = 'CR'
 if len(sys.argv)>3: region=sys.argv[3]
 isCategorized = False
 BDTSR_Merged = False
@@ -316,7 +316,7 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
 
         'XGB1300_SR1' : ( 'XGB1300_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1300 GeV)'),
 #        'XGB1400_SR1' : ( 'XGB1400_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1400 GeV)'),
-#        'XGB1500_SR1' : ( 'XGB1500_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1500 GeV)'),
+        'XGB1500_SR1' : ( 'XGB1500_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1500 GeV)'),
 #        'XGB1600_SR1' : ( 'XGB1600_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1600 GeV)'),
 #
 #        'XGB700_SR2' : ( 'XGB700_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (700 GeV)'),

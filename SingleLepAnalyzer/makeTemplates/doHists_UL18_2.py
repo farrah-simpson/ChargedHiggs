@@ -7,7 +7,7 @@ sys.path.append(parent)
 from numpy import linspace
 import argparse
 from weights_UL18 import *
-from analyze_UL18 import *
+from analyze_UL18_2 import *
 from samples_UL18 import *
 from utils import *
 
@@ -75,9 +75,9 @@ if whichSignal=='Hptb' or 'X53' or 'X53H': decays = ['']
 sigTrained = 'Low1'
 if not doOpt:
 	if len(sys.argv)>10: sigTrained=sys.argv[10]
-iPlot = 'ST' #choose a discriminant from plotList below!
+iPlot = 'XGB1000_SR1' #choose a discriminant from plotList below!
 if len(sys.argv)>2: iPlot=sys.argv[2]
-region = 'SR'
+region = 'CR'
 if len(sys.argv)>3: region=sys.argv[3]
 isCategorized = False
 BDTSR_Merged = False
@@ -175,7 +175,7 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
 	'Bjet1Pt':('BJetLeadPt',linspace(0,1500,51).tolist(),';p_{T}(b_{1}) [GeV]'),
 	'lepPt':('leptonPt_MultiLepCalc',linspace(0, 1000, 51).tolist(),';Lepton p_{T} [GeV]'),
 	'lepEta':('leptonEta_MultiLepCalc',linspace(-4, 4, 41).tolist(),';Lepton #eta'),
-	'JetEta':('theJetEta_JetSubCalc_PtOrdered',linspace(-4, 4, 41).tolist(),';AK4 Jet #eta'),
+	'JetEta':('theJetJetEta_JetSubCalc_PtOrdered',linspace(-4, 4, 41).tolist(),';AK4 Jet #eta'),
 	'JetPt' :('theJetPt_JetSubCalc_PtOrdered',linspace(0, 1500, 51).tolist(),';jet p_{T} [GeV]'),
 	'Jet1Pt':('theJetPt_JetSubCalc_PtOrdered[0]',linspace(0, 1500, 51).tolist(),';p_{T}(j_{1}), AK4 [GeV]'),
 	'Jet2Pt':('theJetPt_JetSubCalc_PtOrdered[1]',linspace(0, 1500, 51).tolist(),';p_{T}(j_{2}), AK4 [GeV]'),
@@ -380,8 +380,8 @@ print "         X-AXIS TITLE  :",plotList[iPlot][2]
 print "         BINNING USED  :",plotList[iPlot][1]
 
 runData =True
-runBkgs =True
-runSigs =True
+runBkgs =False#True
+runSigs =False#True
 nCats  = len(catList)
 
 

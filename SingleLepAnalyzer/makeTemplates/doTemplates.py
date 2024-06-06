@@ -4,7 +4,6 @@ import argparse
 from ROOT import gROOT,TFile,TH1F
 parent = os.path.dirname(os.getcwd())
 sys.path.append(parent)
-#from weights import *
 from modSyst import *
 from utils import *
 
@@ -12,49 +11,55 @@ parser = argparse.ArgumentParser(description="template building for the charged 
 parser.add_argument("-d", "--directory", help="the directory to be processed")
 parser.add_argument("-c", "--Categorized", default=False, action="store_true", help="Categorize or not")
 parser.add_argument("-y", "--year", default="17", help="The data taking year")
+#parser.add_argument("-cut", "--cutString", default="", help="The cut string")
+
 args = parser.parse_args()
 
+year = args.year
 
-if args.year=="17":
-    from weights import *
-if args.year=="18":
-    from weights_UL18 import *
-
-
+if year == 'R17':from weights_UL17 import *
+elif year == 'R18':from weights_UL18 import *
+elif year == 'R16':from weights_UL16 import *
+elif year == 'R16APV':from weights_UL16APV import *
+ 
 gROOT.SetBatch(1)
 start_time = time.time()
 
 lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
+
 sigTrainedList=[]#'1000']
 massPt=''
 if len(sys.argv)>1: massPt=str(sys.argv[1])
-region = 'PS' #PS,SR
+region = 'CR' #PS,SR,CR
+whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53
 
 isCategorized=args.Categorized#False#False
 doTempEachCategory = False
-cutString=''#MET30_1jet40_2jet40'#'lep35_MET30_DR0_1jet40_2jet40'
+cutString=''#args.cutString#MET30_1jet40_2jet40'#'lep35_MET30_DR0_1jet40_2jet40'
 
 pfix = args.directory#'templates_M500_2020_11_23_topPtRW_NC_allweights_DJ'#'kinematics_CR_M500_2020_11_23_topPtRW_NC_allweights_DJ' 
 #if not isCategorized: pfix='/kinematics_'+region+'_M1000'
 #if not isCategorized: pfix='v113/withSys/kinematics_'+region+'_M'
 
 #pfix+=massPt+'_2020_11_23_topPtRW_NC_allweights'
-outDir = os.getcwd()+'/'+pfix+'/'+cutString
+outDir = os.getcwd()+'/'+pfix
 
-scaleSignalXsecTo1pb = True # this has to be "True" if you are making templates for limit calculation!!!!!!!!
+scaleSignalXsecTo1pb =True#False # this has to be "True" if you are making templates for limit calculation!!!!!!!!#doAllSys = False3True
 doAllSys = True
-doQ2sys  = False
-doPDFsys = False
+doQ2sys = False
+doPDFsys = True#False
 if not doAllSys: doQ2sys = False
 addCRsys = False
 #systematicList = ['muR','muF','isr','fsr','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','pileup','muRFcorrd','PNT','PNW','jec','jer','prefire']#,'jmst','jmrt','jmsW','jmrW','trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2'] include any of these??
 #systematicList = ['trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
-systematicList = ['PNT','PNW','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes']
+systematicList = ['isr','fsr','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes','PNT','PNW'] 
 systList_jsf = ['jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
 'jsfJESPileUpPtBB', 'jsfJESPileUpPtEC1', 'jsfJESPileUpPtEC2', 'jsfJESPileUpPtHF', 'jsfJESPileUpPtRef', 'jsfJESRelativeBal', 'jsfJESRelativeFSR',
 'jsfJESRelativeJEREC1', 'jsfJESRelativeJEREC2', 'jsfJESRelativeJERHF', 'jsfJESRelativeJERHF', 'jsfJESRelativePtBB', 'jsfJESRelativePtEC1',
 'jsfJESRelativePtEC2', 'jsfJESRelativePtHF', 'jsfJESRelativeStatEC', 'jsfJESRelativeStatFSR', 'jsfJESRelativeStatHF', 'jsfJESSinglePionECAL',
 'jsfJESSinglePionHCAL', 'jsfJESTimePtEta']
+if year != 'R18': systematicList += ['prefire']
+
 #systematicList += systList_jsf
 normalizeRENORM_PDF = False #normalize the renormalization/pdf uncertainties to nominal templates --> normalizes signal processes only !!!!
 rebinBy = -1#4#performs a regular rebinning with "Rebin(rebinBy)", put -1 if rebinning is not wanted
@@ -64,7 +69,7 @@ splitTTbar = True
 splitST = False
 if splitTTbar:  
 	bkgTTBarList = ['ttnobb','ttbb']
-        #bkgGrupList = bkgTTBarList + ['top','ewk','qcd','WJets', 'ZJets', 'TTToHadronic', 'TTTo2L2Nu', 'TTJetsSemiLeptonic']
+        #bkgGrupList = bkgTTBarList + ['top','ewk','qcd','WJets', 'ZJets', 'TTToHadronic', 'TTTo2L2Nu', 'TTToSemiLeptonic']
         bkgGrupList = bkgTTBarList + ['top','ewk','qcd']
 	bkgProcList = ['tt2b','ttbb','tt1b','ttcc','ttjj','T','TTV','WJets','ZJets','qcd']#,'VV'
         #bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','WJets','ZJets','qcd']#,'VV'
@@ -75,7 +80,7 @@ if splitTTbar:
                 #bkgProcList = ['TT2B','TTBB','TTB','TTCC','TTLF','T','OtherT','WJets','ZJets','qcd']#,'VV'
 
 else:
-	bkgGrupList = ['ttbar','top','ewk','qcd',  'WJets']
+	bkgGrupList = ['ttbar','top','ewk','qcd', 'WJets']
 	#bkgGrupList = ['ttbar','top','ewk','qcd']
 	bkgProcList = ['TTJets','T','WJets','ZJets','VV','qcd']#,'TTV']
 bkgProcs = {}
@@ -88,14 +93,13 @@ bkgProcs['ZJets'] = ['DYMG200','DYMG400','DYMG600','DYMG800','DYMG1200','DYMG250
 
 bkgProcs['VV']    = ['WW','WZ','ZZ']
 bkgProcs['T']     = ['Tt','Tbt','Ts','TtW','TbtW',]
-#bkgProcs['TTV'] = []
 #bkgProcs['TTV']   = ['TTWl','TTWq','TTZl']
 bkgProcs['TTV']   = ['TTWl','TTWq','TTZlM10', 'TTZlM1to10']
-bkgProcs['OtherT']= ['TTHH', 'TTWH', 'TTWW', 'TTWZ', 'TTZH', 'TTZZ', 'TTHB', 'TTHnoB']#['TTHB','TTHnoB', 'TTTT']
+bkgProcs['OtherT']= ['TTHB', 'TTHnoB']#['TTHH', 'TTWH', 'TTWW', 'TTWZ', 'TTZH', 'TTZZ', 'TTHB', 'TTHnoB']#['TTHB','TTHnoB', 'TTTT']
 
 #bkgProcs['TTTo2L2Nu'] = ['TTTo2L2Nu_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 #bkgProcs['TTToHadronic'] = ['TTToHadronic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
-#bkgProcs['TTJetsSemiLeptonic'] = ['TTJetsSemiLeptonic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
+#bkgProcs['TTToSemiLeptonic'] = ['TTJetsSemiLeptonic_'+flavor for flavor in ['tt1b', 'tt2b', 'ttbb', 'ttcc', 'ttjj']]
 bkgProcs['TTJets'] = []
 bkgProcs['TTJets'] += ['TTTo2L2Nu']
 bkgProcs['TTJets'] += ['TTToHadronic']
@@ -159,13 +163,15 @@ topptProcs = ['tt2b','ttbb','ttb','ttcc','ttlf','ttbar','TTJets']#['top','ttbar'
 #bkgProcs['ttbar_q2up'] = ['TTJetsPHQ2U']#,'TtWQ2U','TbtWQ2U']
 #bkgProcs['ttbar_q2dn'] = ['TTJetsPHQ2D']#,'TtWQ2D','TbtWQ2D']
 
-whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
+
 #if massPt not in massList:    MICHAEL COMMENTED OUT THESE TWO LINES
 #	massList.append(massPt)
 #sigList = [whichSignal+str(mass) for mass in massList]
 sigList = [] 
 if whichSignal=='Hptb' or whichSignal == 'Hptb1000': decays = ['']
-if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+if whichSignal == 'X53H':sigList = ['X53M1300MH200','X53M1300MH400','X53M1300MH600','X53M1300MH800','X53M1300MH1000','X53M1400MH200','X53M1400MH400','X53M1400MH600','X53M1400MH800','X53M1400MH1000','X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+#if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+
 if whichSignal == 'X53':
 #	sigList = [whichSignal+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
 	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
@@ -180,12 +186,12 @@ nBRconf=len(BRs['BW'])
 if not doBRScan: nBRconf=1
 
 isEMlist = ['E','M']
-if region=='SR': nttaglist=['0','1p']
+if region=='SR'or region=='CR': nttaglist=['0','1p']
 else: nttaglist = ['0p']
 if region=='TTCR': nWtaglist = ['0p']
 else: nWtaglist = ['0','1p']
 if region=='WJCR': nbtaglist = ['0']
-elif region=='CR': nbtaglist = ['0','0p','1p']
+#elif region=='CR': nbtaglist = ['0','0p','1p']
 else: nbtaglist = ['1','2p']
 if region=='PS': njetslist=['3p']
 else: njetslist = ['4p']
@@ -193,18 +199,26 @@ if not isCategorized:
     nttaglist = ['0p']
     nWtaglist = ['0p']
     nbtaglist = ['1p']
+    njetslist = ['4p']
+if not isCategorized and region =='PS':
+    nttaglist = ['0p']
+    nWtaglist = ['0p']
+    nbtaglist = ['1p']
     njetslist = ['3p']
+
 
 catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist))] #if not skip(item[4] ,item[3])]
 tagList = ['nT'+item[0]+'_nW'+item[1]+'_nB'+item[2]+'_nJ'+item[3] for item in list(itertools.product(nttaglist,nWtaglist,nbtaglist,njetslist))] #if not skip(item[3] ,item[2])]
 
-lumiSys = 0.025 #lumi uncertainty
-eltrigSys = 0.#05 #electron trigger uncertainty
-mutrigSys = 0.#05 #muon trigger uncertainty
-elIdSys = 0.02 #electron id uncertainty
-muIdSys = 0.03 #muon id uncertainty
-elIsoSys = 0.01 #electron isolation uncertainty
-muIsoSys = 0.01 #muon isolation uncertainty
+if year == 'R17':lumiSys = 0.023 #lumi uncertainty in 2017 0.025 in 2018, 0.012 in 2016
+if year == 'R16' or year =='R16APV': lumiSys = 0.012
+if year == 'R18': lumiSys = 0.025
+eltrigSys = 0.05 #electron trigger uncertainty
+mutrigSys = 0.05 #muon trigger uncertainty
+elIdSys = 0.015 #0.02#electron id uncertainty
+muIdSys = 0.01 #muon id uncertainty
+elIsoSys = 0.025 #0#electron isolation uncertainty
+muIsoSys = 0.025 #0#muon isolation uncertainty
 
 elcorrdSys = math.sqrt(lumiSys**2+eltrigSys**2+elIdSys**2+elIsoSys**2)
 mucorrdSys = math.sqrt(lumiSys**2+mutrigSys**2+muIdSys**2+muIsoSys**2)
@@ -340,7 +354,7 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 			yieldTable[histoPrefix]['dataOverBkg'] =0
 		else:
 			yieldTable[histoPrefix]['dataOverBkg'] = yieldTable[histoPrefix]['data']/yieldTable[histoPrefix]['totBkg']
-
+			print yieldTable[histoPrefix]['dataOverBkg']
         #prepare MC yield error table
 		for proc in bkgGrupList+bkgProcList+sigList+['data']: yieldStatErrTable[histoPrefix][proc] = 0.
 		yieldStatErrTable[histoPrefix]['totBkg'] = 0.
@@ -430,12 +444,13 @@ def makeThetaCats(datahists,sighists,bkghists,discriminant,categor):
 		i=cat
                 print cat
                 print "=============================================="
-		postTag = ''#isSR_'
-		#if '_nB1_' in cat or '_nB2p_' in cat or '_nB2_nJ4' in cat or 'nB1p_' in cat: postTag = 'isCR_'
-		#else: postTag = 'isSR_'
+		postTag = ''
+		if 'CR' in pfix: postTag = 'isCR_'
+		elif 'SR' in pfix: postTag = 'isSR_'
+		print postTag
                 for signal in sigList:
                         #mass = [str(mass) for mass in massList if signal.endswith(str(mass))][0]
-                        hists[signal+i].SetName(hists[signal+i].GetName().replace('fb_','fb_'+postTag).replace('__sig','__'+signal))#.replace('M'+mass,'')+'M'+mass))
+                        hists[signal+i].SetName(hists[signal+i].GetName().replace('fb_','fb_'+postTag).replace('__sig','__'+signal))#.replace('M'+mass,''))+'M'+mass))
                         hists[signal+i].Write()
 			if doAllSys: #check??
 				 for syst in systematicList:
@@ -737,20 +752,30 @@ def findfiles(path, filtre):
 
 
 def rundoTemp(category):
-	#iPlotList = ['HT''minBBdr','aveBBdr','deltaEta_maxBB','FW_momentum_2','centrality','aveCSVpt','HT','minMlb','Bjet1Pt','mass_maxJJJpt','MTlmet','lepDR_minBBdr','MET']
         iPlotList = [
-                'HT',
-                #'HTpt40',
-                'ST',
-                'minMlb',
-                #'mass_minBBdr',
-                #'deltaR_lepBJet_maxpt',
-                #'lepDR_minBBdr',
+#'NJets',
+#'deltaRjet2',
+#'NWJets',
+#'NTJets',
+#'MET',
+#'NBJets',
+#'ST',
+#'theLeadJetPt',
+##JetPt',
+#'JetEta',
+#'JetPhi',
+#'XGB200_SR1',
+#'XGB400_SR1',
+#'XGB600_SR1',
+#'XGB800_SR1',
+#'XGB1000_SR1',
+#'XGB1300_SR1',
+'lepPt',
+'lepEta',
+'lepPhi',
+                #'HT',
+                #'minMlb',
                 #'centrality',
-                #'deltaEta_maxBB',
-                #'aveCSVpt',
-                #'aveBBdr',
-                ##'topPt',
                 #'FW_momentum_0',
                 #'FW_momentum_1', ##TODO
                 #'FW_momentum_2', ##TODO
@@ -765,17 +790,9 @@ def rundoTemp(category):
                 #'MTlmet',
                 ##'HT',
                 #'hemiout',
-                'theLeadJetPt',
-                'MET',
-                'lepPt',
-                #'masslepJets0',
-                #'masslepJets1',
-                #'masslepJets2',
                 ##'MT2bb',
                 ##'masslepBJets0',
                 #'mass_lepBJet_mindr',
-                # 
-                #'secondJetPt',
                 ##'fifthJetPt',  ## TODO
                 ##'sixthJetPt', ##TODO
                # 'PtFifthJet', ## TODO
@@ -796,125 +813,15 @@ def rundoTemp(category):
                 #'secondcsvb_bb',
                 #'thirdcsvb_bb',
                 #'fourthcsvb_bb',
-                'NBJets',
-               'NJets',
                 #'HT_2m',
                 #'Sphericity',
                 #'Aplanarity',
-                #'BestTop_Disc',
-                #'BestTop_Pt', 
-                ##'NoTop_Jet1_CSV', 
-                #'NoTop_Jet1_Pt', 
-                #'NoTop_Jet2_CSV',
-                #'NoTop_Jet2_Pt',
-
-                #'XGB200', 
-                #'XGB220', 
-                #'XGB250', 
-                #'XGB300', 
-                #'XGB350', 
-                #'XGB400', 
-                #'XGB500', 
-                #'XGB600', 
-                #'XGB700', 
-                #'XGB800', 
-                #'XGB1000',  
-                #'XGB1250',
-                #'XGB1500',
-                #'XGB1750',
-                #'XGB2000',
-                #'XGB2500',
-                #'XGB3000',
-                
-                #'XGB200_SR1', 
-                #'XGB220_SR1', 
-                #'XGB250_SR1', 
-                #'XGB300_SR1', 
-                #'XGB350_SR1', 
-                #'XGB400_SR1', 
-                #'XGB500_SR1', 
-                #'XGB600_SR1', 
-                #'XGB700_SR1', 
-                #'XGB800_SR1', 
-                #'XGB1000_SR1', 
-                #'XGB1250_SR1',
-                #'XGB1500_SR1',
-                #'XGB1750_SR1',
-                #'XGB2000_SR1',
-                #'XGB2500_SR1',
-                #'XGB3000_SR1',
-                #
-                #'XGB200_SR2', 
-                #'XGB220_SR2', 
-                #'XGB250_SR2', 
-                #'XGB300_SR2', 
-                #'XGB350_SR2', 
-                #'XGB400_SR2', 
-                #'XGB500_SR2', 
-                #'XGB600_SR2', 
-                #'XGB700_SR2', 
-                #'XGB800_SR2', 
-                #'XGB1000_SR2', 
-                #'XGB1250_SR2',
-                #'XGB1500_SR2',
-                #'XGB1750_SR2',
-                #'XGB2000_SR2',
-                #'XGB2500_SR2',
-                #'XGB3000_SR2',
-                #
-                #
-                #'XGB200_SR3', 
-                #'XGB220_SR3', 
-                #'XGB250_SR3', 
-                #'XGB300_SR3', 
-                #'XGB350_SR3', 
-                #'XGB400_SR3', 
-                #'XGB500_SR3', 
-                #'XGB600_SR3', 
-                #'XGB700_SR3', 
-                #'XGB800_SR3', 
-                #'XGB1000_SR3', 
-                #'XGB1250_SR3',
-                #'XGB1500_SR3',
-                #'XGB1750_SR3',
-                #'XGB2000_SR3',
-                #'XGB2500_SR3',
-                #'XGB3000_SR3',
-
-
-
-                #'XGB300',
-                #'XGB300_RS',
-                #'XGB300_3b6j',
-                #'XGB300_3b6j_RS',
-                #
-                #'XGB500',
-                #'XGB500_RS',
-                #'XGB500_3b6j',
-                #'XGB500_3b6j_RS',
-                #
-                #'XGB800',
-                #'XGB800_RS',
-                #'XGB800_3b6j',
-                #'XGB800_3b6j_RS',
-                #
-                #'XGB1000',
-                #'XGB1000_RS',
-                #'XGB1000_3b6j',
-                #'XGB1000_3b6j_RS',
-                #
-                #'XGB1500',
-                #'XGB1500_RS',
-                #'XGB1500_3b6j',
-                #'XGB1500_3b6j_RS',
-
                 ]
-
 #	for file in findfiles(outDir+'/'+category+'/', '*.p'): check!
 #		if 'lepPt' not in file: continue
 #		if 'bkghists' not in file: continue
 #		if not os.path.exists(file.replace('bkghists','datahists')): continue
-#                if not os.path.exists(file.replace('bkghists','sighists')): continue
+ #               if not os.path.exists(file.replace('bkghists','sighists')): continue
 #		iPlotList.append(file.split('/')[-1].replace('bkghists_','')[:-2])
 
 	print "WORKING DIR:",outDir
@@ -923,11 +830,20 @@ def rundoTemp(category):
 		datahists = {}
 		bkghists  = {}
 		sighists  = {}
+
 		print "LOADING DISTRIBUTION: "+iPlot
 		for cat in catList:
 			datahists.update(pickle.load(open(outDir+'/'+cat[2:]+'/datahists_'+iPlot+'.p','rb')))
 			bkghists.update(pickle.load(open(outDir+'/'+cat[2:]+'/bkghists_'+iPlot+'.p','rb')))
                         sighists.update(pickle.load(open(outDir+'/'+cat[2:]+'/sighists_'+iPlot+'.p','rb')))
+
+#		for data in datahists.keys(): 
+#			if 'XGB' in iPlot and region == 'CR': datahists[data].GetXaxis().SetRangeUser(0., 0.95)
+#		for bkg in bkghists.keys():
+#			if 'XGB' in iPlot and region == 'CR': bkghists[bkg].GetXaxis().SetRangeUser(0., 0.95)
+#		for sig in sighists.keys():
+#			if 'XGB' in iPlot and region == 'CR': sighists[sig].GetXaxis().SetRangeUser(0., 0.95)
+
 
 		if iPlot=='BDTdontscale':
 			for key in bkghists.keys(): 
@@ -935,10 +851,10 @@ def rundoTemp(category):
 				if key.startswith(iPlot+'jerUp') or key.startswith(iPlot+'jerDown'): continue
 				if 'TTJetsPHQ2U' in key or 'TTJetsPHQ2D' in key: continue
 				bkghists[key].Scale(2)
-#			 for key in sighists.keys(): 
-#				 if key.startswith(iPlot+'jecUp') or key.startswith(iPlot+'jecDown'): continue
-#				 if key.startswith(iPlot+'jerUp') or key.startswith(iPlot+'jerDown'): continue
-#				 sighists[key].Scale(2)
+			for key in sighists.keys(): 
+				if key.startswith(iPlot+'jecUp') or key.startswith(iPlot+'jecDown'): continue
+				if key.startswith(iPlot+'jerUp') or key.startswith(iPlot+'jerDown'): continue
+				sighists[key].Scale(2)
 
 		#Rebin
 		if rebinBy>0:
@@ -952,7 +868,7 @@ def rundoTemp(category):
 			for sig in sighists.keys():
 				if sighists[sig].GetXaxis().GetNbins()<=50: continue
 				sighists[sig] = sighists[sig].Rebin(rebinBy)
-
+		
 		#Negative Bin Correction
 		if '_wNegBinsCorrec' in saveKey:
 			print "CORRECTING NEGATIVE BINS ..."
