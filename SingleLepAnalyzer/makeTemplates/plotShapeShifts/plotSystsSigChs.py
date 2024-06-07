@@ -22,15 +22,24 @@ tdrstyle.setTDRStyle()
 rt.gROOT.SetBatch(1)
 
 outDir = os.getcwd()+'/'
+whichSignal = 'X53'
 iPlot = 'HT'
-year='R17'
-if year=='R17':
-	lumiStr = '41p53fb'
-	lumi=41.5 #for plots
-else:
-	lumiStr = '59p97fb'
-	lumi=59.97 #for plots
-#sig1 = 'tttt' #  choose the 1st signal to plot
+region = 'SR'
+isCategorized = False
+era=args.year
+if era=='R16': 
+	lumiStr = '16p81fb'
+	lumi = 16.81
+elif era=='R16APV': 
+	lumiStr = '19p52fb'
+	lumi = 19.5
+elif era=='R17': 
+	lumiStr = '41p48fb'
+	lumi = 41.5
+elif era=='R18': 
+	lumiStr = '59p83fb'
+	lumi = 59.83
+sig1 = 'X53RHM1000' #  choose the 1st signal to plot
 isRebinned = '_rebinned_stat0p2'
 isNegCorr = '_wNegBinsCorrec_'
 if args.lowess:
@@ -46,18 +55,35 @@ if useCombine: templateFile = '../'+tempVersion+'/'+cutString+'/templates_'+iPlo
 if not os.path.exists(outDir+tempVersion): os.system('mkdir '+outDir+tempVersion)
 if not os.path.exists(outDir+tempVersion+'/signalIndChannels'): os.system('mkdir '+outDir+tempVersion+'/signalIndChannels')
 
-isEMlist  = ['E','M']
-nttaglist = ['0p']
-nWtaglist = ['0p']
-nbtaglist = ['1','2','3p']
-njetslist = ['3','4','5','6p']
-# nbtaglist = ['2p']
-# njetslist = ['6p']
-systematics = ['pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes'] 
+isEMlist =['E','M']
+if region=='SR' or region=='CR': nttaglist=['0','1p']
+else: nttaglist = ['0p']
+if region=='TTCR': nWtaglist = ['0p']
+else: nWtaglist = ['0','1p']
+if region=='WJCR': nbtaglist = ['0']
+else: nbtaglist = ['1','2p']
+if region=='PS': njetslist=['3p']
+else: njetslist = ['4p']
+if not isCategorized:
+    nttaglist = ['0p']
+    nWtaglist = ['0p']
+    nbtaglist = ['1p']
+    njetslist = ['4p']
+if not isCategorized and region =='PS':
+    nttaglist = ['0p']
+    nWtaglist = ['0p']
+    nbtaglist = ['1p']
+    njetslist = ['3p']
+
+systematics = ['isr','fsr','pileup','muRFcorrd','muR','muF','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes','PNT','PNW'] 
 nSys = len(systematics)
 for isys in range(nSys):
     systematics[isys] = islowess+systematics[isys]
 
+if whichSignal == 'X53H':signameList = ['X53M1300MH200','X53M1300MH400','X53M1300MH600','X53M1300MH800','X53M1300MH1000','X53M1400MH200','X53M1400MH400','X53M1400MH600','X53M1400MH800','X53M1400MH1000','X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+
+if whichSignal == 'X53':
+	signameList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
 
 signameList = ['Hptb200', 'Hptb220','Hptb250', 'Hptb300', 'Hptb350', 'Hptb400', 'Hptb500', 'Hptb600', 'Hptb700', 'Hptb800', 'Hptb1000', 
 'Hptb1250', 'Hptb1500', 'Hptb1750', 'Hptb2000', 'Hptb2500', 'Hptb3000']
@@ -76,8 +102,7 @@ else: #theta
 for syst in systematics:
 	if not os.path.exists(outDir+tempVersion+'/signalIndChannels/'+syst): os.system('mkdir '+outDir+tempVersion+'/signalIndChannels/'+syst)
 	for cat in catList:
-		if '_nB1_' in cat or '_nB2p_' in cat or '_nB2_nJ4' in cat: postTag = 'isCR'
-                else: postTag = 'isSR'
+                postTag = ''
 
 		if (syst=='q2' or syst=='toppt'):
 			print "Do you expect to have "+syst+" for your signal? FIX ME IF SO! I'll skip this systematic"
@@ -109,7 +134,7 @@ for syst in systematics:
 			uPad.SetBottomMargin(0)
 			uPad.SetRightMargin(.05)
 			uPad.SetLeftMargin(.18)
-			#uPad.SetLogy()
+			uPad.SetLogy()
 			uPad.Draw()
 
 			lPad=rt.TPad("lPad","",0,0,1,yDiv) #for sigma runner
