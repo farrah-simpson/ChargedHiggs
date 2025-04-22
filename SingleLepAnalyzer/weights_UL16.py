@@ -173,7 +173,7 @@ nRun['X53RHM1500'] = 137059.0
 nRun['X53LHM1600'] = 300000. #old
 nRun['X53RHM1600'] = 137060.0
 nRun['X53LHM1700'] = 193068.0
-nRun['X53RHM1700'] = 192194.0
+nRun['X53RHM1700'] = 84819.0
 nRun['X53M600MH200']= 138000.0
 nRun['X53M600MH400']= 136122.0
 nRun['X53M700MH200']= 136124.0
@@ -213,6 +213,18 @@ nRun['X53M1500MH400']= 138000.0
 nRun['X53M1500MH600']= 132366.0 
 nRun['X53M1500MH800']= 137060.0
 nRun['X53M1500MH1000']= 138000.0
+nRun['X53M1600MH200']= 136132.0
+nRun['X53M1600MH400']= 138000.0
+nRun['X53M1600MH600']= 138000.0 
+nRun['X53M1600MH800']= 138000.0
+nRun['X53M1600MH1000']= 138000.0
+
+nRun['X53M1700MH200']= 137066.0
+nRun['X53M1700MH400']= 137067.0
+nRun['X53M1700MH600']= 138000.0 
+nRun['X53M1700MH800']= 138000.0
+nRun['X53M1700MH1000']= 138000.0
+
 
 #energy scale samples (Q^2)
 # nRun['TTJetsPHQ2U'] = 9933327.
@@ -226,8 +238,8 @@ nRun['X53M1500MH1000']= 138000.0
 # Cross sections for MC samples (in pb)
 xsec={}
 
-xsec['TTJets'] = 831.76
-xsec['TTJetsPH'] = 831.76 # https://twiki.cern.ch/twiki/bin/view/CMS/SummaryTable1G25ns
+xsec['TTJets'] = 833.9
+xsec['TTJetsPH'] = 833.9 # https://twiki.cern.ch/twiki/bin/view/CMS/SummaryTable1G25ns
 #xsec['TTJetsPH0to700inc'] = 831.76
 #xsec['TTJetsPH700to1000inc'] = 831.76*0.0921 #(xsec*filtering coeff.)
 #xsec['TTJetsPH1000toINFinc'] = 831.76*0.02474 #(xsec*filtering coeff.)
@@ -274,8 +286,8 @@ xsec['Ts'] =10.32#https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopRefXs
 #xsec['Tbs'] 
 xsec['Tt'] = 134.2#https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopRefXsec
 xsec['Tbt'] =80.0#https://twiki.cern.ch/twiki/bin/view/LHCPhysics/SingleTopRefXsec
-xsec['TtW'] =35.85#https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
-xsec['TbtW']= 35.85#https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
+xsec['TtW'] =39.65#https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
+xsec['TbtW']= 39.65#https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopSigma
 
 xsec['WJets'] = 61526.7
 xsec['WJetsMG'] = 61526.7
@@ -436,6 +448,19 @@ xsec['X53M1500MH400']= 0.00200
 xsec['X53M1500MH600']= 0.00200
 xsec['X53M1500MH800']= 0.00200
 xsec['X53M1500MH1000']= 0.00200
+
+xsec['X53M1600MH200']= 0.001148
+xsec['X53M1600MH400']=  0.001148  
+xsec['X53M1600MH600']=  0.001148
+xsec['X53M1600MH800']=  0.001148
+xsec['X53M1600MH1000']= 0.001148
+
+xsec['X53M1700MH200']= 0.000666  
+xsec['X53M1700MH400']= 0.000666
+xsec['X53M1700MH600']= 0.000666
+xsec['X53M1700MH800']= 0.000666
+xsec['X53M1700MH1000']=0.000666 
+
 
 xsec# Calculate lumi normalization weights
 weight = {}

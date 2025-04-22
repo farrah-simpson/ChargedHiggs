@@ -7,10 +7,10 @@ import ROOT as rt
 #
 
 cmsText     = "CMS";
-cmsTextFont   = 61  
+cmsTextFont   = 61 
 
 writeExtraText = True
-extraText   = "Preliminary"
+extraText   = "Preliminary"#Work in Progress"
 extraTextFont = 52 
 
 lumiTextSize     = 0.6

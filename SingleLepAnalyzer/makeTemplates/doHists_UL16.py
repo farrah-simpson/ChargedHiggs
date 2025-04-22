@@ -20,10 +20,9 @@ start_time = time.time()
 # args = parser.parse_args()
 doOpt = False
 lumiStr = str(targetlumi/1000).replace('.','p') # 1/fb
-ntupleDir = 'root://cmseos.fnal.gov//store/user/fsimpson/UL16/step3_XGB_final/nominal/'#'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/' 
-#step1Dir = 'root://cmseos.fnal.gov//store/user/fsimpson/UL17/step3_XGB/nominal/'#'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2018UL_RunIISummer20v2_step2/nominal/' #lpcbril/FWLJMET106X_1lep2017_UL_step2_b0_XGBs_added_sys_new/nominal/'
-#ntupleDir  = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/'#/UL17/step3_XGB_final/nominal/'
-#ntupleDir  = 'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2016APVUL_RunIISummer20v2_step2/nominal/'#'root://cmseos.fnal.gov//store/user/fsimpson/UL17/step3_XGB/nominal/'
+ntupleDir = '/isilon/hadoop/store/user/fsimpson/UL16/step3_XGB_final/nominal/'#'root://cmseos.fnal.gov//store/user/fsimpson/FWLJMET106XUL_singleLep2017UL_RunIISummer20v2_step2/nominal/' 
+#ntupleDir  = '/isilon/hadoop/store/user/fsimpson/FWLJMET106XUL_singleLep2016UL_RunIISummer20v2_step2/nominal/'#/UL17/step3_XGB_final/nominal/'
+#ntupleDir  = '/isilon/hadoop/store/user/fsimpson/FWLJMET106XUL_singleLep2016UL_RunIISummer20v2_step2/nominal/'#'root://cmseos.fnal.gov//store/user/fsimpson/UL17/step3_XGB/nominal/'
 
 """
 Note: 
@@ -65,7 +64,7 @@ whichSignal = 'X53' #Hptb,HTB, TTM, BBM, or X53X53M
 #massList = [300] 
 if whichSignal == 'X53H':sigList = ['X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 if whichSignal == 'X53':
-	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
+	sigList= [whichSignal+'RHM'+str(mass) for mass in range(700,1700+1,100)]
 
 #sigList = [whichSignal+str(mass) for mass in massList]
 #sigList = []
@@ -75,19 +74,20 @@ if whichSignal=='Hptb' or 'X53' or 'X53H': decays = ['']
 sigTrained = 'Low1'
 if not doOpt:
 	if len(sys.argv)>10: sigTrained=sys.argv[10]
-iPlot = 'XGB1000_SR1' #choose a discriminant from plotList below!
+iPlot = 'NJets' #choose a discriminant from plotList below!
 if len(sys.argv)>2: iPlot=sys.argv[2]
-region = 'CR'
+region = 'PS'
 if len(sys.argv)>3: region=sys.argv[3]
 isCategorized = False
 BDTSR_Merged = False
 if len(sys.argv)>4: isCategorized=int(sys.argv[4])
 doJetRwt= 0
 doAllSys=True 
-doPDF = True
+doPDF =True
 
-if region=='PS' or region=='CR' or region=='SR': sigList =['X53M1300MH200','X53M1300MH400','X53M1300MH600','X53M1300MH800','X53M1300MH1000','X53M1400MH200','X53M1400MH400','X53M1400MH600','X53M1400MH800','X53M1400MH1000','X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000'] + [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
+if region=='PS' or region=='CR' or region=='SR': sigList =['X53M1600MH200','X53M1600MH400','X53M1600MH600','X53M1600MH800','X53M1600MH1000','X53M1700MH200','X53M1700MH400','X53M1700MH600','X53M1700MH800','X53M1700MH1000','X53M1300MH200','X53M1300MH400','X53M1300MH600','X53M1300MH800','X53M1300MH1000','X53M1400MH200','X53M1400MH400','X53M1400MH600','X53M1400MH800','X53M1400MH1000','X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000'] + [whichSignal+'RHM'+str(mass) for mass in range(700,1700+1,100)]
  
+
 #lepPtCut= 100#, 80, 100] 
 #metCut = 100#,100,150]
 #drCut = 1#,1,1.25]
@@ -96,7 +96,7 @@ if region=='PS' or region=='CR' or region=='SR': sigList =['X53M1300MH200','X53M
 #jet3PtCut = 0
 #AK4HTCut = 510
 #DISABLED LEP PT CUT IN ANALYZE!!!
-cutList = {'lepPtCut':30,'metCut':30,'mtCut':0,'drCut':1.0,'jet1PtCut':30,'jet2PtCut':30,'jet3PtCut':0, 'AK4HTCut':500} 
+cutList = {'lepPtCut':30,'metCut':30,'mtCut':0,'drCut':1.0,'jet1PtCut':30,'jet2PtCut':30,'jet3PtCut':0, 'AK4HTCut':350} 
 #if region=='CR':cutList = {'lepPtCut':30,'metCut':30,'mtCut':0,'drCut':0,'jet1PtCut':30,'jet2PtCut':30,'jet3PtCut':0, 'AK4HTCut':350} 
 if region=='SR':cutList = {'lepPtCut':30,'metCut':30,'mtCut':0,'drCut':1.0,'jet1PtCut':30,'jet2PtCut':30,'jet3PtCut':0, 'AK4HTCut':500}#, 'XGB':'XGB1300_SR1'}
 
@@ -175,6 +175,7 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
 	'Bjet1Pt':('BJetLeadPt',linspace(0,1500,51).tolist(),';p_{T}(b_{1}) [GeV]'),
 	'lepPt':('leptonPt_MultiLepCalc',linspace(0, 1000, 51).tolist(),';Lepton p_{T} [GeV]'),
 	'lepEta':('leptonEta_MultiLepCalc',linspace(-4, 4, 41).tolist(),';Lepton #eta'),
+	'lepEnergy':('leptonEnergy_MultiLepCalc',linspace(0, 1000, 51).tolist(),';Lepton Energy [GeV]'),
 	'JetEta':('theJetEta_JetSubCalc_PtOrdered',linspace(-4, 4, 41).tolist(),';AK4 Jet #eta'),
 	'JetPt' :('theJetPt_JetSubCalc_PtOrdered',linspace(0, 1500, 51).tolist(),';jet p_{T} [GeV]'),
 	'Jet1Pt':('theJetPt_JetSubCalc_PtOrdered[0]',linspace(0, 1500, 51).tolist(),';p_{T}(j_{1}), AK4 [GeV]'),
@@ -208,7 +209,7 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
         'deltaR_minBB':('deltaR_minBB', linspace(0,6,51).tolist(),';min[#DeltaR(b,b)]'),
         'M_allJet_W':('M_allJet_W', linspace(0, 10000, 201).tolist(),';M(allJets, leptoninc W) [GeV]'),
         'HT_bjets':('HT_bjets',linspace(0, 1800, 101).tolist(),';HT(bjets) [GeV]'),
-        'ratio_HTdHT4leadjets':('ratio_HTdHT4leadjets',linspace(0, 2.6, 51).tolist(),';HT/HT(4 leading jets)'),
+        'ratio_HTdHT3leadjets':('ratio_HTdHT3leadjets',linspace(0, 2.6, 51).tolist(),';HT/HT(3 leading jets)'),
        
         'csvJet1':('csvJet1', linspace(-2.2, 1.2, 101).tolist(),';DeepJet(1stPtJet)'),
         'csvJet2':('csvJet2', linspace(-2.2, 1.2, 101).tolist(),';DeepJet(2ndPtJet)'),
@@ -284,7 +285,7 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
         'HadronicTB1_M': ('HadronicTB1_M', linspace(40, 2000, 100).tolist(),';M(t_{had}, b_{1}^{non-top})[GeV]'),
         'HadronicTB2_M': ('HadronicTB2_M', linspace(40, 2000, 100).tolist(),';M(t_{had}, b_{2}^{non-top})[GeV]'),
 
-##        'XGB700' : ( 'XGB200', linspace(0, 1, 40).tolist(), '; XGB (700 GeV)'),
+#        'XGB700' : ( 'XGB200', linspace(0, 1, 40).tolist(), '; XGB (700 GeV)'),
 ##        'XGB800' : ( 'XGB220', linspace(0, 1, 40).tolist(), '; XGB (800 GeV)'),
 ##        'XGB900' : ( 'XGB250', linspace(0, 1, 40).tolist(), '; XGB (900 GeV)'),
 ##        'XGB1000' : ( 'XGB300', linspace(0, 1, 40).tolist(), '; XGB (1000 GeV)'),
@@ -302,21 +303,21 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
 #        'XGB800_SR1' : ( 'XGB800_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1200 GeV MH+ 800GeV)'),
 #        'XGB1000_SR1' : ( 'XGB1000_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1200 GeV MH+ 1000GeV)'),
 
-        'XGB700_SR1' : ( 'XGB700_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (700 GeV)'),
+        'XGB700_SR1' : ( 'XGB700_SR1', linspace(0, 1, 40).tolist(), '; XGB (700 GeV)'),
 #        'XGB800_SR1' : ( 'XGB800_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (800 GeV)'),
 #        'XGB900_SR1' : ( 'XGB900_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (900 GeV)'),
         #'XGB1000_SR1' : ( 'XGB1000_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1000 GeV)'),
 #        'XGB1100_SR1' : ( 'XGB1100_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1100 GeV)'),
 #        'XGB1200_SR1' : ( 'XGB1200_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1200 GeV)'),
-        'XGB200_SR1' : ( 'XGB200_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (MX 1200 GeV MH+ 200 GeV)'),
-        'XGB400_SR1' : ( 'XGB400_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (MX 1200 GeV MH+ 400 GeV)'),
-        'XGB600_SR1' : ( 'XGB600_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (MX 1200 GeV MH+ 600 GeV)'),
-        'XGB800_SR1' : ( 'XGB800_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (MX 1200 GeV MH+ 800 GeV)'),
-        'XGB1000_SR1' : ( 'XGB1000_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (MX 1200 GeV MH+ 1000 GeV)'),
+        'XGB200_SR1' : ( 'XGB200_SR1', linspace(0, 1, 40).tolist(), '; XGB (MX 1200 GeV MH+ 200 GeV)'),
+        'XGB400_SR1' : ( 'XGB400_SR1', linspace(0, 1, 40).tolist(), '; XGB (MX 1200 GeV MH+ 400 GeV)'),
+        'XGB600_SR1' : ( 'XGB600_SR1', linspace(0, 1, 40).tolist(), '; XGB (MX 1200 GeV MH+ 600 GeV)'),
+        'XGB800_SR1' : ( 'XGB800_SR1', linspace(0, 1, 40).tolist(), '; XGB (MX 1200 GeV MH+ 800 GeV)'),
+        'XGB1000_SR1' : ( 'XGB1000_SR1', linspace(0, 1, 40).tolist(), '; XGB (MX 1200 GeV MH+ 1000 GeV)'),
 
-        'XGB1300_SR1' : ( 'XGB1300_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1300 GeV)'),
+        'XGB1300_SR1' : ( 'XGB1300_SR1', linspace(0, 1, 40).tolist(), '; XGB (1300 GeV)'),
 #        'XGB1400_SR1' : ( 'XGB1400_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1400 GeV)'),
-        'XGB1500_SR1' : ( 'XGB1500_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1500 GeV)'),
+        'XGB1500_SR1' : ( 'XGB1500_SR1', linspace(0, 1, 40).tolist(), '; XGB (1500 GeV)'),
 #        'XGB1600_SR1' : ( 'XGB1600_SR1', linspace(0, 1, 40).tolist(), '; XGB SR1 (1600 GeV)'),
 #
 #        'XGB700_SR2' : ( 'XGB700_SR2', linspace(0, 1, 40).tolist(), '; XGB SR2 (700 GeV)'),
@@ -360,7 +361,7 @@ plotList = {#discriminantName:(discriminantLJMETName, binning, xAxisLabel)
 	'deltaRjet1':('deltaR_lepJets[0]',linspace(0, 5, 51).tolist(),';#DeltaR(l,j_{1})'),
 	'deltaRjet2':('deltaR_lepJets[1]',linspace(0, 5, 51).tolist(),';#DeltaR(l,j_{2})'),
 	'deltaRjet3':('deltaR_lepJets[2]',linspace(0, 5, 51).tolist(),';#DeltaR(l,j_{3})'),
-	'METphi':('corr_met_phi_singleLepCalc',linspace(-3.2,3.2,65).tolist(),';#phi(#slash{E}_{T})'),
+	'METphi':('corr_met_phi_MultiLepCalc',linspace(-3.2,3.2,65).tolist(),';#phi(#slash{E}_{T})'),
 	'lepPhi':('leptonPhi_MultiLepCalc',linspace(-3.2,3.2,65).tolist(),';#phi(l)'),
 	'WvsQCD':('theJetParticleNeWvsQCD_JetSubCalc_PtOrdered',linspace(0,1,51).tolist(),';AK8 Jet #ParticleNetWvsQCD'),
 	'TvsQCD':('theJetParticleNetTvsQCD_JetSubCalc_PtOrdered',linspace(0,1,51).tolist(),';AK8 Jet #ParticleNet:TvsQCD'),

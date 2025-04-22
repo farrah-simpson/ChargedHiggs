@@ -140,12 +140,10 @@ for conf in cutConfigs:
 	cd /uscms/home/fsimpson/nobackup/scratch/FWLJMETstuff/CMSSW_10_2_10/src\n\
 	eval `scramv1 runtime -sh`\n\
 	cd '+os.getcwd()+'\n\
-	python dataCard.py '+train['postfix']+' '+train['year']+' '+train['variable']+' '+train['cutString']+'\n\
+	python dataCard_XXnew.py '+train['postfix']+' '+train['year']+' '+train['variable']+' '+train['cutString']+'\n\
 	cd limits_'+train['year']+'_'+train['postfix']+'_'+train['cutString']+'\n\
-	combineTool.py -M Significance -d cmb/*/workspace.root --there -t -1 --expectSignal=1 --cminDefaultMinimizerStrategy 0 -n .sig --parallel 4\n\
 	combineTool.py -M AsymptoticLimits -d cmb/*/workspace.root --there --run=blind --cminDefaultMinimizerStrategy 0 -n .limit --parallel 4\n\
     combineTool.py -M CollectLimits */*/*.limit.* --use-dirs -o limits.json\n\
-    combineTool.py -M CollectLimits */*/*.sig.* --use-dirs -o sigs.json\n\
 	cd ..\n')
 			shell.close()
 			jdf_name = 'condor_step3_'+train['year']+'_'+train['postfix']+'_'+train['variable']+'.job'

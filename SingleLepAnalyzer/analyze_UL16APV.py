@@ -77,10 +77,10 @@ def analyze(tTree,tTreePkey,process,cutList,doAllSys,doPDF,doJetRwt,iPlot,plotDe
 
 	#if isEM=='E' and isCR(njets,nbtag): cut += ' && (minDPhi_MetJet>0.05)'
 
-	cut += ' && DataPastTriggerX == 1 && MCPastTriggerX == 1 && AK4HT>350'#' && (DataLepPastTrigger == 1 || (DataPastTriggerX==1 && AK4HT>500)) && (MCLepPastTrigger == 1 || (MCPastTriggerX ==1 && AK4HT>500))' #' && DataPastTrigger == 1 && MCPastTrigger == 1'
+	cut += ' && DataLepPastTrigger == 1 && MCLepPastTrigger == 1'#' && DataPastTriggerX == 1 && MCPastTriggerX == 1 && AK4HT>350'#' && (DataLepPastTrigger == 1 || (DataPastTriggerX==1 && AK4HT>500)) && (MCLepPastTrigger == 1 || (MCPastTriggerX ==1 && AK4HT>500))' #' && DataPastTrigger == 1 && MCPastTrigger == 1'
 	# Define weights
-	TrigEff = 'triggerXSF * triggerSF'
-#	TrigEff = 'triggerSF'
+#	TrigEff = 'triggerXSF * triggerSF'
+	TrigEff = 'triggerSF'
 	jetSFstr = '1'
 
 	#if doJetRwt and ('WJetsMG' in process or 'QCD' in process) and 'JSF' in process: jetSFstr= 'JetSF_80X'
@@ -108,8 +108,11 @@ def analyze(tTree,tTreePkey,process,cutList,doAllSys,doPDF,doJetRwt,iPlot,plotDe
  		cut += ' && (isTraining == 3)'
  		weightStr = '5'
  		weightStrBase = '5'
-	if('XGB' in plotTreeName and 'CR' in region):
-		cut += ' && ('+(str(plotTreeName))+' <= 0.95)'
+	#if('XGB' in plotTreeName and 'CR' in region):
+		#cut += ' && ('+(str(plotTreeName))+' <= 0.90)'
+
+	if('XGB' in plotTreeName and 'SR' in region):
+		cut += ' && ('+(str(plotTreeName))+' >= 0.20)'
 
 #	if 'SR' in region or 'CR' in region: cut += ' && ('+(str(cutList['XGB']))+' > 0.8)'
 
@@ -156,12 +159,17 @@ def analyze(tTree,tTreePkey,process,cutList,doAllSys,doPDF,doJetRwt,iPlot,plotDe
 #ltiLepCalc))  *'+str(weight[process])
 #                weightStr          += ' * '+topPt13TeVstr+' * '+HTweightStr+' * '+TrigEff+'  * lepIdSF *'+DJweightStr+'* EGammaGsfSF*(MCWeight_MultiLepCalc/abs(MCWeight_Mu\
 #ltiLepCalc))  *'+str(weight[process]) 
-                weightStr          += ' * pileupWeight * L1NonPrefiringProb_CommonCalc * '+topPt13TeVstr+' * '+HTweightStr+' * '+TrigEff+'  * lepIdSF *'+DJweightStr+'* isoSF * EGammaGsfSF*(MCWeight_MultiLepCalc/abs(MCWeight_Mu\
+#                weightStr          += ' * L1NonPrefiringProb_CommonCalc * '+topPt13TeVstr+' * '+HTweightStr+' * '+TrigEff+'  * lepIdSF *'+DJweightStr+'* isoSF * EGammaGsfSF*(MCWeight_MultiLepCalc/abs(MCWeight_Mu\
+#ltiLepCalc))  *'+str(weight[process]) 
+
+                weightStr          += ' * pileupWeight * pileupJetIDWeight * L1NonPrefiringProb_CommonCalc * '+topPt13TeVstr+' * '+HTweightStr+' * '+TrigEff+'  * lepIdSF *'+DJweightStr+'* isoSF * EGammaGsfSF*(MCWeight_MultiLepCalc/abs(MCWeight_Mu\
 ltiLepCalc))  *'+str(weight[process]) 
                 #weightTrigEffUpStr  = weightStr.replace(TrigEff,'('+TrigEff+'+'+TrigEff+'Uncert)')
                 #weightTrigEffDownStr= weightStr.replace(TrigEff,'('+TrigEff+'-'+TrigEff+'Uncert)')
                 weightPileupUpStr   = weightStr.replace('pileupWeight','pileupWeightUp')
                 weightPileupDownStr = weightStr.replace('pileupWeight','pileupWeightDown')
+                weightPileupJetUpStr   = weightStr.replace('pileupJetIDWeight','pileupJetIDWeightUp')
+                weightPileupJetDownStr   = weightStr.replace('pileupJetIDWeight','pileupJetIDWeightDown')
                 weightL1NonPFPUpStr  = weightStr.replace('L1NonPrefiringProb_CommonCalc','L1NonPrefiringProbUp_CommonCalc')
                 weightL1NonPFPDownStr = weightStr.replace('L1NonPrefiringProb_CommonCalc','L1NonPrefiringProbDown_CommonCalc' )
                 weightmuRFcorrdUpStr   = 'renormWeights[5] * '+weightStr
@@ -434,7 +442,7 @@ ltiLepCalc))  *'+str(weight[process])
 	else: hists[iPlot+'_'+lumiStr+'fb_'+catStr+'_'+process]  = TH1D(iPlot+'_'+lumiStr+'fb_'+catStr+'_'+process,xAxisLabel,len(xbins)-1,xbins)
 	if doAllSys:
 		#systList = ['trigeff','pileup','muRFcorrd','muR','muF','toppt','btag','mistag','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes' ]
-		systList = ['isr','fsr', 'PNT','PNW',  'njet','njetsf', 'prefire', 'jec', 'jer', 'pileup','muRFcorrd','muR','muF','toppt','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes'] #'btag','mistag',]
+		systList = ['jetpileup', 'isr','fsr', 'PNT','PNW',  'njet','njetsf', 'prefire', 'jec', 'jer', 'pileup','muRFcorrd','muR','muF','toppt','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes'] #'btag','mistag',]
 		systList_jsf = ['jsfJES','jsfJESAbsoluteMPFBias', 'jsfJESAbsoluteScale', 'jsfJESAbsoluteStat', 'jsfJESFlavorQCD', 'jsfJESFragmentation', 'jsfJESPileUpDataMC',
 		'jsfJESPileUpPtBB', 'jsfJESPileUpPtEC1', 'jsfJESPileUpPtEC2', 'jsfJESPileUpPtHF', 'jsfJESPileUpPtRef', 'jsfJESRelativeBal', 'jsfJESRelativeFSR',
 		'jsfJESRelativeJEREC1', 'jsfJESRelativeJEREC2', 'jsfJESRelativeJERHF', 'jsfJESRelativeJERHF', 'jsfJESRelativePtBB', 'jsfJESRelativePtEC1',
@@ -463,6 +471,8 @@ ltiLepCalc))  *'+str(weight[process])
 		#tTree[tTreePkey].Draw(plotTreeName+' >> '+iPlot+'trigeffDown_'  +lumiStr+'fb_'+catStr+'_'+process, weightTrigEffDownStr+'*('+fullcut+')', 'GOFF')
 		tTree[tTreePkey].Draw(plotTreeName+' >> '+iPlot+'pileupUp_'     +lumiStr+'fb_'+catStr+'_'+process, weightPileupUpStr+'*('+fullcut+')', 'GOFF')
 		tTree[tTreePkey].Draw(plotTreeName+' >> '+iPlot+'pileupDown_'   +lumiStr+'fb_'+catStr+'_'+process, weightPileupDownStr+'*('+fullcut+')', 'GOFF')
+		tTree[tTreePkey].Draw(plotTreeName+' >> '+iPlot+'jetpileupUp_'     +lumiStr+'fb_'+catStr+'_'+process, weightPileupJetUpStr+'*('+fullcut+')', 'GOFF')
+		tTree[tTreePkey].Draw(plotTreeName+' >> '+iPlot+'jetpileupDown_'   +lumiStr+'fb_'+catStr+'_'+process, weightPileupJetDownStr+'*('+fullcut+')', 'GOFF')
 		tTree[tTreePkey].Draw(plotTreeName+' >> '+iPlot+'muRFcorrdUp_'  +lumiStr+'fb_'+catStr+'_'+process, weightmuRFcorrdUpStr  +'*('+fullcut+')', 'GOFF')
 		tTree[tTreePkey].Draw(plotTreeName+' >> '+iPlot+'muRFcorrdDown_'+lumiStr+'fb_'+catStr+'_'+process, weightmuRFcorrdDownStr+'*('+fullcut+')', 'GOFF')
 		tTree[tTreePkey].Draw(plotTreeName+' >> '+iPlot+'muRUp_'        +lumiStr+'fb_'+catStr+'_'+process, weightmuRUpStr+'*('+fullcut+')', 'GOFF')

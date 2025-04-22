@@ -11,8 +11,10 @@ import argparse
 
 parser = argparse.ArgumentParser(description = "The script to plot shape shifts due to systematic uncertainties")
 parser.add_argument("-d", "--directory", help="the directory to be processed")
-parser.add_argument("-i", "--iplot", default="HT",  help="The variable to be processed")
+parser.add_argument("-i", "--iplot", default="XGB200_SR1",  help="The variable to be processed")
 parser.add_argument("-l", "--lowess", default=False, action="store_true", help="use the lowess algorithm for shape smoothing")
+
+parser.add_argument("-y", "--year", help="")
 
 args = parser.parse_args()
 
@@ -21,15 +23,24 @@ args = parser.parse_args()
 tdrstyle.setTDRStyle()
 rt.gROOT.SetBatch(1)
 
+region = 'SR'
+isCategorized = False
+
 outDir = os.getcwd()+'/'
-iPlot = 'HT'
-year='R17'
-if year=='R17':
-	lumiStr = '41p53fb'
-	lumi=41.5 #for plots
-else:
-	lumiStr = '59p97fb'
-	lumi=59.97 #for plots
+iPlot = 'XGB200_SR1'
+era = args.year
+if era=='R16': 
+	lumiStr = '16p81fb'
+	lumi = 16.81
+elif era=='R16APV': 
+	lumiStr = '19p52fb'
+	lumi = 19.5
+elif era=='R17': 
+	lumiStr = '41p48fb'
+	lumi = 41.5
+elif era=='R18': 
+	lumiStr = '59p83fb'
+	lumi = 59.83
 #sig1 = 'tttt' #  choose the 1st signal to plot
 isRebinned = '_rebinned_stat0p2'
 isNegCorr = '_wNegBinsCorrec_'
@@ -42,27 +53,43 @@ useCombine = True
 tempVersion = args.directory#'templates_'+year+'_njet_2020_8_17/'
 cutString = ''
 if useCombine: templateFile = '../'+tempVersion+'/'+cutString+'/templates_'+iPlot+'_'+lumiStr+isNegCorr+isRebinned+'.root' 
+print templateFile
 #else: templateFile = '../'+tempVersion+'/'+cutString+'/templates_'+iPlot+'_'+sig1+'_'+lumiStr+isRebinned+'.root' 
 if not os.path.exists(outDir+tempVersion): os.system('mkdir '+outDir+tempVersion)
 if not os.path.exists(outDir+tempVersion+'/signalIndChannels'): os.system('mkdir '+outDir+tempVersion+'/signalIndChannels')
 
-isEMlist  = ['E','M']
-nttaglist = ['0p']
-nWtaglist = ['0p']
-nbtaglist = ['1','2','3p']
-njetslist = ['3','4','5','6p']
-# nbtaglist = ['2p']
-# njetslist = ['6p']
-systematics = ['pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes'] 
+isEMlist = ['E','M']
+if region=='SR'or region=='CR': nttaglist=['0','1p']
+else: nttaglist = ['0p']
+if region=='TTCR': nWtaglist = ['0p']
+else: nWtaglist = ['0','1p']
+if region=='WJCR': nbtaglist = ['0']
+#elif region=='CR': nbtaglist = ['0','0p','1p']
+else: nbtaglist = ['1','2p']
+if region=='PS': njetslist=['3p']
+else: njetslist = ['4p']
+if not isCategorized:
+    nttaglist = ['0p']
+    nWtaglist = ['0p']
+    nbtaglist = ['1p']
+    njetslist = ['4p']
+if not isCategorized and region =='PS':
+    nttaglist = ['0p']
+    nWtaglist = ['0p']
+    nbtaglist = ['1p']
+    njetslist = ['3p']
+
+systematics = ['jetpileup','isr','fsr','pileup','muRF','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes','PNT','PNW'] 
+
 nSys = len(systematics)
 for isys in range(nSys):
     systematics[isys] = islowess+systematics[isys]
 
 
-signameList = ['Hptb200', 'Hptb220','Hptb250', 'Hptb300', 'Hptb350', 'Hptb400', 'Hptb500', 'Hptb600', 'Hptb700', 'Hptb800', 'Hptb1000', 
-'Hptb1250', 'Hptb1500', 'Hptb1750', 'Hptb2000', 'Hptb2500', 'Hptb3000']
+signameList = ['X53M1600MH200','X53M1600MH400','X53M1300MH800','X53M1300MH1000']#'X53M1600MH600','X53M1600MH800','X53M1600MH1000','X53M1700MH200','X53M1700MH400','X53M1700MH600','X53M1700MH800','X53M1700MH1000','X53M1300MH200','X53M1300MH400','X53M1300MH600','X53M1300MH800','X53M1300MH1000','X53M1400MH200','X53M1400MH400','X53M1400MH600','X53M1400MH800','X53M1400MH1000','X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 
-catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist)) if not skip(item[4], item[3])]
+
+catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist))]
 print catList
 RFile = rt.TFile(templateFile)
 

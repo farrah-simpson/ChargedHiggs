@@ -12,8 +12,8 @@ import CMS_lumi, tdrstyle
 rt.gROOT.SetBatch(1)
 start_time = time.time()
 
-combine = False#True
-year = 'R16APV'
+combine = True
+year = 'R17'
 
 if year == 'R17':from weights_UL17 import *
 elif year == 'R18':from weights_UL18 import *
@@ -21,12 +21,12 @@ elif year == 'R16':from weights_UL16 import *
 elif year == 'R16APV':from weights_UL16APV import *
 #elif combine == True: 
 
-if combine == True: 
-    targetlumi = 138000.#str(138000./1000).replace('.','p')
-    lumiInTemplates= '138p0'#str(138000./1000).replace('.','p')
-else: 
-    lumi=str(targetlumi/1000).replace('.','p') #for plots
-    lumiInTemplates= str(targetlumi/1000).replace('.','p') # 1/fb
+#if combine == True: 
+#    targetlumi = 138000.#str(138000./1000).replace('.','p')
+#    lumiInTemplates= '138p0'#str(138000./1000).replace('.','p')
+#else: 
+lumi=str(targetlumi/1000).replace('.','p') #for plots
+lumiInTemplates= str(targetlumi/1000).replace('.','p') # 1/fb
 
 whichSig = 'X53H'
 doBkg = True
@@ -35,11 +35,10 @@ plotttnobb = False
 plottop = False
 plotewk = False
 plotqcd = False
-region='CR' #SR,PS
+region='PS' #SR,PS
 isCategorized=False#True
-iPlot='XGB1000_SR1'
+iPlot='ST'#XGB1300_SR1'
 if whichSig == 'X53H' and region!='PS' and 'XGB' in iPlot: doSig =False
-#doSig = True
 if len(sys.argv)>2: iPlot=str(sys.argv[2])
 cutString=''
 pfix='templates'
@@ -60,16 +59,13 @@ if len(sys.argv)>3: massPt=str(sys.argv[3])
 
 if len(sys.argv)>1: 
 	templateDir=os.getcwd()+'/'+str(sys.argv[1])+'/'
-	if whichSig == 'X53H': templateDir2=os.getcwd()+'/'+str(sys.argv[1])+'_X53H/'
-	if whichSig == 'X53H' and 'XGB' in iPlot: templateDir2=os.getcwd()+'/'+str(sys.argv[1])+'/'
-
 
 else:
-    templateDir=os.getcwd()+'/kinematics_R17_SR_2024_3_24/'
-    if whichSig == 'X53H': templateDir2 = os.getcwd()+'/kinematics_R17_SR_2024_3_24/'
+    templateDir=os.getcwd()+'/kinematics_All/'
+    #if whichSig == 'X53H': templateDir2 = os.getcwd()+'/kinematics_/'
 
 splitTTbar = True
-isRebinned= '_wNegBinsCorrec__rebinned_stat0p2'#_killFirstBins_syFist' #post for ROOT file names
+isRebinned= '_wNegBinsCorrec_'#_rebinned_stat0p2'#_killFirstBins_syFist' #post for ROOT file names
 saveKey = '' # tag for plot names
 
 #HERE
@@ -109,12 +105,12 @@ scaleFact4 = 1000
 scaleFact5 = 1000
 scaleFact6 = 1000
 
-scaleFact1merged = 100 
-scaleFact2merged = 100
-scaleFact3merged = 100
-scaleFact4merged = 100
-scaleFact5merged = 100
-scaleFact6merged = 100
+scaleFact1merged = 1000 
+scaleFact2merged = 1000
+scaleFact3merged = 1000
+scaleFact4merged = 1000
+scaleFact5merged = 1000
+scaleFact6merged = 1000
 #scaleFact1merged = 40
 #scaleFact2merged = 40
 #scaleFact3merged = 40
@@ -170,10 +166,12 @@ bkgHistColors2 = {'ttnobb':rt.kBlue} #HTB
 
 #systematicList = ['pileup','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2','muRFcorrd','jec','jer','prefire']#,'jmst','jmrt','jmsW','jmrW','trigeff','pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2']
 systematicList = [
-'jetpileup','pileup','muRF','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes',
+'jetpileup','pileup','muR','muF','jec','jer','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes',
 'PNT',
 'PNW',
 'isr','fsr',
+#'toppt',
+#'ht',
 #'CMS_scale_j'       , 'CMS_HPTB_mcreweight_ewk', 'CMS_res_j'        , 'muR_ttbar', 'muF_ttbar',
 #'CMS_btag_LF'       , 'CMS_pileup'             , 'CMS_btag_HF'      , 'muR_top'  , 'muF_top'  , 
 #'CMS_topreweight' ,
@@ -181,7 +179,7 @@ systematicList = [
 #'CMS_btag_LFstat2'  , 'CMS_btag_CFerr2'        , 'CMS_btag_HFstat2' , 'muR_ewk'  , 'muF_ewk'   
 ]
 
-if year != 'R18': systematicList += ['prefire']
+#if year != 'R18': systematicList += ['prefire']
 doAllSys = True#False
 doQ2sys  = False
 if not doAllSys: doQ2sys = False
@@ -228,7 +226,7 @@ lumiSys = 0.023 # lumi uncertainty
 trigSys = 0.#05 # trigger uncertainty
 lepIdSys = 0.03 # lepton id uncertainty
 lepIsoSys = 0.01 # lepton isolation uncertainty
-corrdSys = math.sqrt(lumiSys**2+trigSys**2+lepIdSys**2+lepIsoSys**2) #cheating while total e/m values are close
+corrdSys = 4*math.sqrt(lumiSys**2+trigSys**2+lepIdSys**2+lepIsoSys**2) #cheating while total e/m values are close
 
 for tag in tagList:
 	tagStr='nT'+tag[0]+'_nW'+tag[1]+'_nB'+tag[2]+'_nJ'+tag[3]
@@ -261,8 +259,6 @@ def formatUpperHist(histogram):
 		histogram.GetYaxis().SetTitleOffset(1.15)
 		histogram.GetXaxis().SetNdivisions(506)
 	else:
-		if 'XGB' in iPlot: histogram.GetXaxis().SetTitle("BDT score Mass_{X_{5/3}}= 1200 GeV Mass_{H^{\pm}}= 1000 GeV")
-		#if region =='CR' and 'XGB' in iPlot: histogram.GetXaxis().SetRangeUser(0,0.9)
 		histogram.GetYaxis().SetLabelSize(0.040)
 		histogram.GetYaxis().SetTitleSize(0.08)
 		histogram.GetYaxis().SetTitleOffset(.71)
@@ -276,11 +272,12 @@ def formatUpperHist(histogram):
 		#histogram.SetMinimum(0.25)
 	if yLog:
 		uPad.SetLogy()
-		if not doNormByBinWidth: histogram.SetMaximum(2000*histogram.GetMaximum())
-		else: histogram.SetMaximum(20000*histogram.GetMaximum())
-		if region =='CR' or region =='SR': histogram.SetMaximum(2*histogram.GetMaximum())
+		if not doNormByBinWidth: histogram.SetMaximum(200*histogram.GetMaximum())
+		else: histogram.SetMaximum(200000*histogram.GetMaximum())
+		if region == 'SR': histogram.SetMaximum(20*histogram.GetMaximum())
 		else: histogram.SetMaximum(200*histogram.GetMaximum())
 
+		
 def formatLowerHist(histogram):
 	histogram.GetXaxis().SetLabelSize(.12)
 	histogram.GetXaxis().SetTitleSize(0.15)
@@ -297,8 +294,6 @@ def formatLowerHist(histogram):
 		if iPlot=='YLD': histogram.GetYaxis().SetRangeUser(0.5,1.5)
 		else: histogram.GetYaxis().SetRangeUser(0.01,1.99)
 	histogram.GetYaxis().CenterTitle()
-	#if region =='CR' and 'XGB' in iPlot: histogram.GetXaxis().SetRangeUser(0,0.9)
-
 
 legx1 = 0.1#0.5
 legx2 = legx1+0.7#0.60
@@ -314,22 +309,23 @@ legy2 = 0.89
 #legy5 = legy4+0.37
 #legy6 = legy5+0.37
 
-tagPosX = 0.76#0.4
-tagPosY = 0.62#0.32#0.52
+tagPosX = 0.4
+tagPosY = 0.32#0.52
 
 # 	if drawQCDmerged: legmerged = rt.TLegend(0.45,0.52,0.95,0.87)
 # 	if not drawQCDmerged or blind: legmerged = rt.TLegend(0.45,0.64,0.95,0.89)
 
 
-RFile1 = rt.TFile(templateDir+tempsig)
-print RFile1
-if whichSig == 'X53H':
-    RFile2 = rt.TFile(templateDir2+tempsig)#.replace('_wNegBinsCorrec_',''))
-    print RFile2
-    RFile3 = rt.TFile(templateDir2+tempsig)#.replace('_wNegBinsCorrec_',''))
-    RFile4 = rt.TFile(templateDir2+tempsig)
-    RFile5 = rt.TFile(templateDir2+tempsig)
-    RFile6 = rt.TFile(templateDir2+tempsig)
+RFile18 = rt.TFile(os.getcwd()+'/kinematics_R18_final_PS_2024_11_5/templates_'+iPlot+'_59p83fb_wNegBinsCorrec_.root')
+RFile17 = rt.TFile(os.getcwd()+'/kinematics_R17_final_PS_2024_10_30/templates_'+iPlot+'_41p48fb_wNegBinsCorrec_.root')
+RFile16 = rt.TFile(os.getcwd()+'/kinematics_R16_final_PS_2024_10_30/templates_'+iPlot+'_16p81fb_wNegBinsCorrec_.root')
+RFile16APV = rt.TFile(os.getcwd()+'/kinematics_R16APV_final_PS_2024_10_30/templates_'+iPlot+'_19p52fb_wNegBinsCorrec_.root')
+print "Hi"
+print RFile18
+RFile18_H = rt.TFile(os.getcwd()+'/kinematics_R18_final_PS_2024_11_5_X53H/templates_'+iPlot+'_59p83fb_wNegBinsCorrec_.root')
+RFile17_H = rt.TFile(os.getcwd()+'/kinematics_R17_final_PS_2024_10_30_X53H/templates_'+iPlot+'_41p48fb_wNegBinsCorrec_.root')
+RFile16_H = rt.TFile(os.getcwd()+'/kinematics_R16_final_PS_2024_10_30_X53H/templates_'+iPlot+'_16p81fb_wNegBinsCorrec_.root')
+RFile16APV_H = rt.TFile(os.getcwd()+'/kinematics_R16APV_final_PS_2024_10_30_X53H/templates_'+iPlot+'_19p52fb_wNegBinsCorrec_.root')
 
 #set the tdr style
 tdrstyle.setTDRStyle()
@@ -337,15 +333,15 @@ tdrstyle.setTDRStyle()
 #change the CMS_lumi variables (see CMS_lumi.py)
 CMS_lumi.lumi_7TeV = "4.8 fb^{-1}"
 CMS_lumi.lumi_8TeV = "18.3 fb^{-1}"
-CMS_lumi.lumi_13TeV= str(targetlumi/1000)+" fb^{-1}"#"59.83 fb^{-1}"#"41.5 fb^{-1}"
+CMS_lumi.lumi_13TeV= str(138.)+" fb^{-1}"#"59.83 fb^{-1}"#"41.5 fb^{-1}"
 CMS_lumi.writeExtraText = 1
 CMS_lumi.extraText = ""#Preliminary"#"Private Work"#Work in Progress"
-CMS_lumi.lumi_sqrtS = "13 TeV" # used with iPeriod = 0, e.g. for simulation-only plots (default is an empty string)
+CMS_lumi.lumi_sqrtS = "Data/Simulation 13 TeV" # used with iPeriod = 0, e.g. for simulation-only plots (default is an empty string)
 
 iPos = 11
 if( iPos==0 ): CMS_lumi.relPosX = 0.12
 
-H_ref = 600; 
+H_ref = 800; 
 W_ref = 800; 
 W = W_ref
 H  = H_ref
@@ -398,22 +394,22 @@ for tag in tagList:
 	tagStr='nT'+tag[0]+'_nW'+tag[1]+'_nB'+tag[2]+'_nJ'+tag[3]
 
 	postTag = '' 
-	if 'CR' in templateDir: postTag = 'isCR_'
-	if 'SR' in templateDir: postTag = 'isSR_'
+	if region=='CR': postTag = 'isCR_'
+	if region=='SR': postTag = 'isSR_'
 #	else: 
 #		postTag = 'isSR_'
 #		blind = blindGlob
 	if not blind:
-		legx1 = 0.45#0.26#0.25##0.26
-		legy1 = 0.52#0.60
+		legx1 = 0.26#0.25##0.26
+		legy1 = 0.60
 
-		legx2 = 0.95#legx1+0.68##0.68
+		legx2 = legx1+0.68##0.68
 		#legx3 = legx2+0.3
 		#legx4 = legx3+0.3
 		#legx5 = legx4+0.3
 		#legx6 = legx5+0.3
 
-		legy2 = 0.87#legy1+0.285#0.295##0.285
+		legy2 = legy1+0.285#0.295##0.285
 		#legy3 = legy2+0.2
 		#legy4 = legy3+0.2
 		#legy5 = legy4+0.2
@@ -460,48 +456,64 @@ for tag in tagList:
 
 
 #	if not isCategorized: blind = blindGlob
-	if not plotCombine: postTag=''
 	#if skip(tag[3],tag[2]) and isCategorized: continue
 	modTag = tagStr[tagStr.find('nT'):tagStr.find('nJ')-3]
 	for isEM in isEMlist:
+		print iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr
 		histPrefix=iPlot+'_'+lumiInTemplates+'fb_'
 		catStr=postTag+'is'+isEM+'_'+tagStr
 		histPrefix+=catStr
 		for proc in bkgProcList: 
-			try: bkghists[proc+catStr] = RFile1.Get(histPrefix+'__'+proc).Clone()
-			except:
-				print "There is no "+proc+"!!!!!!!!"
-				print "Skipping "+proc+"....."
-				pass
+			bkghists[proc+catStr] = RFile18.Get(iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+proc).Clone()
+			bkghists[proc+catStr].Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+proc).Clone())
+			bkghists[proc+catStr].Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+proc).Clone())
+			bkghists[proc+catStr].Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+proc).Clone())
 
 
 		print histPrefix
                 print "Above this line ^^^^^^^ ====================================="
                 if blindYLD and iPlot=='YLD': hData = RFile1.Get(histPrefix+'__'+dataName+'_blind').Clone()
-		else: hData = RFile1.Get(histPrefix+'__'+dataName).Clone()
-		
+		else:
+			hData = RFile18.Get(iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+dataName).Clone()
+			hData.Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+dataName).Clone())
+			hData.Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+dataName).Clone())
+			hData.Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+dataName).Clone())
+
 		if plotCombine:
 			print "histPrefix", histPrefix
 			print "sig1", sig1
-			hsig1 = RFile1.Get(histPrefix+'__'+sig1).Clone(histPrefix+'__sig1')#HERE
-
+			hsig1 = RFile18.Get(iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig1).Clone(histPrefix+'__sig1')#HERE
+			hsig1.Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig1).Clone(histPrefix+'__sig1'))
+			hsig1.Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig1).Clone(histPrefix+'__sig1'))
+			hsig1.Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig1).Clone(histPrefix+'__sig1'))
 			if whichSig == 'X53H':
-				hsig2 = RFile2.Get(histPrefix+'__'+sig2).Clone(histPrefix+'__sig2')
-				hsig3 = RFile3.Get(histPrefix+'__'+sig3).Clone(histPrefix+'__sig3')
-				hsig4 = RFile4.Get(histPrefix+'__'+sig4).Clone(histPrefix+'__sig4')
-				hsig5 = RFile5.Get(histPrefix+'__'+sig5).Clone(histPrefix+'__sig5')
-				hsig6 = RFile6.Get(histPrefix+'__'+sig6).Clone(histPrefix+'__sig6')
+
+			    hsig2 = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig2).Clone(histPrefix+'__sig2')#HERE
+			    hsig2.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig2).Clone(histPrefix+'__sig2'))
+			    hsig2.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig2).Clone(histPrefix+'__sig2'))
+			    hsig2.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig2).Clone(histPrefix+'__sig2'))
+
+			    hsig3 = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig3).Clone(histPrefix+'__sig3')#HERE
+			    hsig3.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig3).Clone(histPrefix+'__sig3'))
+			    hsig3.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig3).Clone(histPrefix+'__sig3'))
+			    hsig3.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig3).Clone(histPrefix+'__sig3'))
+
+			    hsig4 = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig4).Clone(histPrefix+'__sig4')#HERE
+			    hsig4.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig4).Clone(histPrefix+'__sig4'))
+			    hsig4.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig4).Clone(histPrefix+'__sig4'))
+			    hsig4.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig4).Clone(histPrefix+'__sig4'))
+
+			    hsig5 = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig5).Clone(histPrefix+'__sig5')#HERE
+			    hsig5.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig5).Clone(histPrefix+'__sig5'))
+			    hsig5.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig5).Clone(histPrefix+'__sig5'))
+			    hsig5.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig5).Clone(histPrefix+'__sig5'))
+
+			    hsig6 = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig6).Clone(histPrefix+'__sig6')#HERE
+			    hsig6.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig6).Clone(histPrefix+'__sig6'))
+			    hsig6.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig6).Clone(histPrefix+'__sig6'))
+			    hsig6.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+sig6).Clone(histPrefix+'__sig6'))
 
 
-		else:
-			hsig1 = RFile1.Get(histPrefix+'__sig').Clone(histPrefix+'__sig1')
-
-			if whichSig == 'X53H':
-				hsig2 = RFile2.Get(histPrefix+'__sig2').Clone(histPrefix+'__sig2')
-				hsig3 = RFile3.Get(histPrefix+'__sig3').Clone(histPrefix+'__sig3')
-				hsig4 = RFile4.Get(histPrefix+'__sig4').Clone(histPrefix+'__sig4')
-				hsig5 = RFile5.Get(histPrefix+'__sig5').Clone(histPrefix+'__sig5')
-				hsig6 = RFile6.Get(histPrefix+'__sig6').Clone(histPrefix+'__sig6')
 
 #reapplies the xsec just for plotting--I turned of scale to 1pb in doTemplates
 		hsig1.Scale(xsec[sig1])
@@ -535,18 +547,19 @@ for tag in tagList:
 				print syst
 				for ud in [upTag,downTag]:
 					for proc in bkgProcList:
-						try: 
-							systHists[proc+catStr+syst+ud] = RFile1.Get(histPrefix+'__'+proc+'__'+syst+ud).Clone()
+						print iPlot+isEM+'_'+tagStr+'__'+proc+'__'+syst+ud
+						if syst != 'prefire':systHists[proc+'is'+isEM+'_'+tagStr+syst+ud] = RFile18.Get(iPlot+'_59p83fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+proc+'__'+syst+ud).Clone()
+						systHists[proc+'is'+isEM+'_'+tagStr+syst+ud].Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+proc+'__'+syst+ud).Clone())
+						systHists[proc+'is'+isEM+'_'+tagStr+syst+ud].Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+proc+'__'+syst+ud).Clone())
+						systHists[proc+'is'+isEM+'_'+tagStr+syst+ud].Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'is'+isEM+'_'+tagStr+'__'+proc+'__'+syst+ud).Clone())
 
-							if doNormByBinWidth: normByBinWidth(systHists[proc+catStr+syst+ud])
-						except: pass
+						if doNormByBinWidth: normByBinWidth(systHists[proc+'is'+isEM+'_'+tagStr+syst+ud])
 
 		bkgHT = bkghists[bkgProcList[0]+catStr].Clone()
 
 		for proc in bkgProcList:
 			if proc==bkgProcList[0]: continue
-			try: bkgHT.Add(bkghists[proc+catStr])
-			except: pass
+			bkgHT.Add(bkghists[proc+catStr])
 
 		totBkgTemp1[catStr] = rt.TGraphAsymmErrors(bkgHT.Clone(bkgHT.GetName()+'shapeOnly'))
 		totBkgTemp2[catStr] = rt.TGraphAsymmErrors(bkgHT.Clone(bkgHT.GetName()+'shapePlusNorm'))
@@ -597,7 +610,7 @@ for tag in tagList:
 			scaleFact2=1
 			scaleFact3=1
 			scaleFact4=1
-			scaleFact5=1
+			scaleFact3=1
 			scaleFact6=1
 
  		hsig1.Scale(scaleFact1)
@@ -803,7 +816,7 @@ for tag in tagList:
 		if isCategorized and not iPlot == 'YLD':
 			chLatex.DrawLatex(tagPosX, tagPosY-0.06, tagString)
 		if not isCategorized and iPlot != 'YLD':
-			chLatex.DrawLatex(tagPosX, tagPosY-0.06, tagString)
+			chLatex.DrawLatex(tagPosX, tagPosY-0.06, 'PS')#tagString)
 
 
 		leg = rt.TLegend(legx1,legy1,legx2,legy2) #edit
@@ -1007,55 +1020,86 @@ for tag in tagList:
 	histPrefixM = iPlot+'_'+lumiInTemplates+'fb_'+postTag+'isM_'+tagStr
 
 	for proc in bkgProcList:
-		try: 
-			bkghistsmerged[proc+'isL'+tagStr] = RFile1.Get(histPrefixE+'__'+proc).Clone()
-			bkghistsmerged[proc+'isL'+tagStr].Add(RFile1.Get(histPrefixM+'__'+proc))
-		except: pass
+	#	try: 
+		bkghistsmerged[proc+'isL'+tagStr] = RFile18.Get(iPlot+'_59p83fb_'+postTag+'isE_'+tagStr+'__'+proc).Clone()
+		bkghistsmerged[proc+'isL'+tagStr].Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'isE_'+tagStr+'__'+proc).Clone())
+		bkghistsmerged[proc+'isL'+tagStr].Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'isE_'+tagStr+'__'+proc).Clone())
+		bkghistsmerged[proc+'isL'+tagStr].Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'isE_'+tagStr+'__'+proc).Clone())
+		bkghistsmerged[proc+'isL'+tagStr].Add(RFile18.Get(iPlot+'_59p83fb_'+postTag+'isM_'+tagStr+'__'+proc))
+		bkghistsmerged[proc+'isL'+tagStr].Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'isM_'+tagStr+'__'+proc))
+		bkghistsmerged[proc+'isL'+tagStr].Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'isM_'+tagStr+'__'+proc))
+		bkghistsmerged[proc+'isL'+tagStr].Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'isM_'+tagStr+'__'+proc))
+	#	except: pass
  
 
-	if blindYLD and iPlot=='YLD': hDatamerged = RFile1.Get(histPrefixE+'__'+dataName+'_blind').Clone()
-	else: hDatamerged = RFile1.Get(histPrefixE+'__'+dataName).Clone()
-	if blindYLD and iPlot=='YLD': hDatamerged.Add(RFile1.Get(histPrefixM+'__DATA_blind').Clone())
-	else: hDatamerged.Add(RFile1.Get(histPrefixM+'__'+dataName).Clone())
+	hDatamerged = RFile18.Get(iPlot+'_59p83fb_'+postTag+'isE_'+tagStr+'__'+dataName).Clone()
+	hDatamerged.Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'isE_'+tagStr+'__'+dataName).Clone())
+	hDatamerged.Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'isE_'+tagStr+'__'+dataName).Clone())
+	hDatamerged.Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'isE_'+tagStr+'__'+dataName).Clone())
 
+	hDatamerged.Add(RFile18.Get(iPlot+'_59p83fb_'+postTag+'isM_'+tagStr+'__'+dataName).Clone())
+	hDatamerged.Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'isM_'+tagStr+'__'+dataName).Clone())
+	hDatamerged.Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'isM_'+tagStr+'__'+dataName).Clone())
+	hDatamerged.Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'isM_'+tagStr+'__'+dataName).Clone())
 
  	if plotCombine: 
-                print RFile1
- 		hsig1merged = RFile1.Get(histPrefixE+'__'+sig1).Clone(histPrefixE+'__sig1merged')
- 		#hsig2merged = RFile2.Get(histPrefixE+'__'+sig2).Clone(histPrefixE+'__sig2merged')
-		hsig1merged.Add(RFile1.Get(histPrefixM+'__'+sig1).Clone())
-		#hsig2merged.Add(RFile2.Get(histPrefixM+'__'+sig2).Clone())
-		if whichSig == 'X53H':
- 			hsig2merged = RFile2.Get(histPrefixE+'__'+sig2).Clone(histPrefixE+'__sig2merged')
- 			hsig3merged = RFile3.Get(histPrefixE+'__'+sig3).Clone(histPrefixE+'__sig3merged')
- 			hsig4merged = RFile4.Get(histPrefixE+'__'+sig4).Clone(histPrefixE+'__sig4merged')
- 			hsig5merged = RFile5.Get(histPrefixE+'__'+sig5).Clone(histPrefixE+'__sig5merged')
- 			hsig6merged = RFile6.Get(histPrefixE+'__'+sig6).Clone(histPrefixE+'__sig6merged')
+                #print RFile1
+ 		hsig1merged = RFile18.Get(iPlot+'_59p83fb_'+postTag+'isE_'+tagStr+'__'+sig1).Clone(histPrefixE+'__sig1merged')
+		hsig1merged.Add(RFile18.Get(iPlot+'_59p83fb_'+postTag+'isM_'+tagStr+'__'+sig1).Clone())
+        hsig1merged.Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'isE_'+tagStr+'__'+sig1).Clone())
+        hsig1merged.Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'isE_'+tagStr+'__'+sig1).Clone())
+        hsig1merged.Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'isE_'+tagStr+'__'+sig1).Clone())
+        hsig1merged.Add(RFile17.Get(iPlot+'_41p48fb_'+postTag+'isM_'+tagStr+'__'+sig1).Clone())
+        hsig1merged.Add(RFile16.Get(iPlot+'_16p81fb_'+postTag+'isM_'+tagStr+'__'+sig1).Clone())
+        hsig1merged.Add(RFile16APV.Get(iPlot+'_19p52fb_'+postTag+'isM_'+tagStr+'__'+sig1).Clone())
 
-  			hsig2merged.Add(RFile2.Get(histPrefixM+'__'+sig2).Clone())
- 			hsig3merged.Add(RFile3.Get(histPrefixM+'__'+sig3).Clone())
- 			hsig4merged.Add(RFile4.Get(histPrefixM+'__'+sig4).Clone())
- 			hsig5merged.Add(RFile5.Get(histPrefixM+'__'+sig5).Clone())
- 			hsig6merged.Add(RFile6.Get(histPrefixM+'__'+sig6).Clone())
+        if whichSig == 'X53H':
 
+ 		   hsig2merged = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isE_'+tagStr+'__'+sig2).Clone(histPrefixE+'__sig2merged')
+		   hsig2merged.Add(RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isM_'+tagStr+'__'+sig2).Clone())
+		   hsig2merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isE_'+tagStr+'__'+sig2).Clone())
+		   hsig2merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isE_'+tagStr+'__'+sig2).Clone())
+		   hsig2merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isE_'+tagStr+'__'+sig2).Clone())
+		   hsig2merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isM_'+tagStr+'__'+sig2).Clone())
+		   hsig2merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isM_'+tagStr+'__'+sig2).Clone())
+		   hsig2merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isM_'+tagStr+'__'+sig2).Clone())
 
- 	else:
- 		hsig1merged = RFile1.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig1merged')
- 		hsig1merged.Add(RFile1.Get(histPrefixM+'__sig').Clone())
- 		#hsig2merged = RFile2.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig2merged') 
-		#hsig2merged.Add(RFile2.Get(histPrefixM+'__sig').Clone())
-		if whichSig == 'X53H':
- 			hsig2merged = RFile2.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig2merged')
- 			hsig3merged = RFile3.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig3merged')
- 			hsig4merged = RFile4.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig4merged')
- 			hsig5merged = RFile5.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig5merged')
- 			hsig6merged = RFile6.Get(histPrefixE+'__sig').Clone(histPrefixE+'__sig6merged')
+		   hsig3merged = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isE_'+tagStr+'__'+sig3).Clone(histPrefixE+'__sig3merged')
+		   hsig3merged.Add(RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isM_'+tagStr+'__'+sig3).Clone())
+		   hsig3merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isE_'+tagStr+'__'+sig3).Clone())
+		   hsig3merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isE_'+tagStr+'__'+sig3).Clone())
+		   hsig3merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isE_'+tagStr+'__'+sig3).Clone())
+		   hsig3merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isM_'+tagStr+'__'+sig3).Clone())
+		   hsig3merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isM_'+tagStr+'__'+sig3).Clone())
+		   hsig3merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isM_'+tagStr+'__'+sig3).Clone())
+		   
+		   hsig4merged = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isE_'+tagStr+'__'+sig4).Clone(histPrefixE+'__sig4merged')
+		   hsig4merged.Add(RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isM_'+tagStr+'__'+sig4).Clone())
+		   hsig4merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isE_'+tagStr+'__'+sig4).Clone())
+		   hsig4merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isE_'+tagStr+'__'+sig4).Clone())
+		   hsig4merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isE_'+tagStr+'__'+sig4).Clone())
+		   hsig4merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isM_'+tagStr+'__'+sig4).Clone())
+		   hsig4merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isM_'+tagStr+'__'+sig4).Clone())
+		   hsig4merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isM_'+tagStr+'__'+sig4).Clone())
+		   
+		   hsig5merged = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isE_'+tagStr+'__'+sig5).Clone(histPrefixE+'__sig5merged')
+		   hsig5merged.Add(RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isM_'+tagStr+'__'+sig5).Clone())
+		   hsig5merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isE_'+tagStr+'__'+sig5).Clone())
+		   hsig5merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isE_'+tagStr+'__'+sig5).Clone())
+		   hsig5merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isE_'+tagStr+'__'+sig5).Clone())
+		   hsig5merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isM_'+tagStr+'__'+sig5).Clone())
+		   hsig5merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isM_'+tagStr+'__'+sig5).Clone())
+		   hsig5merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isM_'+tagStr+'__'+sig5).Clone())
+		   
+		   hsig6merged = RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isE_'+tagStr+'__'+sig6).Clone(histPrefixE+'__sig6merged')
+		   hsig6merged.Add(RFile18_H.Get(iPlot+'_59p83fb_'+postTag+'isM_'+tagStr+'__'+sig6).Clone())
+		   hsig6merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isE_'+tagStr+'__'+sig6).Clone())
+		   hsig6merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isE_'+tagStr+'__'+sig6).Clone())
+		   hsig6merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isE_'+tagStr+'__'+sig6).Clone())
+		   hsig6merged.Add(RFile17_H.Get(iPlot+'_41p48fb_'+postTag+'isM_'+tagStr+'__'+sig6).Clone())
+		   hsig6merged.Add(RFile16_H.Get(iPlot+'_16p81fb_'+postTag+'isM_'+tagStr+'__'+sig6).Clone())
+		   hsig6merged.Add(RFile16APV_H.Get(iPlot+'_19p52fb_'+postTag+'isM_'+tagStr+'__'+sig6).Clone())
 
- 			hsig2merged.Add(RFile2.Get(histPrefixM+'__sig').Clone())
- 			hsig3merged.Add(RFile3.Get(histPrefixM+'__sig').Clone())
- 			hsig4merged.Add(RFile4.Get(histPrefixM+'__sig').Clone())
- 			hsig5merged.Add(RFile5.Get(histPrefixM+'__sig').Clone())
- 			hsig6merged.Add(RFile6.Get(histPrefixM+'__sig').Clone())
 
 #Turned off scale to 1pb in doTemplates
 	hsig1merged.Scale(xsec[sig1]) #check!
@@ -1271,46 +1315,41 @@ for tag in tagList:
 		if 'BDT' in iPlot and isSR(tag[3],tag[2]): hDatamerged.GetYaxis().SetTitle("< Events / 1.0 units >")
 	elif isRebinned!='': hDatamerged.GetYaxis().SetTitle("Events / bin")
 	else: hDatamerged.GetYaxis().SetTitle("Events / bin")
-	#formatUpperHist(hDatamerged)
-	#hDatamerged.GetXaxis().SetRangeUser(0,0.9)
+	formatUpperHist(hDatamerged)
 	uPad.cd()
 	hDatamerged.SetTitle("")
 	stackbkgHTmerged.SetTitle("")
 	if not blind: 
-		formatUpperHist(hDatamerged)
+		#if 'XGB' in iPlot and region == 'CR':hDatamerged.GetXaxis().SetRangeUser(0,0.89)
 		hDatamerged.Draw("esamex0")
-
-        formatUpperHist(hsig1merged)
-        #formatUpperHist(hsig2merged)
-        #formatUpperHist(hsig3merged)
-        #formatUpperHist(hsig4merged)
-        #formatUpperHist(hsig5merged)
-        #formatUpperHist(hsig6merged)
-
-	if blind: 
-		hsig1merged.SetMinimum(0.1)#check?
-		if doNormByBinWidth: 
-		    hsig1merged.GetYaxis().SetTitle("< Events / GeV >")
-		    if 'BDT' in iPlot and isSR(tag[3],tag[2]): hsig1merged.GetYaxis().SetTitle("< Events / 1.0 units >")
-		elif isRebinned!='': hsig1merged.GetYaxis().SetTitle("Events / bin")
-		else: hsig1merged.GetYaxis().SetTitle("Events / bin")
-		formatUpperHist(hsig1merged)
-		if whichSig == 'X53H':
-		    formatUpperHist(hsig2merged)
-		    formatUpperHist(hsig3merged)
-		    formatUpperHist(hsig4merged)
-		    formatUpperHist(hsig5merged)
-		    formatUpperHist(hsig6merged)
-	#if blind: formatUpperHist(stackbkgHTmerged)
-        #hsig1merged.SetMaximum(1.5*hDatamerged.GetMaximum()) #uncomment!
-        if plottop or plotewk or plotqcd:
-            hsig1merged.SetMaximum(1.1*hsig1merged.GetMaximum())
-        hsig1merged.Draw("SAME HIST") #if doSig
+        if blind: 
+            hsig1merged.SetMinimum(0.1)#check?
+            if doNormByBinWidth: 
+                hsig1merged.GetYaxis().SetTitle("< Events / GeV >")
+                if 'BDT' in iPlot and isSR(tag[3],tag[2]): hsig1merged.GetYaxis().SetTitle("< Events / 1.0 units >")
+            elif isRebinned!='': hsig1merged.GetYaxis().SetTitle("Events / bin")
+            else: hsig1merged.GetYaxis().SetTitle("Events / bin")
+            formatUpperHist(hsig1merged)
+            if whichSig == 'X53H':
+		formatUpperHist(hsig2merged)
+            	formatUpperHist(hsig3merged)
+            	formatUpperHist(hsig4merged)
+            	formatUpperHist(hsig5merged)
+            	formatUpperHist(hsig6merged)
+		#if blind: formatUpperHist(stackbkgHTmerged)
+            hsig1merged.SetMaximum(1.5*hDatamerged.GetMaximum()) #uncomment!
+            if plottop or plotewk or plotqcd:
+                hsig1merged.SetMaximum(1.1*hsig1merged.GetMaximum())
+            hsig1merged.Draw("SAME HIST") #if doSig
+#            hsig1merged.Draw("HIST") #if doSig CHANGE FOR TTNOBB
 	if doBkg: stackbkgHTmerged.Draw("SAME HIST")
+
+
 
 	if drawYields: 
 		rt.gStyle.SetPaintTextFormat("1.0f")
 		bkgHTmerged.Draw("SAME TEXT90")
+
 
  	if doSig: hsig1merged.Draw("SAME HIST")
 # 	hsig2merged.Draw("SAME HIST")
@@ -1533,7 +1572,7 @@ for tag in tagList:
 	#c1merged.Write()
 # 	savePrefixmerged = templateDir.replace(cutString,'')+templateDir.split('/')[-2]+'/plots/'
 # 	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'+sig2
-	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'
+	savePrefixmerged = 'plots_Run2/'
 	if not os.path.exists(savePrefixmerged): os.system('mkdir '+savePrefixmerged)
 	savePrefixmerged+=histPrefixE.replace('isE','isL')+isRebinned.replace('_rebinned_stat1p1','')+saveKey
 	if nttaglist[0]=='0p': savePrefixmerged=savePrefixmerged.replace('nT0p_','')
@@ -1561,14 +1600,11 @@ for tag in tagList:
 		try: del bkghistsmerged[proc+'isL'+tagStr]
 		except: pass
 				
-RFile1.Close()
-if whichSig == 'X53H':
-	RFile2.Close()
-	RFile3.Close()
-	RFile4.Close()
-	RFile5.Close()
-	RFile6.Close()
-
+#RFile1.Close()
+RFile18.Close()
+RFile17.Close()
+RFile16.Close()
+RFile16APV.Close()
 
 
 print("--- %s minutes ---" % (round(time.time() - start_time, 2)/60))

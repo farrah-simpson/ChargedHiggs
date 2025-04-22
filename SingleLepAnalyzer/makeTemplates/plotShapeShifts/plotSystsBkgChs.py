@@ -12,8 +12,9 @@ import argparse
 
 parser = argparse.ArgumentParser(description = "The script to plot shape shifts due to systematic uncertainties")
 parser.add_argument("-d", "--directory", help="the directory to be processed")
-parser.add_argument("-i", "--iplot", default="HT",  help="The variable to be processed")
+parser.add_argument("-i", "--iplot", default="XGB200_SR1",  help="The variable to be processed")
 parser.add_argument("-l", "--lowess", default=False, action="store_true", help="use the lowess algorithm for shape smoothing")
+parser.add_argument("-y", "--year", help="")
 
 args = parser.parse_args()
 
@@ -23,14 +24,22 @@ rt.gROOT.SetBatch(1)
 
 outDir = os.getcwd()+'/'
 iPlot = args.iplot
-year='R17'
-if year=='R17':
-	lumiStr = '41p53fb'
-	lumi=41.5 #for plots
-else:
-	lumiStr = '59p97fb'
-	lumi=59.97 #for plots
-sig1 = 'tttt' #  choose the 1st signal to plot
+region = 'SR'
+isCategorized = False
+era=args.year
+if era=='R16': 
+	lumiStr = '16p81fb'
+	lumi = 16.81
+elif era=='R16APV': 
+	lumiStr = '19p52fb'
+	lumi = 19.5
+elif era=='R17': 
+	lumiStr = '41p48fb'
+	lumi = 41.5
+elif era=='R18': 
+	lumiStr = '59p83fb'
+	lumi = 59.83
+sig1 = 'X53RHM1200' #  choose the 1st signal to plot
 isRebinned = '_rebinned_stat0p2'
 isNegCorr = '_wNegBinsCorrec_'
 if args.lowess:
@@ -46,25 +55,42 @@ else: templateFile = '../'+tempVersion+'/'+cutString+'/templates_'+iPlot+'_'+sig
 if not os.path.exists(outDir+tempVersion): os.system('mkdir '+outDir+tempVersion)
 if not os.path.exists(outDir+tempVersion+'/'+saveDir): os.system('mkdir '+outDir+tempVersion+'/'+saveDir)
 
-bkgTTBarList = ['ttjj','ttcc','ttbb','tt2b', 'tt1b']
+bkgTTBarList = ['ttnobb', 'ttbb']#jj','ttcc','ttbb','tt2b', 'tt1b']
 bkgList = bkgTTBarList+['top','ewk','qcd'] #some uncertainties will be skipped depending on the bkgList[0] process!!!!
-isEMlist  = ['E','M']
-#nhottlist = ['0','1p']
-nttaglist = ['0p']
-nWtaglist = ['0p']
-nbtaglist = ['1','2','3p']
-njetslist = ['3','4','5','6p']
-# nbtaglist = ['2p']
-# njetslist = ['6p']
-systematics = ['pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes']#['pileup','prefire','btag','mistag','jec','jer','hotstat','hotcspur','hotclosure','PSwgt','muRF','pdf','hdamp','ue','njet']#,'ht','trigeff','toppt','tau32','jmst','jmrt','tau21','jmsW','jmrW','tau21pt'] #
+
+isEMlist =['E','M']
+if region=='SR' or region=='CR': nttaglist=['0','1p']
+else: nttaglist = ['0p']
+if region=='TTCR': nWtaglist = ['0p']
+else: nWtaglist = ['0','1p']
+if region=='WJCR': nbtaglist = ['0']
+else: nbtaglist = ['1','2p']
+if region=='PS': njetslist=['3p']
+else: njetslist = ['4p']
+if not isCategorized:
+    nttaglist = ['0p']
+    nWtaglist = ['0p']
+    nbtaglist = ['1p']
+    njetslist = ['4p']
+if not isCategorized and region =='PS':
+    nttaglist = ['0p']
+    nWtaglist = ['0p']
+    nbtaglist = ['1p']
+    njetslist = ['3p']
+
+systematics = ['pdf']#'jetpileup','isr','fsr','pileup','muRF','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes','PNT','PNW'] 
+
+
+#systematics = ['pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes']#['pileup','prefire','btag','mistag','jec','jer','hotstat','hotcspur','hotclosure','PSwgt','muRF','pdf','hdamp','ue','njet']#,'ht','trigeff','toppt','tau32','jmst','jmrt','tau21','jmsW','jmrW','tau21pt'] #
 nSys = len(systematics)
 for isys in range(nSys):
     systematics[isys] = islowess+systematics[isys] 
 
 #tagList = list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist))
-catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist)) if not skip(item[4], item[3])]
+catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist))]
 print catList
 RFile = rt.TFile(templateFile)
+print templateFile
 if useCombine:
 	upTag = 'Up'
 	downTag = 'Down'
@@ -74,9 +100,10 @@ else: #theta
 
 for syst in systematics:
 	if not os.path.exists(outDir+tempVersion+'/'+saveDir+'/'+syst): os.system('mkdir '+outDir+tempVersion+'/'+saveDir+'/'+syst)
+	if not os.path.exists(outDir+tempVersion+'/'+saveDir+'/'+syst+'/'+iPlot): os.system('mkdir '+outDir+tempVersion+'/'+saveDir+'/'+syst+'/'+iPlot)
+
 	for cat in catList:
-                if '_nB1_' in cat or '_nB2p_' in cat or '_nB2_nJ4' in cat: postTag = 'isCR'
-                else: postTag = 'isSR' 
+                postTag = 'is'+region 
 		Prefix = iPlot+'_'+lumiStr+'_'+postTag+'_'+cat+'__'+bkgList[0]
 		print Prefix+'__'+syst
 		try: hNm = RFile.Get(Prefix).Clone()
@@ -133,7 +160,7 @@ for syst in systematics:
 		uPad.SetBottomMargin(0)
 		uPad.SetRightMargin(.05)
 		uPad.SetLeftMargin(.18)
-		#uPad.SetLogy()
+		uPad.SetLogy()
 		uPad.Draw()
 
 		lPad=rt.TPad("lPad","",0,0,1,yDiv) #for sigma runner
@@ -246,6 +273,7 @@ for syst in systematics:
 		legend.SetFillColor(0);
 		legend.SetLineColor(0);
 		legend.AddEntry(hNm,'Nominal','l')
+
 		legend.AddEntry(hUp,syst.replace('pileup','PU').replace('prefire','Prefire').replace('btag','b tag').replace('mistag','udsg mistag').replace('jec','JEC').replace('jer','JER').replace('hotstat','res-t stat').replace('hotcspur','res-t CSpurity').replace('hotclosure','res-t closure').replace('PSwgt','PS weight').replace('pdf','PDF').replace('hdamp','hDamp').replace('ue','UE').replace('njet','Njet').replace('tau21','#tau_{2}/#tau_{1}').replace('toppt','top p_{T}').replace('q2','Q^{2}').replace('jmr','JMR').replace('jms','JMS').replace('tau21pt','#tau_{2}/#tau_{1} p_{T}').replace('tau21','#tau_{2}/#tau_{1}').replace('tau32','#tau_{3}/#tau_{2}')+' Up','l')
 		legend.AddEntry(hDn,syst.replace('pileup','PU').replace('prefire','Prefire').replace('btag','b tag').replace('mistag','udsg mistag').replace('jec','JEC').replace('jer','JER').replace('hotstat','res-t stat').replace('hotcspur','res-t CSpurity').replace('hotclosure','res-t closure').replace('PSwgt','PS weight').replace('pdf','PDF').replace('hdamp','hDamp').replace('ue','UE').replace('njet','Njet').replace('tau21','#tau_{2}/#tau_{1}').replace('toppt','top p_{T}').replace('q2','Q^{2}').replace('jmr','JMR').replace('jms','JMS').replace('tau21pt','#tau_{2}/#tau_{1} p_{T}').replace('tau21','#tau_{2}/#tau_{1}').replace('tau32','#tau_{3}/#tau_{2}')+' Down','l')
 		legend.Draw('same')
@@ -308,7 +336,7 @@ for syst in systematics:
 		chLatex.DrawLatex(0.45, 0.78, tagString)
 		chLatex.DrawLatex(0.45, 0.72, tagString2)
 
-		canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+syst+'_'+cat+'.pdf')
-		canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+syst+'_'+cat+'.png')
+		canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+iPlot+'/'+syst+'_'+cat+'UL'+era+'.pdf')
+		canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+iPlot+'/'+syst+'_'+cat+'UL'+era+'.png')
 		#canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+syst+'_'+cat+'.eps')
 RFile.Close()

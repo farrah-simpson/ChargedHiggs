@@ -151,7 +151,7 @@ samples = {
 'X53RHM1400':'PairVLQ_x53x53_tWtW_narrow_RH_M1400_TuneCP5_13TeV-madgraph-pythia8',
 'X53RHM1500':'PairVLQ_x53x53_tWtW_narrow_RH_M1500_TuneCP5_13TeV-madgraph-pythia8', #2018- CP5 
 'X53RHM1600':'PairVLQ_x53x53_tWtW_narrow_RH_M1600_TuneCP5_13TeV-madgraph-pythia8',
-#'X53RHM1700':'PairVLQ_x53x53_tWtW_narrow_RH_1700_TuneCP5_13TeV-madgraph-pythia8',
+'X53RHM1700':'PairVLQ_x53x53_tWtW_narrow_RH_M1700_TuneCP5_13TeV-madgraph-pythia8',
 
 'X53M500MH200': 'PairVLQ_x53x53_tHtH_narrow_RH_MX500_MH200_TuneCP5_13TeV-madgraph-pythia8',
 'X53M600MH200': 'PairVLQ_x53x53_tHtH_narrow_RH_MX600_MH200_TuneCP5_13TeV-madgraph-pythia8',
@@ -192,6 +192,18 @@ samples = {
 'X53M1500MH600':'PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH600_TuneCP5_13TeV-madgraph-pythia8',
 'X53M1500MH800':'PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH800_TuneCP5_13TeV-madgraph-pythia8',
 'X53M1500MH1000':'PairVLQ_x53x53_tHtH_narrow_RH_MX1500_MH1000_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1600MH200':'PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH200_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1600MH400':'PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH400_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1600MH600':'PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH600_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1600MH800':'PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH800_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1600MH1000':'PairVLQ_x53x53_tHtH_narrow_RH_MX1600_MH1000_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1700MH200':'PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH200_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1700MH400':'PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH400_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1700MH600':'PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH600_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1700MH800':'PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH800_TuneCP5_13TeV-madgraph-pythia8',
+'X53M1700MH1000':'PairVLQ_x53x53_tHtH_narrow_RH_MX1700_MH1000_TuneCP5_13TeV-madgraph-pythia8',
+
+
 # 'VHnonbb':'VHToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8',
 # 'WHbb':'WH_HToBB_WToLNu_M125_13TeV_amcatnloFXFX_madspin_pythia8',
 # 'WWW':'WWW_4F_TuneCUETP8M1_13TeV-amcatnlo-pythia8',
