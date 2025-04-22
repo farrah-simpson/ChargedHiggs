@@ -6,7 +6,7 @@ from utils import *
 thisDir = os.getcwd()
 outputDir = thisDir+'/'
 
-region= 'CR'#'TTCR' #WJCR,SR --> matters only when plotting kinematics
+region= 'SR'#'TTCR' #WJCR,SR --> matters only when plotting kinematics
 categorize=0#1 #==categorize into t/W/b/j, 0==only split into flavor
 #sigTrainedList=['500']#['300', '500', '800', '1000', '1500']#,'500','1000']
 
@@ -15,7 +15,34 @@ date='%i_%i_%i'%(cTime.year,cTime.month,cTime.day)
 time='%i_%i_%i'%(cTime.hour,cTime.minute,cTime.second)
 
 iPlotList = [#distribution name as defined in "doHists.py"
+#'mindeltaRlb',
+#'ratio_HTdHT3leadjets',
+#'masslepJets1',
+#'masslepJets2',
+#'mindeltaR',
+#'MT2bb',
+#'masslepBJets0',
+#'mass_lepBJet_mindr',
+#'M_allJet_W',
+#'HT_bjets',
+#'lepEnergy',
+#'firstcsvb_bb',
+#'secondcsvb_bb',
+#'thirdcsvb_bb',
+#'deltaR_lepJetInMinMljet',
+#'deltaR_lepbJetInMinMlb',
+#'Sphericity',
+#'minMlb',
+#'MTlmet',
+#'lepDR_minBBdr',
+#'Jet5Pt',
+#'Jet6Pt',
+#'NPV',
 #'ST',
+#'mindeltaRlb',
+#'MET',
+#'NWJets',
+#'NTJets',
 #'JetPt',
 #'JetEta',
 #'theLeadJetPt',
@@ -26,26 +53,17 @@ iPlotList = [#distribution name as defined in "doHists.py"
 #'deltaRjet2',
 # 'NJets',
 # 'NBJets',
+#'METphi',
 'XGB200_SR1',
 'XGB400_SR1',
 'XGB600_SR1',
 'XGB800_SR1',
-#'XGB1000_SR1',
+'XGB1000_SR1',
 'XGB1300_SR1',
-#'ST',
-#'NWJets',
-#'NTJets',
-#'deltaRjet2',
-#'JetPt',
-#'JetPhi',
-#'JetEta',
-#'theLeadJetPt',
-#'MET',
-# 'NJets',
-# 'NBJets',
-'lepEta',
- 'lepPt',
- 'lepPhi',
+#'HT',
+#'lepEta',
+#'lepPt',
+#'lepPhi',
 ]
 
 isEMlist = ['E','M']
@@ -77,7 +95,7 @@ count=0
 if 1==1:
 
 	pfix='templates_R16APV_final_'+region
-	if not categorize: pfix='kinematics_R16APV_final_'+region#'kinematics_'+region
+	if not categorize: pfix='kinematics_R16APV_XGBcut_'+region#'kinematics_'+region
 	pfix+='_'+date#+'_'+time
 	outDir = outputDir+pfix
 	if not os.path.exists(outDir): os.system('mkdir '+outDir)
@@ -116,10 +134,11 @@ Executable = %(isEM)sT%(nttag)sW%(nWtag)sB%(nbtag)sJ%(njets)s%(iPlot)s.sh
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
 Transfer_Input_Files = analyze_UL16APV.py,doHists_UL16APV.py,utils.py,weights_UL16APV.py,samples.py
-request_memory = 10000
+request_memory = 8000
 Output = condor_%(iPlot)s.out
 Error = condor_%(iPlot)s.err
 Log = condor_%(iPlot)s.log
+Priority = 20
 Arguments = %(exeDir)s %(iPlot)s %(region)s %(isCategorized)s %(isEM)s %(nttag)s %(nWtag)s %(nbtag)s %(njets)s 
 Queue 1"""%dict)
 			jdf.close()

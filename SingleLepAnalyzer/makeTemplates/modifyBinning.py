@@ -48,12 +48,13 @@ lumiStr = str(targetlumi/1000).replace('.','p')+'fb' # 1/fb
 templateDir = sys.argv[3]#'templates_2023_11_9'
 #templateDir = templateDir+='/cutString'
 iPlotList = [
-'XGB200_SR1', 
+#'XGB200_SR1', 
 'XGB400_SR1', 
-'XGB600_SR1', 
-'XGB800_SR1', 
+#'XGB600_SR1', 
+#'XGB800_SR1', 
+#'XGB1000_SR1', 
 #'XGB1300_SR1', 
-
+#'XGB1500_SR1', 
 #'HT',
 #'ST',
 #'minMlb',
@@ -183,11 +184,11 @@ for iPlot in iPlotList:
     quiet = True #if you don't want to see the warnings that are mostly from the stat. shape algorithm!
     rebinCombine = True #else rebins theta templates
     doStatShapes = False#True
-    doSmoothing = False
-    smoothingAlgo = ''#lowess' #lowess, super, or kern
+    doSmoothing = True
+    smoothingAlgo = 'lowess' #lowess, super, or kern
     symmetrizeSmoothing = True #Symmetrize up/down shifts around nominal before smoothing
     doPDF = True 
-    doMURF = True
+    doMURF = False#True
     doPSWeights = True
     normalizeTheorySystSig = True#False#True #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for signals
     normalizeTheorySystBkg = False #normalize renorm/fact, PDF and ISR/FSR systematics to nominal templates for backgrounds
@@ -208,9 +209,9 @@ for iPlot in iPlotList:
     if sigName=='tttt': sigProcList = [sigName]
     if sigName=='X53': 
     	#sigProcList = [sigName+'LHM'+str(mass) for mass in [1100,1200,1400,1700]]
-    	sigProcList= [sigName+'RHM'+str(mass) for mass in range(700,1600+1,100)]
+    	sigProcList= [sigName+'RHM'+str(mass) for mass in range(700,1700+1,100)]
     if sigName=='X53H': 
-    	sigProcList=['X53M1300MH200','X53M1300MH400','X53M1300MH600','X53M1300MH800','X53M1300MH1000','X53M1400MH200','X53M1400MH400','X53M1400MH600','X53M1400MH800','X53M1400MH1000','X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
+    	sigProcList=['X53M1700MH200','X53M1700MH400','X53M1700MH600','X53M1700MH800','X53M1700MH1000','X53M1600MH200','X53M1600MH400','X53M1600MH600','X53M1600MH800','X53M1600MH1000','X53M1300MH200','X53M1300MH400','X53M1300MH600','X53M1300MH800','X53M1300MH1000','X53M1400MH200','X53M1400MH400','X53M1400MH600','X53M1400MH800','X53M1400MH1000','X53M600MH200','X53M600MH400','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M1000MH200','X53M1000MH400','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
  
     ttProcList = ['ttnobb','ttbb']#['ttjj','ttcc','ttbb','tt1b','tt2b']#['ttnobb','ttbb'] # ['ttjj','ttcc','ttbb','ttbj']
     bkgProcList = ttProcList + ['top','ewk','qcd'] #put the most dominant process first
@@ -221,7 +222,7 @@ for iPlot in iPlotList:
     statThres = 0.05 #statistical uncertainty threshold on total background to assign BB nuisances -- enter 0.0 to assign BB for all bins
     #if len(sys.argv)>1: stat=float(sys.argv[1])
     singleBinCR = False#True#check!
-    symmetrizeTopPtShift = False
+    symmetrizeTopPtShift = True #False
     scaleSignalsToXsec = False # !!!!!Make sure you know signal x-sec used in input files to this script. If this is True, it will scale signal histograms by x-sec in weights.py!!!!!
     zero = 1E-12
     xMin = -1e9
@@ -244,9 +245,9 @@ for iPlot in iPlotList:
     	minNbins=2 #(assuming initial hists are 15 GeV bins) min 30GeV bin width
     	xMin = -1
     	xMax = 1
-#    if 'XGB' in iPlot and 'CR' in templateDir: 
-#    	xMax = 0.95
-#	print 'max is 0.95'
+    if 'XGB' in iPlot and 'CR' in templateDir: 
+     	xMax = 0.9
+        print 'max is 0.9'
      		
     if rebinCombine:
     	dataName = 'data_obs'
@@ -417,15 +418,22 @@ for iPlot in iPlotList:
     	for chn in channels:
     		print "         ",chn,gettime()
     		rebinnedHists = {}
-    		#Rebinning histograms
+    		#Rebinning histograms ADD FLUCTUATION
     		for hist in allhists[chn]:
     			rebinnedHists[hist]=tfiles[iRfile].Get(hist).Rebin(len(xbins[chn])-1,hist,xbins[chn])
     			rebinnedHists[hist].SetDirectory(0)
+
+    			binError = rebinnedHists[hist].GetBinError(1)
+    			binContent = rebinnedHists[hist].GetBinContent(1)
+    			newBinContent = binContent + binError
+    			rebinnedHists[hist].SetBinContent(1, newBinContent)
+
     			overflow(rebinnedHists[hist])
     			underflow(rebinnedHists[hist])
     			if '__pdf' in hist:
     				if upTag not in hist and downTag not in hist: continue
-    			if '__mu' in hist or '__isr' in hist or '__fsr' in hist: continue #why? here
+#    			if '__mu' in hist or '__isr' in hist or '__fsr' in hist: continue #why? here
+    			if '__isr' in hist or '__fsr' in hist: continue #why? here
     			if any([item in hist and not removalKeys[item] for item in removalKeys.keys()]): continue
     			if '__toppt'+downTag in hist and symmetrizeTopPtShift:
     				for ibin in range(1, rebinnedHists[hist].GetNbinsX()+1):
@@ -698,6 +706,7 @@ for iPlot in iPlotList:
                                     systsOutput = [k.GetName().split('__')[2][:-2] for k in outputRfiles[iRfile].GetListOfKeys() if '_'+chn+'_' in k.GetName() and upTag in k.GetName() and '__'+proc in k.GetName() and '_'+year not in k.GetName()]
                                     for syst in systsOutput:
                                             if syst=='toppt' or syst=='ht': continue
+                                            #if syst=='ht': continue
                                             hNm = outputRfiles[iRfile].Get(binName+'__'+proc)
                                             hUp = outputRfiles[iRfile].Get(binName+'__'+proc+'__'+syst+upTag)
                                             hDn = outputRfiles[iRfile].Get(binName+'__'+proc+'__'+syst+downTag)
@@ -1021,6 +1030,7 @@ for iPlot in iPlotList:
     			yldHists[isEM+proc]=TH1F(iPlot+'YLD_'+lumiStr+'_'+isEM+'_nHOT0p_nT0p_nW0p_nB0p_nJ0p__'+proc.replace(signal,'sig').replace('data_obs','DATA'),'',len(channels)/2,0,len(channels)/2)
     			systematicList = sorted([hist[hist.find(proc)+len(proc)+2:hist.find(upTag)] for hist in yieldsAll.keys() if channels[0] in hist and '__'+proc+'__' in hist and upTag in hist])
     			for syst in systematicList:
+    				print "     syst         ... "+syst
     				for ud in ['__plus','__minus']: yldHists[isEM+proc+syst+ud]=TH1F(iPlot+'YLD_'+lumiStr+'_'+isEM+'_nHOT0p_nT0p_nW0p_nB0p_nJ0p__'+proc.replace(signal,'sig').replace('data_obs','DATA')+'__'+syst+ud,'',len(channels)/2,0,len(channels)/2)
     			ibin = 1
     			for chn in channels:

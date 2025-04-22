@@ -14,18 +14,15 @@ start_time = time.time()
 lumi=str(targetlumi/1000).replace('.','p') #for plots
 lumiInTemplates= str(targetlumi/1000).replace('.','p') # 1/fb
 
-sig1leg='t#bar{t}+!b#bar{b} with weight' 
+templateDir=os.getcwd()+'/'+str(sys.argv[1])+'/'
 
-sig2leg='t#bar{t}+!b#bar{b} with no weight'
+RFile1 = rt.TFile(templateDir+'templates_JetEta_'+lumiInTemplates+'fb'+isRebinned+'.root')
+RFile2 =rt.TFile(templateDir+'templates_JetPhi_'+lumiInTemplates+'fb'+isRebinned+'.root')  
 
-RFile1 = rt.TFile("kinematics_R18_NPV/templates_NPV_59p83fb_wNegBinsCorrec_.root")#kinematics_R17_SR_2024_3_24/templates_XGB1300_SR1_41p48fb_wNegBinsCorrec_.root")
-
-RFile2 = rt.TFile("kinematics_R18_nowgt_PS_2024_6_6/templates_NPV_59p83fb_wNegBinsCorrec_.root")#kinematics_R17_sinancuts_CR_2024_3_26/templates_XGB1300_SR1_41p48fb_wNegBinsCorrec_.root")
-
-hsig1merged = RFile1.Get('NPV_'+lumiInTemplates+'fb_'+'isE_'+'nT0p_nW0p_nB1p_nJ3p'+'__ttnobb').Clone()
-hsig2merged = RFile2.Get('NPV_'+lumiInTemplates+'fb_'+'isE_'+'nT0p_nW0p_nB1p_nJ3p'+'__ttnobb').Clone()
-hsig1merged.Add(RFile1.Get('NPV_'+lumiInTemplates+'fb_'+'isM_'+'nT0p_nW0p_nB1p_nJ3p'+'__ttnobb').Clone())
-hsig2merged.Add(RFile2.Get('NPV_'+lumiInTemplates+'fb_'+'isM_'+'nT0p_nW0p_nB1p_nJ3p'+'__ttnobb').Clone())
+hsig1merged = RFile1.Get('JetEta_'+lumiInTemplates+'fb_'+'isE_'+'nT0p_nW0p_nB1p_nJ3p'+'__ttnobb').Clone()
+hsig2merged = RFile2.Get('JetPhi_'+lumiInTemplates+'fb_'+'isE_'+'nT0p_nW0p_nB1p_nJ3p'+'__ttnobb').Clone()
+hsig1merged.Add(RFile1.Get('JetEta_'+lumiInTemplates+'fb_'+'isM_'+'nT0p_nW0p_nB1p_nJ3p'+'__ttnobb').Clone())
+hsig2merged.Add(RFile2.Get('JetPhi_'+lumiInTemplates+'fb_'+'isM_'+'nT0p_nW0p_nB1p_nJ3p'+'__ttnobb').Clone())
  
 c1merged = rt.TCanvas("c1merged","c1merged",50,50,800,800)
 c1merged.SetFillColor(0)
@@ -35,8 +32,6 @@ c1merged.SetFrameBorderMode(0)
 c1merged.SetTickx(0)
 c1merged.SetTicky(0)
 	
-#hsig1merged = RFile1.Get('XGB1300_SR1_'+lumiInTemplates+'fb_'+'isE_'+'nT0p_nW0p_nB1p_nJ4p'+'__ttnobb')
-#hsig2merged = RFile2.Get('XGB1300_SR1_'+lumiInTemplates+'fb_'+'isE_'+'nT0p_nW0p_nB1p_nJ4p'+'__ttnobb')
 uPad=rt.TPad("uPad","",0,0.,1,1) #for actual plots
 T = 0.10*800
 B = 0.12*800
@@ -93,18 +88,12 @@ hsig2merged.SetLineColor(rt.kBlue)
 hsig2merged.SetFillStyle(0)
 hsig2merged.SetLineWidth(3)
 
-hsig1merged.SetMaximum(100000*hsig2merged.GetMaximum())
-uPad.SetLogy()
+#hsig1merged.SetMaximum(hsig2merged.GetMaximum())
+#uPad.SetLogy()
 
 hsig1merged.SetStats(0)
 hsig1merged.Draw("HIST") #if doSig
 hsig2merged.Draw("SAME HIST") #if doSig
-
-legmerged = rt.TLegend(legx1,legy1,legx2,legy2) #edit
-
-legmerged.AddEntry(hsig1merged,sig1leg,"l")
-legmerged.AddEntry(hsig2merged,sig2leg,"l")
-legmerged.Draw("same")
 
 CMS_lumi.CMS_lumi(uPad, iPeriod, iPos)
 	
@@ -113,7 +102,8 @@ uPad.RedrawAxis()
 frame = uPad.GetFrame()
 uPad.Draw()
 	
-c1merged.SaveAs("NPV.png")
+c1merged.SaveAs("JetHEM.png")
+c1merged.SaveAs("JetHEM.pdf")
 
 RFile1.Close()
 RFile2.Close()

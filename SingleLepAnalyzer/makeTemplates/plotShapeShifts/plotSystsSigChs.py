@@ -11,8 +11,10 @@ import argparse
 
 parser = argparse.ArgumentParser(description = "The script to plot shape shifts due to systematic uncertainties")
 parser.add_argument("-d", "--directory", help="the directory to be processed")
-parser.add_argument("-i", "--iplot", default="HT",  help="The variable to be processed")
+parser.add_argument("-i", "--iplot", default="XGB200_SR1",  help="The variable to be processed")
 parser.add_argument("-l", "--lowess", default=False, action="store_true", help="use the lowess algorithm for shape smoothing")
+
+parser.add_argument("-y", "--year", help="")
 
 args = parser.parse_args()
 
@@ -20,6 +22,9 @@ args = parser.parse_args()
 #set the tdr style
 tdrstyle.setTDRStyle()
 rt.gROOT.SetBatch(1)
+
+region = 'SR'
+isCategorized = False
 
 outDir = os.getcwd()+'/'
 whichSignal = 'X53'
@@ -51,6 +56,7 @@ useCombine = True
 tempVersion = args.directory#'templates_'+year+'_njet_2020_8_17/'
 cutString = ''
 if useCombine: templateFile = '../'+tempVersion+'/'+cutString+'/templates_'+iPlot+'_'+lumiStr+isNegCorr+isRebinned+'.root' 
+print templateFile
 #else: templateFile = '../'+tempVersion+'/'+cutString+'/templates_'+iPlot+'_'+sig1+'_'+lumiStr+isRebinned+'.root' 
 if not os.path.exists(outDir+tempVersion): os.system('mkdir '+outDir+tempVersion)
 if not os.path.exists(outDir+tempVersion+'/signalIndChannels'): os.system('mkdir '+outDir+tempVersion+'/signalIndChannels')
@@ -61,20 +67,6 @@ else: nttaglist = ['0p']
 if region=='TTCR': nWtaglist = ['0p']
 else: nWtaglist = ['0','1p']
 if region=='WJCR': nbtaglist = ['0']
-else: nbtaglist = ['1','2p']
-if region=='PS': njetslist=['3p']
-else: njetslist = ['4p']
-if not isCategorized:
-    nttaglist = ['0p']
-    nWtaglist = ['0p']
-    nbtaglist = ['1p']
-    njetslist = ['4p']
-if not isCategorized and region =='PS':
-    nttaglist = ['0p']
-    nWtaglist = ['0p']
-    nbtaglist = ['1p']
-    njetslist = ['3p']
-
 systematics = ['isr','fsr','pileup','muRFcorrd','muR','muF','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes','PNT','PNW'] 
 nSys = len(systematics)
 for isys in range(nSys):
@@ -85,10 +77,10 @@ if whichSignal == 'X53H':signameList = ['X53M1300MH200','X53M1300MH400','X53M130
 if whichSignal == 'X53':
 	signameList= [whichSignal+'RHM'+str(mass) for mass in range(700,1600+1,100)]
 
-signameList = ['Hptb200', 'Hptb220','Hptb250', 'Hptb300', 'Hptb350', 'Hptb400', 'Hptb500', 'Hptb600', 'Hptb700', 'Hptb800', 'Hptb1000', 
-'Hptb1250', 'Hptb1500', 'Hptb1750', 'Hptb2000', 'Hptb2500', 'Hptb3000']
+signameList = ['X53M1600MH200','X53M1600MH400','X53M1300MH800','X53M1300MH1000']#'X53M1600MH600','X53M1600MH800','X53M1600MH1000','X53M1700MH200','X53M1700MH400','X53M1700MH600','X53M1700MH800','X53M1700MH1000','X53M1300MH200','X53M1300MH400','X53M1300MH600','X53M1300MH800','X53M1300MH1000','X53M1400MH200','X53M1400MH400','X53M1400MH600','X53M1400MH800','X53M1400MH1000','X53M600MH200','X53M600MH400','X53M700MH200','X53M700MH400','X53M800MH200','X53M800MH400','X53M800MH600','X53M900MH200','X53M900MH400','X53M900MH600','X53M1000MH200','X53M1000MH400','X53M1000MH600','X53M1000MH800','X53M1100MH200','X53M1100MH400','X53M1100MH600','X53M1100MH800','X53M1200MH200','X53M1200MH400','X53M1200MH600','X53M1200MH800','X53M1200MH1000','X53M1500MH200','X53M1500MH400','X53M1500MH600','X53M1500MH800','X53M1500MH1000']
 
-catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist)) if not skip(item[4], item[3])]
+
+catList = ['is'+item[0]+'_nT'+item[1]+'_nW'+item[2]+'_nB'+item[3]+'_nJ'+item[4] for item in list(itertools.product(isEMlist,nttaglist,nWtaglist,nbtaglist,njetslist))]
 print catList
 RFile = rt.TFile(templateFile)
 

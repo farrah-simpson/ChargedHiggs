@@ -39,7 +39,7 @@ elif era=='R17':
 elif era=='R18': 
 	lumiStr = '59p83fb'
 	lumi = 59.83
-sig1 = 'X53RHM1000' #  choose the 1st signal to plot
+sig1 = 'X53RHM1200' #  choose the 1st signal to plot
 isRebinned = '_rebinned_stat0p2'
 isNegCorr = '_wNegBinsCorrec_'
 if args.lowess:
@@ -79,7 +79,6 @@ if not isCategorized and region =='PS':
     njetslist = ['3p']
 
 systematics = ['isr','fsr','pileup','muRFcorrd','muR','muF','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes','PNT','PNW'] 
-
 #systematics = ['pileup','muRFcorrd','muR','muF','toppt','jec','jer','ht','LF','LFstat1', 'LFstat2','HF','HFstat1','HFstat2','CFerr1','CFerr2', 'DJjes']#['pileup','prefire','btag','mistag','jec','jer','hotstat','hotcspur','hotclosure','PSwgt','muRF','pdf','hdamp','ue','njet']#,'ht','trigeff','toppt','tau32','jmst','jmrt','tau21','jmsW','jmrW','tau21pt'] #
 nSys = len(systematics)
 for isys in range(nSys):
@@ -99,9 +98,11 @@ else: #theta
 
 for syst in systematics:
 	if not os.path.exists(outDir+tempVersion+'/'+saveDir+'/'+syst): os.system('mkdir '+outDir+tempVersion+'/'+saveDir+'/'+syst)
+	if not os.path.exists(outDir+tempVersion+'/'+saveDir+'/'+syst+'/'+iPlot): os.system('mkdir '+outDir+tempVersion+'/'+saveDir+'/'+syst+'/'+iPlot)
+
 	for cat in catList:
-                postTag = '' 
-		Prefix = iPlot+'_'+lumiStr+'_'+cat+'__'+bkgList[0]
+                postTag = 'is'+region 
+		Prefix = iPlot+'_'+lumiStr+'_'+postTag+'_'+cat+'__'+bkgList[0]
 		print Prefix+'__'+syst
 		try: hNm = RFile.Get(Prefix).Clone()
 		except: 
@@ -333,7 +334,7 @@ for syst in systematics:
 		chLatex.DrawLatex(0.45, 0.78, tagString)
 		chLatex.DrawLatex(0.45, 0.72, tagString2)
 
-		canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+syst+'_'+cat+'.pdf')
-		canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+syst+'_'+cat+'.png')
+		canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+iPlot+'/'+syst+'_'+cat+'UL'+era+'.pdf')
+		canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+iPlot+'/'+syst+'_'+cat+'UL'+era+'.png')
 		#canv.SaveAs(tempVersion+'/'+saveDir+'/'+syst+'/'+syst+'_'+cat+'.eps')
 RFile.Close()

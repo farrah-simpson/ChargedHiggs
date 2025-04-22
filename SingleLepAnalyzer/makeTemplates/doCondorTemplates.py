@@ -15,16 +15,38 @@ date='%i_%i_%i'%(cTime.year,cTime.month,cTime.day)
 time='%i_%i_%i'%(cTime.hour,cTime.minute,cTime.second)
 
 iPlotList = [#distribution name as defined in "doHists.py"
+#'mindeltaRlb',
+#'ratio_HTdHT3leadjets',
+#'masslepJets1',
+#'masslepJets2',
+#'mindeltaR',
+#'MT2bb',
+#'masslepBJets0',
+#'mass_lepBJet_mindr',
+#'M_allJet_W',
+#'HT_bjets',
+#'lepEnergy',
+#'firstcsvb_bb',
+#'secondcsvb_bb',
+#'thirdcsvb_bb',
+#'deltaR_lepJetInMinMljet',
+#'deltaR_lepbJetInMinMlb',
+#'Sphericity',
+#'minMlb',
+#'MTlmet',
+#'lepDR_minBBdr',
+#'Jet5Pt',
+#'Jet6Pt',
 'XGB200_SR1',
-#'XGB400_SR1',
-#'XGB600_SR1',
-#'XGB800_SR1',
-###'XGB1000_SR1',
-#'XGB1300_SR1',
+'XGB400_SR1',
+'XGB600_SR1',
+'XGB800_SR1',
+'XGB1000_SR1',
+'XGB1300_SR1',
+#'XGB1500_SR1',
 #'lepEta',
-# 'lepPt',
-# 'lepPhi',
-
+#'lepPt',
+#'lepPhi',
 #'ST',
 #'JetPt',
 #'JetEta',
@@ -34,115 +56,12 @@ iPlotList = [#distribution name as defined in "doHists.py"
 #'NWJets',
 #'NTJets',
 #'deltaRjet2',
-#'NJets',
-#'NBJets',
+# 'NJets',
+# 'NBJets',
 #'HT',
-######'aveBBdr',
-###### 'FW_momentum_0',
-######'FW_momentum_1',
-######'FW_momentum_2',
-######'FW_momentum_3',
-#######'FW_momentum_4',
-######'FW_momentum_5',
-######'FW_momentum_6',
-######'mass_maxJJJpt',
-######'Bjet1Pt',
-######'deltaR_minBB',
-######'deltaR',
-######'MTlmet',
-######'hemiout',
-######'masslepJets0',
-######'masslepJets1',
-######'masslepJets2',
-######'MT2bb',
-######'masslepBJets0',
-#####'mass_lepBJet_mindr',
-######'secondJetPt',
-######'fifthJetPt',
-######'sixthJetPt',
-######'PtFifthJet',
-######'mass_minLLdr',
-######'mass_maxBBmass',
-######'deltaR_lepJetInMinMljet',
-######'deltaPhi_lepJetInMinMljet',
-######'deltaR_lepbJetInMinMlb',
-######'deltaPhi_lepbJetInMinMlb',
-######'M_allJet_W',
-######'HT_bjets',
-######'HTpt40',
-######'ratio_HTdHT4leadjets',
-######'csvJet1',
-######'csvJet2',
-######'csvJet3',
-######'csvJet4',
-######'firstcsvb_bb',
-######'secondcsvb_bb',
-######'thirdcsvb_bb',
-######'fourthcsvb_bb',
-######'NBJetsNoSF',
-#####'HT_2m',
-######'Sphericity',
-######'Aplanarity',
-######'BestTop_Disc', 
-######'BestTop_Pt', 
-#####'NoTop_Jet1_CSV', 
-######'NoTop_Jet1_Pt', 
-######'NoTop_Jet2_CSV', 
-######'NoTop_Jet2_Pt',
-####'XGB700_SR1', 
-#######'XGB800_SR1', 
-#######'XGB900_SR1', 
-####'XGB1000_SR1',
-#######'XGB1100_SR1',
-#######'XGB1400_SR1',
-#######'XGB1500_SR1',
-######'XGB1600_SR1',
-#######
-######'XGB700_SR2', 
-#######'XGB800_SR2', 
-#######'XGB900_SR2', 
-#######'XGB1000_SR2',
-#######'XGB1100_SR2',
-#######'XGB1200_SR2',
-######'XGB1300_SR2',
-#######'XGB1400_SR2',
-#######'XGB1500_SR2',
-######'XGB1600_SR2',
-#######
-#######'XGB700_SR3', 
-#######'XGB800_SR3', 
-#######'XGB900_SR3', 
-######'XGB1000_SR3',
-#######'XGB1100_SR3',
-#######'XGB1200_SR3',
-######'XGB1300_SR3',
-#######'XGB1400_SR3',
-#######'XGB1500_SR3',
-######'XGB1600_SR3',
-######
-###### 			'minBBdr',
-###### 			'aveBBdr',
-###### 			'deltaEta_maxBB',
-###### 			'FW_momentum_2',
-###### 			'centrality',
-###### 			'aveCSVpt',
-###### 			'HT',
-## 			'minMlb',
-###### 			'Bjet1Pt',
-###### 			'mass_maxJJJpt',
-###### 			'MTlmet',
-###### 			'lepDR_minBBdr',
-###### 			'MET',
-###### #  
-###### 			'NPV',
-###### 			'NJets',
-###### 			'NBJets',
-###### 			'HTpBDT',
-###### 			'deltaPhi_METjets',
-######			'min_deltaPhi_METjets'
-######
-###### 			'HTpDNN',	
-			]
+#'METphi',
+#'NPV',
+]
 
 isEMlist = ['E','M']
 if region=='SR' or region=='CR': nttaglist=['0','1p']
@@ -173,7 +92,7 @@ count=0
 if 1==1:
 
 	pfix='templates_R17_final_'+region
-	if not categorize: pfix='kinematics_R17_final_'+region#'kinematics_'+region
+	if not categorize: pfix='kinematics_R17_XGBcut_'+region#'kinematics_'+region
 	pfix+='_'+date#+'_'+time
 	outDir = outputDir+pfix
 	if not os.path.exists(outDir): os.system('mkdir '+outDir)
@@ -212,11 +131,11 @@ Executable = %(isEM)sT%(nttag)sW%(nWtag)sB%(nbtag)sJ%(njets)s%(iPlot)s.sh
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
 Transfer_Input_Files = analyze.py,doHists.py,utils.py,weights.py,samples.py
-request_memory = 10000
+request_memory = 8000
 Output = condor_%(iPlot)s.out
 Error = condor_%(iPlot)s.err
 Log = condor_%(iPlot)s.log
-DesiredOS = SL7
+Priority = 20
 Arguments = %(exeDir)s %(iPlot)s %(region)s %(isCategorized)s %(isEM)s %(nttag)s %(nWtag)s %(nbtag)s %(njets)s 
 Queue 1"""%dict)
 			jdf.close()

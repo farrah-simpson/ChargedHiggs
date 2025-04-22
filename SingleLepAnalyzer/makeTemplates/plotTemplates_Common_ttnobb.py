@@ -5,7 +5,7 @@ import os,sys,time,math,pickle,itertools
 parent = os.path.dirname(os.getcwd())
 sys.path.append(parent)
 import ROOT as rt
-from weights import *
+from weights_UL18 import *
 from modSyst import *
 from utils import *
 import CMS_lumi, tdrstyle
@@ -24,7 +24,7 @@ plotttnobb = False #False#True #RFile2 is CR!!!
 plottop = False
 plotewk = False
 plotqcd = False
-region='' #SR,PS
+region='SR' #SR,PS
 isCategorized=False#True
 iPlot='XGB1300_SR1'
 if len(sys.argv)>2: iPlot=str(sys.argv[2])
@@ -37,17 +37,17 @@ if len(sys.argv)>3: massPt=str(sys.argv[3])
 if len(sys.argv)>1: 
 	templateDir=os.getcwd()+'/'+str(sys.argv[1])+'/'
 else:
-    templateDir=os.getcwd()+'/kinematics_R17_SR_2024_3_24/'#'/templates_R18_SR_2024_2_13/'
-    templateDir2 = os.getcwd()+'/kinematics_R17_CR_2024_3_24/'#'/kinematics_R17_CR_2024_3_24/'#'/kinematics_R17_sinancuts_PS_2024_3_10/'#'/kinematics_CR_2024_2_13/'#'/templates_R18_SR_2024_2_14/'#'/kinematics_CR_2024_2_13/'#'/templates_SR_2024_2_13/'#'/templates_2023_11_9/'
+    templateDir=os.getcwd()+'/kinematics_R18_final_SR_2024_11_10/'#'/templates_R18_SR_2024_2_13/'
+    templateDir2 = os.getcwd()+'/kinematics_R18_final_CR_2024_11_10/'#'/kinematics_R17_CR_2024_3_24/'#'/kinematics_R17_sinancuts_PS_2024_3_10/'#'/kinematics_CR_2024_2_13/'#'/templates_R18_SR_2024_2_14/'#'/kinematics_CR_2024_2_13/'#'/templates_SR_2024_2_13/'#'/templates_2023_11_9/'
 
 splitTTbar = True
 isRebinned= '_wNegBinsCorrec_'#_rebinned_stat0p3'#_killFirstBins_syFist' #post for ROOT file names
 saveKey = '' # tag for plot names
 
 sig1leg='ttnobb SR' 
-sig1 = 'ttnobbSR'
+sig1 = 'ttnobb'
 
-sig2 = 'ttnobbCR'
+sig2 = 'ttnobb'
 sig2leg='ttnobb CR'
 
 plotCombine = True ### make it False for YLD plot
@@ -124,7 +124,6 @@ addCRsys = False
 doOneBand = True#False
 if not doAllSys: doOneBand = True # Don't change this!
 blind =True
-if region =='PS' or region == 'CR': blind=False
 if plotttnobb: 
 	blind =True
 	doSig = False
@@ -376,7 +375,7 @@ for tag in tagList:
 	for isEM in isEMlist:
 		histPrefix=iPlot+'_'+lumiInTemplates+'fb_'
 		catStr=postTag+'is'+isEM+'_'+tagStr
-		histPrefix+=catStr
+		#histPrefix+=catStr
 		print histPrefix
 		print dataName
 		print 
@@ -401,10 +400,10 @@ for tag in tagList:
 		##else: hData = RFile1.Get(histPrefix+'__'+dataName).Clone()
 		
 		if plotCombine:
-			print "histPrefix", histPrefix
-			hsig1 = RFile1.Get(histPrefix+'__'+'ttnobb').Clone(histPrefix+'__ttnobb1')
+			print "histPrefix", histPrefix+'isSR_'+catStr
+			hsig1 = RFile1.Get(histPrefix+'isSR_'+catStr+'__'+'ttnobb').Clone(histPrefix+'__ttnobb1')
 
-			hsig2 = RFile2.Get(histPrefix+'__'+'ttnobb').Clone(histPrefix+'__ttnobb2')
+			hsig2 = RFile2.Get(histPrefix+'isCR_'+catStr+'__'+'ttnobb').Clone(histPrefix+'__ttnobb2')
 		else:
 			hsig1 = RFile1.Get(histPrefix+'__ttnobb').Clone(histPrefix+'__ttnobb1')
 
@@ -892,7 +891,7 @@ for tag in tagList:
 # 		savePrefix = templateDir.replace(cutString,'')+templateDir.split('/')[-2]+cutString+'/plots/'
 		savePrefix = templateDir.replace(cutString,'')+cutString+'/plots/'
 		if not os.path.exists(savePrefix): os.system('mkdir '+savePrefix)
-		savePrefix+=histPrefix+isRebinned.replace('_rebinned_stat1p1','')+saveKey
+		#savePrefix+=histPrefix+isRebinned.replace('_rebinned_stat1p1','')+saveKey
 		if nttaglist[0]=='0p': savePrefix=savePrefix.replace('nT0p_','')
 		if nWtaglist[0]=='0p': savePrefix=savePrefix.replace('nW0p_','')
 		if nbtaglist[0]=='0p': savePrefix=savePrefix.replace('nB0p_','')
@@ -901,15 +900,15 @@ for tag in tagList:
 		if yLog: savePrefix+='_logy'
 		if blind or blindYLD: savePrefix+='_blind'
 		if doOneBand:
-			c1.SaveAs(savePrefix+plotbkg+"totBand.pdf")
-			c1.SaveAs(savePrefix+plotbkg+"totBand.png")
+			c1.SaveAs(plotbkg+"totBand.pdf")
+			c1.SaveAs(plotbkg+"totBand.png")
 			c1.SaveAs(savePrefix+plotbkg+"totBand.eps")
 			#c1.SaveAs(savePrefix+"totBand.root")
 			#c1.SaveAs(savePrefix+"totBand.C")
 		else:
-			c1.SaveAs(savePrefix+plotbkg+".pdf")
-			c1.SaveAs(savePrefix+plotbkg+".png")
-			c1.SaveAs(savePrefix+plotbkg+".eps")
+			c1.SaveAs(plotbkg+".pdf")
+			c1.SaveAs(plotbkg+".png")
+			c1.SaveAs(plotbkg+".eps")
 			#c1.SaveAs(savePrefix+".root")
 			#c1.SaveAs(savePrefix+".C")
 #		for proc in bkgProcList:
@@ -919,8 +918,11 @@ for tag in tagList:
 #			if plotttnobb: del bkghists2['ttnobb2'+catStr]
 
 	# Making plots for e+jets/mu+jets combined #
-	histPrefixE = iPlot+'_'+lumiInTemplates+'fb_'+postTag+'isE_'+tagStr
-	histPrefixM = iPlot+'_'+lumiInTemplates+'fb_'+postTag+'isM_'+tagStr
+	histPrefixE1 = iPlot+'_'+lumiInTemplates+'fb_'+'isSR_'+'isE_'+tagStr
+	histPrefixM1 = iPlot+'_'+lumiInTemplates+'fb_'+'isSR_'+'isM_'+tagStr
+	histPrefixE2 = iPlot+'_'+lumiInTemplates+'fb_'+'isCR_'+'isE_'+tagStr
+	histPrefixM2 = iPlot+'_'+lumiInTemplates+'fb_'+'isCR_'+'isM_'+tagStr
+
 
 #	for proc in bkgProcList:
 #		##try: 
@@ -945,12 +947,12 @@ for tag in tagList:
 #		else: hDatamerged2.Add(RFile2.Get(histPrefixM+'__'+dataName).Clone())
 
 
- 	hsig1merged = RFile1.Get(histPrefixE+'__'+'ttnobb')#, 'ttnobb1merged')#.Clone(histPrefixE+'__ttnobb1merged')
-	hsig1merged.Add(RFile1.Get(histPrefixM+'__'+'ttnobb').Clone())
+ 	hsig1merged = RFile1.Get(histPrefixE1+'__'+'ttnobb')#, 'ttnobb1merged')#.Clone(histPrefixE+'__ttnobb1merged')
+	hsig1merged.Add(RFile1.Get(histPrefixM1+'__'+'ttnobb').Clone())
 
-	hsig2merged = RFile2.Get(histPrefixE+'__'+'ttnobb')#, 'ttnobb2merged')#.SetName(histPrefixE+'__'+'ttnobb2')
- 	#hsig2merged = RFile2.Get(histPrefixE+'__'+'ttnobb').Clone(histPrefixE+'__ttnobb2merged')
-  	hsig2merged.Add(RFile2.Get(histPrefixM+'__'+'ttnobb').Clone())
+	hsig2merged = RFile2.Get(histPrefixE2+'__'+'ttnobb')#, 'ttnobb2merged')#.SetName(histPrefixE+'__'+'ttnobb2')
+ 	#hsig2merged = RFile2.Get(histPrefixE2+'__'+'ttnobb').Clone(histPrefixE+'__ttnobb2merged')
+  	hsig2merged.Add(RFile2.Get(histPrefixM2+'__'+'ttnobb').Clone())
 	#hsig3merged = RFile3.Get(iPlot+'_'+lumiInTemplates+'fb_'+postTag+'isE_'+tagStr+'__ttnobb')
 
 ##Turned off scale to 1pb in doTemplates
@@ -1455,7 +1457,7 @@ for tag in tagList:
 # 	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'+sig2
 	savePrefixmerged = templateDir.replace(cutString,'')+'/plots/'
 	if not os.path.exists(savePrefixmerged): os.system('mkdir '+savePrefixmerged)
-	savePrefixmerged+=histPrefixE.replace('isE','isL')+isRebinned.replace('_rebinned_stat1p1','')+saveKey
+	savePrefixmerged+=histPrefixE2.replace('isE','isL')+isRebinned.replace('_rebinned_stat1p1','')+saveKey
 	if nttaglist[0]=='0p': savePrefixmerged=savePrefixmerged.replace('nT0p_','')
 	if nWtaglist[0]=='0p': savePrefixmerged=savePrefixmerged.replace('nW0p_','')
 	if nbtaglist[0]=='0p': savePrefixmerged=savePrefixmerged.replace('nB0p_','')
